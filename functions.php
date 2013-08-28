@@ -53,6 +53,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 
 /** Add new image sizes */
 add_image_size( 'featured-circle', 300, 300, TRUE );
+add_image_size( 'featured-square', 300, 300, TRUE );
 
 /** Unregister layout settings */
 genesis_unregister_layout( 'content-sidebar' );
@@ -85,7 +86,7 @@ add_action( 'genesis_before_post_title', 'apparition_featured_image' );
 function apparition_featured_image() {
 	if ( is_singular( array( 'post', 'page' ) ) && has_post_thumbnail() ){
 		echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( $thumbnail->ID, 'featured-circle' );
+		echo get_the_post_thumbnail( $thumbnail->ID, 'featured-square' );
 		echo '</div>';
 	}
 }
@@ -126,3 +127,32 @@ function apparition_read_more_link() {
 
 /** Add support for 3-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+add_action('after_setup_theme','bw_images_size');
+function bw_images_size() {
+	add_image_size('thumbnail-bw', 300, 300, FALSE);
+}
+add_filter('wp_generate_attachment_metadata','bw_images_filter');
+function bw_images_filter($meta) {
+	$file = wp_upload_dir();
+	$file = trailingslashit($file['path']).$meta['sizes']['thumbnail-bw']['file'];
+	list($orig_w, $orig_h, $orig_type) = @getimagesize($file);
+	$image = wp_load_image($file);
+	imagefilter($image, IMG_FILTER_GRAYSCALE);
+	//imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
+	switch ($orig_type) {
+		case IMAGETYPE_GIF:
+			$file = str_replace(".gif", "-bw.gif", $file);
+			imagegif( $image, $file );
+			break;
+		case IMAGETYPE_PNG:
+			$file = str_replace(".png", "-bw.png", $file);
+			imagepng( $image, $file );
+			break;
+		case IMAGETYPE_JPEG:
+			$file = str_replace(".jpg", "-bw.jpg", $file);
+			imagejpeg( $image, $file );
+			break;
+	}
+	return $meta;
+}
