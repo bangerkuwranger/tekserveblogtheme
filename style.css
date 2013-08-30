@@ -58,6 +58,44 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato|Lustria);
 
+@font-face {
+  font-family: 'Tekvetica';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Tekvetica-Bold'), url('fonts/Tekvetica-Bold.eot?') format('eot'), url('fonts/Tekvetica-Bold.woff') format('woff'), url('fonts/Tekvetica-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Tekvetica';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Tekvetica-BoldItal'), url('fonts/Tekvetica-BoldItal.eot?') format('eot'), url('fonts/Tekvetica-BoldItal.woff') format('woff'), url('fonts/Tekvetica-BoldItal.ttf') format('truetype');
+}@font-face {
+  font-family: 'Tekvetica';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Tekvetica-Heavy'), url('fonts/Tekvetica-Heavy.eot?') format('eot'), url('fonts/Tekvetica-Heavy.woff') format('woff'), url('fonts/Tekvetica-Heavy.ttf') format('truetype');
+}@font-face {
+  font-family: 'Tekvetica';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Tekvetica-Italic'), url('fonts/Tekvetica-Italic.eot?') format('eot'), url('fonts/Tekvetica-Italic.woff') format('woff'), url('fonts/Tekvetica-Italic.ttf') format('truetype');
+}@font-face {
+  font-family: 'Tekvetica';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tekvetica-Regular'), url('fonts/Tekvetica-Regular.eot?') format('eot'), url('fonts/Tekvetica-Regular.woff') format('woff'), url('fonts/Tekvetica-Regular.ttf') format('truetype');
+}@font-face {
+  font-family: 'Tekvetica';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Tekvetica-Thin'), url('fonts/Tekvetica-Thin.eot?') format('eot'), url('fonts/Tekvetica-Thin.woff') format('woff'), url('fonts/Tekvetica-Thin.ttf') format('truetype');
+}@font-face {
+  font-family: 'Tekvetica';
+  font-style: italic;
+  font-weight: 200;
+  src: local('Tekvetica-ThinItalic'), url('fonts/Tekvetica-ThinItalic.eot?') format('eot'), url('fonts/Tekvetica-ThinItalic.woff') format('woff'), url('fonts/Tekvetica-ThinItalic.ttf') format('truetype');
+}
+
 
 /* Defaults
 ------------------------------------------------------------ */
@@ -251,7 +289,7 @@ body {
 .menu-primary,
 .menu-secondary,
 #header .menu {
-	background-color: #111;
+	background-color: #f36f37;
 	clear: both;
 	color: #fff;
 	font-family: 'Tekvetica', 'Lato', sans-serif;
