@@ -156,3 +156,20 @@ function bw_images_filter($meta) {
 	}
 	return $meta;
 }
+add_filter( 'wp_nav_menu_items', 'genesis_search_primary_nav_menu', 10, 2 );
+
+function genesis_search_primary_nav_menu( $menu, stdClass $args ){
+        
+       
+        if ( 'primary' != $args->theme_location )
+        	return $menu;
+        
+               if( genesis_get_option( 'nav_extras' ) )
+                return $menu;
+        
+        $menu .= sprintf( '<li class="custom-search">%s</li>', __( genesis_search_form( $echo ) ) );
+        
+        
+        return $menu;
+        
+}

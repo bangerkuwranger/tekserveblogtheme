@@ -197,9 +197,12 @@ body {
 	color: #fff;
 }
 
-::selection {
-	background-color: #333;
-	color: #fff;
+::selection, #nav {
+	background-color: #f36f37;
+	-moz-box-shadow: 0px 3px 9px #011011;
+	-webkit-box-shadow: 0px 3px 9px #011011;
+	box-shadow: 0px 3px 9px #011011;
+	text-transform: uppercase;
 }
 
 
@@ -208,7 +211,7 @@ body {
 
 .wrap {
 	margin: 0 auto;
-	width: 1140px;
+	width: 1200px;
 }
 
 
@@ -319,6 +322,14 @@ body {
 #header .menu li {
 	float: left;
 	list-style-type: none;
+	border-right: solid 2px white;
+	height: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+li:last-child {
+border:none;
 }
 
 .menu-primary a,
@@ -329,6 +340,9 @@ body {
 	padding: 15px 20px;
 	position: relative;
 	text-decoration: none;
+	position: relative;
+	top: -15px;
+	font-weight: 200;
 }
 
 #header .menu a {
@@ -344,7 +358,7 @@ body {
 #header .menu li a:hover,
 #header .menu li:hover a,
 #header .menu .current-menu-item a {
-	color: #3fb6d7;
+	color: #40a8c9;
 }
 
 .menu-primary li li a,
@@ -370,7 +384,7 @@ body {
 .menu-primary li li a:hover,
 .menu-secondary li li a:hover,
 #header .menu li li a:hover {
-	color: #3fb6d7;
+	color: #40a8c9;
 }
 
 .menu-primary li ul,
@@ -422,7 +436,13 @@ ul.menu li.sfHover ul,
 #wpadminbar li:hover ul ul {
 	left: 0;
 }
-
+.search-form {
+	position: relative;
+	right: -20px;
+	top: -6px;
+	float: right;
+	width: 125px;
+}
 
 /* Primary Navigation Extras
 ------------------------------------------------------------ */
@@ -1008,6 +1028,8 @@ div.gform_footer input.button {
 	margin: 0 0 10px;
 	padding: 10px;
 	width: 100%;
+	border-radius: 6px;
+	height: 20px;
 }
 
 #header .searchform {
