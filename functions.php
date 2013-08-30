@@ -27,6 +27,8 @@ add_theme_support( 'genesis-style-selector', array(
 	'apparition-orange'		=>	__( 'Orange', 'apparition' ),
 	'apparition-pink'		=>	__( 'Pink', 'apparition' ),
 	'apparition-red'		=>	__( 'Red', 'apparition' ),
+	'apparition-lightblue'		=>	__( 'Light Blue', 'apparition' ),
+	'apparition-darkblue'		=>	__( 'Dark Blue', 'apparition' ),
 ) );
 
 /** Add support for custom header */

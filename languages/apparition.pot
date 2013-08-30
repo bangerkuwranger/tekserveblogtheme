@@ -38,10 +38,18 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:30
+msgid "Light Blue"
+msgstr ""
+
+#: functions.php:31
+msgid "Dark Blue"
+msgstr ""
+
+#: functions.php:119
 msgid "Submit"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:126
 msgid "[Continue Reading]"
 msgstr ""

@@ -48,6 +48,8 @@
 * Apparition Orange
 * Apparition Pink
 * Apparition Red
+* Apparition Light Blue
+* Apparition Dark Blue
 * Responsive Design
 
 */
@@ -130,7 +132,7 @@ textarea,
 .sticky,
 .taxonomy-description,
 .wp-caption {
-	background-color: #f5f5f5;
+	background-color: #fff;
 }
 
 input,
@@ -599,8 +601,9 @@ p.subscribe-to-comments {
 	clear: both;
 	margin: 0 0 25px;
 }
-.odd {
+.even {
 background: #f36f37;
+color: white;
 }
 
 /* Headlines
@@ -1574,6 +1577,138 @@ div.gform_wrapper .gform_footer {
 	background-color: #e64e52;
 }
 
+/* Apparition Light Blue
+------------------------------------------------------------ */
+
+.apparition-lightblue h2 a,
+.apparition-lightblue h2 a:visited {
+	color: #fff;
+}
+
+.apparition-lightblue .menu-primary a,
+.apparition-lightblue .menu-primary a:visited,
+.apparition-lightblue .menu-secondary a,
+.apparition-lightblue .menu-secondary a:visited,
+.apparition-lightblue #header .menu a,
+.apparition-lightblue #header .menu a:visited,
+.apparition-lightblue .menu-primary li li a,
+.apparition-lightblue .menu-primary li li a:link,
+.apparition-lightblue .menu-primary li li a:visited,
+.apparition-lightblue .menu-secondary li li a,
+.apparition-lightblue .menu-secondary li li a:link,
+.apparition-lightblue .menu-secondary li li a:visited,
+.apparition-lightblue #header .menu li li a,
+.apparition-lightblue #header .menu li li a:link,
+.apparition-lightblue #header .menu li li a:visited {
+	color: #fff;
+}
+
+.apparition-lightblue a,
+.apparition-lightblue a:visited,
+.apparition-lightblue h2 a:hover,
+.apparition-lightblue .menu li.right a:hover,
+.apparition-lightblue .menu-primary li a:hover,
+.apparition-lightblue .menu-primary li li a:hover,
+.apparition-lightblue .menu-primary li:hover a,
+.apparition-lightblue .menu-primary .current-menu-item a,
+.apparition-lightblue .menu-secondary li a:hover,
+.apparition-lightblue .menu-secondary li li a:hover,
+.apparition-lightblue .menu-secondary li:hover a,
+.apparition-lightblue .menu-secondary .current-menu-item a,
+.apparition-lightblue #footer a:hover,
+.apparition-lightblue #header .menu li a:hover,
+.apparition-lightblue #header .menu li li a:hover,
+.apparition-lightblue #header .menu li:hover a,
+.apparition-lightblue #header .menu .current-menu-item a {
+	color: #40a8c9;
+}
+
+.apparition-lightblue .post-meta a,
+.apparition-lightblue .post-meta a:visited {
+	color: #f36f37;
+}
+
+.apparition-lightblue a:hover,
+.apparition-lightblue .post-meta a:hover {
+	color: #40a8c9;
+}
+
+.apparition-lightblue div.gform_footer input.button:hover,
+.apparition-lightblue input:hover[type="button"],
+.apparition-lightblue input:hover[type="submit"],
+.apparition-lightblue .navigation li a:hover,
+.apparition-lightblue .navigation li.active a,
+.apparition-lightblue #commentform #submit:hover,
+.apparition-lightblue #footer-widgets {
+	background-color: #40a8c9;
+}
+
+/* Apparition Dark Blue
+------------------------------------------------------------ */
+
+.apparition-darkblue h2 a,
+.apparition-darkblue h2 a:visited {
+	color: #f36f37;
+}
+
+.apparition-darkblue .menu-primary a,
+.apparition-darkblue .menu-primary a:visited,
+.apparition-darkblue .menu-secondary a,
+.apparition-darkblue .menu-secondary a:visited,
+.apparition-darkblue #header .menu a,
+.apparition-darkblue #header .menu a:visited,
+.apparition-darkblue .menu-primary li li a,
+.apparition-darkblue .menu-primary li li a:link,
+.apparition-darkblue .menu-primary li li a:visited,
+.apparition-darkblue .menu-secondary li li a,
+.apparition-darkblue .menu-secondary li li a:link,
+.apparition-darkblue .menu-secondary li li a:visited,
+.apparition-darkblue #header .menu li li a,
+.apparition-darkblue #header .menu li li a:link,
+.apparition-darkblue #header .menu li li a:visited {
+	color: #fff;
+}
+
+.apparition-darkblue a,
+.apparition-darkblue a:visited,
+.apparition-darkblue h2 a:hover,
+.apparition-darkblue .menu li.right a:hover,
+.apparition-darkblue .menu-primary li a:hover,
+.apparition-darkblue .menu-primary li li a:hover,
+.apparition-darkblue .menu-primary li:hover a,
+.apparition-darkblue .menu-primary .current-menu-item a,
+.apparition-darkblue .menu-secondary li a:hover,
+.apparition-darkblue .menu-secondary li li a:hover,
+.apparition-darkblue .menu-secondary li:hover a,
+.apparition-darkblue .menu-secondary .current-menu-item a,
+.apparition-darkblue #footer a:hover,
+.apparition-darkblue #header .menu li a:hover,
+.apparition-darkblue #header .menu li li a:hover,
+.apparition-darkblue #header .menu li:hover a,
+.apparition-darkblue #header .menu .current-menu-item a {
+	color: #f36f37;
+}
+
+.apparition-darkblue .post-meta a,
+.apparition-darkblue .post-meta a:visited {
+	color: #f36f37;
+}
+
+.apparition-darkblue a:hover,
+.apparition-darkblue .post-meta a:hover {
+	color: #004d72;
+}
+
+.apparition-darkblue div.gform_footer input.button:hover,
+.apparition-darkblue input:hover[type="button"],
+.apparition-darkblue input:hover[type="submit"],
+.apparition-darkblue .navigation li a:hover,
+.apparition-darkblue .navigation li.active a,
+.apparition-darkblue #commentform #submit:hover,
+.apparition-darkblue #footer-widgets {
+	background-color: #e59737;
+}
+
 
 /* Responsive Design
 ------------------------------------------------------------ */
@@ -1789,3 +1924,7 @@ div.gform_wrapper .gform_footer {
 	}
 
 }
+
+.even h2 a {color:white;}
+.even h2 a:hover {color:#40a8c9;}
+.entry-title a, .entry-title a:hover {font-weight: 900;}
