@@ -88,7 +88,7 @@ add_action( 'genesis_before_post_title', 'apparition_featured_image' );
 function apparition_featured_image() {
 	if ( is_singular( array( 'post', 'page' ) ) && has_post_thumbnail() ){
 		echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( $thumbnail->ID, 'featured-square' );
+		echo get_the_post_thumbnail( $thumbnail->ID, 'thumbnail-bw' );
 		echo '</div>';
 	}
 }
@@ -174,4 +174,18 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
         
         return $menu;
         
+}
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'testimonial',
+		array(
+			'labels' => array(
+				'name' => __( 'Quotes and Testimonials' ),
+				'singular_name' => __( 'Testimonials' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'testimonial'),
+		)
+	);
 }
