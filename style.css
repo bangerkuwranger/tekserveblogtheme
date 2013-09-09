@@ -115,7 +115,7 @@ p,
 select,
 textarea {
 	color: #333;
-	font-family: 'Tekvetica', 'Lustria', serif;
+	font-family: 'Tekvetica', Helvetica Neue, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 0;
@@ -446,6 +446,7 @@ ul.menu li.sfHover ul,
 	float: right;
 	width: 125px;
 }
+.tinynav { display: none }
 
 /* Primary Navigation Extras
 ------------------------------------------------------------ */
@@ -634,7 +635,7 @@ h2 a:visited {
 	margin: 35px 0 30px;
 }
 
-.page h1,
+/* .page h1, */
 .single h1 {
 	border-bottom: double #eee;
 	margin: 0 0 30px;
@@ -1711,6 +1712,118 @@ div.gform_wrapper .gform_footer {
 }
 
 
+/* Post Alternation
+------------------------------------------------------------ */
+.even h2 a {color:white;}
+.even h2 a:hover {color:#40a8c9;}
+.entry-title a, .entry-title a:hover {font-weight: 900;}
+
+/* Page Sections
+------------------------------------------------------------ */
+.section {
+width: 960px;
+background-color: #fff;
+color: #004d72;
+font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
+padding: 5% 0;
+}
+.section h1 {
+font-size: 36px;
+text-align: left;
+line-height: 1.25em;
+text-transform: uppercase;
+font-weight: 900;
+}
+.section p {
+text-align: justify;
+font-size: 1.1em;
+}
+.section .button {
+border-radius: 6px 0 6px;
+background-color: #40a8c9;
+color: #fff;
+cursor:pointer;
+text-transform: uppercase;
+font-weight: 900;
+}
+.section .button:hover {
+color: #f36f37;
+}
+.orange {
+background: #f36f37;
+color: #fff;
+}
+.lightblue {
+background: #40a8c9;
+color: #fff;
+}
+.darkblue {
+background-color: #004d72;
+color: #fff;
+}
+.orange h1, .lightblue h1, .darkblue  h1, .orange p, .lightblue p, .darkblue p {
+color:#fff;
+}
+.orange .button, .lightblue .button {
+background-color: #004d72;
+}
+.section .orange .button:hover, .section .lightblue .button:hover {
+color: #40a8c9;
+}
+.section .left {
+float: left;
+margin: 0 ;
+padding: 0;
+max-height:100%;
+max-width: 40%;
+}
+.section .right {
+float: right;
+margin: 0 0 0 10%;
+padding: 0;
+max-height: 100%;
+max-width: 40%;
+}
+.section .clear {
+clear: both;
+height: 1em;
+width: 100%;
+}
+.twoUp {
+position: relative;
+height: 100%;
+width: 100%;
+}
+.bgwrapper {
+width: 100%;
+}
+
+/* Drawers
+------------------------------------------------------------ */
+.section .drawer {
+color: inherit;
+background: inherit;
+width: 100%;
+display: none;
+}
+.section .drawerButton {
+background-image: url('images/leftorgarrow.png');
+background-position: left;
+background-repeat: no-repeat;
+padding: 10px 20px 10px 50px;
+text-align: left;
+font-size: 24px;
+color: #f36f37;
+cursor: pointer;
+}
+.section .drawerButton:hover {
+color: #40a8c9;
+}
+.section .opened {
+background-image: url('images/dnorgarrow.png');
+}
+
+
 /* Responsive Design
 ------------------------------------------------------------ */
 
@@ -1726,7 +1839,10 @@ div.gform_wrapper .gform_footer {
 	#content {
 		padding: 0 10%;
 	}
-
+	.section {
+		width: 960px;
+	}
+	
 }
 
 @media only screen and (max-width: 1023px) {
@@ -1837,8 +1953,15 @@ div.gform_wrapper .gform_footer {
 	#footer-widgets .latest-tweets {
 		margin: -40px 0 40px;
 	}
-
+	.section {
+		width: 90%;
+	}
+	.section p, .section h1 {
+		font-size: .8em;
+	}
+	
 }
+
 
 @media only screen and (max-width: 768px) {
 
@@ -1898,6 +2021,9 @@ div.gform_wrapper .gform_footer {
 		box-sizing: border-box;
 		padding: 20px;
 	}
+	.section {
+		width: 80%;
+	}
 
 }
 
@@ -1923,98 +2049,9 @@ div.gform_wrapper .gform_footer {
 	.author-box .avatar {
 		display: none;
 	}
-
-}
-
-/* Post Alternation
------------------------------------------------------------- */
-.even h2 a {color:white;}
-.even h2 a:hover {color:#40a8c9;}
-.entry-title a, .entry-title a:hover {font-weight: 900;}
-
-/* Drawers
------------------------------------------------------------- */
-.drawer {
-color: inherit;
-background: inherit;
-width: 100%;
-display: none;
-}
-.drawerButton {
-background: url('images/leftorgarrow.png') no-repeat left;
-padding: 10px;
-padding-left: 30px;
-text-align: left;
-font-size: 24px;
-color: #f36f37;
-cursor: pointer;
-}
-.drawerButton:hover {
-color: #40a8c9;
-}
-.opened {
-background: url('images/dnorgarrow.png') no-repeat left;
-}
-/* Page Sections
------------------------------------------------------------- */
-.section {
-width: 100%;
-background: #fff;
-color: #004d72;
-font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
-padding: 5% 0;
-}
-.section h1 {
-font-size: 36px;
-text-align: left;
-line-height: 1.25em;
-text-transform: uppercase;
-font-weight: 900;
-}
-.section p {
-text-align: justify;
-}
-.section .button {
-border-radius: 6px 0 0 6px;
-background: #40a8c9;
-color: #fff;
-cursor:pointer;
-text-transform: uppercase;
-font-weight: 900;
-}
-.section .button:hover {
-color: #f36f37;
-}
-.orange {
-background: #f36f37;
-color: #fff;
-}
-.lightblue {
-background: #40a8c9;
-color: #fff;
-}
-.darkblue {
-background: #004d72;
-color: #fff;
-}
-.orange .button, .lightblue .button {
-background: #004d72;
-}
-.section .orange .button:hover, .section .lightblue .button:hover {
-color: #40a8c9;
-}
-.section img.left {
-float: left;
-margin: 0 10% 0 0;
-padding: 0;
-height:100%
-}
-.section img.right {
-float: right;
-margin: 0 0 0 10%;
-padding: 0;
-height: 100%;
-}
-.bgwrapper {
-width: 100%;
+	.section .left, .section .right{
+		max-width:100%;
+	}
+	.tinynav { display: block }
+    #menu-test { display: none }
 }

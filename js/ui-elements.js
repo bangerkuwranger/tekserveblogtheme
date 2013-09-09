@@ -1,8 +1,10 @@
 var $j = jQuery;
+
 function drawerSlide(drawerID, buttonID){
 $j('#'+drawerID).slideToggle();
 $j('#'+buttonID).toggleClass("opened");
 }
+
 var wrapperbgcolor;
 $j(".section").each(function() {
 	wrapperbgcolor = $j(this).css('background-color');
@@ -23,7 +25,8 @@ function fixDiv() {
 $j("#nav").data("top", $j("#nav").offset().top); // set original position on load
 $j(window).scroll(fixDiv);
 var viewWidth = $j(window).width();
-$j(window).resize(function() {
+
+function stretchSection() {
 	$j('.bgwrapper').css('position', 'relative');
 	viewWidth = $j(window).width();
 	$j('.page .hentry').css('overflow', 'visible');
@@ -46,4 +49,13 @@ $j(window).resize(function() {
 		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
 		$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
 	}
+}
+
+stretchSection();
+
+$j(window).resize(function() {
+	stretchSection();
 });
+
+$j('.twoUp').after('<div class="clear">&nbsp;</div>');
+$j("#menu-test").tinyNav();

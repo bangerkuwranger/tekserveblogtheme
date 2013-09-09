@@ -191,5 +191,7 @@ function create_post_type() {
 }
 function include_local_scripts() {
 	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'jquery-resize-event', get_stylesheet_directory_uri() . '/jquery.ba-resize.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'responsive-nav', get_stylesheet_directory_uri() . '/tinynav.min.js', array( 'jquery' ), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
