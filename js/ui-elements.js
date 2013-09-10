@@ -58,4 +58,3 @@ $j(window).resize(function() {
 });
 
 $j('.twoUp').after('<div class="clear">&nbsp;</div>');
-$j("#menu-test").tinyNav();
