@@ -1739,7 +1739,7 @@ text-align: justify;
 font-size: 1.1em;
 }
 .section .button {
-border-radius: 6px 0 6px;
+border-radius: 12px 0 12px;
 background-color: #40a8c9;
 color: #fff;
 cursor:pointer;
@@ -1770,14 +1770,14 @@ background-color: #004d72;
 .section .orange .button:hover, .section .lightblue .button:hover {
 color: #40a8c9;
 }
-.section .left {
+.section .twoUp .left {
 float: left;
 margin: 0 ;
 padding: 0;
 max-height:100%;
 max-width: 40%;
 }
-.section .right {
+.section .twoUp .right {
 float: right;
 margin: 0 0 0 10%;
 padding: 0;
@@ -1800,21 +1800,28 @@ width: 100%;
 
 /* Drawers
 ------------------------------------------------------------ */
+
+/* 
 .section .drawer {
 color: inherit;
 background: inherit;
 width: 100%;
 display: none;
 }
+ */
+/* 
 .section .drawerButton {
 background-image: url('images/leftorgarrow.png');
-background-position: left;
+background-position: right;
 background-repeat: no-repeat;
-padding: 10px 20px 10px 50px;
+padding: 10px 50px 10px 20px;
 text-align: left;
 font-size: 24px;
 color: #f36f37;
 cursor: pointer;
+}
+.section .button .drawerButton {
+color:white;
 }
 .section .drawerButton:hover {
 color: #40a8c9;
@@ -1822,7 +1829,45 @@ color: #40a8c9;
 .section .opened {
 background-image: url('images/dnorgarrow.png');
 }
+ */
+.section .drawer .collapseomatic_content {
+color: inherit;
+background: inherit;
+padding-top: 2em;
+}
+.section .drawer .collapseomatic {
+background-position: left;
+background-repeat: no-repeat;
+padding: 10px 20px 10px 50px;
+text-align: left;
+font-size: 24px;
+color: #f36f37;
+cursor: pointer;
+width: auto;
+display: inline-block;
+background-image: url(images/leftorgarrow.png);
+position: relative;
+}
+.section .drawer .leftcenter {
+left: 20%;
+}
+.section .drawer .rightcenter {
+left: 60%;
+}
+.section .drawer .right {
+left: 80%;
+}
+.section .button .drawer .collapseomatic {
+color:white;
+}
 
+.section .drawer .colomat-hover {
+text-decoration: none;
+color: #40a8c9;
+}
+.section .drawer .colomat-close {
+background-image: url('images/dnorgarrow.png');
+}
 
 /* Responsive Design
 ------------------------------------------------------------ */
@@ -1956,7 +2001,7 @@ background-image: url('images/dnorgarrow.png');
 	.section {
 		width: 90%;
 	}
-	.section p, .section h1, .section .button, .section .drawerButton {
+	.section p, .section h1, .section .button, .section .drawer .collapseomatic {
 		font-size: .8em;
 	}
 	
@@ -2049,11 +2094,12 @@ background-image: url('images/dnorgarrow.png');
 	.author-box .avatar {
 		display: none;
 	}
-	.section .left, .section .right{
+	.section .twoUp .left, .section .twoUp .right{
+		width:100%;
 		max-width:100%;
 	}
 	.menu-primary {
-		width: 100%;
+		width: 380px;
 		padding: 5px 0;
 		min-height: 1.1em;
 		border: solid 1px #aaa;
