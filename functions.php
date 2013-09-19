@@ -278,6 +278,16 @@ function my_theme_register_required_plugins() {
 			'version' 	=> '1.5.2',
 			'force_activation' 	=> true,
 		),
+		
+		array(
+			'name' 		=> 'Collapse-Pro-Matic',
+			'slug' 		=> 'collaps-pro-matic',
+			'required' 	=> true,
+			'version' 	=> '0.5.0',
+			'force_activation' 	=> true,
+			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic-v0.5.zip'
+		),
+
 
 	);
 
