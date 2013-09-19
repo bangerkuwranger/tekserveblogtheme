@@ -29,26 +29,28 @@ function stretchSection() {  //function is called on load and on window resize; 
 	if (viewWidth <= 960) {
 		$j('.bgwrapper').css('padding','0 10%');
 		$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
-				$j(".section").each(function() { //loops through each section, changing image into background as window shrinks.
-			var bgimgsrc = $j('.left-full').attr('src');
-			if (bgimgsrc) {
-				$j('.left-full').css('display','none');
-				$j(this).css('background-image','url('+bgimgsrc+')');
-				$j(this).css('background-position','bottom left');
-				$j(this).css('background-repeat','no-repeat');
-				$j(this).css('background-size','contain');
-			}
-			else {
-				var bgimgsrc = $j('.right-full').attr('src');
-				if (bgimgsrc) {
-					$j('.right-full').css('display','none');
-					$j(this).css('background-image','url('+bgimgsrc+')');
-					$j(this).css('background-position','bottom right');
+			$j(".section").each(function() { //loops through each section, changing image into background as window shrinks.
+				console.log($j(this).attr('id'));
+				var sectionid = $j(this).attr('id');
+				var bgimgsrc = $j('#'+sectionid+' .left-full').attr('src');
+				if(bgimgsrc) {
+					$j('.left-full').css('display','none');
+					$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
+					$j(this).css('background-position','bottom left');
 					$j(this).css('background-repeat','no-repeat');
 					$j(this).css('background-size','contain');
 				}
-			}	
-		});
+				else {
+					var bgimgsrc = $j('#'+sectionid+' .right-full').attr('src');
+					if (bgimgsrc) {
+						$j('.right-full').css('display','none');
+						$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
+						$j("#"+sectionid).css('background-position','bottom right');
+						$j("#"+sectionid).css('background-repeat','no-repeat');
+						$j("#"+sectionid).css('background-size','contain');
+					}
+				}	
+			});
 	}
 	else {
 		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
