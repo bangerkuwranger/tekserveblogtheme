@@ -11,8 +11,27 @@ var wrapperbgcolor;
 $j(".section").each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
 	wrapperbgcolor = $j(this).css('background-color');
 	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');
+	var sectionid = $j(this).attr('id');
+	switch(wrapperbgcolor)
+	{
+	case 'rgb(243, 111, 55)':
+		$j("#"+sectionid+" .left").css('background-color','rgba(243, 111, 55, .65)');
+		$j("#"+sectionid+" .right").css('background-color','rgba(243, 111, 55, .65)');
+		break;	
+	case 'rgb(64, 168, 201)':
+		$j("#"+sectionid+" .left").css('background-color','rgba(64, 168, 201, .65)');
+		$j("#"+sectionid+" .right").css('background-color','rgba(64, 168, 201, .65)');
+		break;
+	case 'rgb(0, 77, 114)':
+		$j("#"+sectionid+" .left").css('background-color','rgba(0, 77, 114, .65)');
+		$j("#"+sectionid+" .right").css('background-color','rgba(0, 77, 114, .65)');
+		break;
+	default:
+		$j("#"+sectionid+" .left").css('background-color','rgba(255, 255, 255, .65)');
+		$j("#"+sectionid+" .right").css('background-color','rgba(255, 255, 255, .65)');
+	}
 });
-
+//stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
 	$j('.bgwrapper').css('position', 'relative');
 	viewWidth = $j(window).width();
@@ -29,46 +48,46 @@ function stretchSection() {  //function is called on load and on window resize; 
 	if (viewWidth <= 960) {
 		$j('.bgwrapper').css('padding','0 10%');
 		$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
-			$j(".section").each(function() { //loops through each section, changing image into background as window shrinks.
-				console.log($j(this).attr('id'));
-				var sectionid = $j(this).attr('id');
-				var bgimgsrc = $j('#'+sectionid+' .left-full').attr('src');
-				if(bgimgsrc) {
-					$j('.left-full').css('display','none');
-					$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
-					$j(this).css('background-position','bottom left');
-					$j(this).css('background-repeat','no-repeat');
-					$j(this).css('background-size','contain');
-				}
-				else {
-					var bgimgsrc = $j('#'+sectionid+' .right-full').attr('src');
-					if (bgimgsrc) {
-						$j('.right-full').css('display','none');
-						$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
-						$j("#"+sectionid).css('background-position','bottom right');
-						$j("#"+sectionid).css('background-repeat','no-repeat');
-						$j("#"+sectionid).css('background-size','contain');
-					}
-				}	
-			});
+// 			$j(".section").each(function() { //loops through each section, changing image into background as window shrinks.
+// 				console.log($j(this).attr('id'));
+// 				var sectionid = $j(this).attr('id');
+// 				var bgimgsrc = $j('#'+sectionid+' .left-full').attr('src');
+// 				if(bgimgsrc) {
+// 					$j('.left-full').css('display','none');
+// 					$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
+// 					$j(this).css('background-position','bottom left');
+// 					$j(this).css('background-repeat','no-repeat');
+// 					$j(this).css('background-size','contain');
+// 				}
+// 				else {
+// 					var bgimgsrc = $j('#'+sectionid+' .right-full').attr('src');
+// 					if (bgimgsrc) {
+// 						$j('.right-full').css('display','none');
+// 						$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
+// 						$j("#"+sectionid).css('background-position','bottom right');
+// 						$j("#"+sectionid).css('background-repeat','no-repeat');
+// 						$j("#"+sectionid).css('background-size','contain');
+// 					}
+// 				}	
+// 			});
 	}
 	else {
 		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
 		$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
-		$j(".section").each(function() { //loops through each section, removing background image and showing image as window grows.
-			var bgimgsrc = $j('.left-full').attr('src');
-			if (bgimgsrc) {
-				$j('.left-full').css('display','block');
-				$j(this).css('background-image','none');
-			}
-			else {
-				var bgimgsrc = $j('.right-full').attr('src');
-				if (bgimgsrc) {
-					$j('.right-full').css('display','block');
-					$j(this).css('background-image','none');
-				}
-			}	
-		});
+// 		$j(".section").each(function() { //loops through each section, removing background image and showing image as window grows.
+// 			var bgimgsrc = $j('.left-full').attr('src');
+// 			if (bgimgsrc) {
+// 				$j('.left-full').css('display','block');
+// 				$j(this).css('background-image','none');
+// 			}
+// 			else {
+// 				var bgimgsrc = $j('.right-full').attr('src');
+// 				if (bgimgsrc) {
+// 					$j('.right-full').css('display','block');
+// 					$j(this).css('background-image','none');
+// 				}
+// 			}	
+// 		});
 	}
 }
 

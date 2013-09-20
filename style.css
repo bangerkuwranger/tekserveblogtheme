@@ -114,7 +114,7 @@ h6,
 p,
 select,
 textarea {
-	color: #333;
+	color: #004d72;
 	font-family: 'Tekvetica', Helvetica Neue, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
@@ -985,28 +985,31 @@ input[type="submit"] {
 
 div.gform_footer input.button,
 #commentform #submit {
-	-moz-border-radius: 50%;
+	-moz-border-radius: 12px 0 12px;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 50%;
+	-webkit-border-radius: 12px 0 12px;
 	-webkit-transition: all 0.2s ease-in-out;
-	background-color: #111;
-	border-radius: 50%;
+	background-color: #f36f37;
+	color: #fff;
+	border-radius: 12px 0 12px;
 	border: none;
 	display: block;
-	font-size: 14px;
+	font-size: 24px;
 	font-weight: bold;
-	height: 100px;
+	text-transform: uppercase;
+/* 	height: 100px; */
 	margin: 40px auto 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	width: 100px;
+	/* width: 100px; */
+	padding: 6px 10px 3px;
 }
 
 div.gform_footer input.button:hover,
 input:hover[type="button"],
 input:hover[type="submit"],
 #commentform #submit:hover {
-	background-color: #3fb6d7;
+	background-color: #40a8c9;
 	border: none;
 	text-decoration: none;
 }
@@ -1246,6 +1249,7 @@ label {
 .comment-content p {
 	font-size: 14px;
 	margin: 0 0 20px;
+	color: white;
 }
 
 .comment-list cite,
@@ -1259,7 +1263,7 @@ label {
 }
 
 .comment {
-	background-color: #f5f5f5;
+	background-color: #004f72;
 	border: 2px solid #fff;
 	border-right: none;
 }
@@ -1726,6 +1730,8 @@ background-color: #fff;
 color: #004d72;
 font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 padding: 5% 0;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .section h1 {
 font-size: 36px;
@@ -1750,11 +1756,11 @@ font-weight: 900;
 color: #f36f37;
 }
 .orange {
-background: #f36f37;
+background-color: #f36f37;
 color: #fff;
 }
 .lightblue {
-background: #40a8c9;
+background-color: #40a8c9;
 color: #fff;
 }
 .darkblue {
@@ -1776,6 +1782,7 @@ margin: 0 ;
 padding: 0;
 max-height:100%;
 max-width: 40%;
+z-index: 3;
 }
 .section .twoUp .right {
 float: right;
@@ -1783,6 +1790,7 @@ margin: 0 0 0 10%;
 padding: 0;
 max-height: 100%;
 max-width: 40%;
+z-index: 3;
 }
 .section .clear {
 clear: both;
@@ -1847,6 +1855,7 @@ width: auto;
 display: inline-block;
 background-image: url(images/leftorgarrow.png);
 position: relative;
+z-index: 5;
 }
 .section .drawer .leftcenter {
 left: 20%;
