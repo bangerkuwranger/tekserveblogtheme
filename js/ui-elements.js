@@ -6,30 +6,40 @@ $j('#'+buttonID).toggleClass("opened");  //spins the triangle for the clicked bu
   //closes any open drawer.
 $j('#'+drawerID).slideToggle();  //opens or closes drawer corresponding to clicked button. 
 }
-
+var sectionid;
 var wrapperbgcolor;
-$j(".section").each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
+$j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
 	wrapperbgcolor = $j(this).css('background-color');
 	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');
-	var sectionid = $j(this).attr('id');
-	switch(wrapperbgcolor)
-	{
-	case 'rgb(243, 111, 55)':
-		$j("#"+sectionid+" .left").css('background-color','rgba(243, 111, 55, .65)');
-		$j("#"+sectionid+" .right").css('background-color','rgba(243, 111, 55, .65)');
-		break;	
-	case 'rgb(64, 168, 201)':
-		$j("#"+sectionid+" .left").css('background-color','rgba(64, 168, 201, .65)');
-		$j("#"+sectionid+" .right").css('background-color','rgba(64, 168, 201, .65)');
-		break;
-	case 'rgb(0, 77, 114)':
-		$j("#"+sectionid+" .left").css('background-color','rgba(0, 77, 114, .65)');
-		$j("#"+sectionid+" .right").css('background-color','rgba(0, 77, 114, .65)');
-		break;
-	default:
-		$j("#"+sectionid+" .left").css('background-color','rgba(255, 255, 255, .65)');
-		$j("#"+sectionid+" .right").css('background-color','rgba(255, 255, 255, .65)');
-	}
+	sectionid = $j(this).attr('id');
+	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65');
+	$j('.left', this).css('background-color', wrapperbgcolor);
+	$j('.right', this).css('background-color', wrapperbgcolor);
+	
+// 	switch(wrapperbgcolor)
+// 	{
+// 	case 'rgb(243, 111, 55)':
+// // 		$j("#"+sectionid+" .left").css('background-color','rgba(243, 111, 55, .65)');
+// 		$j("#"+sectionid+" .left").css('background-color','black');
+// 		$j("#"+sectionid+" .right").css('background-color','rgba(243, 111, 55, .65)');
+// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(243, 111, 55, .65)');
+// 		break;	
+// 	case 'rgb(64, 168, 201)':
+// 		$j("#"+sectionid+" .left").css('background-color','rgba(64, 168, 201, .65)');
+// 		$j("#"+sectionid+" .right").css('background-color','rgba(64, 168, 201, .65)');
+// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(64, 168, 201, .65)');
+// 		break;
+// 	case 'rgb(0, 77, 114)':
+// 		$j("#"+sectionid+" .left").css('background-color','rgba(0, 77, 114, .65)');
+// 		$j("#"+sectionid+" .right").css('background-color','rgba(0, 77, 114, .65)');
+// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(0, 77, 114, .65)');
+// 
+// 		break;
+// 	default:
+// 		$j("#"+sectionid+" .left").css('background-color','rgba(255, 255, 255, .65)');
+// 		$j("#"+sectionid+" .right").css('background-color','rgba(255, 255, 255, .65)');
+// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(255, 255, 255, .65)');
+// 	}
 });
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding

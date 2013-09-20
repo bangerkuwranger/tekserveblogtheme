@@ -193,7 +193,7 @@ function include_local_scripts() {
 	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_style ( 'responsivemenucss', get_stylesheet_directory_uri() . '/css/step4.css');
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
-// 	wp_enqueue_script ( 'responsivemenu', get_stylesheet_directory_uri() . '/js/responsivemenu.js', array( 'modernizr' ), '', true );
+ 	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
 
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
@@ -288,11 +288,10 @@ function my_theme_register_required_plugins() {
 			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic-v0.5.zip'
 		),
 
-
 	);
 
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'tgmpa';
+	$theme_text_domain = 'apparition';
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.
