@@ -334,5 +334,32 @@ function my_theme_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-
+add_filter('upload_mimes', 'my_upload_mimes');
+ 
+function my_upload_mimes($mimes = array()) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
 add_editor_style( 'style.css' );
+add_filter( 'genesis_nav_items', 'magicNav', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'magicNav', 10, 2 );
+function magicNav($menu, stdClass $args) {
+	echo "<div id='magicNav'>";
+// 	$popularButton = "PopularSet";
+// 	var_dump($popularButton);
+	$popularButton = wpp_get_mostpopular('header=""&header_start="<span>"&header_end="</span>"&range="all"&limit=4&order_by="avg"&excerpt_length=100&post_type=post&wpp_start="<div id=\'popularTop\'><h1>POPULAR</h1><ul id=\'popularButton\'>"&wpp_end="</ul></div>"&post_html="<li><h2>{text_title}</h2><p>{summary}</p></li>"');
+// 	$popularPosts = wpp_get_mostpopular('header=""&header_start="<span>"&header_end="</span>"&range="all"&post_type=post&limit=4&order_by="avg"&excerpt_length=90&thumbnail_width=120&thumbnail_height=120&stats_author=1&wpp_start="<ul id=\'popularPosts\'>"&post_html="<li><a href=\'{url}\'><div class=\'popularThumb\'>{thumb}</div><div class=\'popularArticle\'><h2>{text_title}</h2><p><strong>{author}</strong></p><p>{summary}</p></div></a></li></ul>"');
+	echo "<div id='facebookTop'>";
+	echo "<h1>Facebook</h1>";
+	$facebookButton = recent_facebook_posts(array('likes' => 1, 'excerpt_length' => 100, 'number' => 1));
+	echo "</div>";
+// 	$facebookPosts = recent_facebook_posts(array('likes' => 1, 'excerpt_length' => 30, 'number' => 4));
+	echo "<div id='twitterTop'>";
+	echo "<h1>Twitter</h1>";
+	echo do_shortcode('[get_tweet_timeline username="Tekserve" number="1" showlinks="false" newwindow="false" nofollow="true" avatar="false"]');
+	echo "</div>";
+	echo "</div>";
+// 	$menu .="<div id='magicNav'>{$popularButton}</div>";// .$popularButton.$facebookButton."</div>";
+// 	var_dump($popularButton);
+	return $menu;
+}

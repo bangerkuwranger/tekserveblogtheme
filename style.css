@@ -58,44 +58,63 @@
 /* Import Fonts
 ------------------------------------------------------------ */
 
-@import url(http://fonts.googleapis.com/css?family=Lato|Lustria);
+/* @import url(http://fonts.googleapis.com/css?family=Lato|Lustria); */
 
 @font-face {
   font-family: 'Tekvetica';
-  font-style: normal;
-  font-weight: bold;
-  src: local('Tekvetica-Bold'), url('fonts/Tekvetica-Bold.eot?') format('eot'), url('fonts/Tekvetica-Bold.woff') format('woff'), url('fonts/Tekvetica-Bold.ttf') format('truetype');
+/*	src: local('Tekvetica-Bold');  */
+	src: url('./fonts/tekvetica/Tekvetica-Bold.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Bold.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bold;
 }
 @font-face {
-  font-family: 'Tekvetica';
-  font-style: italic;
-  font-weight: bold;
-  src: local('Tekvetica-BoldItal'), url('fonts/Tekvetica-BoldItal.eot?') format('eot'), url('fonts/Tekvetica-BoldItal.woff') format('woff'), url('fonts/Tekvetica-BoldItal.ttf') format('truetype');
-}@font-face {
-  font-family: 'Tekvetica';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Tekvetica-Heavy'), url('fonts/Tekvetica-Heavy.eot?') format('eot'), url('fonts/Tekvetica-Heavy.woff') format('woff'), url('fonts/Tekvetica-Heavy.ttf') format('truetype');
-}@font-face {
-  font-family: 'Tekvetica';
-  font-style: italic;
-  font-weight: normal;
-  src: local('Tekvetica-Italic'), url('fonts/Tekvetica-Italic.eot?') format('eot'), url('fonts/Tekvetica-Italic.woff') format('woff'), url('fonts/Tekvetica-Italic.ttf') format('truetype');
-}@font-face {
-  font-family: 'Tekvetica';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Tekvetica-Regular'), url('fonts/Tekvetica-Regular.eot?') format('eot'), url('fonts/Tekvetica-Regular.woff') format('woff'), url('fonts/Tekvetica-Regular.ttf') format('truetype');
-}@font-face {
-  font-family: 'Tekvetica';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Tekvetica-Thin'), url('fonts/Tekvetica-Thin.eot?') format('eot'), url('fonts/Tekvetica-Thin.woff') format('woff'), url('fonts/Tekvetica-Thin.ttf') format('truetype');
-}@font-face {
-  font-family: 'Tekvetica';
-  font-style: italic;
-  font-weight: 200;
-  src: local('Tekvetica-ThinItalic'), url('fonts/Tekvetica-ThinItalic.eot?') format('eot'), url('fonts/Tekvetica-ThinItalic.woff') format('woff'), url('fonts/Tekvetica-ThinItalic.ttf') format('truetype');
+/* 	src: local('Tekvetica-BoldItal'); */
+	src: url('./fonts/tekvetica/Tekvetica-BoldItal.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-BoldItal.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-BoldItal.ttf') format('truetype');
+	font-family: 'Tekvetica';
+	font-style: italic;
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Tekvetica';
+/* 	src: local('Tekvetica-Heavy'); */
+	src: url('./fonts/tekvetica/Tekvetica-Heavy.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Heavy.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Heavy.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 900;
+}
+@font-face {
+	font-family: 'Tekvetica';
+/* 	src: local('Tekvetica-Italic'); */
+	src: url('./fonts/tekvetica/Tekvetica-Italic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Italic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Italic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Tekvetica';
+/* 	src: local('Tekvetica-Regular'); */
+	src: url('./fonts/tekvetica/Tekvetica-Regular.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Regular.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Tekvetica';
+/* 	src: local('Tekvetica-Thin'); */
+	src: url('./fonts/tekvetica/Tekvetica-Thin.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Thin.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Thin.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 200;
+}
+@font-face {
+/* 	font-family: 'Tekvetica'; */
+	src: local('Tekvetica-ThinItalic');
+	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-ThinItalic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: 200;
 }
 
 
@@ -627,12 +646,17 @@ h6 {
 	text-decoration: none;
 }
 
-h1,
+h1 {
+	font-size: 42px;
+	font-weight: 900;
+	/* margin: 35px 0 30px; */
+}
+,
 h2,
 h2 a,
 h2 a:visited {
-	font-size: 36px;
-	/* margin: 35px 0 30px; */
+font-size: 36px;
+font-weight: bold;
 }
 
 /* .page h1, */
@@ -1746,11 +1770,15 @@ font-size: 1.1em;
 }
 .section .button {
 border-radius: 12px 0 12px;
-background-color: #40a8c9;
-color: #fff;
+background-color: #004d72;
 cursor:pointer;
+display: inline-block;
+padding: 0 1em;
+color: #fff;
 text-transform: uppercase;
 font-weight: 900;
+font-size: 24px;
+margin: .5em 0;
 }
 .section .button:hover {
 color: #f36f37;
@@ -1770,11 +1798,23 @@ color: #fff;
 .orange h1, .lightblue h1, .darkblue  h1, .orange p, .lightblue p, .darkblue p {
 color:#fff;
 }
-.orange .button, .lightblue .button {
-background-color: #004d72;
+.section.darkblue .button {
+background-color: #40a8c9;
 }
-.section .orange .button:hover, .section .lightblue .button:hover {
-color: #40a8c9;
+.section.darkblue .button:hover {
+color: #f36f37;
+}
+.section.lightblue .button {
+background-color: #f36f37;
+}
+.section.lightblue .button:hover {
+color: #004d72;
+}
+.section.orange .button {
+background-color: #40a8c9;
+}
+.section.orange .button:hover {
+color: #004d72;
 }
 .section .twoUp .left {
 float: left;
@@ -1844,18 +1884,18 @@ background: inherit;
 padding-top: 2em;
 }
 .section .drawer .collapseomatic {
-background-position: left;
+background-position: right 45%;
 background-repeat: no-repeat;
-padding: 10px 20px 10px 50px;
+padding: 10px 30px 10px 0px;
 text-align: left;
 font-size: 24px;
-color: #fff;
+color: #004d72;
 cursor: pointer;
 width: auto;
 display: inline-block;
-background-image: url(images/leftorgarrow.png);
 position: relative;
 z-index: 5;
+background-size: 30px;
 }
 .section .drawer .leftcenter {
 left: 20%;
@@ -1866,17 +1906,126 @@ left: 60%;
 .section .drawer .right {
 left: 80%;
 }
-.section .button .drawer .collapseomatic {
-color:white;
-}
+
 
 .section .drawer .colomat-hover {
 text-decoration: none;
 color: #40a8c9;
 }
-.section .drawer .colomat-close {
-background-image: url('images/dnorgarrow.png');
+.section.lightblue .drawer .collapseomatic.colomat-hover {
+text-decoration: none;
+color: #f36f37;
 }
+.section.darkblue .drawer .collapseomatic.colomat-hover {
+text-decoration: none;
+color: #40a8c9;
+}
+
+.collapseomatic {
+	background-image: url(images/ltbluearrowrt.svg);
+	background-repeat: no-repeat;
+	padding: 0 0 10px 16px;
+	/*border: 1px dotted blue;*/
+	cursor: pointer;
+}
+.arrowright {
+	background-position: top right;
+	padding: 0 16px 10px 0;
+}
+.noarrow {
+	background-image: none !important;
+	padding: 0 0 10px 0;
+}
+
+.colomat-close {
+	background-image: url(images/ltbluearrowdn.svg);
+}
+.collapseomatic_excerpt, .collapseomatic_content {
+	margin-top: 0px;
+	margin-left: 16px;
+	padding: 0px;
+}
+.content_collapse_wrapper {
+	position: absolute; left: -999em;
+}
+.collapseall, .expandall {
+	cursor: pointer;
+}
+.collapseall:hover, .expandall:hover {
+	text-decoration: underline;
+}
+.maptastic {
+    position: absolute !important;
+	left: -10000px !important;
+	display:block !important;
+}
+
+.section.orange .drawer .collapseomatic {
+	background-image: url(images/drkbluearrowrt.svg);
+	color: white;
+}
+.section.darkblue .drawer .collapseomatic, .section.lightblue .drawer .collapseomatic {
+	background-image: url(images/orgarrowrt.svg);
+	color: white;
+}
+.section.orange .drawer .collapseomatic.colomat-close {
+	background-image: url(images/drkbluearrowdn.svg);
+}
+.section.darkblue .drawer .collapseomatic.colomat-close, .section.lightblue .drawer .collapseomatic.colomat-close {
+	background-image: url(images/orgarrowdn.svg);
+}
+
+/* MagicNav
+------------------------------------------------------------ */
+#magicNav {
+width:100%;
+background-color: #004d72;
+color: #fff !important;
+position: relative;
+top: 15px;
+}
+#popularTop, #facebookTop, #twitterTop {
+width: 20%;
+padding: 0 0 0 2.5%;
+display: inline-table;
+border-right: 2px solid white;
+padding-right: 2.5%
+}
+#popularTop h1, #facebookTop h1, #twitterTop h1 {
+font-size: 30px;
+font-weight: 900;
+text-transform: uppercase;
+color: #f36f37;
+}
+#popularButton, #facebookTop .recent-facebook-posts {
+width: 100%;
+height: 150px;
+overflow: hidden;
+
+}
+#popularButton li, #facebookTop .rfb_posts.shortcode div.rfb-post {
+margin-bottom: 55px;
+border-bottom: none;
+}
+#popularButton li h2, #facebookTop .rfb_posts.shortcode div.rfb-post h2 {
+font-weight: bold;
+margin-bottom: 5px;
+color: white;
+}
+#popularButton li p, #facebookTop .rfb_posts.shortcode div.rfb-post .rfb_text {
+color: white;
+}
+#facebookTop .rfb_posts.shortcode div.rfb-post p a {
+color: white;
+}
+#facebookTop .rfb_posts.shortcode div.rfb-post p a:hover {
+color: #40a8c9;
+}
+.customisable-border.thm-dark, .thm-dark .customisable-border {
+border: none;
+}
+
+
 
 /* Responsive Design
 ------------------------------------------------------------ */
