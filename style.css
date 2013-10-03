@@ -1984,38 +1984,44 @@ color: #fff !important;
 position: relative;
 top: 15px;
 }
-#popularTop, #facebookTop, #twitterTop {
+#popularTop, #facebookTop, #twitterTop, #categoriesTop {
 width: 20%;
 padding: 0 0 0 2.5%;
 display: inline-table;
 border-right: 2px solid white;
-padding-right: 2.5%
+padding-right: 2.5%;
+height: 202px;
 }
-#popularTop h1, #facebookTop h1, #twitterTop h1 {
+#categoriesTop {
+border: none;
+padding-right: 0;
+}
+#popularTop h1, #facebookTop h1, #twitterTop h1, #categoriesTop h1 {
 font-size: 30px;
 font-weight: 900;
 text-transform: uppercase;
 color: #f36f37;
 }
-#popularButton, #facebookTop .recent-facebook-posts {
+#popularButton, #facebookTop .recent-facebook-posts, .afti-short-timeline, #categoriesTop ul {
 width: 100%;
 height: 150px;
 overflow: hidden;
 
 }
-#popularButton li, #facebookTop .rfb_posts.shortcode div.rfb-post {
+#popularButton li, #facebookTop .rfb_posts.shortcode div.rfb-post, .afti-short-timeline li {
 margin-bottom: 55px;
 border-bottom: none;
+list-style: none;
 }
 #popularButton li h2, #facebookTop .rfb_posts.shortcode div.rfb-post h2 {
 font-weight: bold;
 margin-bottom: 5px;
 color: white;
 }
-#popularButton li p, #facebookTop .rfb_posts.shortcode div.rfb-post .rfb_text {
+#popularButton li p, #facebookTop .rfb_posts.shortcode div.rfb-post .rfb_text, .afti-short-timeline li p {
 color: white;
 }
-#facebookTop .rfb_posts.shortcode div.rfb-post p a {
+#facebookTop .rfb_posts.shortcode div.rfb-post p a, .afti-short-timeline li p a {
 color: white;
 }
 #facebookTop .rfb_posts.shortcode div.rfb-post p a:hover {
