@@ -7,39 +7,32 @@ $j('#'+buttonID).toggleClass("opened");  //spins the triangle for the clicked bu
 $j('#'+drawerID).slideToggle();  //opens or closes drawer corresponding to clicked button. 
 }
 var sectionid;
-var wrapperbgcolor;
+var wrapperbgcolor; 	
+var contrastColor;
+function getContrast() { // set contrasting color based on background color
+	switch(wrapperbgcolor)
+	{
+	case 'rgb(243, 111, 55)':
+		contrastColor = 'rgb(0, 77, 114)';
+		break;	
+	case 'rgb(64, 168, 201)':
+		contrastColor = 'rgb(243, 111, 55)';
+		break;
+	case 'rgb(0, 77, 114)':
+		contrastColor = 'rgb(243, 111, 55)';
+		break;
+	default:
+		contrastColor = 'rgb(64, 168, 201)';
+	}
+}
 $j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
 	wrapperbgcolor = $j(this).css('background-color');
-	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');
-	sectionid = $j(this).attr('id');
-	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65');
+	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');//creates full width wrapper element with correct background color
+	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
 	$j('.left', this).css('background-color', wrapperbgcolor);
 	$j('.right', this).css('background-color', wrapperbgcolor);
+	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
 	
-// 	switch(wrapperbgcolor)
-// 	{
-// 	case 'rgb(243, 111, 55)':
-// // 		$j("#"+sectionid+" .left").css('background-color','rgba(243, 111, 55, .65)');
-// 		$j("#"+sectionid+" .left").css('background-color','black');
-// 		$j("#"+sectionid+" .right").css('background-color','rgba(243, 111, 55, .65)');
-// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(243, 111, 55, .65)');
-// 		break;	
-// 	case 'rgb(64, 168, 201)':
-// 		$j("#"+sectionid+" .left").css('background-color','rgba(64, 168, 201, .65)');
-// 		$j("#"+sectionid+" .right").css('background-color','rgba(64, 168, 201, .65)');
-// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(64, 168, 201, .65)');
-// 		break;
-// 	case 'rgb(0, 77, 114)':
-// 		$j("#"+sectionid+" .left").css('background-color','rgba(0, 77, 114, .65)');
-// 		$j("#"+sectionid+" .right").css('background-color','rgba(0, 77, 114, .65)');
-// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(0, 77, 114, .65)');
-// 
-// 		break;
-// 	default:
-// 		$j("#"+sectionid+" .left").css('background-color','rgba(255, 255, 255, .65)');
-// 		$j("#"+sectionid+" .right").css('background-color','rgba(255, 255, 255, .65)');
-// 		$j("#"+sectionid+" .collapseomatic_content").css('background-color','rgba(255, 255, 255, .65)');
-// 	}
 });
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
@@ -118,6 +111,8 @@ function fixDiv() {
         $j('#nav').css({'position': 'static', 'top': 'auto', 'width': '100%'});
     }
 }
+
+$j('.nr_text').after('<div class="continueButton">continue</div>');//add continue button after related article
 
 $j("#nav").data("top", $j("#nav").offset().top); // set original position on load
 $j(window).scroll(fixDiv);

@@ -57,16 +57,16 @@ add_theme_support( 'genesis-structural-wraps', array(
 add_image_size( 'featured-circle', 300, 300, TRUE );
 add_image_size( 'featured-square', 300, 300, TRUE );
 
-/** Unregister layout settings */
-genesis_unregister_layout( 'content-sidebar' );
-genesis_unregister_layout( 'sidebar-content' );
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
-
-/** Unregister secondary sidebar */
-unregister_sidebar( 'sidebar' );
-unregister_sidebar( 'sidebar-alt' );
+// /** Unregister layout settings */
+// genesis_unregister_layout( 'content-sidebar' );
+// genesis_unregister_layout( 'sidebar-content' );
+// genesis_unregister_layout( 'content-sidebar-sidebar' );
+// genesis_unregister_layout( 'sidebar-content-sidebar' );
+// genesis_unregister_layout( 'sidebar-sidebar-content' );
+// 
+// /** Unregister secondary sidebar */
+// unregister_sidebar( 'sidebar' );
+// unregister_sidebar( 'sidebar-alt' );
 
 /** Add odd/even post class */
 function apparition_oddeven_post_class ( $classes ) {
@@ -98,7 +98,7 @@ remove_action( 'genesis_before_post_content', 'genesis_post_info' );
 
 /** Reposition the post meta function */
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
-add_action( 'genesis_post_content', 'genesis_post_meta' );
+add_action( 'genesis_after_post_title', 'genesis_post_meta' );
 
 /** Customize the post meta function */
 add_filter( 'genesis_post_meta', 'post_meta_filter' );
@@ -334,5 +334,89 @@ function my_theme_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-
+add_filter('upload_mimes', 'my_upload_mimes');
+ 
+function my_upload_mimes($mimes = array()) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
 add_editor_style( 'style.css' );
+
+add_filter('genesis_comment_form_args','custom_email_note'); //move labels to top of fields in comment form
+function custom_email_note() {
+$args = array(
+
+        'fields' => array(
+            'author' =>  '<p class="comment-form-author">' .
+            '<label for="author">' . __( 'Name', 'genesis' ) . '<span style="color:#f36f37"> *</span></label> ' .
+	        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" tabindex="1"' . $aria_req . ' />' .
+	        ( $req ? '<span class="required">*</span>' : '' ) .
+	        '</p>',
+
+            'email' =>   '<p class="comment-form-email">' .
+            '<label for="email">' . __( 'Email', 'genesis' ) . '<span style="color:#f36f37"> *</span></label> ' .
+	        '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" tabindex="2"' . $aria_req . ' />' .
+	        ( $req ? '<span class="required">*</span>' : '' ) .
+	        '</p>',
+         
+            'url' => '<p class="comment-form-url">' .
+            '<label for="url">' . __( 'Website', 'genesis' ) . '</label> ' .
+	    	'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" tabindex="3" />' .
+	    	'</p>'
+        ),
+                 
+        'comment_field' =>   '<p class="comment-form-comment">' .
+        '<label for="comment">' . __( 'Comment', 'genesis' ) . '</label> ' .
+	    '<textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true"></textarea>' .
+	    '</p>',
+                             
+        'title_reply' => __( 'Comment', 'genesis' ),
+        'label_submit' => __( 'Submit', 'genesis' ),
+   );
+    return $args;
+}
+
+
+add_filter( 'genesis_nav_items', 'magicNav', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'magicNav', 10, 2 );
+function magicNav($menu, stdClass $args) {
+	if ( is_page_template('single.php') ) {
+		echo "<div id='magicNav'>";
+	// 	$popularButton = "PopularSet";
+	// 	var_dump($popularButton);
+		$popularButton = wpp_get_mostpopular('header=""&header_start="<span>"&header_end="</span>"&range="all"&limit=4&order_by="avg"&excerpt_length=100&post_type=post&wpp_start="<div id=\'popularTop\'><h1>POPULAR</h1><ul id=\'popularButton\'>"&wpp_end="</ul></div>"&post_html="<li><h2>{text_title}</h2><p>{summary}</p></li>"');
+	// 	$popularPosts = wpp_get_mostpopular('header=""&header_start="<span>"&header_end="</span>"&range="all"&post_type=post&limit=4&order_by="avg"&excerpt_length=90&thumbnail_width=120&thumbnail_height=120&stats_author=1&wpp_start="<ul id=\'popularPosts\'>"&post_html="<li><a href=\'{url}\'><div class=\'popularThumb\'>{thumb}</div><div class=\'popularArticle\'><h2>{text_title}</h2><p><strong>{author}</strong></p><p>{summary}</p></div></a></li></ul>"');
+		echo "<div id='facebookTop'>";
+		echo "<h1>Facebook</h1>";
+		$facebookButton = recent_facebook_posts(array('likes' => 1, 'excerpt_length' => 100, 'number' => 1));
+		echo "</div>";
+	// 	$facebookPosts = recent_facebook_posts(array('likes' => 1, 'excerpt_length' => 30, 'number' => 4));
+		echo "<div id='twitterTop'>";
+		echo "<h1>Twitter</h1>";
+		echo do_shortcode('[get_tweet_timeline username="Tekserve" number="1" showlinks="false" newwindow="false" nofollow="true" avatar="false"]');
+		echo "</div>";
+		echo "<div id='categoriesTop'>";
+		echo "<h1>Categories</h1>";
+		echo "<ul id='categorylist'>";
+		$categories = get_categories();
+	foreach ($categories as $cat) {
+		if ($cat->category_parent != 0) {
+			echo '<span style="padding-left:10px;">';
+		}
+		echo '<a href="'.get_option('home').get_option('category_base').'/'.$cat->category_nicename.'/">'.$cat->cat_name.'</a> ('.$cat->category_count.')';
+		if ($cat->category_description != '') {
+			echo ' - '.$cat->category_description;
+		}
+		if ($cat->category_parent != 0) {
+			echo '</span>';
+		}
+		echo '<br />';
+		}
+		echo "</ul>";
+		echo "</div>";
+		echo "</div>";
+	// 	$menu .="<div id='magicNav'>{$popularButton}</div>";// .$popularButton.$facebookButton."</div>";
+	// 	var_dump($popularButton);
+	}
+	return $menu;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="45px" height="26px" viewBox="0 0 45 26" enable-background="new 0 0 45 26" xml:space="preserve">
+<font horiz-adv-x="1792">
+<!-- Please refer to the Copyright section for the font trademark attribution notices. -->
+<font-face font-family="FontAwesome" units-per-em="1792" underline-position="-134" underline-thickness="90"/>
+<missing-glyph horiz-adv-x="896" d="M224,112l448,0l0,1312l-448,0M112,0l0,1536l672,0l0,-1536z"/>
+<glyph unicode="&#xF0DA;" horiz-adv-x="640" d="M557,595l-448,-448C96,134 81,128 64,128C47,128 32,134 19,147C6,160 0,175 0,192l0,896C0,1105 6,1120 19,1133C32,1146 47,1152 64,1152C81,1152 96,1146 109,1133l448,-448C570,672 576,657 576,640C576,623 570,608 557,595z"/>
+</font>
+
+	<text transform="matrix(1 0 0 1 19.6143 28.9941)" fill="#40A8C9" font-family="'FontAwesome'" font-size="44.9737"></text>
+</svg>
