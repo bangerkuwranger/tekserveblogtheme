@@ -8,7 +8,7 @@
  */
 
 /*
-Template Name: Blog Front Page
+Template Name: Sections
 */
 
 // Add custom body class to the head
@@ -21,7 +21,7 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs');
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 remove_action( 'genesis_post_title', 'genesis_do_post_title' );
-remove_action( 'genesis_loop', 'genesis_do_loop' );
+// remove_action( 'genesis_loop', 'genesis_do_loop' );
 // add_action( 'genesis_loop', 'frontpage_custom_loop' );
 
 // function frontpage_custom_loop () 
@@ -33,6 +33,8 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 // );
 // query_posts( $args );
 // }
+
+query_posts( 'post_type=section');
 
 
 

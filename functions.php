@@ -189,6 +189,95 @@ function create_post_type() {
 		)
 	);
 }
+if ( ! function_exists('appears_on') ) {
+
+// Register Custom Taxonomy
+function appears_on()  {
+
+	$labels = array(
+		'name'                       => 'Pages This Appears On',
+		'singular_name'              => 'Page This Appears On',
+		'menu_name'                  => 'Page Appears on',
+		'all_items'                  => 'All Pages',
+		'parent_item'                => 'Parent Page',
+		'parent_item_colon'          => 'Parent Page:',
+		'new_item_name'              => 'New Page Name',
+		'add_new_item'               => 'Add New Page',
+		'edit_item'                  => 'Edit Page',
+		'update_item'                => 'Update Page',
+		'separate_items_with_commas' => 'Separate page names with commas',
+		'search_items'               => 'Search Pages',
+		'add_or_remove_items'        => 'Add or remove pages',
+		'choose_from_most_used'      => 'Choose from the most used pages',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+		'rewrite'                    => false,
+	);
+	register_taxonomy( 'appearson', 'custom_post_type', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'appears_on', 0 );
+
+}
+if ( ! function_exists('section_code') ) {
+
+// Register Custom Post Type
+function section_code() {
+
+	$labels = array(
+		'name'                => 'Sections',
+		'singular_name'       => 'Section',
+		'menu_name'           => 'Sections',
+		'parent_item_colon'   => 'Parent Section:',
+		'all_items'           => 'All Sections',
+		'view_item'           => 'View Section',
+		'add_new_item'        => 'Add New Section',
+		'add_new'             => 'New Section',
+		'edit_item'           => 'Edit Section',
+		'update_item'         => 'Update Section',
+		'search_items'        => 'Search Sections',
+		'not_found'           => 'No Sections found',
+		'not_found_in_trash'  => 'No Sections found in Trash',
+	);
+	$args = array(
+		'label'               => 'section',
+		'description'         => 'Individual Full Width Sections',
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', ),
+		'taxonomies'          => array( 'appearson' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 20,
+		'menu_icon'           => '',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => true,
+		'publicly_queryable'  => false,
+		'query_var'           => 'section',
+		'rewrite'             => false,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'section', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'section_code', 0 );
+
+}
 function include_local_scripts() {
 	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_style ( 'responsivemenucss', get_stylesheet_directory_uri() . '/css/step4.css');

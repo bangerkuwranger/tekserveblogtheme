@@ -117,3 +117,7 @@ $j('.nr_text').after('<div class="continueButton">continue</div>');//add continu
 $j("#nav").data("top", $j("#nav").offset().top); // set original position on load
 $j(window).scroll(fixDiv);
 var viewWidth = $j(window).width();
+
+$j( ".collapseomatic" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
+  $j(this).parents('.section').toggleClass('drawerDown');
+});
