@@ -209,13 +209,21 @@ a img {
 /* Body
 ------------------------------------------------------------ */
 
+html {
+	background-color: #004d72;
+}
+
 body {
-	background-color: #fff;
+	background-color: #004d72;
 }
 
 ::-moz-selection {
 	background-color: #333;
 	color: #fff;
+}
+
+body.custom-background {
+	background-color: #004d72 !important;
 }
 
 #nav {
@@ -234,6 +242,9 @@ body {
 .wrap {
 	margin: 0 auto;
 	width: 1200px;
+}
+#wrap {
+	background-color: #fff;
 }
 
 
@@ -306,6 +317,16 @@ body {
 	float: right;
 	width: 75%;
 }
+#wrap #header {
+moz-box-shadow: 0px 3px 9px #011011;
+-webkit-box-shadow: 0px 3px 9px #011011;
+box-shadow: 0px 3px 9px #011011;
+background-color: #004d72 !important;
+background-position: top center !important;
+z-index: 1001;
+margin-bottom: -10px;
+background-size: contain !important;
+}
 
 
 /* Navigation Menus
@@ -317,9 +338,9 @@ body {
 	background-color: #f36f37;
 	clear: both;
 	color: #fff;
-	font-family: 'Tekvetica', 'Lato', sans-serif;
+	font-family: 'Tekvetica', 'Helvetica', sans-serif;
 	overflow: hidden;
-	width: 100%;
+	width: 81%;
 }
 
 #header .menu {
@@ -329,7 +350,7 @@ body {
 
 .menu-primary,
 .menu-secondary {
-	margin: 10px 0 0;
+	margin: 10px auto 0;
 }
 
 .menu-primary ul,
@@ -463,7 +484,7 @@ ul.menu li.sfHover ul,
 	right: -20px;
 	top: -6px;
 	float: right;
-	width: 125px;
+	width: 150px;
 }
 .tinynav { display: none }
 
@@ -471,7 +492,7 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 .menu li.right {
-	float: right;
+/* 	float: right; */
 	padding: 15px 20px;
 }
 
@@ -1028,6 +1049,9 @@ outline: none;
 .navigation li.active a {
 	background-color: #3fb6d7;
 }
+#nav .closeButton {
+display: none;
+}
 
 
 /* Buttons
@@ -1097,7 +1121,7 @@ div.gform_footer input.button {
 	box-shadow: 0 0 5px #ddd inset;
 	box-sizing: border-box;
 	color: #999;
-	font-family: 'Tekvetica', 'Lato', sans-serif;
+	font-family: 'Tekvetica', 'Helvetica', sans-serif;
 	font-size: 14px;
 	margin: 0 0 10px;
 	padding: 10px;
@@ -1114,6 +1138,34 @@ div.gform_footer input.button {
 .enews #subbutton,
 .searchsubmit {
 	display: none;
+}
+
+/* Search Results
+------------------------------------------------------------ */
+
+.search-results .even a img.alignleft {
+margin: 0 5px 0px 30px;
+}
+.search-results .odd a img {
+margin: 0 30px 0px 0;
+}
+.search-results .hentry a img {
+height: 150px;
+width: 150px;
+}
+.search-results .hentry {
+padding: 30px 0 5px 5px;
+}
+.search-results .page.hentry h2.entry-title a, .search-results .post.hentry h2.entry-title a {
+font-size: 30px !important;
+color: #004d72 !important;
+}
+.search-results .page.hentry h2.entry-title a:hover, .search-results .post.hentry h2.entry-title a:hover {
+color: #40a8c9 !important;
+text-decoration: none;
+}
+.search-results .hentry {
+background: none;
 }
 
 
@@ -2236,21 +2288,22 @@ font-weight: 900;
 list-style: none;
 margin-bottom: 1em;
 }
-.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfb_text, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited {
+.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited {
 color: white !important;
 font-size: 18px;
 }
 .wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover {
 color: #004d72 !important;
 }
-.rfb_image {
-display: none;
+.rfbp-image-link {
+display: none !important;
 }
-.timestamp span, #atfi_widget-2 ul li a {
-color: #004d72;
+#rfb_widget-2 .rfbp-timestamp, #rfb_widget-2 .rfbp-page-link-wrap a.rfbp-page-link, #atfi_widget-2 ul li a  {
+color: #004d72 !important;
 }
-.timestamp span:hover, #atfi_widget-2 ul li a:hover {
-color: #fff;
+#rfb_widget-2 .rfbp-timestamp:hover, #rfb_widget-2 .rfbp-page-link-wrap a.rfbp-page-link:hover, #atfi_widget-2 ul li a:hover {
+color: #fff !important;
+text-decoration: none;
 }
 
 /* Calendar & Events
@@ -2408,6 +2461,12 @@ color: #229;
 	.section {
 		width: 960px;
 	}
+	.search-results .hentry.even a img {
+	margin: 0 5px 30px 30px;
+	}
+	.search-results .hentry.odd a img {
+	margin: 0 30px 30px 0;
+	}
 	
 }
 
@@ -2525,9 +2584,17 @@ color: #229;
 	.section p, .section h1, .section .button, .section .drawer .collapseomatic {
 		font-size: .8em;
 	}
+
 	
 }
 
+@media (max-width:1024px) and (min-width:768px) {
+
+	ul.menu.genesis-nav-menu.menu-primary {
+	width: 100%;
+	}
+
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -2590,6 +2657,46 @@ color: #229;
 	.section {
 		width: 80%;
 	}
+	.search-results .hentry.odd a img, .search-results .hentry.even a img {
+	margin: 0 0 30px 0;
+	width: 200px;
+	height: 200px;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	}
+	#wrap #header {
+	background-image: url('http://tekserveblog.wpengine.com/wp-content/uploads/2013/10/tekservemobilelogo@2x.png') !important;
+	background-size: 50% !important;
+	background-position-y: 50% !important;
+	}
+
+}
+
+@media (max-width:768px) and (min-width:600px) {
+
+	ul.menu.genesis-nav-menu.menu-primary {
+	text-align: left;
+	}
+	ul.menu.genesis-nav-menu.menu-primary li {
+	height: 40px;
+	}
+	ul.menu.genesis-nav-menu.menu-primary li a {
+	font-size: 28px;
+	font-weight: normal;
+	}
+	.menu li.right.search {
+	display: inline-block;
+	}
+	form.searchform.search-form {
+	top: 0px;
+	width: 280px;
+	}
+	input.s.search-input {
+	height: 40px;
+	font-size: 24px;
+	}
 
 }
 
@@ -2620,13 +2727,14 @@ color: #229;
 		max-width:100%;
 	}
 	.menu-primary {
-		width: 380px;
+		width: 320px;
 		padding: 5px 0;
 		min-height: 1.1em;
-		border: solid 1px #aaa;
-		background: #fff url(images/icon-menu.png) no-repeat 10px 11px;
-		border-radius: 5px;
+/* 		border: solid 1px #aaa; */
+		background: #f36f37 url(images/navmenumobile@2x.png) no-repeat 10px 7px;
+/* 		border-radius: 5px; */
 		box-shadow: 0 1px 2px rgba(0,0,0,.3);
+		background-size: 50%;
 	}
 	.menu-primary li {
 		display: none; /* hide all <li> items */
@@ -2676,6 +2784,7 @@ color: #229;
 		width: auto;
 		box-shadow: none;
 		background: none;
+		margin-top: 30px;
 	}
 	.search-form {
 		position: relative;
@@ -2683,16 +2792,51 @@ color: #229;
 		top: -6px;
 		float: none;
 		width: 280px;
+		margin: 0 auto;
+	}
+	input.s.search-input {
+		font-size: 18px;
+		font-weight: bold;
+		height: 28px;
+		color: #004d72;
+	}
+	li.right.search {
+	list-style: none;
+	margin-top: 30px;
+	}
+	#nav .wrap {
+	position: relative;
+	}
+	#nav .closeButton {
+	z-index: 1000;
+	height: 54px;
+	width: 100%;
+	background-color: #f36f37;
+	background-image: url('images/mobileclosebutton@2x.png');
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: -80px;
+	right: 0px;
+	display: none;
 	}
 }
 
-#wrap #header {
-moz-box-shadow: 0px 3px 9px #011011;
--webkit-box-shadow: 0px 3px 9px #011011;
-box-shadow: 0px 3px 9px #011011;
-background-color: #004d72 !important;
-background-position: top center !important;
-z-index: 1001;
-margin-bottom: -10px;
-background-size: contain !important;
+@media only screen and (max-width: 500px) {
+	#wrap #header {
+	background-image: url('http://tekserveblog.wpengine.com/wp-content/uploads/2013/10/tekservemobilelogo@2x.png') !important;
+	background-size: 90% !important;
+	background-position-y: 50% !important;
+	}
+
+}
+
+#page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 8px solid #f00;
 }

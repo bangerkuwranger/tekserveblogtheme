@@ -1,0 +1,51 @@
+<html> 
+<!-- 
+This page is on the same domain as the parent, so can
+communicate with it to order the iframe window resizing
+to fit the content 
+--> 
+	<body onload="resumatorResizeParentIframe()">
+		<h1>Your Resumator Helper File is loading correctly.</h1>
+		<p>
+			Please note this is a helper file that ensures your company job board works correctly. 
+			Do not remove it from the server!
+		</p>
+		<script> 
+		// Tell the parent iframe what height the iframe needs to be
+		function resumatorResizeParentIframe(){
+			var ph = resumatorGetParam('height');
+			var ju = resumatorGetParam('nojump');
+			// This works as our parent's parent is on our domain.. Removed for now.
+			//window.parent.parent.resizeResumatorIframe(ph,ju);
+			resizeFrame(ph);
+		}
+			
+		//Change default msg. for no jobs; resize div instead of iframe	
+		function resizeFrame(ht) { 
+			document.getElementById('jobs').style.height = ht + 20 + 'px'; 
+			if (ht < 130) {
+				document.getElementById('jobs').style.display = 'none';
+				document.getElementById('nojobs').style.display='block';
+			}
+			else {
+				document.getElementById('jobs').style.display = 'block';
+				document.getElementById('nojobs').style.display='none';
+			}
+		}
+
+		
+		// Helper function, parse param from request string
+		function resumatorGetParam( p ){
+			p = p.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var rs = "[\\?&]"+p+"=([^&#]*)";
+			var r = new RegExp( rs );
+			var results = r.exec( window.location.href );
+			if( results == null ){
+				return "";
+			}else{
+				return results[1];
+			}
+		}
+		</script> 
+	</body> 
+</html>

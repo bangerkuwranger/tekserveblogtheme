@@ -34,6 +34,28 @@ $j('.section').each(function() { //loops through each section, creating a wrappe
 	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
 	
 });
+
+function mobileMeta() {
+	$j('head').append('<meta id="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes">');
+	$j('head').append('<meta id="apple-mobile-web-app-status-bar-style" name="apple-mobile-web-app-status-bar-style" content="black">');
+}
+function remMobileMeta() {
+	$j('#apple-mobile-web-app-capable, #apple-mobile-web-app-status-bar-style').remove();
+}
+
+function moveSearchMobile () {  //moves search outside of nav node; called on page load and window resize
+	$j('.right.search').insertAfter('#nav');
+}
+function moveSearchBack () {  //moves search back into nav node; called on window resize
+	$j('.right.search').insertAfter('#nav div ul li:last-child');
+}
+
+function MobileCloseButton() {
+
+		$j('#nav .wrap .closeButton').toggle();
+		alert('duh');
+}
+
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
 	$j('.bgwrapper').css('position', 'relative');
@@ -93,12 +115,44 @@ function stretchSection() {  //function is called on load and on window resize; 
 // 		});
 	}
 }
-
+$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
 stretchSection(); //call on load
+var clientWidth = document.documentElement.clientWidth;
+if(clientWidth < 600){
+	moveSearchMobile(); //call on load if window size < 600
+}
+if(clientWidth < 1025){
+	mobileMeta(); //call on load if window size < 1025
+}
 
 $j(window).resize(function() { //call on window resize
 	stretchSection();
+	clientWidth = document.documentElement.clientWidth;
+	if(clientWidth < 600) {
+		moveSearchMobile(); //call on resize if window size becomes < 600
+	}
+	if(clientWidth > 599){
+		moveSearchBack(); //call on resize if window size > 599
+	}
+	if(clientWidth < 1025) {
+		mobileMeta(); //call on resize if window size becomes < 1025
+	}
+	if(clientWidth > 1024){
+		remMobileMeta(); //call on resize if window size > 1024
+	}
 });
+
+$j('#nav .wrap ul').hover(
+	function() {
+	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
+// 		MobileCloseButton();
+	},
+	function() {
+		$j('#nav .wrap .closeButton').remove();
+	}
+);
+
+
 
 $j('.twoUp').after('<div class="clear">&nbsp;</div>');  //clears floats after twoup divs in sections
 
@@ -121,3 +175,5 @@ var viewWidth = $j(window).width();
 $j( ".collapseomatic" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
   $j(this).parents('.section').toggleClass('drawerDown');
 });
+
+$j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page
