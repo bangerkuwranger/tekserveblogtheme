@@ -175,8 +175,9 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
         return $menu;
         
 }
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
+
+add_action( 'init', 'create_post_type_testimonial' );
+function create_post_type_testimonial() {
 	register_post_type( 'testimonial',
 		array(
 			'labels' => array(
@@ -189,6 +190,22 @@ function create_post_type() {
 		)
 	);
 }
+
+add_action( 'init', 'create_post_type_press' );
+function create_post_type_press() {
+	register_post_type( 'press',
+		array(
+			'labels' => array(
+				'name' => __( 'Press' ),
+				'singular_name' => __( 'Press' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'press'),
+		)
+	);
+}
+
 function include_local_scripts() {
 	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_style ( 'responsivemenucss', get_stylesheet_directory_uri() . '/css/step4.css');
@@ -340,7 +357,7 @@ function my_upload_mimes($mimes = array()) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-add_editor_style( 'style.css' );
+// add_editor_style( 'style.css' );
 
 add_filter('genesis_comment_form_args','custom_email_note'); //move labels to top of fields in comment form
 function custom_email_note() {
@@ -419,4 +436,104 @@ function magicNav($menu, stdClass $args) {
 	// 	var_dump($popularButton);
 	}
 	return $menu;
+}
+//[repairstatus]
+function repair_status_checker($atts){
+return "<div id='status-title'><h2>Check Your Repair Status</h2></div><div id='status-wrapper'><div id='status-content'><p>Please use the form below to check the status of your repair at Tekserve. Just enter your SRO number (found in the upper right corner of your receipt) and billing zip code below.</p><img id='statusimg' src='' /><div id='fail-msg' style='display:none'><p style='padding:5px 0px'>The information you provided does not match what we have on record.<br />Please double check your information and try again. If it still isn't working for you, call us at: 212.929.3645</p><input onclick='javascript:document.location.reload()' class='button' type='button' value='Try Again'></input></div><div style='display:none' class='customer-info'><ul><li class='customer-info'><h3>Customer Info</h3><p></p></li><li id='product-info'><p></p></li></ul><li class='repair-details'><h3>Details</h3><ul class='repair-details'><li style='display: none'><p>During the first 1-3 business days, your repair will be processed and assigned to a technician.</p></li><li style='display: none'><p>A technician will work on your repair during this time. This will include confirming your issue, ordering replacement parts (if needed), and replacing the affected parts.</p></li><li style='display: none'><p>We are confirming that we resolved the issue.</p></li><li style='display: none'><p>The repair is done. It is ready to be picked up, if you have not made other arrangements.</p></li><li style='display: none'><p>Call Customer Support at 212.929.3645 for more information regarding this repair.</p></li></ul></li></div><form class='status-front' id='status-front' method='get'><p><span class='label'>SRO#</span> <a class='poplink' rel='facebox' href='whats_sro.php'>What's this?</a></p><p class='statusField'><input class='limit' name='sro1' id='sro1' type='text' value='' maxlength='1' size='1' tabindex='1' onkeyup='checkLen(this,this.value)'></input> - <input class='limit' name='sro2' id='sro2' type='text' value='' maxlength='3' size='3' tabindex='2' onkeyup='checkLen(this,this.value)'></input> - <input class='limit' name='sro3' id='sro3' type='text' value='' maxlength='3' size='3' tabindex='3' onkeyup='checkLen(this,this.value)'></input></p><p><span class='label'>Billing ZIP Code</span></p><p><input class='limited' name='zip' id='zip' type='text'  value='' maxlength='5' size='5' tabindex='4' onkeyup='checkLen(this,this.value)' /></p><div class='buttons'><button type='button' class='positive'>Submit</button></div></form></div></div></div><div></div>
+<script type='text/javascript'>
+
+var \$j = jQuery;
+\$j('button.positive').click(function () {
+    var img_base_path = 'http://www.tekserve.com/skin/frontend/tekserve/tekstore/';
+    var repair_status = new Array('Created', 'In Progress', 'Testing', 'Complete', 'On Hold', 'Done', 'Service Complete');
+    var sro1 = \$j('#sro1').val();
+    var sro2 = \$j('#sro2').val();
+    var sro3 = \$j('#sro3').val();
+    var zip = \$j('#zip').val();
+    var sro_zip = 'SRO#: ' + sro1 + '-' + sro2 + '-' + sro3 + '<br />' + 'Billing Zip Code: ' + zip;
+    \$j.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: 'http://www.tekserve.com/status/?sro1=' + sro1 + '&sro2=' + sro2 + '&sro3=' + sro3 + '&zip=' + zip,
+        success: function (msg) {
+            \$j('#status-content').children('p').add('form.status-front').hide();
+            if (msg == false) {
+                \$j('#status-title').find('strong').html('Login Failed');
+                \$j('#fail-msg').show();
+                return;
+            }
+            var product_name = 'Product: ' + msg.product;
+            \$j('#status-title').find('strong').html('Repair Status');
+            \$j('form.status-front').hide();
+            \$j('.customer-info').show();
+            \$j('li.customer-info').children('p').html(sro_zip);
+            \$j('#product-info').children('p').html(product_name);
+            var result = msg.status;
+            var result_index = \$j.inArray(result, repair_status);
+            \$j('#status-content').children('img').attr('src', img_base_path + 'images/repair_stage_' + result_index + '.png');
+            \$j('#status-content').children('img').show();
+            var detail_cmt = \$j('ul.repair-details').find('li');
+            detail_cmt[result_index].show();
+        }
+    });
+});
+
+function checkLen(x, y) {
+    if (y.length == x.maxLength) {
+        var next = x.tabIndex;
+        if (next < document.getElementById('status-front').length) {
+            document.getElementById('status-front').elements[next].focus();
+        }
+    }
+}</script>";
+}
+add_shortcode( 'repairstatus', 'repair_status_checker' );
+
+vc_map( array(
+   "name" => __("Repair Status Checker"),
+   "base" => "repairstatus",
+   "class" => "",
+   "icon" => "icon-wpb-repairstatus",
+   "category" => __('Content'),
+   'admin_enqueue_css' => array('vc_extend/icons.css'),
+) );
+if ( ! function_exists('updater') ) {
+
+// Register Custom Taxonomy
+function updater()  {
+
+	$labels = array(
+		'name'                       => 'Updaters',
+		'singular_name'              => 'Updater',
+		'menu_name'                  => 'Updater',
+		'all_items'                  => 'All Updaters',
+		'parent_item'                => 'Parent Updater',
+		'parent_item_colon'          => 'Parent Updater:',
+		'new_item_name'              => 'New Updater Name',
+		'add_new_item'               => 'Add New Updater',
+		'edit_item'                  => 'Edit Updater',
+		'update_item'                => 'Update Updater',
+		'separate_items_with_commas' => 'Separate Updaters with commas',
+		'search_items'               => 'Search Updaters',
+		'add_or_remove_items'        => 'Add or remove Updaters',
+		'choose_from_most_used'      => 'Choose from existing Updaters',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => false,
+		'query_var'                  => 'updater',
+		'rewrite'                    => false,
+	);
+	register_taxonomy( 'updater', 'post', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'updater', 0 );
+
 }
