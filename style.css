@@ -714,9 +714,11 @@ font-weight: normal;
 
 /* .page h1, */
 .single h1 {
-	border-bottom: double #eee;
+/* 	border-bottom: double #eee; */
+/* 
 	margin: 0 0 30px;
 	padding: 0 0 30px;
+ */
 	text-align: center;
 }
 
@@ -1011,14 +1013,14 @@ img.alignnone {
 }
 
 img.alignleft,
-.wp-caption.alignleft {
+/* .wp-caption.alignleft  */{
 	display: inline;
 	margin: 30px 60px 0 0;
 }
 
 .even img.alignleft,
 img.alignright,
-.wp-caption.alignright {
+/* .wp-caption.alignright */ {
 	display: inline;
 	margin: 30px 5px 0 60px;
 }
@@ -1191,7 +1193,8 @@ width: 200px;
 width: auto;
 height: auto;
 max-width: 99%;
-margin: 0 auto 20px; 
+margin: 20px auto;
+max-height: 480px; 
 }
 .hfeed .hentry a img.alignright {
 margin: 0px 5px 0 30px;
@@ -1918,10 +1921,10 @@ color: #f06c34 !important;
 ------------------------------------------------------------ */
 .section {
 width: 960px;
-background-color: #fff;
+background-color: none;
 color: #004d72;
 font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
-padding: 5% 0;
+padding: 5% 1em;
 background-size: contain;
 background-repeat: no-repeat;
 }
@@ -2013,21 +2016,84 @@ width: 100%;
 .bgwrapper {
 width: 100%;
 }
-.drawerDown {
+.collapseomatic_content {
 background-size: 50%;
+background-color: rgba(0, 0, 0, .2)
 }
+
+.section:before,
+.section:after {
+  display: table;
+  content: "";
+}
+.section:after {
+  clear: both;
+}
+.section [class*="vc_span"] {
+  display: block;
+  width: 100%;
+  min-height: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.5%;
+}
+.section [class*="vc_span"]:first-child {
+  margin-left: 0;
+}
+.section .vc_span12,
+.wpb_teaser_grid.wpb_carousel .vc_span12 {
+  width: 100%;
+}
+.section .vc_span11 {
+  width: 91.4583333333%;
+}
+.section .vc_span10 {
+  width: 82.9166666667%;
+}
+.section .vc_span9 {
+  width: 74.375%;
+}
+.section .vc_span8 {
+  width: 65.8333333333%;
+}
+.section .vc_span7 {
+  width: 57.2916666667%;
+}
+.section .vc_span6,
+.wpb_teaser_grid.wpb_carousel .vc_span6 {
+  width: 48.75%;
+}
+.section .vc_span5 {
+  width: 40.2083333333%;
+}
+.section .vc_span4,
+.wpb_teaser_grid.wpb_carousel .vc_span4 {
+  width: 31.6666666667%;
+}
+.section .vc_span3,
+.wpb_teaser_grid.wpb_carousel .vc_span3 {
+  width: 23.125%;
+}
+.section .vc_span2 {
+  width: 14.5833333333%;
+}
+.section .vc_span1 {
+  width: 6.04166666667%;
+}
+
 
 /* Drawers
 ------------------------------------------------------------ */
 
-/* 
-.section .drawer {
-color: inherit;
-background: inherit;
-width: 100%;
-display: none;
+
+.section.dsection {
+padding: 1em ;
+border: none;
 }
- */
+ 
 /* 
 .section .drawerButton {
 background-image: url('images/leftorgarrow.png');
@@ -2051,10 +2117,10 @@ background-image: url('images/dnorgarrow.png');
  */
 .section .drawer .collapseomatic_content {
 color: inherit;
-background: inherit;
+/* background: none; */
 padding-top: 2em;
 }
-.section .drawer .collapseomatic {
+.section .drawer .collapseomatic, .section .collapseomatic.drawertrigger {
 background-position: right 45%;
 background-repeat: no-repeat;
 padding: 10px 30px 10px 0px;
@@ -2068,26 +2134,25 @@ position: relative;
 z-index: 5;
 background-size: 30px;
 }
-.section .drawer .leftcenter {
+.section .drawer .collapseomatic.leftcenter {
 left: 20%;
 }
-.section .drawer .rightcenter {
+.section .drawer .collapseomatic.rightcenter {
 left: 60%;
 }
-.section .drawer .right {
+.section .drawer .collapseomatic.right {
 left: 80%;
 }
 
-
-.section .drawer .colomat-hover {
+.section .drawertrigger.collapseomatic:hover {
 text-decoration: none;
 color: #40a8c9;
 }
-.section.lightblue .drawer .collapseomatic.colomat-hover {
+.section.lightblue .drawertrigger.collapseomatic:hover {
 text-decoration: none;
-color: #f36f37;
+color: #004d72;
 }
-.section.darkblue .drawer .collapseomatic.colomat-hover {
+.section.darkblue .drawertrigger.collapseomatic:hover {
 text-decoration: none;
 color: #40a8c9;
 }
@@ -2098,6 +2163,7 @@ color: #40a8c9;
 	padding: 0 0 10px 16px;
 	/*border: 1px dotted blue;*/
 	cursor: pointer;
+	background-color: inherit;
 }
 .arrowright {
 	background-position: top right;
@@ -2131,19 +2197,22 @@ color: #40a8c9;
 	display:block !important;
 }
 
-.section.orange .drawer .collapseomatic {
+.section.orange .drawer .collapseomatic, .section.orange .collapseomatic.drawertrigger {
 	background-image: url(images/drkbluearrowrt.svg);
 	color: white;
 }
-.section.darkblue .drawer .collapseomatic, .section.lightblue .drawer .collapseomatic {
+.section.darkblue .drawer .collapseomatic, .section.lightblue .drawer .collapseomatic, .section.darkblue .collapseomatic.drawertrigger, .section.lightblue .collapseomatic.drawertrigger {
 	background-image: url(images/orgarrowrt.svg);
 	color: white;
 }
-.section.orange .drawer .collapseomatic.colomat-close {
+.section.orange .drawer .collapseomatic.colomat-close, .section.orange .collapseomatic.drawertrigger.colomat-close {
 	background-image: url(images/drkbluearrowdn.svg);
 }
-.section.darkblue .drawer .collapseomatic.colomat-close, .section.lightblue .drawer .collapseomatic.colomat-close {
+.section.darkblue .drawer .collapseomatic.colomat-close, .section.lightblue .drawer .collapseomatic.colomat-close, .section.lightblue .collapseomatic.drawertrigger.colomat-close, .section.darkblue .collapseomatic.drawertrigger.colomat-close {
 	background-image: url(images/orgarrowdn.svg);
+}
+.section .drawer .collapseomatic {
+	display: none;
 }
 
 /* MagicNav

@@ -489,17 +489,143 @@ function checkLen(x, y) {
 }
 add_shortcode( 'repairstatus', 'repair_status_checker' );
 
+//custom shortcode for collapsomatic elements
+function drawer( $atts, $content = null ) { // New function parameter $content is added!
+   extract( shortcode_atts( array(
+		'title' => 'Click Here',
+		'swaptitle' => 'Click Here to Hide',
+		'alt' => '',
+		'notitle' => '',
+		'id' => 'id'.$ran,
+		'tag' => $options['tag'],
+		'trigclass' => '',
+		'trigpos' => $options['trigpos'],
+		'targtag' => $options['targtag'],
+		'targclass' => '',
+		'targpos' => $options['targpos'],
+		'rel' => '',
+		'expanded' => '',
+		'excerpt' => '',
+		'excerptpos' => 'below-trigger',
+		'excerpttag' => 'div',
+		'excerptclass' => '',
+		'swapexcerpt' => false,
+		'findme' => '',
+		'offset' => $options['offset'],
+		'scrollonclose' => '',
+		'startwrap' => '',
+		'endwrap' => '',
+		'elwraptag' => $options['wraptag'],
+		'elwrapclass' => $options['wrapclass'],
+		'cookiename' => '',
+		'color' => 'none',
+		'alignment' => 'left'
+   ), $atts ) );
+ 
+   $content = wpb_js_remove_wpautop($content); // fix unclosed/unwanted paragraph tags in $content
+ 
+   return "<div class='section ${color} dsection'><div class='drawer'><div id='${id}' class='collapseomatic colomat-hover ${alignment}' title='${title}'>${title}</div><div id='swap-${id}' style='display:none;'>${swaptitle}</div><div id='target-${id}' class='collapseomatic_content' style='display:none;'>${content}</div></div></div>";
+// 
+}
+add_shortcode( 'drawer', 'drawer' );
+
+
+
+//custom vc elements
+
 vc_map( array(
    "name" => __("Repair Status Checker"),
    "base" => "repairstatus",
    "class" => "",
    "icon" => "icon-wpb-repairstatus",
    "category" => __('Content'),
-   'admin_enqueue_css' => array('vc_extend/icons.css'),
+   'admin_enqueue_css' => array('vc_extend/icons.css')
 ) );
+
+vc_map( array(
+   "name" => __("Drawer"),
+   "base" => "drawer",
+   "class" => "",
+   "icon" => "icon-wpb-drawer",
+   "category" => __('Content'),
+   "admin_enqueue_css" => array('vc_extend/icons.css'),
+   "params" => array(
+	 array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Unique ID"),
+         "param_name" => "id",
+         "value" => __("click-here"),
+         "description" => __("Required; Unique ID to identify drawer on this page. Use all lowercase, no special characters or spaces."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Title"),
+         "param_name" => "title",
+         "value" => __("Click Here"),
+         "description" => __("Required; Text that user clicks on to expand drawer"),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "dropdown",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Alignment"),
+         "param_name" => "alignment",
+         "value" => array("left", "leftcenter", "rightcenter", "right"),
+         "description" => __("Required; Choose where the title text will appear on the page."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Alternate Title"),
+         "param_name" => "swaptitle",
+         "value" => __("Click Here to Hide"),
+         "description" => __("Optional; Title that is displayed when drawer is open."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Unique ID"),
+         "param_name" => "id",
+         "value" => __("click-here"),
+         "description" => __("Required; Unique ID to identify drawer on this page. Use all lowercase, no special characters or spaces."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "dropdown",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Background Color"),
+         "param_name" => "color",
+         "value" => array("white", "orange", "darkblue", "lightblue"),
+         "description" => __("Choose the background color for this drawer."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textarea_html",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Content"),
+         "param_name" => "content",
+         "value" => __("<p>I am test text block. Click edit button to change this text.</p>"),
+         "description" => __("Required; Enter the drop-down content of the drawer.")
+   )
+) 
+	)
+);
+
 if ( ! function_exists('updater') ) {
 
-// Register Custom Taxonomy
+// Register Custom Taxonomy for content update assignments
 function updater()  {
 
 	$labels = array(
@@ -537,3 +663,5 @@ function updater()  {
 add_action( 'init', 'updater', 0 );
 
 }
+
+
