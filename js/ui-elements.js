@@ -176,7 +176,8 @@ var viewWidth = $j(window).width();
 var downid;
 $j( ".drawertrigger" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
   downid = $j(this).attr('targetid');
-  $j('#'+downid).toggleClass('drawerDown');
+  $j('#target-'+downid).toggleClass('drawerDown');
+  $j('#target-'+downid).parents('.dsection').toggle();
 });
 
 $j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page

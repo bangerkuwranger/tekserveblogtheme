@@ -2090,8 +2090,9 @@ background-color: rgba(0, 0, 0, .2)
 
 
 .section.dsection {
-padding: 1em ;
+padding: 0 ;
 border: none;
+display: none;
 }
  
 /* 
@@ -2117,8 +2118,7 @@ background-image: url('images/dnorgarrow.png');
  */
 .section .drawer .collapseomatic_content {
 color: inherit;
-/* background: none; */
-padding-top: 2em;
+padding: 1em;
 }
 .section .drawer .collapseomatic, .section .collapseomatic.drawertrigger {
 background-position: right 45%;
