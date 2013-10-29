@@ -29,9 +29,10 @@ $j('.section').each(function() { //loops through each section, creating a wrappe
 	wrapperbgcolor = $j(this).css('background-color');
 	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');//creates full width wrapper element with correct background color
 	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
-	$j('.left', this).css('background-color', wrapperbgcolor);
-	$j('.right', this).css('background-color', wrapperbgcolor);
-	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
+// 	$j('.left', this).css('background-color', wrapperbgcolor);
+// 	$j('.right', this).css('background-color', wrapperbgcolor);
+	console.log($j(this).children('.wpb_text_column'));// .css('background-color', wrapperbgcolor);
+// 	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
 	
 });
 
@@ -154,9 +155,9 @@ $j('#nav .wrap ul').hover(
 
 
 
-$j('.twoUp').after('<div class="clear">&nbsp;</div>');  //clears floats after twoup divs in sections
+// $j('.twoUp').after('<div class="clear">&nbsp;</div>');  //clears floats after twoup divs in sections
 
-function fixDiv() {
+function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
     if ($j(window).scrollTop() > $jdiv.data("top")) { 
         $j('#nav').css({'position': 'fixed', 'top': '0', 'width': '100%'}); 
@@ -172,8 +173,43 @@ $j("#nav").data("top", $j("#nav").offset().top); // set original position on loa
 $j(window).scroll(fixDiv);
 var viewWidth = $j(window).width();
 
-$j( ".collapseomatic" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
-  $j(this).parents('.section').toggleClass('drawerDown');
+var downid;
+$j( ".drawertrigger" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
+  downid = $j(this).attr('targetid');
+  $j('#target-'+downid).toggleClass('drawerDown');
+  $j('#target-'+downid).parents('.dsection').toggle();
 });
 
 $j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page
+
+//fix ol, ul sizes followed by headers
+$j('h2').parent('li').addClass('htwoList');
+$j('h3').parent('li').addClass('hthreeList');
+$j('h4').parent('li').addClass('hfourList');
+
+var bgimgsrc;
+var objectparentsection;
+var objectparentcolumn;
+// var opptxtheight;
+$j(".bgimage div img").each(function() {//takes bgimage class object src and makes it the bgimage of parent .section.vc_row
+	bgimgsrc = $j(this).attr('src');
+	objectparentsection = $j(this).parents('.section');
+	objectparentcolumn = $j(this).parents('.wpb_column');
+	$j(objectparentsection).css('background-image', 'url('+bgimgsrc+')');
+	if($j(objectparentcolumn).is('div:first-child')){
+		$j(objectparentsection).css('background-position', 'bottom left');
+	}
+	else {
+		$j(objectparentsection).css('background-position', 'bottom right');
+	}
+	$j(this).css('visibility', 'hidden');
+// 	opptxtheight = $j(objectparentsection).children('.wpb_text_column').css('height');
+// 	if(opptxtheight == undefined) {
+		$j(this).css('height', '0');
+// 	}
+// 	else {
+// 		$j(this).css('height', opptxtheight);
+// 	}
+});
+
+$j('.section').removeClass('vc_row-fluid');//removes vc_fluid badness
