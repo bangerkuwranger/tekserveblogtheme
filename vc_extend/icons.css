@@ -1,0 +1,5 @@
+/* path to the icon file should be relative to the css file where you place your css rules (this file) */
+.wpb_bootstrap_modals .wpb-content-layouts .wpb-layout-element-button .icon-wpb-repairstatus { background-image: url(images/icons/my_shortcode_icon.png); }
+ 
+/* .wpb_{shortcode_base} .wpb_element_wrapper selector can be used to add background image to VC shortcode block in the Visual Composer Editor working canvas */
+.wpb_repairstatus .wpb_element_wrapper { background-image: url(images/icons/my_shortcode_icon.png); }
