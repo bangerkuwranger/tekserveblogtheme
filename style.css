@@ -603,7 +603,7 @@ ul.menu li.sfHover ul,
 }
 
 .page #content {
-	padding: 0 20%;
+	padding: 0 2%;
 }
 
 .single.content-sidebar #content {
@@ -638,13 +638,15 @@ color: #40a8c9 !important;
 blockquote {
 	background: url(images/blockquote.png) no-repeat;
 	border: none;
-	margin: 5px 5px 20px;
+	margin: 5px 10% 20px;
 	padding: 25px 30px 5px 70px;
 }
 
 blockquote p {
-	color: #999;
-	font-style: italic;
+/* 	color: #999; */
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 2.25em;
 }
 
 p.subscribe-to-comments {
@@ -658,6 +660,7 @@ p.subscribe-to-comments {
 .alignright,
 .even .alignleft {
 	float: right;
+	margin: 0 1em 0 2em !important;
 }
 
 .clear {
@@ -1203,6 +1206,7 @@ margin: 0px 5px 0 30px;
 
 max-width: 25%;
  */
+ margin: 0 2em 0 0;
 }
 .search-results .hentry, .hfeed .hentry {
 padding: 30px 0 5px 5px;
@@ -1473,6 +1477,11 @@ font-size: 24px;
 /* Gravity Forms
 ------------------------------------------------------------ */
 
+
+div.gform_wrapper div.gform_body {
+font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+color: #004d72;
+}
 div.gform_wrapper input,
 div.gform_wrapper select,
 div.gform_wrapper textarea {
@@ -1482,15 +1491,23 @@ div.gform_wrapper textarea {
 	background-color: #fff;
 	box-shadow: 0 0 5px #ddd inset;
 	box-sizing: border-box;
-	font-size: 16px !important;
+	font-size: 16px;
 	margin: 0 0 10px;
 	padding: 10px !important;
+	font-size: 18px;
+	line-height: 1.25em;
+	border-radius: 6px;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+color: #004d72;
 }
 
 div.gform_footer input.button {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
+	font-size: 24px;
+	border-radius: 12px 0 12px 0;
+	background-color: #f36f37;
 }
 
 div.gform_wrapper .ginput_complex label {
@@ -1499,7 +1516,9 @@ div.gform_wrapper .ginput_complex label {
 
 div.gform_wrapper li,
 div.gform_wrapper form li {
-	margin: 0 0 10px;
+	margin: 0;
+	list-style: none;
+	text-align: right;
 }
 
 div.gform_wrapper .gform_footer {
@@ -1507,7 +1526,47 @@ div.gform_wrapper .gform_footer {
 	margin: 0;
 	padding: 0;
 }
-
+div.gform_wrapper li label span.gfield_required {
+color: #f36f37;
+}
+div.gform_wrapper .gfield_label {
+color: #004d72;
+font-weight: 900;
+font-size: 24px;
+text-transform: uppercase;
+}
+div.gform_wrapper .gform_fields {
+width: 100%;
+}
+div.gform_wrapper .gfield {
+width: 437px;
+}
+div.gform_wrapper .gfield.formlongtitle .gfield_label {
+font-size: 18px;
+}
+div.gform_wrapper .gform_fields .gfield span label {
+display: block;
+color: #004d72;
+font-weight: bold;
+font-size: 18px;
+text-transform: uppercase;
+}
+div.gform_wrapper .gform_fields .gfield .ginput_container label {
+color: #004d72;
+font-weight: bold;
+font-size: 18px;
+text-transform: uppercase;
+}
+div.gform_wrapper .gfield.gform_validation_container {
+visibility:hidden;
+height: 0;
+}
+div.gform_wrapper .gform_footer {
+width: 437px;
+}
+div.gform_wrapper .gform_footer input {
+float: right;
+}
 
 /* Apparition Green
 ------------------------------------------------------------ */
@@ -2215,6 +2274,42 @@ color: #40a8c9;
 	display: none;
 }
 
+/* SortTable Post
+------------------------------------------------------------ */
+
+/* Header Row Colors */
+table.sortable thead tr {
+    background-color: #40a8c9 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.25em;
+}
+
+/*  Highlight Color for Header Row Cells on Hover*/
+table.sortable th:hover:not(.sorttable_nosort) {
+    background: #f36f37 !important;
+}
+
+/* Shading For Even Rows */
+table.sortable tr:nth-child(even) { background: #f6f6f6 !important; }
+
+/* Table Border Color */
+table.sortable th,
+table.sortable td {
+    border: 1px solid #40a8c9 !important;
+}
+
+/*  Style & Width of Particular Columns */
+table.sortable td.col3,
+table.sortable td.col4,
+table.sortable td.col5,
+table.sortable td.col6,
+table.sortable td.col7 {
+    text-align: left !important;
+    width: 10% !important;
+}
+
 /* MagicNav
 ------------------------------------------------------------ */
 #magicNav {
@@ -2612,7 +2707,7 @@ min-height: 330px;
 	margin: 0 5px 30px 30px;
 	}
 	.search-results .hentry.odd a img, .hfeed .search-results .hentry.odd a img {
-	margin: 0 30px 30px 0;
+	margin: 0 30px 30px 0 !important;
 	}
 	.search-results .hentry.odd a img, .search-results .hentry.even a img, .hfeed .hentry.odd a img, .hfeed .hentry.even a img {
 	height: 200px;
@@ -2621,7 +2716,7 @@ min-height: 330px;
 	
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1024px) {
 
 	body {
 		margin: 0 auto;
@@ -2735,6 +2830,12 @@ min-height: 330px;
 	.section p, .section h1, .section .button, .section .drawer .collapseomatic {
 		font-size: .8em;
 	}
+	.nrelate_default .nr_col_1.nr_panel, .nrelate_default .nr_col_2.nr_panel {
+	margin-right: 5%;
+	}
+	.nrelate_default .nr_col_1.nr_panel:hover, .nrelate_default .nr_col_2.nr_panel:hover {
+	margin-right: 5%;
+	}
 
 	
 }
@@ -2753,12 +2854,13 @@ min-height: 330px;
 	#inner {
 		padding: 30px 0;
 	}
-
+	.single h1.entry-title,
 	h1,
 	h2,
 	h2 a,
 	h2 a:visited {
 		clear: both;
+		font-size: 2em;
 	}
 
 	.even img.alignleft,
@@ -2809,7 +2911,7 @@ min-height: 330px;
 		width: 80%;
 	}
 	.search-results .hentry.odd a img, .search-results .hentry.even a img, .hfeed .hentry.odd a img, .hfeed .hentry.even a img {
-	margin: 0 0 30px 0;
+	margin: 0 0 30px 0 !important;
 	width: 200px;
 	height: 200px;
 	border-radius: 0;
@@ -2822,7 +2924,24 @@ min-height: 330px;
 	background-size: 50% !important;
 	background-position-y: 50% !important;
 	}
-
+	.single #content-sidebar-wrap #sidebar {
+	float: right;
+	width: 25%;
+	display: block;
+	min-width: 300px;
+	position: relative;
+	right: 25%;
+	}
+	.single #content-sidebar-wrap #content {
+	width: 100%;
+	}
+	.nrelate_default .nr_col_1.nr_panel, .nrelate_default .nr_col_2.nr_panel {
+	margin-right: 5%;
+	}
+	.nrelate_default .nr_col_1.nr_panel:hover, .nrelate_default .nr_col_2.nr_panel:hover {
+	margin-right: 5%;
+	}
+	
 }
 
 @media (max-width:768px) and (min-width:600px) {
@@ -2847,6 +2966,19 @@ min-height: 330px;
 	input.s.search-input {
 	height: 40px;
 	font-size: 24px;
+	}
+	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
+	width: 280px !important;
+	}
+	.single #content-sidebar-wrap #sidebar {
+	float: right;
+	width: 90%;
+	display: block;
+	min-width: 300px;
+	position: relative;
+	right: 5%;
+	border-top: 16px solid #40a8c9;
+	padding-top: 24px;
 	}
 
 }
@@ -2972,6 +3104,9 @@ min-height: 330px;
 	right: 0px;
 	display: none;
 	}
+	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
+	width: 250px !important;
+	}
 }
 
 @media only screen and (max-width: 500px) {
@@ -2980,7 +3115,9 @@ min-height: 330px;
 	background-size: 90% !important;
 	background-position-y: 50% !important;
 	}
-
+	.single #content-sidebar-wrap #sidebar {
+	right: 3%
+	}
 }
 
 #page {

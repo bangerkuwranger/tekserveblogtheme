@@ -543,6 +543,118 @@ vc_map( array(
 ) );
 
 vc_map( array(
+   "name" => __("Sortable Table"),
+   "base" => "sorttablepost",
+   "class" => "",
+   "icon" => "icon-wpb-sorttablepost",
+   "category" => __('Content'),
+   "admin_enqueue_css" => array('vc_extend/icons.css'),
+   "params" => array(
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Unique ID"),
+         "param_name" => "id",
+         "value" => __(""),
+         "description" => __("Enter a unique id (no spaces) for this table."),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Custom Post Type"),
+         "param_name" => "type",
+         "value" => __(""),
+         "description" => __("Enter the slug for the post type you would like to display"),
+         "admin_label" => true
+      ),
+     array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Custom Hierarchical Taxononomy"),
+         "param_name" => "cat",
+         "value" => __(""),
+         "description" => __("Enter the slug for the custom taxonomy you would like to display"),
+         "admin_label" => true
+      ),
+      array(
+         "type" => "textfield",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Custom Non-Hierarchical Taxononomy"),
+         "param_name" => "cat",
+         "value" => __(""),
+         "description" => __("Enter the slug for the custom taxonomy you would like to display"),
+         "admin_label" => true
+      ),
+      array( // need to troubleshoot this feature for vc
+         "type" => "exploded_textarea",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Additional Columns"),
+         "param_name" => "meta",
+         "value" => __(""),
+         "description" => __("Enter the slugs for any additional fields you'd like to display as a column. Separate slugs with line breaks by pressing return key."),
+         "admin_label" => true
+      ),
+	 array(
+         "type" => "checkbox",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Hide Featured Image"),
+         "param_name" => "nothumb",
+         "value" => array("true"),
+         "description" => __("Check to hide the featured image column"),
+         "admin_label" => false
+      ),
+	 array(
+         "type" => "checkbox",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Hide Title"),
+         "param_name" => "notitle",
+         "value" => array("true"),
+         "description" => __("Check to hide the title column"),
+         "admin_label" => false
+      ),
+	 array(
+         "type" => "checkbox",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Hide Post Date"),
+         "param_name" => "nodate",
+         "value" => array("true"),
+         "description" => __("Check to hide the column for the post's date"),
+         "admin_label" => false
+      ),
+     array(
+         "type" => "checkbox",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Hide Categories"),
+         "param_name" => "nocats",
+         "value" => array("true"),
+         "description" => __("Check to hide the categories column"),
+         "admin_label" => false
+      ),
+	 array(
+         "type" => "checkbox",
+         "holder" => "div",
+         "class" => "",
+         "heading" => __("Hide Tags"),
+         "param_name" => "notags",
+         "value" => array("true"),
+         "description" => __("Check to hide the tags column"),
+         "admin_label" => false
+      )
+    )
+)	);
+
+
+vc_map( array(
    "name" => __("Drawer"),
    "base" => "drawer",
    "class" => "",
