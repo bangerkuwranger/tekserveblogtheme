@@ -980,8 +980,13 @@ img {
 }
 
 .featured-image {
-	padding: 0 0 30px;
-	text-align: center;
+	padding: 0 30px 0 0;
+	float:left;
+}
+
+.featured-image img {
+height: 200px;
+width: 200px;
 }
 
 .alignleft .avatar {
@@ -2420,17 +2425,23 @@ background: none repeat scroll 0 0 #004d72;
 border: 1px solid #004d72 !important;
 outline: 1px solid #004d72;
 }
-.continueButton {
+.nrelate_default.nr_150 .nr_panel {
+position: relative;
+min-height: 280px;
+}
+.nrelate div.continueButton {
 border-radius: 12px 0 12px;
 background-color: #004d72;
 cursor:pointer;
 display: inline-block;
-padding: 0 1em;
+padding: 0 .5em;
 color: #fff;
 text-transform: uppercase;
 font-weight: 900;
 font-size: 24px;
-margin: .5em 0;
+position: absolute;
+bottom: 0;
+left: 0;
 }
 
 /* Sidebar
@@ -2685,6 +2696,106 @@ border: none;
 min-height: 330px;
 }
 
+/* Revolution Slider
+------------------------------------------------------------ */
+
+
+.rev_slider_wrapper .rev_slider .tp-caption.darkblue{
+            position: absolute; 
+			color: #004d72; 
+			text-shadow: none;
+			line-height: 1.5em; 
+			font-family: Tekvetica; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 
+			background-color:transparent;
+								
+		}
+.rev_slider_wrapper .rev_slider .tp-caption.orange{
+            position: absolute; 
+			color: #f36f37; 
+			text-shadow: none;
+			line-height: 1.5em; 
+			font-family: Tekvetica; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 
+			background-color:transparent;						
+		}
+.rev_slider_wrapper .rev_slider .tp-caption.lightblue{
+            position: absolute; 
+			color: #40a8c9; 
+			text-shadow: none;
+			line-height: 1.5em; 
+			font-family: Tekvetica; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 
+			background-color:transparent;
+								
+		}
+.rev_slider_wrapper .rev_slider .tp-caption.white{
+			position: absolute; 
+			color: #fff; 
+			text-shadow: none;
+			line-height: 1.5em; 
+			font-family: Tekvetica; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 								
+		}
+.rev_slider_wrapper .rev_slider .tp-caption.tp-caption a { 
+	color: #f36f37; text-decoration: none; text-shadow: none;	-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out;	 
+}			
+	
+.rev_slider_wrapper .rev_slider .tp-caption a:hover { 
+	color: #40a8c9; 
+}
+.rev_slider_wrapper .rev_slider .tp-caption.img200 img {
+    height: 200px;
+	width: 200px;    
+}
+}
+.rev_slider_wrapper .rev_slider .tp-caption.img200 {
+    height: 200px;
+	width: 200px;    
+}
+.rev_slider_wrapper .rev_slider .tp-caption.size14 {
+   font-size: 14px !important; 
+  }
+.rev_slider_wrapper .rev_slider .tp-caption.size28 {
+      font-size: 28px !important;
+    }
+.rev_slider_wrapper .rev_slider .tp-caption.size36 {
+      font-size: 36px !important;
+      }
+.rev_slider_wrapper .rev_slider .tp-caption.size48 {
+      font-size: 48px !important;
+        }
+.rev_slider_wrapper .rev_slider .tp-caption.size60 {
+      font-size: 60px !important;
+        }
+.rev_slider_wrapper .rev_slider .tp-caption.size72 {
+      font-size: 72px !important;
+      line-height: 1.1em;
+        }
+.rev_slider_wrapper .rev_slider .tp-caption.size96 {
+      font-size: 96px !important;
+      line-height: 1.1em;
+        }
+.rev_slider_wrapper .rev_slider .tp-caption.center {
+text-align: center;
+}
+        
 /* Responsive Design
 ------------------------------------------------------------ */
 
