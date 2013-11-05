@@ -54,7 +54,6 @@ function moveSearchBack () {  //moves search back into nav node; called on windo
 function MobileCloseButton() {
 
 		$j('#nav .wrap .closeButton').toggle();
-		alert('duh');
 }
 
 //stretchSection needs browser detection to set % correctly
@@ -116,6 +115,7 @@ function stretchSection() {  //function is called on load and on window resize; 
 // 		});
 	}
 }
+
 $j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
 stretchSection(); //call on load
 var clientWidth = document.documentElement.clientWidth;
@@ -167,8 +167,6 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
     }
 }
 
-$j('.nr_text').after('<div class="continueButton">continue</div>');//add continue button after related article
-
 $j("#nav").data("top", $j("#nav").offset().top); // set original position on load
 $j(window).scroll(fixDiv);
 var viewWidth = $j(window).width();
@@ -203,13 +201,13 @@ $j(".bgimage div img").each(function() {//takes bgimage class object src and mak
 		$j(objectparentsection).css('background-position', 'bottom right');
 	}
 	$j(this).css('visibility', 'hidden');
-// 	opptxtheight = $j(objectparentsection).children('.wpb_text_column').css('height');
-// 	if(opptxtheight == undefined) {
+	opptxtheight = $j(objectparentsection).css('height');
+	if(opptxtheight == undefined) {
 		$j(this).css('height', '0');
-// 	}
-// 	else {
-// 		$j(this).css('height', opptxtheight);
-// 	}
+	}
+	else {
+		$j(this).css('height', opptxtheight);
+	}
 });
 
 $j('.section').removeClass('vc_row-fluid');//removes vc_fluid badness from sections

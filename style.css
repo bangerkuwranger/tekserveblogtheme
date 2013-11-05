@@ -205,6 +205,9 @@ a img {
 	border: none;
 }
 
+.at-vertical-menu a:hover {
+	background: #40a8c9 !important;
+}
 
 /* Body
 ------------------------------------------------------------ */
@@ -2371,7 +2374,7 @@ color: #40a8c9;
 border: none;
 }
 
-/* Related Articles
+/* nRelate Related Articles
 ------------------------------------------------------------ */
 
 .nr_related_placeholder {
@@ -2427,21 +2430,22 @@ outline: 1px solid #004d72;
 }
 .nrelate_default.nr_150 .nr_panel {
 position: relative;
-min-height: 280px;
+min-height: 280px !important;
 }
 .nrelate div.continueButton {
 border-radius: 12px 0 12px;
 background-color: #004d72;
-cursor:pointer;
+cursor: pointer;
 display: inline-block;
-padding: 0 .5em;
+padding: .25em 1em;
 color: #fff;
 text-transform: uppercase;
 font-weight: 900;
-font-size: 24px;
+font-size: 18px;
 position: absolute;
 bottom: 0;
 left: 0;
+font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 }
 
 /* Sidebar
@@ -2700,7 +2704,7 @@ min-height: 330px;
 ------------------------------------------------------------ */
 
 
-.rev_slider_wrapper .rev_slider .tp-caption.darkblue{
+.rev_slider_wrapper .rev_slider .tp-caption.darkbluetxt{
             position: absolute; 
 			color: #004d72; 
 			text-shadow: none;
@@ -2714,7 +2718,7 @@ min-height: 330px;
 			background-color:transparent;
 								
 		}
-.rev_slider_wrapper .rev_slider .tp-caption.orange{
+.rev_slider_wrapper .rev_slider .tp-caption.orangetxt{
             position: absolute; 
 			color: #f36f37; 
 			text-shadow: none;
@@ -2727,7 +2731,7 @@ min-height: 330px;
 			border-style: none; 
 			background-color:transparent;						
 		}
-.rev_slider_wrapper .rev_slider .tp-caption.lightblue{
+.rev_slider_wrapper .rev_slider .tp-caption.lightbluetxt{
             position: absolute; 
 			color: #40a8c9; 
 			text-shadow: none;
@@ -2741,7 +2745,7 @@ min-height: 330px;
 			background-color:transparent;
 								
 		}
-.rev_slider_wrapper .rev_slider .tp-caption.white{
+.rev_slider_wrapper .rev_slider .tp-caption.whitetxt{
 			position: absolute; 
 			color: #fff; 
 			text-shadow: none;
@@ -2794,6 +2798,9 @@ min-height: 330px;
         }
 .rev_slider_wrapper .rev_slider .tp-caption.center {
 text-align: center;
+}
+.wpb_content_element {
+margin: 0 !important;
 }
         
 /* Responsive Design
