@@ -2670,7 +2670,7 @@ table.sortable td a {
 }
 
 .nrelate_default .nr_panel.nr_link:hover {
-	border: none !important;
+/* 	border: none !important; */
 	background: #40a8c9;
 	color: #fff !important;
 }
@@ -3312,6 +3312,10 @@ button.positive:hover {
 	
 	.menu-primary li {
 		text-align: center;
+	}
+	
+	.nrelate_default.nr_150 a.nr_panel {
+		margin-right: 4% !important;
 	}
 	
 }

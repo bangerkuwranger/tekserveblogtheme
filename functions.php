@@ -522,8 +522,10 @@ add_action( 'init', 'updater', 0 );
 }
 
 /** Customize the credits */
-add_filter( 'genesis_footer_creds_text', 'sp_footer_creds_text' );
-function sp_footer_creds_text() {
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'tekserve_footer' );
+function tekserve_footer() {
+	echo '<div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div>';
 	echo '<div class="creds">';
 	echo '<div class="leftcopy">';
 	echo '<a href="#terms">Terms of Use</a> | ';
