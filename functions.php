@@ -344,9 +344,18 @@ array(
 			'name' 		=> 'Tekserve Press Mentions',
 			'slug' 		=> 'tekservepressmentions',
 			'required' 	=> true,
-			'version' 	=> '1.0',
+			'version' 	=> '1.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory() . '/lib/tekservepressmentions.zip'
+		),
+		
+		array(
+			'name' 		=> 'Tekserve Single Post Shortcode',
+			'slug' 		=> 'tekserversinglepostshortcode',
+			'required' 	=> true,
+			'version' 	=> '1.1',
+			'force_activation' 	=> true,
+			'source'	=> get_stylesheet_directory() . '/lib/tekservesinglepostshortcode.zip'
 		),
 		
 		array(
