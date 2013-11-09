@@ -3498,7 +3498,7 @@ button.positive:hover {
 	}
 
 	.gototop {
-		visibility: hidden;
+		display: none;
 	}
 	#status-wrapper {
 		max-width: 100%;
