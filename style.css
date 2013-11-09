@@ -2478,6 +2478,36 @@ color: #f06c34 !important;
 	padding: 2em;
 }
 
+.page-template-static_content-php .tekserve-single-post img {
+	float: left;
+	margin-right: 1em;
+}
+
+.page-template-static_content-php .orange .tekserve-single-post div,
+.page-template-static_content-php .orange .tekserve-single-post h2,
+.page-template-static_content-php .orange .tekserve-single-post a,
+.page-template-static_content-php .darkblue .tekserve-single-post div,
+.page-template-static_content-php .darkblue .tekserve-single-post h2,
+.page-template-static_content-php .darkblue .tekserve-single-post a,
+.page-template-static_content-php .lightblue .tekserve-single-post div,
+.page-template-static_content-php .lightblue .tekserve-single-post h2,
+.page-template-static_content-php .lightblue .tekserve-single-post a {
+	color: #fff;
+}
+
+.page-template-static_content-php .tekserve-single-post h2 {
+	font-size: 28px;
+	margin-bottom: 0;
+}
+
+.page-template-static_content-php .tekserve-single-post .tekserve-single-post-meta {
+	margin-bottom: 1em;
+}
+
+.page-template-static_content-php .tekserve-single-post {
+	padding: 1em 2em;
+}
+
 /* Testimonials
 ------------------------------------------------------------ */
 
