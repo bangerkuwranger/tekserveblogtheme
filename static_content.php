@@ -24,7 +24,7 @@ remove_action( 'genesis_post_title', 'genesis_do_post_title' );
 
 add_action('genesis_meta', 'blogFrontCode');
 function blogFrontCode() {
-    wp_register_script( 'blogFront', get_stylesheet_uri().'/js/blogFront.js');
+    wp_register_script( 'blogFront', get_stylesheet_directory_uri() . '/js/blogFront.js' );
     wp_enqueue_script( 'blogFront' );
 }
 

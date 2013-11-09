@@ -31,7 +31,7 @@ $j('.section').each(function() { //loops through each section, creating a wrappe
 	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
 // 	$j('.left', this).css('background-color', wrapperbgcolor);
 // 	$j('.right', this).css('background-color', wrapperbgcolor);
-	console.log($j(this).children('.wpb_text_column'));// .css('background-color', wrapperbgcolor);
+// 	console.log($j(this).children('.wpb_text_column'));// .css('background-color', wrapperbgcolor);
 // 	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
 	
 });
@@ -153,10 +153,6 @@ $j('#nav .wrap ul').hover(
 	}
 );
 
-
-
-// $j('.twoUp').after('<div class="clear">&nbsp;</div>');  //clears floats after twoup divs in sections
-
 function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
     if ($j(window).scrollTop() > $jdiv.data("top")) { 
@@ -210,5 +206,14 @@ $j(".bgimage div img").each(function() {//takes bgimage class object src and mak
 	}
 });
 
-$j('.section').removeClass('vc_row-fluid');//removes vc_fluid badness from sections
+$j('.section').removeClass('vc_row-fluid');  //removes vc_fluid badness from sections
 
+var slugtext;
+$j('.sortable th').each(function() {  //removes slug ugliness from sorttable columns
+	slugtext = $j(this).text();
+	slugtext = slugtext.replace( 'tekserve_press_', '' );
+	$j(this).text(slugtext);
+});
+
+//add class to quotation sections to adjust margins
+$j('.tekserve-testimonial').parents('.section').addClass('testimonial');

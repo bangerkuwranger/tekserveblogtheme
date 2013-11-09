@@ -9,6 +9,9 @@ load_child_theme_textdomain( 'apparition', apply_filters( 'child_theme_textdomai
 define( 'CHILD_THEME_NAME', __( 'Apparition Theme', 'apparition' ) );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/themes/apparition' );
 
+/** Add HTML5 support */
+add_theme_support( ‘html5′ );
+
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'apparition_add_viewport_meta_tag' );
 function apparition_add_viewport_meta_tag() {
@@ -57,8 +60,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 add_image_size( 'featured-circle', 300, 300, TRUE );
 add_image_size( 'featured-square', 300, 300, TRUE );
 
-// /** Unregister layout settings */
-
+/** Unregister layout settings */
 genesis_unregister_layout( 'sidebar-content' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
@@ -124,8 +126,8 @@ function apparition_read_more_link() {
 	return '... <a class="more-link" href="' . get_permalink() . '">' . __( '[Continue Reading]', 'apparition' ) .'</a>';
 }
 
-/** Add support for 3-column footer widgets */
-add_theme_support( 'genesis-footer-widgets', 3 );
+/** Add support for 5-column footer widgets */
+add_theme_support( 'genesis-footer-widgets', 5 );
 
 /** Create additional thumnails in black and white */
 add_action('after_setup_theme','bw_images_size');
@@ -161,19 +163,12 @@ function bw_images_filter($meta) {
 add_filter( 'wp_nav_menu_items', 'genesis_search_primary_nav_menu', 10, 2 );
 
 function genesis_search_primary_nav_menu( $menu, stdClass $args ){
-        
-       
         if ( 'primary' != $args->theme_location )
         	return $menu;
-        
                if( genesis_get_option( 'nav_extras' ) )
                 return $menu;
-        
         $menu .= sprintf( '<li class="custom-search">%s</li>', __( genesis_search_form( $echo ) ) );
-        
-        
         return $menu;
-        
 }
 
 
@@ -182,7 +177,6 @@ function include_local_scripts() {
 	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true ); //
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
-
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -211,31 +205,50 @@ function apparition_tekserve_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		// This is an example of how to include a plugin pre-packaged with a theme
-		// array(
-// 			'name'     				=> 'TGM Example Plugin', // The plugin name
-// 			'slug'     				=> 'tgm-example-plugin', // The plugin slug (typically the folder name)
-// 			'source'   				=> get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
-// 			'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
-// 			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-// 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-// 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-// 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-// 		),
-// 
- 		// This is an example of how to include a plugin from the WordPress Plugin Repository
-// 		array(
-// 			'name' 		=> 'BuddyPress',
-// 			'slug' 		=> 'buddypress',
-// 			'required' 	=> false,
-// 		),
+/**This is an example of how to include a plugin pre-packaged with a theme
 
-		array(//											//list is currently incomplete.
+array(
+			'name'     				=> 'TGM Example Plugin', // The plugin name
+			'slug'     				=> 'tgm-example-plugin', // The plugin slug (typically the folder name)
+			'source'   				=> get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
+			'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+
+ 		// This is an example of how to include a plugin from the WordPress Plugin Repository
+		array(
+			'name' 		=> 'BuddyPress',
+			'slug' 		=> 'buddypress',
+			'required' 	=> false,
+		), 
+*/
+
+		array(
+			'name' 		=> 'AddThis Smart Layers',
+			'slug' 		=> 'addthis-smart-layers',
+			'required' 	=> true,
+			'version' 	=> '1.0.4',
+			'force_activation' 	=> true,
+		),
+
+		array(
 			'name' 		=> 'Advanced Custom Fields',
 			'slug' 		=> 'advanced-custom-fields',
 			'required' 	=> true,
 			'version' 	=> '4.2.2',
 			'force_activation' 	=> true,
+		),
+				
+		array(
+			'name' 		=> 'Collapse-Pro-Matic',
+			'slug' 		=> 'collapse-pro-matic',
+			'required' 	=> true,
+			'version' 	=> '0.5',
+			'force_activation' 	=> true,
+			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic-v0.5.zip'
 		),
 		
 		array(
@@ -247,12 +260,27 @@ function apparition_tekserve_register_required_plugins() {
 		),
 		
 		array(
-			'name' 		=> 'Smart Layers by AddThis',
-			'slug' 		=> 'addthis-smart-layer',
+			'name' 		=> 'FlowSplit',
+			'slug' 		=> 'flowsplit',
 			'required' 	=> true,
-			'version' 	=> '1.0.4',
+			'version' 	=> '1.1.3',
+			'force_activation' 	=> false,
+		),
+		
+		array(
+			'name' 		=> 'Font Awesome Icons',
+			'slug' 		=> 'font-awesome',
+			'required' 	=> true,
+			'version' 	=> '3.2.1',
 			'force_activation' 	=> true,
-			'source' 	=> 'http://downloads.wordpress.org/plugin/addthis-smart-layers.1.0.4.zip',
+		),
+				
+		array(
+			'name' 		=> 'Genesis Simple Hooks',
+			'slug' 		=> 'genesis-simple-hooks',
+			'required' 	=> true,
+			'version' 	=> '2.0.0',
+			'force_activation' 	=> true,
 		),
 		
 		array(
@@ -262,6 +290,22 @@ function apparition_tekserve_register_required_plugins() {
 			'version' 	=> '6.4.5',
 			'force_activation' 	=> false,
 		),
+				
+		array(
+			'name' 		=> 'Gravity Forms',
+			'slug' 		=> 'gravityforms',
+			'required' 	=> true,
+			'version' 	=> '1.7.11',
+			'force_activation' 	=> true,
+		),
+				
+		array(
+			'name' 		=> 'Post Content Shortcodes',
+			'slug' 		=> 'post-content-shortcodes',
+			'required' 	=> true,
+			'version' 	=> '0.3.4.1',
+			'force_activation' 	=> true,
+		),
 		
 		array(
 			'name' 		=> 'Relevanissi',
@@ -269,23 +313,6 @@ function apparition_tekserve_register_required_plugins() {
 			'required' 	=> true,
 			'version' 	=> '3.1.9',
 			'force_activation' 	=> false,
-		),
-		
-		array(
-			'name' 		=> 'SortTable Post',
-			'slug' 		=> 'sorttable-post',
-			'required' 	=> true,
-			'version' 	=> '4.2',
-			'force_activation' 	=> true,
-		),
-		
-		array(
-			'name' 		=> 'WPBakery Visual Composer',
-			'slug' 		=> 'js_composer',
-			'required' 	=> true,
-			'version' 	=> '3.6.14.1',
-			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/js_composer.zip'
 		),
 		
 		array(
@@ -298,30 +325,21 @@ function apparition_tekserve_register_required_plugins() {
 		),
 		
 		array(
-			'name' 		=> 'Genesis Simple Hooks',
-			'slug' 		=> 'genesis-simple-hooks',
+			'name' 		=> 'Scalable Vector Graphics (SVG)',
+			'slug' 		=> 'scalable-vector-graphics',
 			'required' 	=> true,
-			'version' 	=> '2.0.0',
+			'version' 	=> '2.1.1',
 			'force_activation' 	=> true,
 		),
 		
 		array(
-			'name' 		=> 'Use Google Libraries',
-			'slug' 		=> 'use-google-libraries',
+			'name' 		=> 'SortTable Post',
+			'slug' 		=> 'sorttable-post',
 			'required' 	=> true,
-			'version' 	=> '1.5.2',
+			'version' 	=> '4.2',
 			'force_activation' 	=> true,
 		),
-		
-		array(
-			'name' 		=> 'Collapse-Pro-Matic',
-			'slug' 		=> 'collapse-pro-matic',
-			'required' 	=> true,
-			'version' 	=> '0.5.0',
-			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic-v0.5.zip'
-		),
-		
+				
 		array(
 			'name' 		=> 'Tekserve Press Mentions',
 			'slug' 		=> 'tekservepressmentions',
@@ -347,6 +365,31 @@ function apparition_tekserve_register_required_plugins() {
 			'version' 	=> '1.0',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory() . '/lib/tekserve-vcbuttons.zip'
+		),
+				
+		array(
+			'name' 		=> 'Use Google Libraries',
+			'slug' 		=> 'use-google-libraries',
+			'required' 	=> true,
+			'version' 	=> '1.5.2',
+			'force_activation' 	=> true,
+		),
+		
+		array(
+			'name' 		=> 'WPBakery Visual Composer',
+			'slug' 		=> 'js_composer',
+			'required' 	=> true,
+			'version' 	=> '3.6.14.1',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/js_composer.zip'
+		),
+		
+		array(
+			'name' 		=> 'WYSIWYG Widgets',
+			'slug' 		=> 'wysiwyg-widgets',
+			'required' 	=> true,
+			'version' 	=> '2.3.1',
+			'force_activation' 	=> true,
 		),
 
 	);
@@ -396,15 +439,7 @@ function apparition_tekserve_register_required_plugins() {
 
 }
 
-//														//tbm
-add_filter('upload_mimes', 'my_upload_mimes');
- 
-function my_upload_mimes($mimes = array()) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-}
 // add_editor_style( 'style.css' );					//editor style tba p2; current default is effective for non-visual tinymce
-
 
 /** Move labels to top of fields in comment form */
 add_filter('genesis_comment_form_args','custom_email_note'); //
@@ -444,46 +479,75 @@ $args = array(
 //magicNav has been deprecated.
 
 //This (updater) is deprecated for launch, remains for data cleanup project
-
+/** Register Custom Taxonomy for content update assignments */
 if ( ! function_exists('updater') ) {
-
-// Register Custom Taxonomy for content update assignments
-function updater()  {
-
-	$labels = array(
-		'name'                       => 'Updaters',
-		'singular_name'              => 'Updater',
-		'menu_name'                  => 'Updater',
-		'all_items'                  => 'All Updaters',
-		'parent_item'                => 'Parent Updater',
-		'parent_item_colon'          => 'Parent Updater:',
-		'new_item_name'              => 'New Updater Name',
-		'add_new_item'               => 'Add New Updater',
-		'edit_item'                  => 'Edit Updater',
-		'update_item'                => 'Update Updater',
-		'separate_items_with_commas' => 'Separate Updaters with commas',
-		'search_items'               => 'Search Updaters',
-		'add_or_remove_items'        => 'Add or remove Updaters',
-		'choose_from_most_used'      => 'Choose from existing Updaters',
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => false,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => false,
-		'query_var'                  => 'updater',
-		'rewrite'                    => false,
-	);
-	register_taxonomy( 'updater', 'post', $args );
-
+	function updater()  {
+		$labels = array(
+			'name'                       => 'Updaters',
+			'singular_name'              => 'Updater',
+			'menu_name'                  => 'Updater',
+			'all_items'                  => 'All Updaters',
+			'parent_item'                => 'Parent Updater',
+			'parent_item_colon'          => 'Parent Updater:',
+			'new_item_name'              => 'New Updater Name',
+			'add_new_item'               => 'Add New Updater',
+			'edit_item'                  => 'Edit Updater',
+			'update_item'                => 'Update Updater',
+			'separate_items_with_commas' => 'Separate Updaters with commas',
+			'search_items'               => 'Search Updaters',
+			'add_or_remove_items'        => 'Add or remove Updaters',
+			'choose_from_most_used'      => 'Choose from existing Updaters',
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => false,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_tagcloud'              => false,
+			'query_var'                  => 'updater',
+			'rewrite'                    => false,
+		);
+		register_taxonomy( 'updater', 'post', $args );
 }
-
 // Hook into the 'init' action
 add_action( 'init', 'updater', 0 );
+}
 
+/** Customize the credits */
+add_filter( 'genesis_footer_creds_text', 'sp_footer_creds_text' );
+function sp_footer_creds_text() {
+	echo '<div class="creds">';
+	echo '<div class="leftcopy">';
+	echo '<a href="#terms">Terms of Use</a> | ';
+	echo '<a href="#privacy">Privacy Policy</a>';
+	echo '</div>';
+	echo '<div class="centercopy">';
+	echo 'Copyright &copy; ';
+	echo date('Y');
+	echo ' <a href="http://tekserve.com">Tekserve Corportation</a> All Rights Reserved';
+	echo '</div>';
+	echo '<div class="rightcopy">';
+	echo ' <a href="http://nytm.org/made">Dilligently Made in NYC</a>';
+	echo '</div>';
+	echo '</div>';
 }
 
 
+/** Widget area for special notices sitewide */
+// Register widget area
+genesis_register_sidebar( array(
+	'id'				=> 'below-header-banner',
+	'name'			=> __( 'Between Header and Nav' ),
+	'description'	=> __( 'A banner that shows up below the header; useful for sitewide notices.' ),
+) );
+// Add widget support for site. If widget not active, don't display
+function tekserve_below_header_banner_genesis() {
+		genesis_widget_area( 'below-header-banner', array(
+			'before' => '<div id="special-notice"><div class="wrap">',
+			'after' => '</div></div>',
+		) );
+ }
+ // Place widget
+add_action( 'genesis_after_header', 'tekserve_below_header_banner_genesis' );
