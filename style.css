@@ -1229,7 +1229,7 @@ div.gform_footer input.button {
 	margin: 0 30px 0px 5px;
 }
 
-.search-results .hentry a img, .archive .hfeed .hentry a img {
+.search-results .hentry a img, .archive .hfeed .hentry a img, .blog .hfeed .post a img {
 	height: 200px;
 	width: 200px;
 }
@@ -2481,6 +2481,10 @@ color: #f06c34 !important;
 .page-template-static_content-php .tekserve-single-post img {
 	float: left;
 	margin-right: 1em;
+}
+
+.page-template-static_content-php .lightblue .tekserve-single-post img {
+	outline-color: #004d72;
 }
 
 .page-template-static_content-php .orange .tekserve-single-post div,
