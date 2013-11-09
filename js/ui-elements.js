@@ -211,3 +211,4 @@ $j(".bgimage div img").each(function() {//takes bgimage class object src and mak
 });
 
 $j('.section').removeClass('vc_row-fluid');//removes vc_fluid badness from sections
+
