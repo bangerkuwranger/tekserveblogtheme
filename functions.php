@@ -326,7 +326,7 @@ array(
 		
 		array(
 			'name' 		=> 'Scalable Vector Graphics (SVG)',
-			'slug' 		=> 'scalable-vector-graphics',
+			'slug' 		=> 'scalable-vector-graphics-svg',
 			'required' 	=> true,
 			'version' 	=> '2.1.1',
 			'force_activation' 	=> true,
@@ -342,29 +342,26 @@ array(
 				
 		array(
 			'name' 		=> 'Tekserve Press Mentions',
-			'slug' 		=> 'tekservepressmentions',
+			'slug' 		=> 'tekserve-press-mentions',
 			'required' 	=> true,
 			'version' 	=> '1.1',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/tekservepressmentions.zip'
 		),
 		
 		array(
 			'name' 		=> 'Tekserve Single Post Shortcode',
-			'slug' 		=> 'tekserversinglepostshortcode',
+			'slug' 		=> 'tekserve-single-post-shortcode',
 			'required' 	=> true,
 			'version' 	=> '1.1',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/tekservesinglepostshortcode.zip'
 		),
 		
 		array(
 			'name' 		=> 'Tekserve Testimonials',
-			'slug' 		=> 'tekservetestimonials',
+			'slug' 		=> 'tekserve-testimonials',
 			'required' 	=> true,
 			'version' 	=> '1.0',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/tekservetestimonials.zip'
 		),
 		
 		array(
