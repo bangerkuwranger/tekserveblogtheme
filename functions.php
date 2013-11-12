@@ -382,6 +382,14 @@ array(
 		),
 		
 		array(
+			'name' 		=> 'Widgets on Pages',
+			'slug' 		=> 'widgets-on-pages',
+			'required' 	=> true,
+			'version' 	=> '0.0.12',
+			'force_activation' 	=> true,
+		),
+		
+		array(
 			'name' 		=> 'WPBakery Visual Composer',
 			'slug' 		=> 'js_composer',
 			'required' 	=> true,
