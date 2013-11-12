@@ -217,3 +217,8 @@ $j('.sortable th').each(function() {  //removes slug ugliness from sorttable col
 
 //add class to quotation sections to adjust margins
 $j('.tekserve-testimonial').parents('.section').addClass('testimonial');
+
+//remove bottom padding from footer folk
+$j('.footer-folk').parents('.wpb_wrapper').css('padding-bottom', '0');
+
+$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
