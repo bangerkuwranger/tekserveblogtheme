@@ -58,7 +58,7 @@
 * StortTable Post
 * MagicNav (deprecated)
 * nRelate Related Articles
-* Sidebar
+* Sidebar / Front Page Widgets
 * Calendar & Events
 * Repair Status
 * Revolution Slider
@@ -2740,7 +2740,7 @@ table.sortable td a {
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 }
 
-/* Sidebar
+/* Sidebar / Front Page Widgets
 ------------------------------------------------------------ */
 
 #emma-widget-2 {
@@ -2798,31 +2798,32 @@ ul#emma-form-elements li.emma-form-row {
 }
 
 
-#wpp-2, #rfb_widget-2, #atfi_widget-2, #categories-2, #ace-categories {
+#wpp-2, #rfb_widget-2, #atfi_widget-2, #categories-2, #ace-categories, #categories-4, #pippin_simple_authors_widget-2, #archives-4 {
 	background-color: #f36f37;
 	border-radius: 24px;
 	padding: 24px;
 	margin-bottom: 1em;
 }
 
-#wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4 {
+#wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4, #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
 	color: white;
 	text-transform: uppercase;
 	font-size: 24px;
 	font-weight: 900;
 }
 
-.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li {
+.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li {
 	list-style: none;
 	margin-bottom: 1em;
+	text-indent: 0px;
 }
 
-.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited {
+.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited {
 	color: white !important;
 	font-size: 18px;
 }
 
-.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover {
+.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover, #categories-4 ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover {
 	color: #004d72 !important;
 }
 
@@ -2837,6 +2838,51 @@ ul#emma-form-elements li.emma-form-row {
 #rfb_widget-2 .rfbp-timestamp:hover, #rfb_widget-2 .rfbp-page-link-wrap a.rfbp-page-link:hover, #atfi_widget-2 ul li a:hover {
 	color: #fff !important;
 	text-decoration: none;
+}
+
+#Front_Page ul {
+	margin: 0 auto;
+	width: 70%;
+	max-width: 1200px;
+	min-width: 1024px;
+}
+
+.widgets_on_page ul {
+	display: table;
+}
+
+#categories-4, #pippin_simple_authors_widget-2, #archives-4 {
+	margin: 0 10px; 1em;
+	float: left;
+	display: table-cell;
+	min-width: 280px;
+	max-width: 25%;
+	max-height: 660px;
+}
+
+#categories-4 ul, #pippin_simple_authors_widget-2 ul, #archives-4 ul {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+ #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
+	font-size: 1.1em;
+	text-align: center;
+	padding-left: .5em;
+}
+
+#categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li {
+	margin: 0;
+	width: 100%;
+}
+
+#categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited {
+	font-weight: normal;
+}
+
+#categories-4 ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover {
+	font-weight: normal;
 }
 
 /* Calendar & Events
@@ -3252,32 +3298,32 @@ button.positive:hover {
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size14 {
-	font-size: 14px !important; 
+	font-size: 14px; 
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size28 {
-	font-size: 28px !important;
+	font-size: 28px;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size36 {
-	font-size: 36px !important;
+	font-size: 36px;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size48 {
-	font-size: 48px !important;
+	font-size: 48px;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size60 {
-	font-size: 60px !important;
+	font-size: 60px;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size72 {
-	font-size: 72px !important;
+	font-size: 72px;
 	line-height: 1.1em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size96 {
-	font-size: 96px !important;
+	font-size: 96px;
 	line-height: 1.1em;
 }
 
@@ -3407,7 +3453,7 @@ button.positive:hover {
 		width: 100%;
 	}
 	
-	#footer .gototop {
+	#footer .creds div.rightcopy {
 		padding-bottom: 3em;
 	}
 
@@ -3506,6 +3552,38 @@ button.positive:hover {
 	
 	ul.menu.genesis-nav-menu.menu-primary {
 		width: 100%;
+	}
+	
+	#categories-4, #pippin_simple_authors_widget-2, #archives-4 {
+		width: 100%;
+		margin: 0 auto 1em;
+		float: left;
+		padding: 24px 0;
+		display: block;
+		max-width: 100%;
+	}
+
+	#categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	#categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li {
+		margin: 0;
+		display: block;
+		text-align: center;
+	}
+	
+	#footer-widgets #emma-form input[type="submit"] {
+		margin-bottom: 2em;
+	}
+	
+	#Front_Page.widgets_on_page ul {
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
 	}
 	
 }
@@ -3724,7 +3802,7 @@ button.positive:hover {
 	ul.menu.genesis-nav-menu.menu-primary,
 	.menu-primary {
 		width: 320px;
-		padding: 5px 0;
+		padding: 5px 0 0;
 		min-height: 1.1em;
 /* 		border: solid 1px #aaa; */
 		background: #f36f37 url(images/navmenumobile@2x.png) no-repeat 10px 7px;
@@ -3752,14 +3830,15 @@ button.positive:hover {
 	}
 
 	/* on nav hover */
+	ul.menu.genesis-nav-menu.menu-primary:hover,
 	.menu-primary:hover {
 		background-image: none;
-		padding-top: 28px;
+		padding-top: 28px !important;
 		padding-left: 28px;
 	}
 	.menu-primary:hover li {
 		display: block;
-		margin: 0 0 5px;
+		margin: 0 0 5px 1em;
 		border: none;
 	}
 	.menu-primary:hover .current {
@@ -3868,6 +3947,17 @@ button.positive:hover {
 
 	button.positive {
 		font-size: 1.25em;
+	}
+	
+	.vc_responsive div.vc_row-fluid div[class*="vc_span"] {
+		float: none;
+		display: block;
+		width: 100% !important;
+		margin-left: 0;
+	}
+	
+	#categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
+		font-size: 1em;
 	}
 
 }
