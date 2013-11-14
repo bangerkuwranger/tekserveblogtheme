@@ -1,17 +1,16 @@
 $j = jQuery; //noconflict
 function blogSectionHeight() {// sets height for blog front page sections to height of row
-	var rowHeight;
-	var wrapperHeight;
-	$j('.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column').each(function() {
-		$j(this).css('min-height', 0);
-		rowHeight = $j(this).parents('.vc_row-fluid.wpb_row').css('height');
-		wrapperHeight = $j(this).children('.wpb_wrapper').css('height');
-// 		console.log(rowHeight+' '+wrapperHeight);
-// 		if(parseInt(rowHeight)>parseInt(wrapperHeight)){
-// 			$j(this).css('height', wrapperHeight);
-// 		}
-		if(parseInt(rowHeight)<1000){
-			$j(this).css('min-height', rowHeight);
+	var leftHeight;
+	var rightHeight;
+	$j('.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid').each(function() {
+		$j(this).children('.wpb_column').css('min-height', 0);
+		leftHeight = $j(this).children('.leftstory').height();
+		rightHeight = $j(this).children('.rightstory').height();
+		if(leftHeight < rightHeight) {
+ 			$j(this).children('.leftstory').css('min-height', rightHeight);
+		}
+		else {
+			$j(this).children('.rightstory').css('min-height', leftHeight+'px');
 		}
 	});
 }

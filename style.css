@@ -1180,6 +1180,7 @@ input:hover[type="submit"],
 	background-color: #40a8c9;
 	border: none;
 	text-decoration: none;
+	color:#fff;
 }
 
 div.gform_footer input.button {
@@ -2536,6 +2537,14 @@ color: #f06c34 !important;
 	margin-top: 0;
 }
 
+.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .leftstory .wpb_wrapper {
+	padding: 2em 2em 2em 16em;
+}
+
+.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
+	padding: 2em 16em 2em 2em;
+}
+
 /* Testimonials
 ------------------------------------------------------------ */
 
@@ -2822,32 +2831,32 @@ ul#emma-form-elements li.emma-form-row {
 }
 
 
-#wpp-2, #rfb_widget-2, #atfi_widget-2, #categories-2, #ace-categories, #categories-4, #pippin_simple_authors_widget-2, #archives-4 {
+#wpp-2, #rfb_widget-2, #atfi_widget-2, #categories-2, #ace-categories, #categories-4, #pippin_simple_authors_widget-2, #archives-4, .widget_categories {
 	background-color: #f36f37;
 	border-radius: 24px;
 	padding: 24px;
 	margin-bottom: 1em;
 }
 
-#wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4, #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
+#wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4, #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2, .widget_categories h4 {
 	color: white;
 	text-transform: uppercase;
 	font-size: 24px;
 	font-weight: 900;
 }
 
-.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li {
+.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, .widget_categories ul li {
 	list-style: none;
 	margin-bottom: 1em;
 	text-indent: 0px;
 }
 
-.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited {
+.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, .widget_categories ul li a, .widget_categories ul li a:visited {
 	color: white !important;
 	font-size: 18px;
 }
 
-.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover, #categories-4 ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover {
+.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover, #categories-4 ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover, .widget_categories ul li a:hover {
 	color: #004d72 !important;
 }
 
@@ -2881,7 +2890,7 @@ ul#emma-form-elements li.emma-form-row {
 	display: table-cell;
 	min-width: 280px;
 	max-width: 25%;
-	max-height: 660px;
+	max-height: 764px;
 }
 
 #categories-4 ul, #pippin_simple_authors_widget-2 ul, #archives-4 ul {
@@ -3380,6 +3389,18 @@ button.positive:hover {
 	bottom: 0;
 }
 
+.rev_slider_wrapper .rev_slider .leftjustify {
+text-align: left;
+}
+
+.rev_slider_wrapper .rev_slider .rightjustify {
+text-align: right;
+}
+
+.rev_slider_wrapper .rev_slider .centerjustify {
+text-align: center;
+}
+
         
 /* Responsive Design
 ------------------------------------------------------------ */
@@ -3420,6 +3441,14 @@ button.positive:hover {
 	
 	.nrelate_default.nr_150 a.nr_panel {
 		margin-right: 4% !important;
+	}
+	
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .leftstory .wpb_wrapper {
+		padding: 2em;
+	}
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
+		padding: 2em;
 	}
 	
 }
@@ -3556,7 +3585,7 @@ button.positive:hover {
 	}
 	
 	.section p, .section h1, .section .button, .section .drawer .collapseomatic {
-		font-size: .8em;
+/* 		font-size: .8em; */
 	}
 	
 	.nrelate_default .nr_col_1.nr_panel, .nrelate_default .nr_col_2.nr_panel {
@@ -3610,6 +3639,55 @@ button.positive:hover {
 		min-width: 100%;
 	}
 	
+	.section [class*="vc_span"] {
+		display: block;
+		width: 100% !important;
+		min-height: 5px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		margin-left: 2.5%;
+	}
+	
+	div.gform_wrapper .gform_footer, div.gform_wrapper .gfield, div.gform_wrapper input, div.gform_wrapper select, div.gform_wrapper textarea {
+		width: 100%;
+	}
+	
+	.page-template-static_content-php  .wpb_text_column.wpb_content_element.leftofform .wpb_wrapper {
+		max-width: 300px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.page-template-static_content-php  .wpb_text_column.wpb_content_element img {
+		-moz-border-radius: 0 !important;
+		-webkit-border-radius: 0 !important;
+		border-radius: 0 !important;
+	}
+	
+	div.gform_wrapper .gform_footer input {
+		float: right;
+		width: auto;
+	}
+
+	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
+		background-color: rgba(0,0,0,.3);
+		padding: 1em;
+		width: 100%;
+	}
+	
+	.page-template-static_content-php div.wpb_text_column.wpb_content_element.leftofform {
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	
+	.bgimage {
+		display:none;
+	}
+	
 }
 
 @media (max-width:1024px) and (min-width:768px) {
@@ -3631,15 +3709,21 @@ button.positive:hover {
 
 @media only screen and (max-width: 768px) {
 
+	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
+		width: 125%;
+	}
+
 	.apparition-landing #inner,
 	#inner {
 		padding: 30px 0;
 	}
+	
 	.single h1.entry-title,
 	h1,
 	h2,
 	h2 a,
-	h2 a:visited {
+	h2 a:visited,
+	h2 a:hover {
 		clear: both;
 		font-size: 2em;
 	}
@@ -3650,9 +3734,6 @@ button.positive:hover {
 		display: block;
 		float: none;
 		margin: 0 auto 30px;
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
 	}
 
 	.archive-page,
@@ -3746,12 +3827,7 @@ button.positive:hover {
 	.tekserve-testimonial .tekserve-testimonial-source {
 		font-size: 18px;
 	}
-	
-	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
-		background-color: rgba(0,0,0,.3);
-		padding: 1em;
-		width: 125%;
-	}
+
 	
 }
 
@@ -3794,7 +3870,7 @@ button.positive:hover {
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
 
 	#title {
 		font-size: 36px;
@@ -3809,7 +3885,8 @@ button.positive:hover {
 	h1,
 	h2,
 	h2 a,
-	h2 a:visited {
+	h2 a:visited,
+	h2 a:hover {
 		font-size: 30px;
 	}
 
@@ -3914,11 +3991,13 @@ button.positive:hover {
 	list-style: none;
 	margin-top: 30px;
 	}
+	
 	#nav .wrap {
 	position: relative;
 	background-color: #004d72;
 	box-shadow: 0 1px 2px rgba(0,0,0,.3);
 	}
+	
 	#nav .closeButton {
 	z-index: 1000;
 	height: 54px;
@@ -3933,9 +4012,11 @@ button.positive:hover {
 	right: 0px;
 	display: none;
 	}
+	
 	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
 	width: 250px !important;
 	}
+	
 	.footer-widgets-2,
 	.footer-widgets-3,
 	.footer-widgets-4 {
@@ -3944,6 +4025,26 @@ button.positive:hover {
 		padding: 0;
 	}
 	
+	.vc_responsive div.vc_row-fluid div[class*="vc_span"] {
+		float: none;
+		display: block;
+		width: 100% !important;
+		margin-left: 0;
+		min-height: 0 !important;
+	}
+	
+	.section [class*="vc_span"] {
+		display: block;
+		width: 100% !important;
+		min-height: 5px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		margin-left: 2.5%;
+/* 		max-height: 480px !important; */
+	}
 }
 
 @media only screen and (max-width: 500px) {
@@ -3977,25 +4078,6 @@ button.positive:hover {
 
 	button.positive {
 		font-size: 1.25em;
-	}
-	
-	.vc_responsive div.vc_row-fluid div[class*="vc_span"] {
-		float: none;
-		display: block;
-		width: 100% !important;
-		margin-left: 0;
-	}
-	.section [class*="vc_span"] {
-		display: block;
-		width: 100% !important;
-		min-height: 5px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-		float: left;
-		margin-left: 2.5%;
-		max-height: 480px !important;
 	}
 	
 	#categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {

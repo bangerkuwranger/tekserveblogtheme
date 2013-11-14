@@ -298,14 +298,6 @@ array(
 			'version' 	=> '1.7.11',
 			'force_activation' 	=> true,
 		),
-				
-		array(
-			'name' 		=> 'Post Content Shortcodes',
-			'slug' 		=> 'post-content-shortcodes',
-			'required' 	=> true,
-			'version' 	=> '0.3.4.1',
-			'force_activation' 	=> true,
-		),
 		
 		array(
 			'name' 		=> 'Relevanissi',
