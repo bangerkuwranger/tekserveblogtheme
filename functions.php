@@ -293,7 +293,7 @@ array(
 				
 		array(
 			'name' 		=> 'Gravity Forms',
-			'slug' 		=> 'gravity-forms',
+			'slug' 		=> 'gravityforms',
 			'required' 	=> true,
 			'version' 	=> '1.7.11',
 			'force_activation' 	=> true,
