@@ -293,10 +293,11 @@ array(
 				
 		array(
 			'name' 		=> 'Gravity Forms',
-			'slug' 		=> 'gravityforms',
+			'slug' 		=> 'gravity-forms',
 			'required' 	=> true,
 			'version' 	=> '1.7.11',
 			'force_activation' 	=> true,
+			'source'	=> get_stylesheet_directory() . '/lib/gravityforms_1.7.12.zip'
 		),
 		
 		array(

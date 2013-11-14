@@ -1982,7 +1982,7 @@ color: #f06c34 !important;
 }
 
 .apparition-lightblue a,
-.apparition-lightblue .post-meta a,
+.apparition-lightblue .post-meta a
 {
 	color: #f36f37;
 }
@@ -2885,7 +2885,7 @@ ul#emma-form-elements li.emma-form-row {
 }
 
 #categories-4, #pippin_simple_authors_widget-2, #archives-4 {
-	margin: 0 10px; 1em;
+	margin: 0 10px;
 	float: left;
 	display: table-cell;
 	min-width: 280px;
@@ -4045,6 +4045,20 @@ text-align: center;
 		margin-left: 2.5%;
 /* 		max-height: 480px !important; */
 	}
+	
+	.page-template-static_content-php .tekserve-single-post img,
+	.page-template-static_content-php .tekserve-single-post #tekserve-single-post-excerpt,
+	#categories-4 ul li,
+	#pippin_simple_authors_widget-2 ul li,
+	#archives-4 ul li {
+		display: none;
+	}
+	#categories-4 h2,
+	#pippin_simple_authors_widget-2 h2,
+	#archives-4 h2 {
+		cursor: pointer;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
@@ -4082,6 +4096,14 @@ text-align: center;
 	
 	#categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2 {
 		font-size: 1em;
+	}
+	
+	#categories-4, #pippin_simple_authors_widget-2, #archives-4 {
+		margin: 0 1em 1em -12px;
+	}
+	
+	.max450 {
+		max-height: 5000px;
 	}
 
 }

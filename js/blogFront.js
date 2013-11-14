@@ -16,6 +16,16 @@ function blogSectionHeight() {// sets height for blog front page sections to hei
 }
 $j('document').ready(function() { //call on load
 	blogSectionHeight();
+	//toggle orange box headers
+	$j( ".page-template-static_content-php #categories-4 h2" ).click(function() {
+		$j('#categories-4 ul li').slideToggle();
+	});
+	$j( ".page-template-static_content-php .widget_pippin_simple_authors_widget h2" ).click(function() {
+		$j('.widget_pippin_simple_authors_widget ul li').slideToggle();
+	});
+	$j( ".page-template-static_content-php .widget_archive h2" ).click(function() {
+		$j('.widget_archive ul li').slideToggle();
+	});
 });
 
 $j(window).resize(function() { //call on window resize
@@ -23,3 +33,6 @@ $j(window).resize(function() { //call on window resize
 });
 
 ////////oh but why can i not make you smaller again! alice will never fit through the doorway now, the white rabbit is lost forever...
+
+
+
