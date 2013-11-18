@@ -748,11 +748,6 @@ font-size: 36px;
 font-weight: 900;
 list-style-position: inside;
 }
-.htwoList p, .hthreeList p, .hfourList p {
-font-size: 16px;
-font-weight: normal;
-text-indent: 0;
-}
 
 .single h1 {
 	text-align: center;
@@ -785,6 +780,12 @@ h5,
 h6,
 .taxonomy-description h1 {
 	font-size: 12px;
+}
+
+.htwoList p, .hthreeList p, .hfourList p, .htwoList ul li, .hthreeList ul li, .hfourList ul li, .htwoList ol li, .hthreeList ol li, .hfourList ol li {
+	font-size: 16px;
+	font-weight: normal;
+	text-indent: 0;
 }
 
 
@@ -832,7 +833,17 @@ h6,
 	width: 90%
 }
 
+.entry-content li.htwoList {
+	margin-bottom: 36px;
+}
 
+.entry-content li.hthreeList {
+	margin-bottom: 24px;
+}
+
+.entry-content li.hfourList {
+	margin-bottom: 20px;
+}
 
 
 /* Post Info / Post Meta
@@ -1090,13 +1101,22 @@ p.wp-caption-text {
 	border: none;
 	float: none;
 }
-div a img, div p img {
+div a img,
+div p img,
+div h2 img,
+div h3 img,
+div h4 img,
+div div img {
 outline-color: #40a8c9;
 outline-offset: 0px;
 outline-width: 2px;
 outline-style: solid;
 }
-.bx-wrapper div.limargin a img, .section .twoUp img {
+.bx-wrapper div.limargin a img, 
+.section .twoUp img,
+.wpb_content_element div.tp-caption img,
+.wpb_content_element div img,
+div .footer-folk img {
 outline: none;
 }
 
@@ -2890,7 +2910,7 @@ ul#emma-form-elements li.emma-form-row {
 	display: table-cell;
 	min-width: 280px;
 	max-width: 25%;
-	max-height: 764px;
+	max-height: 420px;
 }
 
 #categories-4 ul, #pippin_simple_authors_widget-2 ul, #archives-4 ul {
