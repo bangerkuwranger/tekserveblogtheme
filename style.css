@@ -2755,7 +2755,7 @@ table.sortable td a {
 	padding: 0 !important;
 }
 
-.nrelate_default .nr_col_1.nr_panel, .nrelate_default .nr_col_2.nr_panel {
+.nrelate_default a.nr_panel {
 	margin-right: 14% !important;
 }
 
@@ -4102,6 +4102,12 @@ text-align: center;
 	#pippin_simple_authors_widget-2 h2,
 	#archives-4 h2 {
 		cursor: pointer;
+	}
+	
+	.nrelate_default a.nr_panel {
+		margin: 0 auto 25px !important;
+		width: 100% !important;
+		min-height: 0px !important;
 	}
 	
 }
