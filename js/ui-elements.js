@@ -25,16 +25,7 @@ function getContrast() { // set contrasting color based on background color
 		contrastColor = 'rgb(64, 168, 201)';
 	}
 }
-$j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
-	wrapperbgcolor = $j(this).css('background-color');
-	$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');//creates full width wrapper element with correct background color
-	wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
-// 	$j('.left', this).css('background-color', wrapperbgcolor);
-// 	$j('.right', this).css('background-color', wrapperbgcolor);
-// 	console.log($j(this).children('.wpb_text_column'));// .css('background-color', wrapperbgcolor);
-// 	$j('.collapseomatic_content', this).css('background-color', wrapperbgcolor);
-	
-});
+
 
 function mobileMeta() {
 	$j('head').append('<meta id="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes">');
@@ -51,7 +42,7 @@ function moveSearchBack () {  //moves search back into nav node; called on windo
 	$j('.right.search').insertAfter('#nav div ul li:last-child');
 }
 
-function MobileCloseButton() {
+function mobileCloseButton() {
 
 		$j('#nav .wrap .closeButton').toggle();
 }
@@ -73,57 +64,11 @@ function stretchSection() {  //function is called on load and on window resize; 
 	if (viewWidth <= 960) {
 		$j('.bgwrapper').css('padding','0 10%');
 		$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
-// 			$j(".section").each(function() { //loops through each section, changing image into background as window shrinks.
-// 				console.log($j(this).attr('id'));
-// 				var sectionid = $j(this).attr('id');
-// 				var bgimgsrc = $j('#'+sectionid+' .left-full').attr('src');
-// 				if(bgimgsrc) {
-// 					$j('.left-full').css('display','none');
-// 					$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
-// 					$j(this).css('background-position','bottom left');
-// 					$j(this).css('background-repeat','no-repeat');
-// 					$j(this).css('background-size','contain');
-// 				}
-// 				else {
-// 					var bgimgsrc = $j('#'+sectionid+' .right-full').attr('src');
-// 					if (bgimgsrc) {
-// 						$j('.right-full').css('display','none');
-// 						$j("#"+sectionid).css('background-image','url("'+bgimgsrc+'")');
-// 						$j("#"+sectionid).css('background-position','bottom right');
-// 						$j("#"+sectionid).css('background-repeat','no-repeat');
-// 						$j("#"+sectionid).css('background-size','contain');
-// 					}
-// 				}	
-// 			});
 	}
 	else {
 		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
 		$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
-// 		$j(".section").each(function() { //loops through each section, removing background image and showing image as window grows.
-// 			var bgimgsrc = $j('.left-full').attr('src');
-// 			if (bgimgsrc) {
-// 				$j('.left-full').css('display','block');
-// 				$j(this).css('background-image','none');
-// 			}
-// 			else {
-// 				var bgimgsrc = $j('.right-full').attr('src');
-// 				if (bgimgsrc) {
-// 					$j('.right-full').css('display','block');
-// 					$j(this).css('background-image','none');
-// 				}
-// 			}	
-// 		});
 	}
-}
-
-$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
-stretchSection(); //call on load
-var clientWidth = document.documentElement.clientWidth;
-if(clientWidth < 600){
-	moveSearchMobile(); //call on load if window size < 600
-}
-if(clientWidth < 1025){
-	mobileMeta(); //call on load if window size < 1025
 }
 
 $j(window).resize(function() { //call on window resize
@@ -143,16 +88,6 @@ $j(window).resize(function() { //call on window resize
 	}
 });
 
-$j('#nav .wrap ul').hover(
-	function() {
-	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
-// 		MobileCloseButton();
-	},
-	function() {
-		$j('#nav .wrap .closeButton').remove();
-	}
-);
-
 function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
     if ($j(window).scrollTop() > $jdiv.data("top")) { 
@@ -163,62 +98,102 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
     }
 }
 
-$j("#nav").data("top", $j("#nav").offset().top); // set original position on load
-$j(window).scroll(fixDiv);
-var viewWidth = $j(window).width();
 
-var downid;
-$j( ".drawertrigger" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
-  downid = $j(this).attr('targetid');
-  $j('#target-'+downid).toggleClass('drawerDown');
-  $j('#target-'+downid).parents('.dsection').toggle();
+
+$j('document').ready(function() { //call on load
+
+	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
+	$j('.dsection').addClass('thinMan');
+	
+	$j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
+		wrapperbgcolor = $j(this).css('background-color');
+		$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');//creates full width wrapper element with correct background color
+		wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
+	});
+	
+	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
+	
+	stretchSection(); //call on load
+	
+	var clientWidth = document.documentElement.clientWidth;
+	if(clientWidth < 600){
+		moveSearchMobile(); //call on load if window size < 600
+	}
+	if(clientWidth < 1025){
+		mobileMeta(); //call on load if window size < 1025
+	}
+	
+	$j('#nav .wrap ul').hover(
+		function() {
+		$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
+	// 		mobileCloseButton();
+		},
+		function() {
+			$j('#nav .wrap .closeButton').remove();
+		}
+	);
+	
+	$j("#nav").data("top", $j("#nav").offset().top); // set nav original position on load
+	$j(window).scroll(fixDiv);
+	var viewWidth = $j(window).width();
+
+	var downid;
+	$j( ".drawertrigger" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
+		downid = $j(this).attr('name');
+	    setTimeout(function()
+		{
+			$j('#target-'+downid).toggleClass('drawerDown');
+			$j('#target-'+downid).parents('.dsection').toggleClass("thinMan");
+			$j('#target-'+downid).parents('.wpb_wrapper, .wpb_column').toggleClass('thinMan');
+		}, 400);
+	});
+
+	$j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page
+
+	//fix ol, ul sizes followed by headers
+	$j('h2').parent('li').addClass('htwoList');
+	$j('h3').parent('li').addClass('hthreeList');
+	$j('h4').parent('li').addClass('hfourList');
+
+	var bgimgsrc;
+	var objectparentsection;
+	var objectparentcolumn;
+	// var opptxtheight;
+	$j(".bgimage div img").each(function() {//takes bgimage class object src and makes it the bgimage of parent .section.vc_row
+		bgimgsrc = $j(this).attr('src');
+		objectparentsection = $j(this).parents('.section');
+		objectparentcolumn = $j(this).parents('.wpb_column');
+		$j(objectparentsection).css('background-image', 'url('+bgimgsrc+')');
+		if($j(objectparentcolumn).is('div:first-child')){
+			$j(objectparentsection).css('background-position', 'bottom left');
+		}
+		else {
+			$j(objectparentsection).css('background-position', 'bottom right');
+		}
+		$j(this).css('visibility', 'hidden');
+		opptxtheight = $j(objectparentsection).css('height');
+		if(opptxtheight == undefined) {
+			$j(this).css('height', '0');
+		}
+		else {
+			$j(this).css('height', opptxtheight);
+		}
+	});
+
+	$j('.section').removeClass('vc_row-fluid');  //removes vc_fluid badness from sections
+
+	var slugtext;
+	$j('.sortable th').each(function() {  //removes slug ugliness from sorttable columns
+		slugtext = $j(this).text();
+		slugtext = slugtext.replace( 'tekserve_press_', '' );
+		$j(this).text(slugtext);
+	});
+
+	//add class to quotation sections to adjust margins
+	$j('.tekserve-testimonial').parents('.section').addClass('testimonial');
+
+	//remove bottom padding from footer folk
+	$j('.footer-folk').parents('.wpb_wrapper').css('padding-bottom', '0');
+
+	$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
 });
-
-$j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page
-
-//fix ol, ul sizes followed by headers
-$j('h2').parent('li').addClass('htwoList');
-$j('h3').parent('li').addClass('hthreeList');
-$j('h4').parent('li').addClass('hfourList');
-
-var bgimgsrc;
-var objectparentsection;
-var objectparentcolumn;
-// var opptxtheight;
-$j(".bgimage div img").each(function() {//takes bgimage class object src and makes it the bgimage of parent .section.vc_row
-	bgimgsrc = $j(this).attr('src');
-	objectparentsection = $j(this).parents('.section');
-	objectparentcolumn = $j(this).parents('.wpb_column');
-	$j(objectparentsection).css('background-image', 'url('+bgimgsrc+')');
-	if($j(objectparentcolumn).is('div:first-child')){
-		$j(objectparentsection).css('background-position', 'bottom left');
-	}
-	else {
-		$j(objectparentsection).css('background-position', 'bottom right');
-	}
-	$j(this).css('visibility', 'hidden');
-	opptxtheight = $j(objectparentsection).css('height');
-	if(opptxtheight == undefined) {
-		$j(this).css('height', '0');
-	}
-	else {
-		$j(this).css('height', opptxtheight);
-	}
-});
-
-$j('.section').removeClass('vc_row-fluid');  //removes vc_fluid badness from sections
-
-var slugtext;
-$j('.sortable th').each(function() {  //removes slug ugliness from sorttable columns
-	slugtext = $j(this).text();
-	slugtext = slugtext.replace( 'tekserve_press_', '' );
-	$j(this).text(slugtext);
-});
-
-//add class to quotation sections to adjust margins
-$j('.tekserve-testimonial').parents('.section').addClass('testimonial');
-
-//remove bottom padding from footer folk
-$j('.footer-folk').parents('.wpb_wrapper').css('padding-bottom', '0');
-
-$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
