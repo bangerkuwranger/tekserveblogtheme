@@ -143,8 +143,8 @@ $j('document').ready(function() { //call on load
 	    setTimeout(function()
 		{
 			$j('#target-'+downid).toggleClass('drawerDown');
-			$j('#target-'+downid).parents('.dsection').toggleClass("thinMan");
-			$j('#target-'+downid).parents('.wpb_wrapper, .wpb_column').toggleClass('thinMan');
+// 			$j('#target-'+downid).parents('.dsection').toggleClass("thinMan");
+// 			$j('#target-'+downid).parents('.wpb_wrapper, .wpb_column').toggleClass('thinMan');
 		}, 400);
 	});
 

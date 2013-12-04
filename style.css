@@ -43,6 +43,7 @@
 * Latest Tweets
 * Footer
 * Comments
+* Responsive Table
 * Gravity Forms
 * Apparition Green
 * Apparition Orange
@@ -193,13 +194,7 @@ table {
 	width: 100%;
 }
 
-table thead tr {
-	background-color: #004d72;
-	color: #fff;
-}
-
 table td, table th {
-	min-width: 10%;
 	padding: 1em;
 	text-align: left;
 }
@@ -1125,7 +1120,7 @@ div p img,
 div h2 img,
 div h3 img,
 div h4 img,
-div div img {
+/* div div img */ {
 outline-color: #40a8c9;
 outline-offset: 0px;
 outline-width: 2px;
@@ -1147,14 +1142,33 @@ outline: none;
 	width: 100%;
 }
 
-.navigation li {
+.navigation li,
+tfoot .pagination ul li {
 	display: inline;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 18px;
+	height: auto;
+	line-height: 27px;
+	list-style-type: none;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	text-align: left;
+	width: auto;
 }
 
 .navigation li a,
 .navigation li.disabled,
 .navigation li a:hover,
-.navigation li.active a {
+.navigation li.active a,
+tfoot .pagination ul li.active a,
+tfoot .pagination ul li a,
+tfoot .pagination ul li a:hover {
 	background-color: #004d72;
 	color: #fff;
 	cursor: pointer;
@@ -1162,10 +1176,13 @@ outline: none;
 	padding: 10px;
 	text-decoration: none;
 	font-weight: bold;
+	margin: 0 5px;
 }
 
 .navigation li a:hover,
-.navigation li.active a {
+.navigation li.active a,
+tfoot .pagination ul li.active a,
+tfoot .pagination ul li a:hover {
 	background-color: #f36f37;
 }
 #nav .closeButton {
@@ -1601,6 +1618,62 @@ label {
 	font-size: 24px;
 }
 
+/* Responsive Table
+------------------------------------------------------------ */
+
+table.responsivetable {
+	border-collapse: separate;
+	border-spacing: 0;
+	border: 1px solid #f36f37;
+	border-top: none;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #004d72;
+	background: #fff;
+}
+
+table.responsivetable>thead>tr>th,
+table.responsivetable>thead>tr>td {
+	background-color: #004d72;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+	border-top: 0;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	color: white;
+	font-weight: bold;
+}
+
+table.footable.breakpoint>tbody>tr>td>span.footable-toggle {
+	display: inline-block;
+	font-family: 'fontawesome' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	padding-right: 5px;
+	font-size: 36px;
+	color: #f36f37 !important;
+	vertical-align: middle;
+}
+
+table.footable.breakpoint>tbody>tr>td>span.footable-toggle:before {
+	content: "";
+}
+
+table.footable.breakpoint>tbody>tr.footable-detail-show>td>span.footable-toggle:before {
+	content: "";
+}
+
+table.footable.breakpoint>tbody>tr.footable-detail-show>td.footable-last-column.footable-first-column {
+	font-weight: bold;
+	font-size: 1.5em;
+}
 
 /* Gravity Forms
 ------------------------------------------------------------ */
@@ -2742,6 +2815,11 @@ table.sortable td a {
 	margin-bottom: 32px;
 }
 
+.wpb_row .nr_popular_placeholder {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
 .nrelate_default .nr_title span {
 	color: #f36f37;
 	text-transform: uppercase;
@@ -2965,6 +3043,13 @@ ul#emma-form-elements li.emma-form-row {
 
 /* Calendar & Events
 ------------------------------------------------------------ */
+
+body.events-single #wrap div.inner,
+body.events-archive #wrap div.inner {
+	background-image: url(./random-image/rotate.php);
+	background-position: bottom right;
+	background-size: contain;
+}
 
 div.tribe-events-content img {
 	outline: none;
