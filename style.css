@@ -3044,11 +3044,20 @@ ul#emma-form-elements li.emma-form-row {
 /* Calendar & Events
 ------------------------------------------------------------ */
 
-body.events-single #wrap div.inner,
-body.events-archive #wrap div.inner {
+body.events-single #wrap div#inner,
+body.events-archive #wrap div#inner {
 	background-image: url(./random-image/rotate.php);
 	background-position: bottom right;
 	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+body.events-list #wrap div#inner {
+	background-size: 50%;
+}
+
+#tribe-events {
+	background-color: rgba(255,255,255,.75);
 }
 
 div.tribe-events-content img {
