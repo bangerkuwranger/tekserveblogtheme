@@ -1119,8 +1119,7 @@ div a img,
 div p img,
 div h2 img,
 div h3 img,
-div h4 img,
-/* div div img */ {
+div h4 img {
 outline-color: #40a8c9;
 outline-offset: 0px;
 outline-width: 2px;
