@@ -3817,6 +3817,10 @@ text-align: center;
 		width: 100%;
 	}
 	
+	.page-template-static_content-php .nogrey div.wpb_text_column.wpb_content_element  {
+		background-color: #FFF;
+	}
+	
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element.leftofform {
 		width: 100%;
 		background-color: transparent;
