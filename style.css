@@ -3482,10 +3482,12 @@ button.positive:hover {
 
 .rev_slider_wrapper .rev_slider .tp-caption.size48 {
 	font-size: 48px;
+	line-height: 1em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size60 {
 	font-size: 60px;
+	line-height: 1em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size72 {
