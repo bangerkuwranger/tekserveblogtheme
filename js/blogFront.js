@@ -20,11 +20,11 @@ $j('document').ready(function() { //call on load
 	$j( ".page-template-static_content-php #categories-4 h2" ).click(function() {
 		$j('#categories-4 ul li').slideToggle();
 	});
-	$j( ".page-template-static_content-php .widget_pippin_simple_authors_widget h2" ).click(function() {
-		$j('.widget_pippin_simple_authors_widget ul li').slideToggle();
+	$j( ".page-template-static_content-php #Front_Page .widget_knrauthorlistwidget h2" ).click(function() {
+		$j('#Front_Page .widget_knrauthorlistwidget ul li').slideToggle();
 	});
-	$j( ".page-template-static_content-php .widget_archive h2" ).click(function() {
-		$j('.widget_archive ul li').slideToggle();
+	$j( ".page-template-static_content-php #Front_Page .widget_anual_archive h2" ).click(function() {
+		$j('#Front_Page .widget_anual_archive ul li').slideToggle();
 	});
 });
 
