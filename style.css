@@ -55,6 +55,7 @@
 * Page Sections
 * Drawers
 * Blog Front Page
+* Orange Box
 * Testimonials
 * StortTable Post
 * MagicNav (deprecated)
@@ -2249,12 +2250,35 @@ color: #f06c34 !important;
 	color:#fff;
 }
 
+.orange p a,
+.orange p a:visited {
+	color: #004d72;
+}
+
+.darkblue p a,
+.darkblue p a:visited {
+	color: #40a8c9;
+}
+
+.lightblue p a,
+.lightblue p a:visited {
+	color: #f36f37;
+}
+
 .orange a:hover, .lightblue a:hover {
 	color:#004d72;
 }
 
 .darkblue a:hover {
 	color:#40a8c9;
+}
+
+.darkblue p a:hover {
+	color: #f36f37;
+}
+
+.orange p a:hover {
+	color: #40a8c9;
 }
 
 .section.darkblue .button {
@@ -2406,6 +2430,18 @@ color: #f06c34 !important;
 
 .max450 {
 	max-height: 450px;
+}
+
+.max450 div img {
+	max-height: 400px !important;
+}
+
+.max750 {
+	max-height: 750px;
+}
+
+.max750 div img {
+	max-height: 600px !important;
 }
 
 /* Drawers
@@ -2650,6 +2686,10 @@ color: #f06c34 !important;
 	margin: 0;
 }
 
+.page-template-static_content-php .entry-content .drawer p {
+	margin: 0 0 1em;
+}
+
 .page-template-static_content-php .entry-content {
 	margin-top: 0;
 }
@@ -2660,6 +2700,60 @@ color: #f06c34 !important;
 
 .page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
 	padding: 2em 16em 2em 2em;
+}
+
+/* Orange Box
+------------------------------------------------------------ */
+
+div.orangebox {
+	background-color: #f36f37;
+	border: none;
+	border-radius: 12px;
+	padding: 4em 1em;
+	color: white;
+	width: 300px;
+	margin: 0 auto;
+}
+
+div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
+	color: white;
+	font-weight: bold;
+	font-size: 52px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+div.orangebox h2 a, div.orangebox h2 a:visited, div.orangebox h2 {
+	color: white;
+	font-weight: normal;
+	font-size: 28px;
+	text-transform: lowercase;
+	text-align: center;
+}
+
+div.orangebox h2 a:hover, div.orangebox h1 a:hover {
+	color: #004d72;
+}
+
+div.orangebox .button {
+	border-radius: 12px 0 12px;
+	background-color: #004d72;
+	cursor:pointer;
+	display: inline-block;
+	padding: 0 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 24px;
+	margin: .5em 0;
+}
+
+div.orangebox .button:hover {
+	color: #40a8c9;
+}
+
+div.orangebox p {
+	text-align: center;
 }
 
 /* Testimonials
@@ -3482,7 +3576,7 @@ button.positive:hover {
 
 .rev_slider_wrapper .rev_slider .tp-caption.size48 {
 	font-size: 48px;
-	line-height: 1em;
+	line-height: .75em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size60 {
@@ -3589,6 +3683,11 @@ text-align: center;
 
 	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
 		padding: 2em;
+	}
+	
+	div.orangebox {
+		position: relative;
+		right: 60px;
 	}
 	
 }
@@ -3811,11 +3910,17 @@ text-align: center;
 		float: right;
 		width: auto;
 	}
-
+	
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
-		background-color: rgba(0,0,0,.3);
+		background-color: rgba(255,255,255,.8);
 		padding: 1em;
 		width: 100%;
+	}
+
+	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
+	.page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element,
+	.page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
+		background-color: rgba(0,0,0,.3);
 	}
 	
 	.page-template-static_content-php .nogrey div.wpb_text_column.wpb_content_element  {
@@ -3830,6 +3935,26 @@ text-align: center;
 	
 	.bgimage {
 		display:none;
+	}
+	
+	div.orangebox {
+		width: 200px;
+	}
+
+	div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
+		font-size: 36px;
+	}
+
+	div.orangebox h2 a, div.orangebox h2 a:visited, div.orangebox h2 {
+		font-size: 20px;
+	}
+
+	div.orangebox .button {
+		font-size: 16px;
+	}
+
+	div.orangebox {
+		right: 40%;
 	}
 	
 }
@@ -3853,9 +3978,11 @@ text-align: center;
 
 @media only screen and (max-width: 768px) {
 
+/* 
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
 		width: 125%;
 	}
+ */
 
 	.apparition-landing #inner,
 	#inner {
@@ -4213,6 +4340,15 @@ text-align: center;
 		min-height: 0px !important;
 	}
 	
+		div.orangebox {
+		right: 71px;
+		width: 280px;
+	}
+	
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
+		padding: .25em .5em;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
@@ -4259,6 +4395,10 @@ text-align: center;
 	.max450 {
 		max-height: 5000px;
 	}
+	
+	.max750 {
+		max-height: 5000px;
+	}
 
 }
 
@@ -4271,7 +4411,7 @@ text-align: center;
 	border: 8px solid #f00;
 }
 
-page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper.thinMan, page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column.thinMan, .thinMan {
+.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper.thinMan, .page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column.thinMan, .thinMan {
 /* 	height: 0; */
 	margin: 0;
 	padding: 0 !important;
@@ -4290,5 +4430,11 @@ page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_
 	margin-bottom: 0 !important;
 }
 .noSe {
-display: none !important;
+	display: none !important;
+}
+.page-template-static_content-php .wpb_row {
+	margin-bottom: 0 !important;
+}
+.page-template-static_content-php .flatTop div.wpb_wrapper {
+	padding-top: 0 !important;
 }

@@ -275,6 +275,14 @@ array(
 			'version' 	=> '3.2.1',
 			'force_activation' 	=> true,
 		),
+		
+		array(
+			'name' 		=> 'FooTable',
+			'slug' 		=> 'footable',
+			'required' 	=> true,
+			'version' 	=> '0.3.1',
+			'force_activation' 	=> true,
+		),
 				
 		array(
 			'name' 		=> 'Genesis Simple Hooks',
