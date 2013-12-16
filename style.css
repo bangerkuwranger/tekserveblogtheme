@@ -2246,7 +2246,48 @@ color: #f06c34 !important;
 	color: #fff;
 }
 
-.orange h1, .lightblue h1, .darkblue  h1, .orange p, .lightblue p, .darkblue p, .orange h2, .lightblue h2, .darkblue  h2, .orange a, .lightblue a, .darkblue a, .orange h1 a, .lightblue h1 a, .darkblue  h1 a, .orange h2 a:visited, .lightblue h2 a:visited, .darkblue h2 a:visited, .darkblue h2 a, .orange h2 a, .lightblue h2 a  {
+.orange h1, 
+.lightblue h1,
+.darkblue  h1,
+.orange p,
+.lightblue p,
+.darkblue p,
+.orange h2,
+.lightblue h2,
+.darkblue  h2,
+.orange a,
+.lightblue a,
+.darkblue a,
+.orange h1 a:visited,
+.lightblue h1 a:visited,
+.darkblue h1 a:visited,
+.orange h1 a,
+.lightblue h1 a,
+.darkblue  h1 a,
+.orange h2 a:visited,
+.lightblue h2 a:visited,
+.darkblue h2 a:visited,
+.darkblue h2 a,
+.orange h2 a,
+.lightblue h2 a,
+.orange h3, 
+.lightblue h3,
+.darkblue  h3,
+.orange h3 a:visited,
+.lightblue h3 a:visited,
+.darkblue h3 a:visited,
+.orange h3 a,
+.lightblue h3 a,
+.darkblue  h3 a,
+.orange h4, 
+.lightblue h4,
+.darkblue  h4,
+.orange h4 a:visited,
+.lightblue h4 a:visited,
+.darkblue h4 a:visited,
+.orange h4 a,
+.lightblue h4 a,
+.darkblue  h4 a {
 	color:#fff;
 }
 
@@ -2433,7 +2474,7 @@ color: #f06c34 !important;
 }
 
 .max450 div img {
-	max-height: 400px !important;
+	max-height: 300px !important;
 }
 
 .max750 {
@@ -2442,6 +2483,22 @@ color: #f06c34 !important;
 
 .max750 div img {
 	max-height: 600px !important;
+}
+
+.max550 {
+	max-height: 550px;
+}
+
+.max550 div img {
+	max-height: 450px !important;
+}
+
+.max650 {
+	max-height: 650px;
+}
+
+.max650 div img {
+	max-height: 550px !important;
 }
 
 /* Drawers
@@ -4393,6 +4450,14 @@ text-align: center;
 	}
 	
 	.max450 {
+		max-height: 5000px;
+	}
+	
+	.max550 {
+		max-height: 5000px;
+	}
+	
+	.max650 {
 		max-height: 5000px;
 	}
 	
