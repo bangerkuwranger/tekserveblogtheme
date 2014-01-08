@@ -261,14 +261,6 @@ array(
 		),
 		
 		array(
-			'name' 		=> 'FlowSplit',
-			'slug' 		=> 'flowsplit',
-			'required' 	=> true,
-			'version' 	=> '1.1.3',
-			'force_activation' 	=> false,
-		),
-		
-		array(
 			'name' 		=> 'Font Awesome Icons',
 			'slug' 		=> 'font-awesome',
 			'required' 	=> true,
