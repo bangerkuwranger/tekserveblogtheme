@@ -538,13 +538,13 @@ function tekserve_footer() {
 	echo '<div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div>';
 	echo '<div class="creds">';
 	echo '<div class="leftcopy">';
-	echo '<a href="#terms">Terms of Use</a> | ';
-	echo '<a href="#privacy">Privacy Policy</a>';
+	echo '<a href="http://maintekserve.wpengine.com/terms-of-use/">Terms of Use</a> | ';
+	echo '<a href="http://maintekserve.wpengine.com/privacy-policy/">Privacy Policy</a>';
 	echo '</div>';
 	echo '<div class="centercopy">';
 	echo 'Copyright &copy; ';
 	echo date('Y');
-	echo ' <a href="http://tekserve.com">Tekserve Corportation</a> All Rights Reserved';
+	echo ' <a href="http://www.tekserve.com">Tekserve Corportation</a> All Rights Reserved';
 	echo '</div>';
 	echo '<div class="rightcopy">';
 	echo ' <a href="http://nytm.org/made">Dilligently Made in NYC</a>';
@@ -569,3 +569,6 @@ function tekserve_below_header_banner_genesis() {
  }
  // Place widget
 add_action( 'genesis_after_header', 'tekserve_below_header_banner_genesis' );
+
+/** Add post navigation (requires HTML5 support) */
+add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
