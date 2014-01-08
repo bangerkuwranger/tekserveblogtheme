@@ -1266,6 +1266,11 @@ div.gform_footer input.button {
 	margin: .5em 0;
 }
 
+.rightstory .tekserve-single-post .tekserve-single-post-button,
+.leftstory .tekserve-single-post .tekserve-single-post-button {
+	float: right;
+}
+
 .darkblue .tekserve-single-post .tekserve-single-post-button {
 	background-color: #40a8c9;
 }
@@ -1338,7 +1343,7 @@ div.gform_footer input.button {
 	width: 200px;
 }
 
-.hfeed .hentry a img.aligncenter {
+.archive .hfeed .hentry a img.aligncenter {
 	width: auto;
 	height: auto;
 	max-width: 99%;
@@ -1346,15 +1351,15 @@ div.gform_footer input.button {
 	max-height: 480px; 
 }
 
-.hfeed .hentry a img.alignright {
+.archive .hfeed .hentry a img.alignright {
 	margin: 0px 5px 0 30px;
 }
 
-.hfeed .hentry img.alignright, .hfeed .hentry img.alignleft, .hentry .alignleft img, .hentry .alignright img {
+.archive .hfeed .hentry img.alignright, .archive .hfeed .hentry img.alignleft, .hentry .alignleft img, .hentry .alignright img {
 	margin: 0 2em 0 0;
 }
 
-.search-results .hentry, .hfeed .hentry {
+.search-results .hentry, .archive .hfeed .hentry {
 	padding: 30px 0 5px 5px;
 }
 
@@ -1368,7 +1373,7 @@ div.gform_footer input.button {
 	text-decoration: none;
 }
 
-.search-results .hentry, .hfeed .hentry {
+.search-results .hentry, .archive .hfeed .hentry {
 	background: none;
 }
 
@@ -3777,7 +3782,7 @@ text-align: center;
 		width: 960px;
 	}
 
-	.search-results .hentry.even a img, .hfeed .hentry.even a img {
+	.search-results .hentry.even a img, .archive .hfeed .hentry.even a img {
 	margin: 0 5px 30px 30px;
 	}
 
@@ -3785,7 +3790,7 @@ text-align: center;
 	margin: 0 30px 30px 0 !important;
 	}
 
-	.search-results .hentry.odd a img, .search-results .hentry.even a img, .hfeed .hentry.odd a img, .hfeed .hentry.even a img {
+	.search-results .hentry.odd a img, .search-results .hentry.even a img, .archive .hfeed .hentry.odd a img, .archive .hfeed .hentry.even a img {
 	height: 200px;
 	width: 200px;
 	}
@@ -4165,7 +4170,7 @@ text-align: center;
 		width: 80%;
 	}
 	
-	.search-results .hentry.odd a img, .search-results .hentry.even a img, .hfeed .hentry.odd a img, .hfeed .hentry.even a img {
+	.search-results .hentry.odd a img, .search-results .hentry.even a img, archive .archive .hfeed .hentry.odd a img, .archive .hfeed .hentry.even a img {
 	margin: 0 0 30px 0 !important;
 	width: 200px;
 	height: 200px;
@@ -4447,6 +4452,7 @@ text-align: center;
 	#Front_Page .widget_anual_archive ul li {
 		display: none;
 	}
+	
 	#categories-4 h2,
 	#pippin_simple_authors_widget-2 h2,
 	#archives-4 h2,
@@ -4455,13 +4461,21 @@ text-align: center;
 		cursor: pointer;
 	}
 	
+	#categories-4,
+	#pippin_simple_authors_widget-2,
+	#archives-4,
+	#Front_Page .widget_knrauthorlistwidget,
+	#Front_Page .widget_anual_archive {
+		height: auto;
+	}
+	
 	.nrelate_default a.nr_panel {
 		margin: 0 auto 25px !important;
 		width: 100% !important;
 		min-height: 0px !important;
 	}
 	
-		div.orangebox {
+	div.orangebox {
 		right: 71px;
 		width: 280px;
 	}
