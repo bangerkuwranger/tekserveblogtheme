@@ -1253,6 +1253,43 @@ div.gform_footer input.button {
 	margin: 40px auto 30px;
 }
 
+.tekserve-single-post .tekserve-single-post-button {
+	border-radius: 12px 0 12px;
+	background-color: #004d72;
+	cursor:pointer;
+	display: inline-block;
+	padding: 0 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 24px;
+	margin: .5em 0;
+}
+
+.darkblue .tekserve-single-post .tekserve-single-post-button {
+	background-color: #40a8c9;
+}
+
+.darkblue .tekserve-single-post .tekserve-single-post-button:hover {
+	color: #f36f37;
+}
+
+.lightblue .tekserve-single-post .tekserve-single-post-button {
+	background-color: #f36f37;
+}
+
+.lightblue .tekserve-single-post .tekserve-single-post-button:hover {
+	color: #004d72;
+}
+
+.orange .tekserve-single-post .tekserve-single-post-button {
+	background-color: #40a8c9;
+}
+
+.orange .tekserve-single-post .tekserve-single-post-button:hover {
+	color: #004d72;
+}
+
 
 /* Search Form / eNews and Update Widget
 ------------------------------------------------------------ */
@@ -3095,6 +3132,10 @@ table.sortable td a {
 	margin: 0;
 }
 
+#emma-form.x-small ul#emma-form-elements .emma-form-input {
+	text-transform: none;
+}
+
 ul#emma-form-elements span.emma-required {
 	color: #f36f37;
 }
@@ -3141,7 +3182,7 @@ ul#emma-form-elements li.emma-form-row {
 	font-weight: 900;
 }
 
-.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, #Front_Page .widget_knrauthorlistwidget ul li, #Front_Page .widget_anual_archive ul li {
+.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, .widget_categories ul li, #categories-4 ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, #Front_Page .widget_knrauthorlistwidget ul li, #Front_Page .widget_anual_archive ul li {
 	list-style: none;
 	margin-bottom: 1em;
 	text-indent: 0px;
@@ -3186,7 +3227,7 @@ ul#emma-form-elements li.emma-form-row {
 	display: table-cell;
 	min-width: 280px;
 	max-width: 25%;
-	max-height: 420px;
+	height: 420px;
 }
 
 #categories-4 ul, #pippin_simple_authors_widget-2 ul, #archives-4 ul, #Front_Page .widget_knrauthorlistwidget ul, #Front_Page .widget_anual_archive ul {
