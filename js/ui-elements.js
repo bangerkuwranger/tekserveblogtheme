@@ -73,12 +73,13 @@ function stretchSection() {  //function is called on load and on window resize; 
 
 $j(window).resize(function() { //call on window resize
 	stretchSection();
-	clientWidth = document.documentElement.clientWidth;
-	if(clientWidth < 600) {
-		moveSearchMobile(); //call on resize if window size becomes < 600
+	clientWidth = $j(window).width();
+	console.log(clientWidth);
+	if(clientWidth < 627) {
+		moveSearchMobile(); //call on resize if window size becomes < 640
 	}
-	if(clientWidth > 599){
-		moveSearchBack(); //call on resize if window size > 599
+	if(clientWidth > 627){
+		moveSearchBack(); //call on resize if window size > 640
 	}
 	if(clientWidth < 1025) {
 		mobileMeta(); //call on resize if window size becomes < 1025
@@ -194,6 +195,32 @@ $j('document').ready(function() { //call on load
 
 	//remove bottom padding from footer folk
 	$j('.footer-folk').parents('.wpb_wrapper').css('padding-bottom', '0');
-
+	
+	//remove bottom padding from top slider
 	$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
+	
+	//add group rel="" to original drawer trigger in collapse-o-matic objects with remote triggers
+	$j('.collapseomatic[rel!=""]').each(function() {
+		var id = $j(this).attr('id');
+		console.log(id);
+		id = id.substring(7);
+		console.log(id);
+		var rel = $j(this).attr('rel');
+		console.log(rel);
+		$j('#'+id+'.collapseomatic').attr('rel', rel);
+	});
+	//enably bit.ly for addthis smartlayers
+	var addthis_share = {
+	// ... other options
+	url_transforms : {
+		shorten: {
+			twitter: 'bitly',
+			facebook: 'bitly'
+		}
+		}, 
+		shorteners : {
+			bitly : {} 
+		}
+	}
+	
 });
