@@ -4147,7 +4147,15 @@ text-align: center;
 	img.alignleft {
 		display: block;
 		float: none;
-		margin: 0 auto 30px;
+		margin: 50px auto !important;
+		width: 100%;
+		height: auto;
+	}
+	
+	.nrelate_default .nr_img_div img {
+		width: 75% !important;
+		height: auto !important;
+		margin: 0 auto !important;
 	}
 
 	.archive-page,
@@ -4516,7 +4524,13 @@ text-align: center;
 	}
 	
 	.single #content-sidebar-wrap #sidebar {
-		right: 3%;
+		right: auto;
+		left: auto;
+		width: 100%;
+	}
+	
+	ul#emma-form-elements li.emma-form-row {
+		text-indent: 0;
 	}
 	
 	.status-front .label {
