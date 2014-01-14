@@ -209,5 +209,18 @@ $j('document').ready(function() { //call on load
 		console.log(rel);
 		$j('#'+id+'.collapseomatic').attr('rel', rel);
 	});
+	//enably bit.ly for addthis smartlayers
+	var addthis_share = {
+	// ... other options
+	url_transforms : {
+		shorten: {
+			twitter: 'bitly',
+			facebook: 'bitly'
+		}
+		}, 
+		shorteners : {
+			bitly : {} 
+		}
+	}
 	
 });

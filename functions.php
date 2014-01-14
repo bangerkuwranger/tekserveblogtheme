@@ -564,3 +564,12 @@ add_action( 'genesis_after_header', 'tekserve_below_header_banner_genesis' );
 
 /** Add post navigation (requires HTML5 support) */
 add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
+
+//add editors to roles allowed to edit forms
+function add_caps()
+{
+	$role = get_role( 'editor' );
+	$role->add_cap( 'gform_full_access' );
+}
+
+add_action( 'admin_init', 'add_caps' );

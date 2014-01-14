@@ -141,7 +141,7 @@ p,
 select,
 textarea {
 	color: #004d72;
-	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 0;
@@ -172,7 +172,7 @@ label,
 select,
 textarea {
 	color: #004d72;
-	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
 
@@ -210,15 +210,16 @@ table td, table th {
 
 a,
 a:visited {
+	-o-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
-	color: #3fb6d7;
+	color: #f36f37;
 	text-decoration: none;
 	transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-	color: #f36f37;
+	color: #40a8c9;
 }
 
 a img {
@@ -395,7 +396,7 @@ body.custom-background {
 	background-color: #f36f37;
 	clear: both;
 	color: #fff;
-	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow: hidden;
 	width: 950px;
 }
@@ -459,7 +460,7 @@ body.custom-background {
 .menu-secondary .current-menu-item a,
 #header .menu li a:hover,
 #header .menu li:hover a {
-	color: #40a8c9;
+	color: #004d72;
 }
 
 .menu-primary li li a,
@@ -485,7 +486,7 @@ body.custom-background {
 .menu-primary li li a:hover,
 .menu-secondary li li a:hover,
 #header .menu li li a:hover {
-	color: #40a8c9;
+	color: #004d72;
 }
 
 .menu-primary li ul,
@@ -735,15 +736,25 @@ p.subscribe-to-comments {
 ------------------------------------------------------------ */
 
 h1,
+h1 a:visited,
+h1 a:hover,
 h2,
 h2 a,
 h2 a:visited,
 h2 a:hover,
 h3,
+h3 a:visited,
+h3 a:hover,
 h4,
+h4 a:visited,
+h4 a:hover,
 h5,
-h6 {
-	font-family: Tekvetica, 'Helvetica-Neue', Helvetica, sans-serif;
+h5 a:visited,
+h5 a:hover,
+h6,
+h6 a:visited,
+h6 a:hover {
+	font-family: Tekvetica, 'Helvetica-Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.25;
 	margin: 0 0 15px;
 	text-decoration: none;
@@ -752,6 +763,7 @@ h6 {
 h1 {
 	font-size: 42px;
 	font-weight: 900;
+	text-transform: uppercase;
 }
 
 h2,
@@ -759,9 +771,9 @@ h2 a,
 h2 a:visited,
 h2 a:hover,
 .htwoList {
-font-size: 36px;
-font-weight: 900;
-list-style-position: inside;
+	font-size: 36px;
+	font-weight: 900;
+	list-style-position: inside;
 }
 
 .single h1 {
@@ -789,7 +801,7 @@ h4, .hfourList {
 
 h5,
 #footer-widgets h4 {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 h6,
@@ -1155,7 +1167,7 @@ outline: none;
 .navigation li,
 tfoot .pagination ul li {
 	display: inline;
-	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	height: auto;
 	line-height: 27px;
@@ -1182,7 +1194,7 @@ tfoot .pagination ul li a:hover {
 	background-color: #004d72;
 	color: #fff;
 	cursor: pointer;
-	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding: 10px;
 	text-decoration: none;
 	font-weight: bold;
@@ -1237,6 +1249,7 @@ div.gform_footer input.button,
 	text-align: center;
 	transition: all 0.2s ease-in-out;
 	padding: 6px 10px 3px;
+	cursor: pointer;
 }
 
 div.gform_footer input.button:hover,
@@ -1276,7 +1289,7 @@ div.gform_footer input.button {
 }
 
 .darkblue .tekserve-single-post .tekserve-single-post-button:hover {
-	color: #f36f37;
+	background-color: #f36f37;
 }
 
 .lightblue .tekserve-single-post .tekserve-single-post-button {
@@ -1284,15 +1297,15 @@ div.gform_footer input.button {
 }
 
 .lightblue .tekserve-single-post .tekserve-single-post-button:hover {
-	color: #004d72;
+	background-color: #004d72;
 }
 
 .orange .tekserve-single-post .tekserve-single-post-button {
-	background-color: #40a8c9;
+	background-color: #004d72;
 }
 
 .orange .tekserve-single-post .tekserve-single-post-button:hover {
-	color: #004d72;
+	background-color: #40a8c9;
 }
 
 
@@ -1731,26 +1744,28 @@ table.footable.breakpoint>tbody>tr.footable-detail-show>td.footable-last-column.
 ------------------------------------------------------------ */
 
 div.gform_wrapper div.gform_body {
-	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #004d72;
 }
 
 div.gform_wrapper input,
 div.gform_wrapper select,
 div.gform_wrapper textarea {
-	-moz-box-shadow: 0 0 5px #ddd inset;
-	-moz-box-sizing: border-box;
-	-webkit-box-shadow: 0 0 5px #ddd inset;
-	background-color: #fff;
 	box-shadow: 0 0 5px #ddd inset;
 	box-sizing: border-box;
-	font-size: 16px;
-	margin: 0 0 10px;
+	-o-box-shadow: 0 0 5px #ddd inset;
+	-o-box-sizing: border-box;
+	-moz-box-shadow: 0 0 5px #ddd inset;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-box-shadow: 0 0 5px #ddd inset;
+	background-color: #fff;
+	margin: 0 0 .5em;
 	padding: 10px !important;
 	font-size: 18px;
 	line-height: 1.25em;
 	border-radius: 6px;
-	font-family: Tekvetica, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #004d72;
 }
 
@@ -4132,7 +4147,15 @@ text-align: center;
 	img.alignleft {
 		display: block;
 		float: none;
-		margin: 0 auto 30px;
+		margin: 50px auto !important;
+		width: 100%;
+		height: auto;
+	}
+	
+	.nrelate_default .nr_img_div img {
+		width: 75% !important;
+		height: auto !important;
+		margin: 0 auto !important;
 	}
 
 	.archive-page,
@@ -4501,7 +4524,13 @@ text-align: center;
 	}
 	
 	.single #content-sidebar-wrap #sidebar {
-		right: 3%;
+		right: auto;
+		left: auto;
+		width: 100%;
+	}
+	
+	ul#emma-form-elements li.emma-form-row {
+		text-indent: 0;
 	}
 	
 	.status-front .label {
