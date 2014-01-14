@@ -1474,7 +1474,7 @@ div.gform_footer input.button {
 }
 
 #footer-widgets #emma-form input[type="submit"] {
-	font-size: 2.2em;
+	font-size: 2em;
 }
 
 /* Latest Tweets
@@ -3115,7 +3115,7 @@ table.sortable td a {
 ------------------------------------------------------------ */
 
 #emma-widget-2 {
-	height: 225px;
+	min-height: 225px;
 	margin-bottom: 20px;
 	margin-left: 10px;
 }
@@ -3165,11 +3165,13 @@ ul#emma-form-elements li.emma-form-row {
 	font-size: 24px;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin: 1em 0 0;
+	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
 	padding: .25em .33em .2em;
 	float: left !important;
+	min-width: 200px;
+	width: 100%;
 }
 
 
@@ -4482,6 +4484,11 @@ text-align: center;
 	
 	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
 		padding: .25em .5em;
+	}
+
+	.rightstory .tekserve-single-post .tekserve-single-post-button,
+	.leftstory .tekserve-single-post .tekserve-single-post-button {
+		float: none;
 	}
 	
 }
