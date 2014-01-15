@@ -3504,6 +3504,11 @@ h2.tribe-events-list-event-title a:hover, .tribe-events-list-event-description a
 	min-height: 330px;
 }
 
+.tribe-events-list-separator-month span {
+	color: #004d72;
+	font-weight: bold;
+}
+
 
 /* Repair Status
 ------------------------------------------------------------ */
