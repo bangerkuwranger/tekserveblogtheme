@@ -4192,7 +4192,7 @@ text-align: center;
 		padding: 20px;
 	}
 	.section {
-		width: 80%;
+		width: 98%;
 	}
 	
 	.search-results .hentry.odd a img, .search-results .hentry.even a img, archive .archive .hfeed .hentry.odd a img, .archive .hfeed .hentry.even a img {
@@ -4514,6 +4514,10 @@ text-align: center;
 		float: none;
 	}
 	
+	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
+		padding: 0;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
@@ -4560,7 +4564,11 @@ text-align: center;
 	}
 	
 	#categories-4, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_anual_archive, #Front_Page .widget_knrauthorlistwidget {
-		margin: 0 1em 1em -12px;
+		margin: 0 auto 1em;
+	}
+	
+	div#Front_Page.widgets_on_page {
+		margin-top: 4em;
 	}
 	
 	.max450 {
