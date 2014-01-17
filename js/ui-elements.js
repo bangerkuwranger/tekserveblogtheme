@@ -74,7 +74,6 @@ function stretchSection() {  //function is called on load and on window resize; 
 $j(window).resize(function() { //call on window resize
 	stretchSection();
 	clientWidth = $j(window).width();
-	console.log(clientWidth);
 	if(clientWidth < 627) {
 		moveSearchMobile(); //call on resize if window size becomes < 640
 	}
@@ -153,8 +152,10 @@ $j('document').ready(function() { //call on load
 	var downid;
 	$j( ".drawertrigger" ).click(function() { //fix for the expanding size of background image as drawer is toggled; switches to background-size %50 and back to contain when drawer closes.
 		downid = $j(this).attr('name');
+		thisID = $j(this).attr('id');
 	    setTimeout(function()
 		{
+// 			$j('#'+thisID).toggleClass('colomat-close');
 			$j('#target-'+downid).toggleClass('drawerDown');
 // 			$j('#target-'+downid).parents('.dsection').toggleClass("thinMan");
 // 			$j('#target-'+downid).parents('.wpb_wrapper, .wpb_column').toggleClass('thinMan');
@@ -212,15 +213,17 @@ $j('document').ready(function() { //call on load
 	$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
 	
 	//add group rel="" to original drawer trigger in collapse-o-matic objects with remote triggers
-	$j('.collapseomatic').each(function() {
+	$j(".collapseomatic"+"[id^=extra]").each(function() {
 		var id = $j(this).attr('id');
-		id = id.substring(7);
-		var rel = $j(this).attr('rel');
-		$j('#'+id+'.collapseomatic').attr('rel', rel);
+		if(id != "") {
+			id = id.substring(7);
+			var rel = $j(this).attr('rel');
+			$j('#'+id+'.collapseomatic').attr('rel', rel);
+		}
 	});
 	//enably bit.ly for addthis smartlayers
 	var addthis_share = {
-	// ... other options
+	// ... other options for addthis smartlayers
 	url_transforms : {
 		shorten: {
 			twitter: 'bitly',
@@ -231,5 +234,19 @@ $j('document').ready(function() { //call on load
 			bitly : {} 
 		}
 	}
+	//code to made map drawers act like other normal drawers
+	$j('#trigger-get-directions').click(function() {
+		$j('#get-to-tekserve').slideToggle();
+	});
+	var group = $j('#trigger-get-directions').attr('rel');
+	$j("[rel="+group+"]").each(function() {
+		var thisID = $j(this).attr('id');
+		if(thisID != 'trigger-get-directions') {    
+			$j(this).click(function() {
+				$j('#get-to-tekserve').slideUp();
+				$j('#trigger-get-directions').removeClass('colomat-close');
+			});
+		}
+	});
 	
 });
