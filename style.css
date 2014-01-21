@@ -4359,6 +4359,7 @@ text-align: center;
 	}
 
 	/* on nav hover */
+/* 
 	ul.menu.genesis-nav-menu.menu-primary:hover,
 	.menu-primary:hover {
 		background-image: none;
@@ -4371,6 +4372,24 @@ text-align: center;
 		border: none;
 	}
 	.menu-primary:hover .current {
+		background: url(images/icon-check.png) no-repeat 10px 7px;
+	}
+ */
+ 
+	ul.menu.genesis-nav-menu.menu-primary.hovermenu,
+	.menu-primary.hovermenu {
+		background-image: none;
+		padding-top: 28px !important;
+		padding-left: 28px;
+	}
+	
+	.menu-primary.hovermenu li {
+		display: block;
+		margin: 0 0 5px 1em;
+		border: none;
+	}
+	
+	.menu-primary.hovermenu .current {
 		background: url(images/icon-check.png) no-repeat 10px 7px;
 	}
 	
