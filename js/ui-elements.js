@@ -213,15 +213,17 @@ $j('document').ready(function() { //call on load
 	$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
 	
 	//add group rel="" to original drawer trigger in collapse-o-matic objects with remote triggers
-	$j(".collapseomatic"+"[rel!=''],[id^='extra']").each(function() {
+	$j(".collapseomatic"+"[id^=extra]").each(function() {
 		var id = $j(this).attr('id');
-		id = id.substring(7);
-		var rel = $j(this).attr('rel');
-		$j('#'+id+'.collapseomatic').attr('rel', rel);
+		if(id != "") {
+			id = id.substring(7);
+			var rel = $j(this).attr('rel');
+			$j('#'+id+'.collapseomatic').attr('rel', rel);
+		}
 	});
 	//enably bit.ly for addthis smartlayers
 	var addthis_share = {
-	// ... other options
+	// ... other options for addthis smartlayers
 	url_transforms : {
 		shorten: {
 			twitter: 'bitly',
@@ -232,5 +234,19 @@ $j('document').ready(function() { //call on load
 			bitly : {} 
 		}
 	}
+	//code to made map drawers act like other normal drawers
+	$j('#trigger-get-directions').click(function() {
+		$j('#get-to-tekserve').slideToggle();
+	});
+	var group = $j('#trigger-get-directions').attr('rel');
+	$j("[rel="+group+"]").each(function() {
+		var thisID = $j(this).attr('id');
+		if(thisID != 'trigger-get-directions') {    
+			$j(this).click(function() {
+				$j('#get-to-tekserve').slideUp();
+				$j('#trigger-get-directions').removeClass('colomat-close');
+			});
+		}
+	});
 	
 });
