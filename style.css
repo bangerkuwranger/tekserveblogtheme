@@ -1422,7 +1422,7 @@ div.gform_footer input.button {
 }
 
 #footer-widgets a:hover {
-	color: #40a8c9;
+	color: #f36f37;
 }
 
 #footer-widgets p {
@@ -1552,7 +1552,7 @@ div.gform_footer input.button {
 }
 
 #footer a:hover {
-	color: #40a8c9;
+	color: #004d72;
 	text-decoration: none;
 }
 
@@ -1751,14 +1751,7 @@ div.gform_wrapper div.gform_body {
 div.gform_wrapper input,
 div.gform_wrapper select,
 div.gform_wrapper textarea {
-	box-shadow: 0 0 5px #ddd inset;
 	box-sizing: border-box;
-	-o-box-shadow: 0 0 5px #ddd inset;
-	-o-box-sizing: border-box;
-	-moz-box-shadow: 0 0 5px #ddd inset;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-webkit-box-shadow: 0 0 5px #ddd inset;
 	background-color: #fff;
 	margin: 0 0 .5em;
 	padding: 10px !important;
@@ -1799,11 +1792,21 @@ div.gform_wrapper li label span.gfield_required {
 	color: #f36f37;
 }
 
+.orange div.gform_wrapper li label span.gfield_required {
+	color: #40a8c9;
+}
+
 div.gform_wrapper .gfield_label {
 	color: #004d72;
 	font-weight: 900;
 	font-size: 24px;
 	text-transform: uppercase;
+}
+
+.darkblue div.gform_wrapper .gfield_label,
+.orange div.gform_wrapper .gfield_label,
+.lightblue div.gform_wrapper .gfield_label {
+	color: #fff;
 }
 
 div.gform_wrapper .gform_fields {
@@ -1826,11 +1829,23 @@ div.gform_wrapper .gform_fields .gfield span label {
 	text-transform: uppercase;
 }
 
+.darkblue div.gform_wrapper .gform_fields .gfield span label,
+.orange div.gform_wrapper .gform_fields .gfield span label,
+.lightblue div.gform_wrapper .gform_fields .gfield span label {
+	color: #fff;
+}
+
 div.gform_wrapper .gform_fields .gfield .ginput_container label {
 	color: #004d72;
 	font-weight: bold;
 	font-size: 18px;
 	text-transform: uppercase;
+}
+
+.darkblue div.gform_wrapper .gform_fields .gfield .ginput_container label,
+.orange div.gform_wrapper .gform_fields .gfield .ginput_container label,
+.lightblue div.gform_wrapper .gform_fields .gfield .ginput_container label {
+	color: #fff;
 }
 
 div.gform_wrapper .gfield.gform_validation_container {
@@ -1852,12 +1867,29 @@ div.gform_wrapper .gform_footer input {
 	font-weight: bold;
 }
 
+.orange div.gform_wrapper .gform_fields .gfield .gfield_description,
+.darkblue div.gform_wrapper .gform_fields .gfield .gfield_description,
+.lightblue div.gform_wrapper .gform_fields .gfield .gfield_description {
+	color: #fff;
+}
+
 div.gform_wrapper .gform_body .validation_message,
-div.gform_wrapper .validation_error {
+div.gform_wrapper .validation_error,
+div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message,
+div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
 	font-size: 1.1em;
 	color: #f36f37;
 	font-weight: bold;
 }
+
+.orange div.gform_wrapper .gform_body .validation_message,
+.orange div.gform_wrapper .validation_error,
+.orange #gforms_confirmation_message,
+.orange div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message,
+.orange div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
+	color: #004d72;
+}
+
 
 /* Apparition Green
 ------------------------------------------------------------ */
@@ -2308,7 +2340,8 @@ color: #f06c34 !important;
 }
 
 .section .button:hover {
-	color: #f36f37;
+	color: #fff;
+	background-color: #f36f37;
 }
 
 .orange {
@@ -2407,7 +2440,7 @@ color: #f06c34 !important;
 }
 
 .section.darkblue .button:hover {
-	color: #f36f37;
+	background-color: #f36f37;
 }
 
 .section.lightblue .button {
@@ -2415,7 +2448,7 @@ color: #f06c34 !important;
 }
 
 .section.lightblue .button:hover {
-	color: #004d72;
+	background-color: #004d72;
 }
 
 .section.orange .button {
@@ -2423,7 +2456,7 @@ color: #f06c34 !important;
 }
 
 .section.orange .button:hover {
-	color: #004d72;
+	background-color: #004d72;
 }
 
 .section .twoUp .left {
@@ -4364,6 +4397,7 @@ text-align: center;
 	}
 
 	/* on nav hover */
+/* 
 	ul.menu.genesis-nav-menu.menu-primary:hover,
 	.menu-primary:hover {
 		background-image: none;
@@ -4376,6 +4410,24 @@ text-align: center;
 		border: none;
 	}
 	.menu-primary:hover .current {
+		background: url(images/icon-check.png) no-repeat 10px 7px;
+	}
+ */
+ 
+	ul.menu.genesis-nav-menu.menu-primary.hovermenu,
+	.menu-primary.hovermenu {
+		background-image: none;
+		padding-top: 28px !important;
+		padding-left: 28px;
+	}
+	
+	.menu-primary.hovermenu li {
+		display: block;
+		margin: 0 0 5px 1em;
+		border: none;
+	}
+	
+	.menu-primary.hovermenu .current {
 		background: url(images/icon-check.png) no-repeat 10px 7px;
 	}
 	
