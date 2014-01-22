@@ -293,7 +293,7 @@ body.custom-background {
 	margin: 32px 0 0;
 	width: 25%;
 	background-size: contain !important;
-	background-image: url('images/header@2x.svg') !important;
+	background-image: url('images/header.9-8.11-6@2x.svg') !important;
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 }
@@ -4566,11 +4566,17 @@ text-align: center;
 		float: none;
 	}
 	
+	.page-template-static_content-php div.wpb_text_column.wpb_content_element.leftofform {
+		width: 100%;
+		background-color: transparent;
+		padding: 0;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
 	#title-area {
-		background-image: url('images/mobileheader@2x.svg') !important;
+		background-image: url('images/mobileheader.9-8.11-6@2x.svg') !important;
 		background-size: 90% !important;
 		background-position-y: 50% !important;
 	}
@@ -4612,7 +4618,7 @@ text-align: center;
 	}
 	
 	#categories-4, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_anual_archive, #Front_Page .widget_knrauthorlistwidget {
-		margin: 0 1em 1em -12px;
+		margin: 1em auto;
 	}
 	
 	.max450 {
@@ -4629,6 +4635,11 @@ text-align: center;
 	
 	.max750 {
 		max-height: 5000px;
+	}
+	
+	.entry-content ul.certificationlogos li {
+		margin: 0 auto;
+		width: 210px;
 	}
 
 }
@@ -4663,9 +4674,16 @@ text-align: center;
 .noSe {
 	display: none !important;
 }
+
 .page-template-static_content-php .wpb_row {
 	margin-bottom: 0 !important;
 }
+
 .page-template-static_content-php .flatTop div.wpb_wrapper, .page-template-static_content-php .flatTop {
 	padding-top: 0 !important;
+}
+
+div.tp-caption.sft.slidelink.hasclicklistener,
+div.tp-caption.sft.slidelink.hasclicklistener a {
+	z-index: 999 !important;
 }
