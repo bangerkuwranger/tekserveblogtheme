@@ -732,6 +732,33 @@ p.subscribe-to-comments {
 	color: white;
 }
 
+.wpb_alert p:first-child,
+#content .wpb_alert p:first-child,
+.wpb_text_column p:first-child,
+.wpb_text_column *:first-child,
+#content .wpb_text_column p:first-child,
+#content .wpb_text_column *:first-child,
+.wpb_toggle_content p:first-child,
+.wpb_alert p,
+#content .wpb_alert p,
+.wpb_text_column p, 
+.wpb_text_column *,
+#content .wpb_text_column p,
+#content .wpb_text_column *, 
+.wpb_toggle_content p {
+	margin-bottom: 1em !important;
+}
+
+.wpb_alert p:last-child,
+#content .wpb_alert p:last-child,
+.wpb_text_column p:last-child,
+.wpb_text_column *:last-child,
+#content .wpb_text_column p:last-child,
+#content .wpb_text_column *:last-child,
+.wpb_toggle_content p:last-child {
+	margin-bottom: 0 !important;
+}
+
 /* Headlines
 ------------------------------------------------------------ */
 
