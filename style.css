@@ -4687,3 +4687,7 @@ div.tp-caption.sft.slidelink.hasclicklistener,
 div.tp-caption.sft.slidelink.hasclicklistener a {
 	z-index: 999 !important;
 }
+
+#target-media-mentions .tp-bgimg.defaultimg {
+background: transparent !important;
+}
