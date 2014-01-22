@@ -4688,6 +4688,7 @@ div.tp-caption.sft.slidelink.hasclicklistener a {
 	z-index: 999 !important;
 }
 
-#target-media-mentions .tp-bgimg.defaultimg {
+#target-media-mentions .tp-bgimg.defaultimg,
+#target-media-mentions .slot .slotslide div {
 background: transparent !important;
 }
