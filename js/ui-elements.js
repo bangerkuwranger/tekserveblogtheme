@@ -100,12 +100,15 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
 
 //function to scroll to object with ID targetID. Include hash symbol in targetID when calling function.
 
-function scrollToID(targetID, delay, isHash) {
+function scrollToID(targetID, delay, isHash, offsetV) {
 	if(isHash == "" || isHash == undefined) {
 		isHash = false;
 	}
 	if(delay == "" || delay == undefined) {
 		delay = 0;
+	}
+	if(offsetV == "" || offsetV == undefined) {
+		offsetV = 0;
 	}
 	console.log(delay);
     var offset_top = $j('#find-'+targetID.substring(1)).offset();
@@ -117,7 +120,9 @@ function scrollToID(targetID, delay, isHash) {
 	if(!offset_trigger) {
 		offset_trigger = target_offset.top;
 	}
-	offset_trigger = offset_trigger - 150;
+	console.log('pretrigoff - '+offset_trigger);
+	console.log('offsetV - '+offsetV);
+	offset_trigger = offset_trigger - 150 - offsetV;
 	console.log(offset_top);
 	console.log(offset_trigger);
 	setTimeout(function(){
