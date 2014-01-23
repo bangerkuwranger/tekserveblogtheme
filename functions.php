@@ -174,10 +174,10 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true ); //
+	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
-
+ 	wp_enqueue_script ( 'scroll-into-view', get_stylesheet_directory_uri() . '/js/jquery.scrollintoview.min.js', array( 'jquery' ), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 

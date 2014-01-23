@@ -735,16 +735,12 @@ p.subscribe-to-comments {
 .wpb_alert p:first-child,
 #content .wpb_alert p:first-child,
 .wpb_text_column p:first-child,
-.wpb_text_column *:first-child,
 #content .wpb_text_column p:first-child,
-#content .wpb_text_column *:first-child,
 .wpb_toggle_content p:first-child,
 .wpb_alert p,
 #content .wpb_alert p,
-.wpb_text_column p, 
-.wpb_text_column *,
+.wpb_text_column p,
 #content .wpb_text_column p,
-#content .wpb_text_column *, 
 .wpb_toggle_content p {
 	margin-bottom: 1em !important;
 }
@@ -752,7 +748,6 @@ p.subscribe-to-comments {
 .wpb_alert p:last-child,
 #content .wpb_alert p:last-child,
 .wpb_text_column p:last-child,
-.wpb_text_column *:last-child,
 #content .wpb_text_column p:last-child,
 #content .wpb_text_column *:last-child,
 .wpb_toggle_content p:last-child {
@@ -2669,6 +2664,12 @@ color: #f06c34 !important;
 	position: relative;
 	z-index: 5;
 	background-size: 30px;
+	margin-bottom: 0 !important;
+}
+
+#content .section .wpb_text_column .collapseomatic.drawertrigger,
+#content .section .wpb_text_column .drawertrigger-container {
+	margin-bottom: 0 !important;
 }
 
 .section .drawer .collapseomatic.leftcenter {
@@ -4760,4 +4761,8 @@ div.tp-caption.sft.slidelink.hasclicklistener a {
 #target-media-mentions .tp-bgimg.defaultimg,
 #target-media-mentions .slot .slotslide div {
 background: transparent !important;
+}
+
+#live_chat a img {
+	outline: none;
 }

@@ -98,6 +98,37 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
     }
 }
 
+//function to scroll to object with ID targetID. Include hash symbol in targetID when calling function.
+
+function scrollToID(targetID, delay, isHash) {
+	if(isHash == "" || isHash == undefined) {
+		isHash = false;
+	}
+	if(delay == "" || delay == undefined) {
+		delay = 0;
+	}
+	console.log(delay);
+    var offset_top = $j('#find-'+targetID.substring(1)).offset();
+    var offset_trigger = $j('#extra1-'+targetID.substring(1)).offset();
+	offset_trigger = offset_trigger.top;
+	if(($j('#extra1-'+targetID.substring(1)).attr('name')) && (isHash == true)) {
+		offset_trigger = $j('#extra1-'+targetID.substring(1)).attr('name');
+	}
+	if(!offset_trigger) {
+		offset_trigger = target_offset.top;
+	}
+	offset_trigger = offset_trigger - 150;
+	console.log(offset_top);
+	console.log(offset_trigger);
+	setTimeout(function(){
+		$j('html, body').animate({
+			scrollTop: offset_trigger
+		}, { 
+			duration: 500, 
+			easing: 'swing'
+		});
+	}, delay);
+}
 
 
 $j('document').ready(function() { //call on load
@@ -249,4 +280,30 @@ $j('document').ready(function() { //call on load
 		}
 	});
 	
+	//scroll to id, intransigent swine! ///////NEED TO FIND HEIGHT of closed Drawer
+	setTimeout(function() {
+		$j('.drawertrigger').each(function() {
+			var myOffset = ($j(this).offset()).top;
+			$j(this).attr('name', myOffset);
+		});
+	
+		if(window.location.hash) {
+			var hashTarget = window.location.hash;
+			console.log(hashTarget);
+			if($j(hashTarget).hasClass('find-me')){
+				scrollToID(hashTarget, 500, true);
+			}
+		}
+	
+// 		$j('.drawertrigger').click(function() {
+// 
+// 			var clickedTrigger = $j(this).attr('id');
+// 			var targetDrawer = clickedTrigger.substring(7);
+// 			if(!($j('#'+clickedTrigger).hasClass('colomat-close'))) {
+// 				targetDrawer = '#' + targetDrawer;
+// 				console.log(targetDrawer);
+// 				scrollToID(targetDrawer, 500);
+// 			}
+// 		});
+	}, 1000);
 });
