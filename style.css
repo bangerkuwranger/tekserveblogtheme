@@ -56,6 +56,7 @@
 * Drawers
 * Blog Front Page
 * Orange Box
+* Detail Boxes
 * Testimonials
 * StortTable Post
 * MagicNav (deprecated)
@@ -173,7 +174,7 @@ select,
 textarea {
 	color: #004d72;
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: 1em;
 }
 
 select {
@@ -300,7 +301,7 @@ body.custom-background {
 
 #title {
 	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 42px;
+	font-size: 2.625em;
 	font-weight: normal;
 	line-height: 1.25;
 	margin: 0;
@@ -338,7 +339,7 @@ body.custom-background {
 
 #description {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1em;
 }
 
 .header-image #description {
@@ -476,7 +477,7 @@ body.custom-background {
 	border: 1px solid #333;
 	border-top: none;
 	color: #fff;
-	font-size: 12px;
+	font-size: .75em;
 	padding: 15px 20px;
 	position: relative;
 	text-transform: none;
@@ -597,7 +598,7 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 .breadcrumb {
-	font-size: 12px;
+	font-size: .75em;
 	margin: 0;
 	padding: 0;
 }
@@ -616,7 +617,7 @@ ul.menu li.sfHover ul,
 
 .author-box p,
 .taxonomy-description p {
-	font-size: 14px;
+	font-size: .825em;
 }
 
 .sticky {
@@ -783,7 +784,7 @@ h6 a:hover {
 }
 
 h1 {
-	font-size: 42px;
+	font-size: 2.625em;
 	font-weight: 900;
 	text-transform: uppercase;
 }
@@ -793,7 +794,7 @@ h2 a,
 h2 a:visited,
 h2 a:hover,
 .htwoList {
-	font-size: 36px;
+	font-size: 2.25em;
 	font-weight: 900;
 	list-style-position: inside;
 }
@@ -812,27 +813,27 @@ h2 a:hover {
 }
 
 h3, .hthreeList {
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 
 h4, .hfourList {
-	font-size: 20px;
+	font-size: 1.25em;
 	font-weight: bold;
 }
 
 h5,
 #footer-widgets h4 {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 h6,
 .taxonomy-description h1 {
-	font-size: 12px;
+	font-size: .75em;
 }
 
 .htwoList p, .hthreeList p, .hfourList p, .htwoList ul li, .hthreeList ul li, .hfourList ul li, .htwoList ol li, .hthreeList ol li, .hfourList ol li {
-	font-size: 16px;
+	font-size: 1em;
 	font-weight: normal;
 	text-indent: 0;
 }
@@ -881,7 +882,7 @@ ol ol {
 
 .single h1.entry-title {
 	text-align: left;
-	font-size: 42px;
+	font-size: 2.625em;
 	text-transform: uppercase;
 	border: none;
 	padding: 0;
@@ -910,7 +911,7 @@ li.hfourList {
 
 .post-meta {
 	color: #999;
-	font-size: 18px;
+	font-size: 1.125em;
 	padding: 10px 0 0;
 }
 
@@ -949,7 +950,7 @@ li.hfourList {
 #tekserve-press-publication {
 	text-transform: uppercase;
 	color: #f36f37;
-	font-size: 18px;
+	font-size: 1.125em;
 	font-weight: 200;
 	margin-right: .4em !important;
 }
@@ -1150,7 +1151,7 @@ max-width: 99% !important;
 }
 
 p.wp-caption-text {
-	font-size: 14px;
+	font-size: .875em;
 	margin: 5px 0;
 	width: auto !important;
 }
@@ -1182,7 +1183,7 @@ outline: none;
 ------------------------------------------------------------ */
 
 .navigation {
-	font-size: 18px;
+	font-size: 1.125em;
 	width: 100%;
 }
 
@@ -1190,7 +1191,7 @@ outline: none;
 tfoot .pagination ul li {
 	display: inline;
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 1.125em;
 	height: auto;
 	line-height: 27px;
 	list-style-type: none;
@@ -1264,13 +1265,13 @@ div.gform_footer input.button,
 	border-radius: 12px 0 12px;
 	border: none;
 	display: block;
-	font-size: 24px;
-	font-weight: bold;
+	font-size: 1.5em;
+	font-weight: 900;
 	text-transform: uppercase;
 	margin: 1em 0 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: 6px 10px 3px;
+	padding: 6px 10px 3px !important;
 	cursor: pointer;
 }
 
@@ -1297,7 +1298,7 @@ div.gform_footer input.button {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 1.5em;
 	margin: .5em 0;
 }
 
@@ -1344,7 +1345,7 @@ div.gform_footer input.button {
 	box-sizing: border-box;
 	color: #999;
 	font-family: 'Tekvetica', 'Helvetica', sans-serif;
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 0 10px;
 	padding: 10px;
 	width: 100%;
@@ -1399,7 +1400,7 @@ div.gform_footer input.button {
 }
 
 .search-results .page.hentry h2.entry-title a, .search-results .post.hentry h2.entry-title a, .hfeed .page.hentry h2.entry-title a, .hfeed .post.hentry h2.entry-title a {
-	font-size: 30px !important;
+	font-size: 1.875 !important;
 	color: #004d72 !important;
 }
 
@@ -1420,7 +1421,7 @@ div.gform_footer input.button {
 	background-color: #004d72;
 	clear: both;
 	color: #fff;
-	font-size: 15px;
+	font-size: 0.9375em;
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -1550,7 +1551,7 @@ div.gform_footer input.button {
 	clear: both;
 	color: #fff;
 	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 16px;
+	font-size: 1em;
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -1636,7 +1637,7 @@ div.gform_footer input.button {
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.25em;
 	display: block;
 	margin: 0;
 }
@@ -1646,7 +1647,7 @@ div.gform_footer input.button {
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.25em;
 }
 
 label {
@@ -1669,7 +1670,7 @@ label {
 }
 
 .comment-content p {
-	font-size: 14px;
+	font-size: .875em;
 	margin: 0 0 20px;
 	color: white;
 }
@@ -1680,7 +1681,7 @@ label {
 }
 
 .commentmetadata {
-	font-size: 12px;
+	font-size: .75em;
 	margin: 0 0 5px;
 }
 
@@ -1691,7 +1692,7 @@ label {
 }
 
 .reply {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 #comments .navigation {
@@ -1702,7 +1703,7 @@ label {
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 1.5em;
 }
 
 /* Responsive Table
@@ -1717,7 +1718,7 @@ table.responsivetable {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	font-family: 'Tekvetica', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: 1em;
 	color: #004d72;
 	background: #fff;
 }
@@ -1744,7 +1745,7 @@ table.footable.breakpoint>tbody>tr>td>span.footable-toggle {
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 	padding-right: 5px;
-	font-size: 36px;
+	font-size: 2.25em;
 	color: #f36f37 !important;
 	vertical-align: middle;
 }
@@ -1777,7 +1778,7 @@ div.gform_wrapper textarea {
 	background-color: #fff;
 	margin: 0 0 .5em;
 	padding: 10px !important;
-	font-size: 18px;
+	font-size: 1.125em;
 	line-height: 1.25em;
 	border-radius: 6px;
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1788,13 +1789,13 @@ div.gform_footer input.button {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
-	font-size: 24px;
+	font-size: 1.5em;
 	border-radius: 12px 0 12px 0;
 	background-color: #f36f37;
 }
 
 div.gform_wrapper .ginput_complex label {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 div.gform_wrapper li,
@@ -1821,7 +1822,7 @@ div.gform_wrapper li label span.gfield_required {
 div.gform_wrapper .gfield_label {
 	color: #004d72;
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 1.5em;
 	text-transform: uppercase;
 }
 
@@ -1840,14 +1841,14 @@ div.gform_wrapper .gfield {
 }
 
 div.gform_wrapper .gfield.formlongtitle .gfield_label {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 div.gform_wrapper .gform_fields .gfield span label {
 	display: block;
 	color: #004d72;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 1.125em;
 	text-transform: uppercase;
 }
 
@@ -1860,7 +1861,7 @@ div.gform_wrapper .gform_fields .gfield span label {
 div.gform_wrapper .gform_fields .gfield .ginput_container label {
 	color: #004d72;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 1.125em;
 	text-transform: uppercase;
 }
 
@@ -2336,7 +2337,7 @@ color: #f06c34 !important;
 }
 
 .section h1 {
-	font-size: 42px;
+	font-size: 2.625em;
 	text-align: left;
 	line-height: 1.25em;
 	text-transform: uppercase;
@@ -2345,7 +2346,7 @@ color: #f06c34 !important;
 
 .section p {
 	text-align: justify;
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 .section .button {
@@ -2357,7 +2358,7 @@ color: #f06c34 !important;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 1.5em;
 	margin: .5em 0;
 }
 
@@ -2522,7 +2523,7 @@ color: #f06c34 !important;
 .orange .collapseomatic_content,
 .darkblue .collapseomatic_content,
 .lightblue .collapseomatic_content {
-	background-color: rgba(0, 0, 0, .2)
+	background-color: rgba(0, 0, 0, .2);
 }
 
 .section:before,
@@ -2656,7 +2657,7 @@ color: #f06c34 !important;
 	background-repeat: no-repeat;
 	padding: 10px 30px 10px 0px;
 	text-align: left;
-	font-size: 24px;
+	font-size: 1.25em;
 	color: #004d72;
 	cursor: pointer;
 	width: auto;
@@ -2863,7 +2864,7 @@ color: #f06c34 !important;
 }
 
 .page-template-static_content-php .tekserve-single-post h2 {
-	font-size: 28px;
+	font-size: 1.75em;
 	margin-bottom: 0;
 }
 
@@ -2916,7 +2917,7 @@ div.orangebox {
 div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
 	color: white;
 	font-weight: bold;
-	font-size: 52px;
+	font-size: 1.75em;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -2924,7 +2925,7 @@ div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
 div.orangebox h2 a, div.orangebox h2 a:visited, div.orangebox h2 {
 	color: white;
 	font-weight: normal;
-	font-size: 28px;
+	font-size: 1.25em;
 	text-transform: lowercase;
 	text-align: center;
 }
@@ -2942,16 +2943,170 @@ div.orangebox .button {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 24px;
-	margin: .5em 0;
+	font-size: 1.5em;
+	margin: .5em auto;
+	position: relative;
+	left: 30%;
 }
 
 div.orangebox .button:hover {
-	color: #40a8c9;
+	background-color: #40a8c9;
 }
 
 div.orangebox p {
 	text-align: center;
+}
+
+/* Detail Boxes
+------------------------------------------------------------ */
+.page-template-static_content-php #wrap #inner .wrap #content div.wpb_row.section.dboxsection {
+	padding: 0;
+}
+
+.section .detailBox {
+	background-color: rgba(0, 0, 0, .2);
+	padding: 2em;
+}
+
+.section .detailBox:before,
+.section .detailBox:after {
+	display: table;
+	height: 0px;
+	content: "";
+}
+
+.section .detailBox:before {
+	margin-left: 0;
+}
+
+.section .detailBox:after {
+	clear: both;
+}
+
+.section .detailBox .detailBox-left,
+.section .detailBox .detailBox-right {
+	width: 49%;
+	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.section .detailBox .detailBoxTrigger {
+	display: inline-block;
+	position: relative;
+	font-size: 1.25em;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.section .detailBox .detailBoxTrigger:after {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #40a8c9;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    right: -1em;
+}
+
+.section .detailBox .detailBox-right .detailBox-mobile-back:before {
+	content: "\f100"; 
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	color: #40a8c9;
+	font-size: inherit;
+	position: absolute;
+	top: -.2em;
+	left: 0;
+}
+
+.section.orange .detailBox .detailBoxTrigger:after,
+.section.orange .detailBox .detailBox-right .detailBox-mobile-back:before {
+	color: #004d72;
+}
+
+.section.darkblue .detailBox .detailBoxTrigger:after,
+.section.darkblue .detailBox .detailBox-right .detailBox-mobile-back:before {
+	color: #f37f37;
+}
+
+.section.lightblue .detailBox .detailBoxTrigger:after,
+.section.lightblue .detailBox .detailBox-right .detailBox-mobile-back:before {
+	color: #004d72;
+}
+
+.section .detailBox .detailBoxTrigger-container.active .detailBoxTrigger:after {
+	content: "\f104";
+}
+
+.section .detailBox .detailBoxTrigger:hover,
+.section .detailBox .detailBoxTrigger-container.active .detailBoxTrigger ,
+.section.darkblue .detailBox .detailBoxTrigger:hover,
+.section.darkblue .detailBox .detailBoxTrigger-container.active .detailBoxTrigger {
+	color: #f36f37;
+}
+
+.section.orange .detailBox .detailBoxTrigger:hover,
+.section.orange .detailBox .detailBoxTrigger-container.active .detailBoxTrigger,
+.section.lightblue .detailBox .detailBoxTrigger:hover,
+.section.lightblue .detailBox .detailBoxTrigger-container.active .detailBoxTrigger {
+	color: #004d72;
+}
+
+.section .detailBox .detailBoxTrigger-container.active .detailBoxTrigger:hover {
+	color: #004d72;
+	cursor: default;
+}
+
+.section.darkblue .detailBox .detailBoxTrigger-container.active .detailBoxTrigger:hover,
+.section.orange .detailBox .detailBoxTrigger-container.active .detailBoxTrigger:hover,
+.section.lightblue .detailBox .detailBoxTrigger-container.active .detailBoxTrigger:hover {
+	color: #fff;
+}
+
+.section .detailBox .detailBox-right {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	min-height: 300px;
+	background-image: url(images/clicklearnmore-wht.svg);
+	position: relative;
+}
+
+.section.orange .detailBox .detailBox-right {
+	background-image: url(images/clicklearnmore-org.svg);
+}
+
+.section.darkblue .detailBox .detailBox-right {
+	background-image: url(images/clicklearnmore-dbl.svg);
+}
+
+.section.lightblue .detailBox .detailBox-right {
+	background-image: url(images/clicklearnmore-lbl.svg);
+}
+
+.section .detailBox .detailBox-right.active {
+	background: transparent !important;
+}
+
+.section .detailBox .detailBox-detail {
+	position: absolute;
+    height: 100%;
+    width: 100%;
+	display: none;
+}
+
+.section .detailBox .detailBox-right .detailBox-mobile {
+	display: none;
 }
 
 /* Testimonials
@@ -2961,7 +3116,7 @@ div.orangebox p {
 	display: table;
 	margin: 0 auto;
 	font-weight: normal;
-	font-size: 30px;
+	font-size: 1.875em;
 }
 
 .section.testimonial {
@@ -2978,7 +3133,7 @@ div.orangebox p {
 
 .tekserve-testimonial .tekserve-testimonial-source {
 	text-transform: uppercase;
-	font-size: 26px;
+	font-size: 1.625em;
 }
 
 .section .tekserve-testimonial-ul li {
@@ -3059,7 +3214,7 @@ table.sortable td a {
 }
 
 #popularTop h1, #facebookTop h1, #twitterTop h1, #categoriesTop h1 {
-	font-size: 30px;
+	font-size: 1.875em;
 	font-weight: 900;
 	text-transform: uppercase;
 	color: #f36f37;
@@ -3116,7 +3271,7 @@ table.sortable td a {
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 1.5em;
 }
 
 .nrelate_default .nr_title {
@@ -3144,7 +3299,7 @@ table.sortable td a {
 
 .nrelate_default .nr_panel .nr_post_title {
 	color: #004d72;
-	font-size: 18px;
+	font-size: 1.125em;
 	font-weight: normal;
 	line-height: 1.25em;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
@@ -3180,7 +3335,7 @@ table.sortable td a {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 18px;
+	font-size: 1.125em;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -3208,7 +3363,7 @@ table.sortable td a {
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.25em;
 	display: block;
 	margin: 0;
 }
@@ -3238,7 +3393,7 @@ ul#emma-form-elements li.emma-form-row {
 	border-radius: 12px 0 12px;
 	border: none;
 	display: block;
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: bold;
 	text-transform: uppercase;
 	margin: 1em 0;
@@ -3261,7 +3416,7 @@ ul#emma-form-elements li.emma-form-row {
 #wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4, #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2, .widget_categories h4, #Front_Page .widget_knrauthorlistwidget h2, #Front_Page .widget_anual_archive h2 {
 	color: white;
 	text-transform: uppercase;
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: 900;
 }
 
@@ -3273,7 +3428,7 @@ ul#emma-form-elements li.emma-form-row {
 
 .wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, .widget_categories ul li a, .widget_categories ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
 	color: white !important;
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 .wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover, #categories-4 ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover, .widget_categories ul li a:hover, #Front_Page .widget_knrauthorlistwidget ul li a:hover, #Front_Page .widget_anual_archive ul li a:hover {
@@ -3378,7 +3533,7 @@ div.tribe-events-content img {
 span.tribe-events-list-separator-month {
 	background-color: #40a8c9;
 	color: white;
-	font-size: 30px;
+	font-size: 1.875em;
 	font-weight: normal;
 	text-transform: none;
 }
@@ -3391,7 +3546,7 @@ span.tribe-events-list-separator-month span {
 }
 
 #tribe-events-content-wrapper .tribe-events-list-separator-year {
-	font-size: 48px;
+	font-size: 3em;
 	padding-top: 0;
 	background: #f36f37;
 	font-weight: 900;
@@ -3586,7 +3741,7 @@ a.tribe-events-button:hover {
 }
 
 h2.tribe-events-list-event-title a, h2.tribe-events-list-event-title a:visited, .tribe-events-list-event-description a:visited, .tribe-events-list-event-description a {
-	font-size: 24px;
+	font-size: 1.5em;
 	color: #f36f37;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -3597,7 +3752,7 @@ h2.tribe-events-list-event-title a:hover, .tribe-events-list-event-description a
 }
 
 #tribe-events-content h2.tribe-events-page-title {
-	font-size: 36px;
+	font-size: 2.2em;
 	font-weight: 900;
 	text-transform: uppercase;
 }
@@ -3720,7 +3875,7 @@ button.positive:hover {
 }
 
 #status-content p {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 #status-content ul li {
@@ -3736,6 +3891,9 @@ button.positive:hover {
 /* Revolution Slider
 ------------------------------------------------------------ */
 
+.rev_slider_wrapper .rev_slider .tp-caption {
+	font-size: 16px;
+}
 
 .rev_slider_wrapper .rev_slider .tp-caption.darkbluetxt{
 	position: absolute; 
@@ -3814,34 +3972,34 @@ button.positive:hover {
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size14 {
-	font-size: 14px; 
+	font-size: .875em; 
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size28 {
-	font-size: 28px;
+	font-size: 1.175em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size36 {
-	font-size: 36px;
+	font-size: 2.25em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size48 {
-	font-size: 48px;
+	font-size: 3em;
 	line-height: .75em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size60 {
-	font-size: 60px;
+	font-size: 3.75em;
 	line-height: 1em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size72 {
-	font-size: 72px;
+	font-size: 4.5em;
 	line-height: 1.1em;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size96 {
-	font-size: 96px;
+	font-size: 6em;
 	line-height: 1.1em;
 }
 
@@ -4171,7 +4329,7 @@ text-align: center;
 	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
 	.page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element,
 	.page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
-		background-color: rgba(0,0,0,.3);
+		background-color: rgba(0,0,0,.2);
 	}
 	
 	.page-template-static_content-php .nogrey div.wpb_text_column.wpb_content_element  {
@@ -4193,15 +4351,15 @@ text-align: center;
 	}
 
 	div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
-		font-size: 36px;
+		font-size: 2.25em;
 	}
 
 	div.orangebox h2 a, div.orangebox h2 a:visited, div.orangebox h2 {
-		font-size: 20px;
+		font-size: 1.25em;
 	}
 
 	div.orangebox .button {
-		font-size: 16px;
+		font-size: 1em;
 	}
 
 	div.orangebox {
@@ -4342,7 +4500,7 @@ text-align: center;
 	
 	table.sortable thead tr,
 	table.sortable tbody tr {
-		font-size: 12px;
+		font-size: .75em;
 	}
 
 	table.sortable tr th:first-child, 
@@ -4351,11 +4509,11 @@ text-align: center;
 	}
 	
 	.section .tekserve-testimonial {
-		font-size: 22px;
+		font-size: 1.375em;
 	}
 	
 	.tekserve-testimonial .tekserve-testimonial-source {
-		font-size: 18px;
+		font-size: 1.125em;
 	}
 
 	
@@ -4370,7 +4528,7 @@ text-align: center;
 	height: 36px;
 	}
 	ul.menu.genesis-nav-menu.menu-primary li a {
-	font-size: 28px;
+	font-size: 1.75em;
 	font-weight: normal;
 	}
 	.menu li.right.search {
@@ -4382,7 +4540,7 @@ text-align: center;
 	}
 	input.s.search-input {
 	height: 40px;
-	font-size: 24px;
+	font-size: 1.5em;
 	}
 	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
 	width: 280px !important;
@@ -4402,8 +4560,13 @@ text-align: center;
 
 @media only screen and (max-width: 640px) {
 
+	#inner {
+		width: 640px;
+		overflow: hidden;
+	}
+
 	#title {
-		font-size: 36px;
+		font-size: 2.25em;
 	}
 
 	.menu-primary a,
@@ -4417,7 +4580,7 @@ text-align: center;
 	h2 a,
 	h2 a:visited,
 	h2 a:hover {
-		font-size: 30px;
+		font-size: 1.875em;
 	}
 
 	blockquote {
@@ -4531,7 +4694,7 @@ text-align: center;
 		margin: 0 auto;
 	}
 	input.s.search-input {
-		font-size: 18px;
+		font-size: 1.125em;
 		font-weight: bold;
 		height: 28px;
 		color: #004d72;
@@ -4645,6 +4808,49 @@ text-align: center;
 		width: 100%;
 		background-color: transparent;
 		padding: 0;
+	}
+	
+	.section .detailBox {
+		width: 1280px;
+		position: relative;
+		-webkit-transition: left 300ms cubic-bezier(0.580, 1, 0.835, 1); /* older webkit */
+		-webkit-transition: left 300ms cubic-bezier(0.580, 1.230, 0.835, 1.035); 
+		-moz-transition: left 300ms cubic-bezier(0.580, 1.230, 0.835, 1.035); 
+		-o-transition: left 300ms cubic-bezier(0.580, 1.230, 0.835, 1.035); 
+		transition: left 300ms cubic-bezier(0.580, 1.230, 0.835, 1.035); /* custom */
+		padding: 3em;
+	}
+	
+	.section .detailBox.shifted {
+		left: -640px;
+	}
+	
+	.section .detailBox .detailBox-detail,
+	.section .detailBox .detailBox-right {
+		max-width: 540px;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile {
+		display: block;
+		margin-bottom: 1em;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile-back {
+		font-size: 1.25em;
+		text-transform: uppercase;
+		padding: 0 1em;
+		cursor: pointer;
+		position: relative;
+		vertical-align: top;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile-title {
+		font-size: 1.25em;
+		text-align: center;
+		width: 400px;
+		display: inline-block;
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 	
 }
