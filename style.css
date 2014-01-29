@@ -1412,6 +1412,19 @@ div.gform_footer input.button {
 	background: none;
 }
 
+.even h2 a,
+.even h2 a:visited,
+.odd h2 a,
+.odd h2 a:visited {
+	color: #004d72;
+	font-size: 30px;
+}
+
+.even h2 a:hover,
+.odd h2 a:hover {
+	color: #40a8c9;
+}
+
 
 /* Footer Widgets
 ------------------------------------------------------------ */
@@ -2315,14 +2328,6 @@ color: #f06c34 !important;
 }
 
 
-/* Post Alternation
------------------------------------------------------------- */
-.even h2 a {color:white;}
-
-.even h2 a:hover {color:#40a8c9;}
-
-.entry-title a, .entry-title a:hover {font-weight: 900;}
-
 /* Page Sections
 ------------------------------------------------------------ */
 .section {
@@ -2943,7 +2948,11 @@ div.orangebox .button {
 	text-transform: uppercase;
 	font-weight: 900;
 	font-size: 24px;
-	margin: .5em 0;
+	margin: .5em auto;
+	width: 70px;
+	text-align: center;
+	position: relative;
+	left: 30%;
 }
 
 div.orangebox .button:hover {
