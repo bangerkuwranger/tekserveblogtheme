@@ -197,6 +197,40 @@ $j('document').ready(function() { //call on load
 // 			$j('#target-'+downid).parents('.wpb_wrapper, .wpb_column').toggleClass('thinMan');
 		}, 400);
 	});
+	
+	//detailBox sliding behavior
+	$j('.detailBoxTrigger').click(function() {
+		var thistitle = $j(this).html();
+		$j(this).parents('.detailBox').find('.detailBox-mobile-title').html(thistitle);
+		$j(this).parents('.detailBox').addClass('shifted');
+		$j(this).parent().addClass('active');
+		var $jothertrigs = $j(this).parent().siblings('.active');
+		$j($jothertrigs).removeClass('active');
+ 		var targetid = $j(this).attr('id');
+        targetid = targetid.replace('_trigger', '');
+        var $jtarget = $j('#'+targetid);
+        var $jother = $j('#'+targetid).siblings('.active');
+    	$j('.detailBox-right').addClass('active');
+        if (!$jtarget.hasClass('active')) {
+            $jother.each(function(index, self) {
+                var $jthis = $j(this);
+				$jthis.removeClass('active').animate({
+					left: $jthis.width()
+				}, 500).hide(500);
+            });
+
+            $jtarget.addClass('active').show().css({
+                left: -($jtarget.width())
+            }).animate({
+                left: 0
+            }, 500);
+        }
+    });
+    
+    //detailBox mobile back button
+    $j('.detailBox-mobile').click(function() {
+    	$j(this).parents('.detailBox').removeClass('shifted');
+    });
 
 	$j('.search-results img').removeAttr('width').removeAttr('height');//remove image size attributes from search results page
 
@@ -311,4 +345,5 @@ $j('document').ready(function() { //call on load
 // 			}
 // 		});
 	}, 1000);
+	
 });
