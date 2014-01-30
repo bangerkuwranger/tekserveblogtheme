@@ -544,6 +544,39 @@ function tekserve_footer() {
 	echo '</div>';
 }
 
+//iCaps
+function icaps( $atts, $content ) {
+   extract( shortcode_atts( array(
+		'usereg' => false
+   ), $atts ) );
+   $content = strtolower($content);
+   if (usereg != false) {
+	   $reg = '&reg;';
+	}
+	else { 
+		$reg = '';
+	}
+ 	if ($content == 'ipad') {
+ 		$icap = '<span style="text-transform: lowercase;">i</span><span style="text-transform: uppercase;">p</span>ad<sup style="font-size: .1em; vertical-align: 50%;">'.$reg.'</sup>';
+ 	}
+ 	elseif ($content = 'iphone') {
+ 		$icap = '<span style="text-transform: lowercase;">i</span><span style="text-transform: uppercase;">p</span>hone<sup style="font-size: .1em; vertical-align: 50%;">'.$reg.'</sup>';
+ 	}
+ 	elseif ($content = 'ipod') {
+ 		$icap = '<span style="text-transform: lowercase;">i</span><span style="text-transform: uppercase;">p</span>od<sup style="font-size: .1em; vertical-align: 50%;">'.$reg.'</sup>';
+ 	}
+ 	elseif ($content = 'ios') {
+ 		$icap = '<span style="text-transform: lowercase;">i</span><span style="text-transform: uppercase;">os</span><sup style="font-size: .1em; vertical-align: 50%;">'.$reg.'</sup>';
+ 	}
+ 	elseif ($content = 'imac') {
+ 		$icap = '<span style="text-transform: lowercase;">i</span><span style="text-transform: uppercase;">m</span>ac<sup style="font-size: .1em; vertical-align: 50%;">'.$reg.'</sup>';
+ 	}
+ 	else {
+ 		$icap = $content;
+ 	}
+   return $icap;
+}
+add_shortcode( 'icaps', 'icaps' );
 
 /** Widget area for special notices sitewide */
 // Register widget area

@@ -140,6 +140,8 @@ $j('document').ready(function() { //call on load
 
 	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
 	$j('.dsection').addClass('thinMan');
+	$j('.dboxsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for detailBox containers
+	$j('.dboxsection').addClass('thinMan');
 	
 	$j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
 		wrapperbgcolor = $j(this).css('background-color');
@@ -210,7 +212,7 @@ $j('document').ready(function() { //call on load
         targetid = targetid.replace('_trigger', '');
         var $jtarget = $j('#'+targetid);
         var $jother = $j('#'+targetid).siblings('.active');
-    	$j('.detailBox-right').addClass('active');
+    	$j(this).parents('.detailBox').find('.detailBox-right').addClass('active');
         if (!$jtarget.hasClass('active')) {
             $jother.each(function(index, self) {
                 var $jthis = $j(this);
@@ -333,17 +335,6 @@ $j('document').ready(function() { //call on load
 				scrollToID(hashTarget, 500, true);
 			}
 		}
-	
-// 		$j('.drawertrigger').click(function() {
-// 
-// 			var clickedTrigger = $j(this).attr('id');
-// 			var targetDrawer = clickedTrigger.substring(7);
-// 			if(!($j('#'+clickedTrigger).hasClass('colomat-close'))) {
-// 				targetDrawer = '#' + targetDrawer;
-// 				console.log(targetDrawer);
-// 				scrollToID(targetDrawer, 500);
-// 			}
-// 		});
 	}, 1000);
 	
 });
