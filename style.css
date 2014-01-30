@@ -624,6 +624,38 @@ ul.menu li.sfHover ul,
 	padding: 30px;
 }
 
+span.mta {
+	font-weight: 200;
+	color: #fff;
+	background-color: #004d72;
+	border-radius: 50%;
+	padding: 6px 4px 2px;
+	width: 1.5em;
+	margin: 0 .5em;
+	text-align: center;
+	display: inline-block;
+	height: 1.5em;
+}
+
+span.mta.orange {
+	background-color: #f99f1b;
+}
+
+span.mta.red {
+	background-color: #ff2921;
+}
+
+span.mta.yellow {
+	background-color: #e5cf2f;
+}
+
+span.mta.blue {
+	background-color: #2850b9;
+}
+
+span.mta.green {
+	background-color: #01933d;
+}
 
 /* Content
 ------------------------------------------------------------ */
@@ -2637,6 +2669,30 @@ color: #f06c34 !important;
 	max-height: 550px !important;
 }
 
+.max850 {
+	max-height: 850px;
+}
+
+.max850 div img {
+	max-height: 700px !important;
+}
+
+.max950 {
+	max-height: 950px;
+}
+
+.max950 div img {
+	max-height: 800px !important;
+}
+
+.max1050 {
+	max-height: 1050px;
+}
+
+.max1050 div img {
+	max-height: 900px !important;
+}
+
 /* Drawers
 ------------------------------------------------------------ */
 
@@ -2882,7 +2938,7 @@ color: #f06c34 !important;
 }
 
 .page-template-static_content-php .entry-content p {
-	margin: 0;
+	margin: 0 0 1em;
 }
 
 .page-template-static_content-php .entry-content .drawer p {
@@ -4928,6 +4984,12 @@ text-align: center;
 	.max750 {
 		max-height: 5000px;
 	}
+		
+	.max850,
+	.max950,
+	.max1050 {
+		max-height: 5000px;
+	}
 	
 	.entry-content ul.certificationlogos li {
 		margin: 0 auto;
@@ -5027,7 +5089,9 @@ div.tp-caption.sft.slidelink.hasclicklistener a {
 }
 
 #target-media-mentions .tp-bgimg.defaultimg,
-#target-media-mentions .slot .slotslide div {
+#target-media-mentions .slot .slotslide div,
+.target-media-mentions .tp-bgimg.defaultimg,
+.target-media-mentions .slot .slotslide div {
 background: transparent !important;
 }
 
@@ -5035,7 +5099,8 @@ background: transparent !important;
 	outline: none;
 }
 
-span.trademark {
+span.trademark,
+span.insider {
 	text-transform: none !important;
 }
 
