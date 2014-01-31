@@ -165,7 +165,7 @@ textarea,
 input,
 select,
 textarea {
-	border: 1px solid #ddd;
+	border: 1px solid #40a8c9;
 }
 
 input,
@@ -3511,6 +3511,10 @@ body.events-list #wrap div#inner {
 }
  */
 
+ .single-tribe_events .tribe-events-content {
+	margin: 4em 0;
+}
+
 #tribe-events {
 	background-color: rgba(255,255,255,.75);
 }
@@ -5029,4 +5033,15 @@ background: transparent !important;
 
 #live_chat a img {
 	outline: none;
+}
+
+span.trademark {
+	text-transform: none !important;
+}
+
+span.trademark:after {
+	content: '®';
+	font-size: .25em;
+	vertical-align: text-top;
+	line-height: 1em;
 }

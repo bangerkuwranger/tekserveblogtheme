@@ -140,6 +140,8 @@ $j('document').ready(function() { //call on load
 
 	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
 	$j('.dsection').addClass('thinMan');
+	$j('.dboxsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for detailBox containers
+	$j('.dboxsection').addClass('thinMan');
 	
 	$j('.section').each(function() { //loops through each section, creating a wrapper with the corresponding bg color to be stretched to the window length.
 		wrapperbgcolor = $j(this).css('background-color');
@@ -201,6 +203,7 @@ $j('document').ready(function() { //call on load
 	//detailBox sliding behavior
 	$j('.detailBoxTrigger').click(function() {
 		var thistitle = $j(this).html();
+		var leftheight = $j(this).parents('.detailBox').find('.detailBox-left').height();
 		$j(this).parents('.detailBox').find('.detailBox-mobile-title').html(thistitle);
 		$j(this).parents('.detailBox').addClass('shifted');
 		$j(this).parent().addClass('active');
@@ -210,7 +213,7 @@ $j('document').ready(function() { //call on load
         targetid = targetid.replace('_trigger', '');
         var $jtarget = $j('#'+targetid);
         var $jother = $j('#'+targetid).siblings('.active');
-    	$j('.detailBox-right').addClass('active');
+    	$j(this).parents('.detailBox').find('.detailBox-right').addClass('active');
         if (!$jtarget.hasClass('active')) {
             $jother.each(function(index, self) {
                 var $jthis = $j(this);
@@ -218,7 +221,10 @@ $j('document').ready(function() { //call on load
 					left: $jthis.width()
 				}, 500).hide(500);
             });
-
+            if (leftheight > 300) {
+				$jtarget.css('height',leftheight+'px');
+				$jtarget.parents('.detailBox-right').css('height',leftheight+'px');
+			}
             $jtarget.addClass('active').show().css({
                 left: -($jtarget.width())
             }).animate({
@@ -333,17 +339,17 @@ $j('document').ready(function() { //call on load
 				scrollToID(hashTarget, 500, true);
 			}
 		}
-	
-// 		$j('.drawertrigger').click(function() {
-// 
-// 			var clickedTrigger = $j(this).attr('id');
-// 			var targetDrawer = clickedTrigger.substring(7);
-// 			if(!($j('#'+clickedTrigger).hasClass('colomat-close'))) {
-// 				targetDrawer = '#' + targetDrawer;
-// 				console.log(targetDrawer);
-// 				scrollToID(targetDrawer, 500);
-// 			}
-// 		});
 	}, 1000);
 	
+});
+//icaps
+$j('h1, h2, h3, .detailBoxTrigger, .drawertrigger').each(function () {
+    var my_html = $j(this).html();
+    var my_old_html = $j(this).html();
+ 
+    // Make sure there are no children so we don't edit more than we want.
+    if ($j(this).children().length == 0) {
+        my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|MacBook|Mac mini|Mac Pro)/ig, '<span class="trademark">$1</span>');
+        $j(this).html(my_html);
+    }
 });

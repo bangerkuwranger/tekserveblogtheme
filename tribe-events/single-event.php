@@ -16,6 +16,9 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
 $event_id = get_the_ID();
 
+$datedetails = tribe_events_event_schedule_details();
+$datedetails = str_replace('@', 'from', $datedetails);
+$datedetails = str_replace('-', 'to', $datedetails);
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
@@ -28,7 +31,8 @@ $event_id = get_the_ID();
 	<?php the_title( '<h2 class="tribe-events-single-event-title summary">', '</h2>' ); ?>
 
 	<div class="tribe-events-schedule updated published tribe-clearfix">
-		<h3><?php echo tribe_events_event_schedule_details(); ?></h3>
+		<h3><?php echo $datedetails ?></h3>
+		<?php echo tribe_events_single_event_meta() ?>
 		<?php echo tribe_events_event_recurring_info_tooltip(); ?>
 		<?php  if ( tribe_get_cost() ) :  ?>
 			<span class="tribe-events-divider">|</span>
@@ -49,6 +53,8 @@ $event_id = get_the_ID();
 	<?php while ( have_posts() ) :  the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class('vevent'); ?>>
 			<!-- Event featured image -->
+
+
 			<?php echo tribe_event_featured_image(); ?>
 
 			<!-- Event content -->
@@ -60,7 +66,7 @@ $event_id = get_the_ID();
 
 			<!-- Event meta -->
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-				<?php echo tribe_events_single_event_meta() ?>
+				
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 			</div><!-- .hentry .vevent -->
 		<?php if( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments','no' ) == 'yes' ) { comments_template(); } ?>
