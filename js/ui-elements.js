@@ -214,9 +214,9 @@ $j('document').ready(function() { //call on load
         if (!$jtarget.hasClass('active')) {
             $jother.each(function(index, self) {
                 var $jthis = $j(this);
-                $jthis.removeClass('active').animate({
-                    left: $jthis.width()
-                }, 500);
+				$jthis.removeClass('active').animate({
+					left: $jthis.width()
+				}, 500).hide(500);
             });
 
             $jtarget.addClass('active').show().css({

@@ -3080,6 +3080,7 @@ div.orangebox p {
 	min-height: 300px;
 	background-image: url(images/clicklearnmore-wht.svg);
 	position: relative;
+	height: 100%;
 }
 
 .section.orange .detailBox .detailBox-right {
@@ -4856,6 +4857,12 @@ text-align: center;
 }
 
 @media only screen and (max-width: 500px) {
+	
+	#inner {
+		width: 320px;
+		overflow: hidden;
+	}
+	
 	#title-area {
 		background-image: url('images/mobileheader.9-8.11-6@2x.svg') !important;
 		background-size: 90% !important;
@@ -4921,6 +4928,52 @@ text-align: center;
 	.entry-content ul.certificationlogos li {
 		margin: 0 auto;
 		width: 210px;
+	}
+
+	.section .detailBox {
+		width: 640px;
+		padding: 1em;
+	}
+	
+	.section .detailBox .detailBox-left, 
+	.section .detailBox .detailBox-right {
+		width: 45%;
+		min-height: 480px;
+	}
+	
+	.section .detailBox .detailBox-left {
+		margin-right: 1em;
+	}
+	
+	.section .detailBox .detailBoxTrigger {
+		width: 85%;
+	}
+	
+	.section .detailBox.shifted {
+		left: -320px;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile-back {
+		left: 1em;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile-title {
+		width: auto;
+	}
+	
+	.section .detailBox .detailBox-detail, .section .detailBox .detailBox-right {
+		max-width: 280px;
+	}
+	
+	.section .detailBox .detailBox-detail {
+		max-width: 250px;
+		padding-left: 2em;
+	}
+	
+	.section .detailBox .detailBox-right .detailBox-mobile-title {
+		text-align: left;
+		padding-left: 32px;
+		padding-top: .5em;
 	}
 
 }
