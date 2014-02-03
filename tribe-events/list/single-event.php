@@ -52,7 +52,12 @@ $has_venue_address = ( $venue_address ) ? ' location': '';
 
 	<!-- Schedule & Recurrence Details -->
 	<div class="updated published time-details">
-		<?php echo tribe_events_event_schedule_details() ?>
+		<?php $datedetails = tribe_events_event_schedule_details();
+		$datedetails = str_replace('@', 'From', $datedetails);
+		$datedetails = str_replace('-', 'To', $datedetails);
+		echo $datedetails ?>
+
+
 		<?php echo tribe_events_event_recurring_info_tooltip() ?>
 	</div>
 	
