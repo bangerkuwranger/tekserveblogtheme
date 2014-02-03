@@ -811,8 +811,30 @@ h6 a:visited,
 h6 a:hover {
 	font-family: Tekvetica, 'Helvetica-Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.25;
-	margin: 0 0 15px;
+	margin: .8em 0 .5em;
 	text-decoration: none;
+}
+
+h1:first-child,
+h1:first-child a:visited,
+h1:first-child a:hover,
+h2:first-child,
+h2:first-child a,
+h2:first-child a:visited,
+h2:first-child a:hover,
+h3:first-child,
+h3:first-child a:visited,
+h3:first-child a:hover,
+h4:first-child,
+h4:first-child a:visited,
+h4:first-child a:hover,
+h5:first-child,
+h5:first-child a:visited,
+h5:first-child a:hover,
+h6:first-child,
+h6:first-child a:visited,
+h6:first-child a:hover {
+	margin: .8em 0 .5em;
 }
 
 h1 {
