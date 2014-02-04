@@ -1315,7 +1315,7 @@ input[type="submit"] {
 	border: none;
 	color: #fff;
 	cursor: pointer;
-	font-family: 'Tekvetica', 'Lato', sans-serif;
+	font-family: 'Tekvetica', Helvetica, sans-serif;
 	line-height: 21px;
 	padding: 7px 10px 6px;
 	text-decoration: none;
@@ -5227,11 +5227,7 @@ div.tp-caption.sft.slidelink.hasclicklistener a {
 #target-media-mentions .slot .slotslide div,
 .target-media-mentions .tp-bgimg.defaultimg,
 .target-media-mentions .slot .slotslide div {
-<<<<<<< HEAD
-background: transparent !important;
-=======
 	background: transparent !important;
->>>>>>> d97a42c3a6add51861b3efbf6dc43e59a6e97319
 }
 
 #live_chat a img {

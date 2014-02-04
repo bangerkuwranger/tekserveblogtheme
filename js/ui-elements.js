@@ -51,8 +51,6 @@ function mobileCloseButton() {
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
 	$j('.bgwrapper').css('position', 'relative');
 	viewWidth = $j(window).width();
-	$j('.page .hentry').css('overflow', 'visible');
-	$j('.entry-content').css('overflow', 'visible');
 	var viewMargin = (viewWidth - 960) / 2;
 	var viewMoveBig = $j('#content').css('padding-left');
 	viewMoveBig = viewMoveBig.substring(0, viewMoveBig.length - 2);
@@ -150,8 +148,9 @@ $j('document').ready(function() { //call on load
 	});
 	
 	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
-	
+	$j('.tekserve_vendors').addClass('bgwrapper');
 	stretchSection(); //call on load
+	
 	
 	var clientWidth = document.documentElement.clientWidth;
 	if(clientWidth < 600){
