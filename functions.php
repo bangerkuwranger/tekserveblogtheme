@@ -544,7 +544,6 @@ function tekserve_footer() {
 	echo '</div>';
 }
 
-
 /** Widget area for special notices sitewide */
 // Register widget area
 genesis_register_sidebar( array(
