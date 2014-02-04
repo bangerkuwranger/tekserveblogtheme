@@ -17,8 +17,8 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 $event_id = get_the_ID();
 
 $datedetails = tribe_events_event_schedule_details();
-$datedetails = str_replace('@', 'from', $datedetails);
-$datedetails = str_replace('-', 'to', $datedetails);
+$datedetails = str_replace('@', 'From', $datedetails);
+$datedetails = str_replace('-', 'To', $datedetails);
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
