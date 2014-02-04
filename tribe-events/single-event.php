@@ -32,7 +32,13 @@ $datedetails = str_replace('-', 'To', $datedetails);
 
 	<div class="tribe-events-schedule updated published tribe-clearfix">
 		<h3><?php echo $datedetails ?></h3>
-		<?php echo tribe_events_single_event_meta() ?>
+		<!-- Event meta -->
+		<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+		<h3 style="display: block; margin-bottom: 1em;">At&nbsp;
+		<?php echo tribe_get_venue_link();
+		echo tribe_get_full_address(); ?>
+		</h3>
+		<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 		<?php echo tribe_events_event_recurring_info_tooltip(); ?>
 		<?php  if ( tribe_get_cost() ) :  ?>
 			<span class="tribe-events-divider">|</span>
@@ -64,10 +70,7 @@ $datedetails = str_replace('-', 'To', $datedetails);
 			</div><!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
-			<!-- Event meta -->
-			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-				
-			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
+			
 			</div><!-- .hentry .vevent -->
 		<?php if( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments','no' ) == 'yes' ) { comments_template(); } ?>
 	<?php endwhile; ?>
