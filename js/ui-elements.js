@@ -270,7 +270,7 @@ $j('document').ready(function() { //call on load
 	});
 	
 	//icaps
-	$j('h1, h2, h3, .detailBoxTrigger, .drawertrigger').each(function () {
+	$j('h1, h2, h3, .detailBoxTrigger, .drawertrigger, .tekserve-case-study-cta').each(function () {
 		var my_html = $j(this).html();
 		var my_old_html = $j(this).html();
  
@@ -291,8 +291,9 @@ $j('document').ready(function() { //call on load
 		$j(this).text(slugtext);
 	});
 
-	//add class to quotation sections to adjust margins
+	//add class to quotation/case study sections to adjust margins
 	$j('.tekserve-testimonial').parents('.section').addClass('testimonial');
+	$j('.tekserve-case-study').parents('.section').addClass('case-study');
 
 	//remove bottom padding from footer folk
 	$j('.footer-folk').parents('.wpb_wrapper').css('padding-bottom', '0');

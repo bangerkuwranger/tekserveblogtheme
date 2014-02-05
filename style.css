@@ -58,6 +58,7 @@
 * Orange Box
 * Detail Boxes
 * Testimonials
+* Case Studies
 * StortTable Post
 * MagicNav (deprecated)
 * nRelate Related Articles
@@ -3210,11 +3211,13 @@ div.orangebox p {
 	display: table;
 	margin: 0 auto;
 	font-weight: normal;
-	font-size: 1.875em;
+	width: 150%;
+	left: -25%;
+	position: relative;
 }
 
 .section.testimonial {
-	padding: 1% 1em 0;
+	padding: 1% 1em;
 }
 
 .tekserve-testimonial .tekserve-testimonial-quote p {
@@ -3223,15 +3226,81 @@ div.orangebox p {
 
 .tekserve-testimonial .tekserve-testimonial-quote {
 	text-align: left;
+	font-size: 2em;
+	font-weight: 200;
 }
 
 .tekserve-testimonial .tekserve-testimonial-source {
 	text-transform: uppercase;
-	font-size: 1.625em;
+	font-size: 1.5em;
 }
 
 .section .tekserve-testimonial-ul li {
 	list-style: none;
+}
+
+/* Case Studies
+------------------------------------------------------------ */
+
+.section .tekserve-case-study {
+	display: table;
+	margin: 0 auto;
+	font-weight: normal;
+	font-size: 1.825em;
+	width: 150%;
+	left: -25%;
+	position: relative;
+}
+
+.tekserve-case-study .tekserve-case-study-text p {
+	font-size: inherit;
+}
+
+.tekserve-case-study .tekserve-case-study-text {
+	text-align: left;
+	font-weight: 200;
+}
+
+.tekserve-case-study .tekserve-case-study-cta {
+	text-transform: uppercase;
+	position: relative;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: right;
+	margin-right: 1.5em;
+}
+
+.tekserve-case-study .tekserve-case-study-cta:after {
+    content: "\f061";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #40a8c9;
+    font-size: inherit;
+    position: absolute;
+    top: -2px;
+    right: -1.25em;
+}
+
+.section.orange .tekserve-case-study .tekserve-case-study-cta:after {
+	color: #004d72;
+}
+
+.section.darkblue .tekserve-case-study .tekserve-case-study-cta:after {
+	color: #f37f37;
+}
+
+.section.lightblue .tekserve-case-study .tekserve-case-study-cta:after {
+	color: #004d72;
+}
+
+.section .tekserve-case-study-ul li {
+	list-style: none;
+}
+
+.section.case-study {
+	padding: 1% 1em;
 }
 
 /* SortTable Post
@@ -4145,6 +4214,49 @@ text-align: center;
         
 /* Responsive Design
 ------------------------------------------------------------ */
+
+@media only screen and (max-width: 1400px) {
+
+	.section .tekserve-case-study,
+	.section .tekserve-testimonial {
+		width: auto;
+		position: static;
+	}
+	
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.max450 .wpb_wrapper {
+		max-height: 300px;
+	}
+	
+	.max550 .wpb_wrapper {
+		max-height: 400px;
+	}
+	
+	.max650 .wpb_wrapper {
+		max-height: 500px;
+	}
+	
+	.max750 .wpb_wrapper {
+		max-height: 600px;
+	}
+	
+	.max850 .wpb_wrapper {
+		max-height: 700px;
+	}
+	
+	.max950 .wpb_wrapper {
+		max-height: 800px;
+	}
+	
+	.max1050 .wpb_wrapper {
+		max-height: 900px;
+	}
+	
+}
+
 
 @media only screen and (max-width: 1200px) {
 
