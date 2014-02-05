@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Tekvetica';
+	src: url('./fonts/tekvetica/Tekvetica-Bold.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Bold.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face {
+	src: url('./fonts/tekvetica/Tekvetica-BoldItal.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-BoldItal.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-BoldItal.ttf') format('truetype');
+	font-family: 'Tekvetica';
+	font-style: italic;
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Tekvetica';
+	src: url('./fonts/tekvetica/Tekvetica-Heavy.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Heavy.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Heavy.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 900;
+}
+@font-face {
+	font-family: 'Tekvetica';
+	src: url('./fonts/tekvetica/Tekvetica-Italic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Italic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Italic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Tekvetica';
+	src: url('./fonts/tekvetica/Tekvetica-Regular.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Regular.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Tekvetica';
+	src: url('./fonts/tekvetica/Tekvetica-Thin.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Thin.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Thin.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 200;
+}
+@font-face {
+	font-family: 'Tekvetica';
+	src: local('Tekvetica-ThinItalic');
+	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-ThinItalic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: 'Bandit';
+	src: local('Bandit-Medium');
+	src: url('./fonts/bandit/Bandit-Medium.eot?') format('eot');
+	src: url('./fonts/bandit/Bandit-Medium.woff') format('woff'), url('./fonts/bandit/Bandit-Medium.ttf') format('truetype');
+}
+
+p, div, a {
+	font-family: 'Tekvetica' Helvetica, Arial, sans-serif !important;
+	color: #004d72 !important;
+}
+
+p strong, div strong, a strong {
+	font-family: 'Tekvetica' Helvetica, Arial, sans-serif !important;
+	color: #004d72 !important;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+div strong.teklogo {
+	font-family: 'Bandit', sans-serif !important;
+}
+
+a, a:visited {
+	color: #f36f37 !important;
+	text-decoration: none !important;
+}
+
+a:hover {
+	color: #40a8c9 !important;
+}
