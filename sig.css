@@ -56,6 +56,13 @@
 	src: url('./fonts/bandit/Bandit-Medium.woff') format('woff'), url('./fonts/bandit/Bandit-Medium.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'FontAwesome';
+/* 	src: local('fontawesome-webfont'); */
+	src: url('./fonts/fontawesome/fontawesome-webfont.eot?') format('eot');
+	src: url('./fonts/fontawesome/fontawesome-webfont.woff') format('woff'), url('./fonts/fontawesome/fontawesome-webfont.ttf') format('truetype');
+}
+
 p, div, a {
 	font-family: 'Tekvetica' Helvetica, Arial, sans-serif !important;
 	color: #004d72 !important;
@@ -70,13 +77,92 @@ p strong, div strong, a strong {
 
 div strong.teklogo {
 	font-family: 'Bandit', sans-serif !important;
+	color: #40a8c9 !important;
+	font-size: 1.75em;
 }
 
 a, a:visited {
 	color: #f36f37 !important;
 	text-decoration: none !important;
+	margin-left: 1.5em;
+	position: relative;
+	border-right: 2px solid #004d72;
+	padding-right: .5em;
 }
 
 a:hover {
 	color: #40a8c9 !important;
+}
+
+a:last-child {
+	border: 0 !important;
+}
+
+a.weblink:before {
+    content: "\f0ac";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004d72;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: -1.25em;
+}
+
+a.bloglink:before {
+    content: "\f0a1";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004d72;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: -1.25em;
+}
+
+a.tweetlink:before {
+    content: "\f099";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004d72;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: -1.25em;
+}
+
+a.fblink:before {
+    content: "\f082";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004d72;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: -1.25em;
+}
+
+a.lilink:before {
+    content: "\f08c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004d72;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: -1.25em;
+}
+
+span.noshow {
+	display: none !important;
 }

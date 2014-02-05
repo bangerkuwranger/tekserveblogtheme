@@ -4565,11 +4565,11 @@ text-align: center;
 	}
 
 	div.orangebox h1 a, div.orangebox h1 a:visited, div.orangebox h1 {
-		font-size: 2.25em;
+		font-size: 1.5em;
 	}
 
 	div.orangebox h2 a, div.orangebox h2 a:visited, div.orangebox h2 {
-		font-size: 1.25em;
+		font-size: 1.1em;
 	}
 
 	div.orangebox .button {
@@ -4726,8 +4726,13 @@ text-align: center;
 		display: none;
 	}
 	
-	.section .tekserve-testimonial {
+	.tekserve-testimonial .tekserve-testimonial-quote,
+	.section .tekserve-case-study  {
 		font-size: 1.375em;
+	}
+	
+	.section .tekserve-case-study .tekserve-case-study-text p {
+		font-weight: normal;
 	}
 	
 	.tekserve-testimonial .tekserve-testimonial-source {
