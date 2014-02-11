@@ -296,7 +296,7 @@ body.custom-background {
 	margin: 32px 0 0;
 	width: 25%;
 	background-size: contain !important;
-	background-image: url('images/header.9-8.11-6@2x.svg') !important;
+	background-image: url('images/header.9-8.11-6@2x.svg');
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 }

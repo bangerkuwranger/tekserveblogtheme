@@ -291,6 +291,13 @@ $j('document').ready(function() { //call on load
 		$j(this).text(slugtext);
 	});
 
+	//remove empty paragraphs
+	$j('p:empty').remove();
+	
+	//youtube still replace
+	var iframe = $j('.home.page-template-static_content-php .wpb_video_wrapper iframe');
+	$j('div.yt-embed-thumbnail', iframe.contents()).css('backgroundImage', 'url(./images/youtubeclip.jpg) !important');
+	
 	//add class to quotation/case study sections to adjust margins
 	$j('.tekserve-testimonial').parents('.section').addClass('testimonial');
 	$j('.tekserve-case-study').parents('.section').addClass('case-study');
