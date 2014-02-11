@@ -826,7 +826,7 @@ h5 a:hover,
 h6,
 h6 a:visited,
 h6 a:hover {
-	font-family: Tekvetica, 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+	font-family: Tekvetica, 'Helvetica-Neue', Helvetica, Arial, sans-serif !important;
 	line-height: 1.25;
 	margin: .8em 0 .5em;
 	text-decoration: none;
@@ -3675,7 +3675,11 @@ body.events-list #wrap div#inner {
  */
 
  .single-tribe_events .tribe-events-content {
-	margin: 4em 0;
+	margin: 0;
+}
+
+.hentry.tribe_events {
+	padding-top: 0;
 }
 
 #tribe-events {
@@ -3827,8 +3831,89 @@ span.tribe-events-list-separator-month span {
 }
 
 li.tribe-events-nav-previous a {
-margin-left: 1em;
+	margin-left: 1em;
 }
+
+#tribe-events-pg-template .tribe-events-content.tribe-events-single-event-description ul li {
+	margin: 0 0 0 1em;
+}
+
+#tribe-events-pg-template .tribe-events-content h1,
+.tribe-events-before-html h1,
+.tribe-events-after-html h1,
+#tribe-events-pg-template .tribe-events-content h2,
+.tribe-events-before-html h2,
+.tribe-events-after-html h2,
+#tribe-events-pg-template .tribe-events-content h3,
+.tribe-events-before-html h3,
+.tribe-events-after-html h3,
+#tribe-events-pg-template .tribe-events-content h4,
+.tribe-events-before-html h4,
+.tribe-events-after-html h4,
+#tribe-events-pg-template .tribe-events-content h5,
+.tribe-events-before-html h5,
+.tribe-events-after-html h5,
+#tribe-events-pg-template .tribe-events-content h6, 
+.tribe-events-before-html h6,
+.tribe-events-after-html h6 {
+	margin: .8em 0 .5em !important;
+}
+
+.tribe-events-before-html h1,
+.tribe-events-after-html h1,
+#tribe-events-pg-template .tribe-events-content h1 {
+	font-size: 2.625em !important;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.tribe-events-before-html h2,
+.tribe-events-after-html h2,
+#tribe-events-pg-template .tribe-events-content h2 {
+	font-size: 2.25em !important;
+	font-weight: 900;
+	list-style-position: inside;
+}
+
+.tribe-events-before-html h3,
+.tribe-events-after-html h3,
+#tribe-events-pg-template .tribe-events-content h3 {
+	font-size: 1.5em !important;
+	font-weight: bold;
+}
+
+.tribe-events-before-html h4,
+.tribe-events-after-html h4,
+#tribe-events-pg-template .tribe-events-content h4 {
+	font-size: 1.25em !important;
+	font-weight: bold;
+}
+
+.tribe-events-before-html h5,
+.tribe-events-after-html h5,
+#tribe-events-pg-template .tribe-events-content h5 {
+	font-size: .875em !important;
+	line-height: 1 !important;
+}
+
+.tribe-events-before-html h6,
+.tribe-events-after-html h6,
+#tribe-events-pg-template .tribe-events-content h6 {
+	font-size: .75em !important;
+	line-height: 1 !important;
+}
+
+.tribe-events-before-html ul,
+.tribe-events-after-html ul,
+#tribe-events-pg-template .tribe-events-content  ul {
+	list-style: square inside !important;
+}
+
+.tribe-events-before-html ol,
+.tribe-events-after-html ol,
+#tribe-events-pg-template .tribe-events-content  ol {
+	list-style: decimal inside !important;
+} 
+
 
 @media only screen and (-moz-min-device-pixel-ratio:2), only screen and (-o-min-device-pixel-ratio:2/1), only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
 	.tribe-events-tooltip .tribe-events-arrow {
