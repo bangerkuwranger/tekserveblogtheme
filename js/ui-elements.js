@@ -70,20 +70,21 @@ function stretchSection() {  //function is called on load and on window resize; 
 }
 
 $j(window).resize(function() { //call on window resize
-	stretchSection();
+	stretchSection(); //resize call for section stretch
 	clientWidth = $j(window).width();
 	if(clientWidth < 627) {
-		moveSearchMobile(); //call on resize if window size becomes < 640
+		moveSearchMobile(); //call on resize if window size becomes < 640, moves search outside of nav
 	}
 	if(clientWidth > 627){
-		moveSearchBack(); //call on resize if window size > 640
+		moveSearchBack(); //call on resize if window size > 640, moves search back into nav
 	}
 	if(clientWidth < 1025) {
-		mobileMeta(); //call on resize if window size becomes < 1025
+		mobileMeta(); //call on resize if window size becomes < 1025, adds apple's happy lil metas for ios
 	}
 	if(clientWidth > 1024){
-		remMobileMeta(); //call on resize if window size > 1024
+		remMobileMeta(); //call on resize if window size > 1024, rems apple's happy lil metas for ios
 	}
+	swapHeaderImgs(clientWidth); //call on resize if window size becomes < 768, swaps image to mobile
 });
 
 function fixDiv() { //fixes nav to top screen as user scrolls down
@@ -133,6 +134,23 @@ function scrollToID(targetID, delay, isHash, offsetV) {
 	}, delay);
 }
 
+//function to swap programmatically added mobile header image url with existing header image url.
+//only runs if plugin tekserve-shared-data has created it. Requires a page width.
+function swapHeaderImgs(pageWidth) {
+	if($j('#tekserve-shared-data-hours-swap').length != 0) {
+		console.log('TSD Obj created');
+		var firstImg = $j('#wrap #header .wrap #title-area').css('backgroundImage');
+		var secondImg = $j('#tekserve-shared-data-hours-swap').html();
+		if( $j('#wrap #header .wrap #title-area').hasClass('mobileImg') && (pageWidth > 768) ) {
+			$j('#wrap #header .wrap #title-area').css('backgroundImage', secondImg).removeClass('mobileImg');
+			$j('#tekserve-shared-data-hours-swap').html(firstImg);
+		}
+		if( !( $j('#wrap #header .wrap #title-area').hasClass('mobileImg') ) && (pageWidth < 768) ) {
+			$j('#wrap #header .wrap #title-area').css('backgroundImage', secondImg).addClass('mobileImg');
+			$j('#tekserve-shared-data-hours-swap').html(firstImg);
+		}
+	}
+}
 
 $j('document').ready(function() { //call on load
 
@@ -148,16 +166,18 @@ $j('document').ready(function() { //call on load
 	});
 	
 	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
-	$j('.tekserve_vendors').addClass('bgwrapper');
-	stretchSection(); //call on load
-	
+	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
+	stretchSection(); //stretch sections widths at load
 	
 	var clientWidth = document.documentElement.clientWidth;
-	if(clientWidth < 600){
-		moveSearchMobile(); //call on load if window size < 600
+	if(clientWidth < 627){
+		moveSearchMobile(); //call on load if window size < 640
 	}
 	if(clientWidth < 1025){
 		mobileMeta(); //call on load if window size < 1025
+	}
+	if(clientWidth < 769){
+		swapHeaderImgs(600); //call on load if window size ≤ 768
 	}
 	
 	$j('#nav .wrap ul').hover(

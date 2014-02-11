@@ -4694,7 +4694,7 @@ text-align: center;
 	}
 	
 	#title-area {
-	background-image: url('images/mobileheader@2x.svg') !important;
+	background-image: url('images/mobileheader@2x.svg');
 	background-size: 50% !important;
 	background-position-y: 50% !important;
 	}
@@ -5202,7 +5202,7 @@ text-align: center;
 	}
 	
 	#title-area {
-		background-image: url('images/mobileheader.9-8.11-6@2x.svg') !important;
+		background-image: url('images/mobileheader.9-8.11-6@2x.svg');
 		background-size: 90% !important;
 		background-position-y: 50% !important;
 	}
