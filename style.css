@@ -3826,6 +3826,10 @@ span.tribe-events-list-separator-month span {
 	margin-left: 1em;
 }
 
+li.tribe-events-nav-previous a {
+margin-left: 1em;
+}
+
 @media only screen and (-moz-min-device-pixel-ratio:2), only screen and (-o-min-device-pixel-ratio:2/1), only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
 	.tribe-events-tooltip .tribe-events-arrow {
 		background-image: url(images/tribe-tooltips@2x.png) !important;
