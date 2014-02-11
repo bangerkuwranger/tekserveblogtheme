@@ -66,6 +66,7 @@ $datedetails = str_replace('-', 'To', $datedetails);
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 			<div class="tribe-events-single-event-description tribe-events-content entry-content description">
+				<h2>About This Event</h2>
 				<?php the_content(); ?>
 			</div><!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
