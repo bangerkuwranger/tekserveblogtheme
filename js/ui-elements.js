@@ -301,6 +301,12 @@ $j('document').ready(function() { //call on load
 			$j(this).html(my_html);
 		}
 	});
+	
+	$j('.section').each(function() {  //add rightside class to text with left bgimage
+		if($j(this).css('backgroundPosition') == '0% 100%') {
+			$j(this).find('div.wpb_text_column.wpb_content_element').addClass('rightside');
+		}
+	});
 
 	$j('.section').removeClass('vc_row-fluid');  //removes vc_fluid badness from sections
 

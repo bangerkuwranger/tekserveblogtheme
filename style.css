@@ -4606,6 +4606,14 @@ text-align: center;
 		width: 100%;
 	}
 	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element {
+		width: 80% !important;
+	}
+	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element.rightside {
+		margin-left: 20% !important
+	}
+	
 	.page-template-static_content-php  .wpb_text_column.wpb_content_element.leftofform .wpb_wrapper {
 		max-width: 300px;
 		width: 100%;
@@ -4626,7 +4634,6 @@ text-align: center;
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
 		background-color: rgba(255,255,255,.8);
 		padding: 1em;
-		width: 100%;
 	}
 
 	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
@@ -4888,6 +4895,14 @@ text-align: center;
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element, .page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element, .page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element, .page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
 		width: 630px;
 	}
+	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element {
+		width: 75% !important;
+	}
+	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element.rightside {
+		margin-left: 20% !important
+	}
 
 	.section .detailBox .detailBoxTrigger,
 	.section .detailBox .detailBoxTrigger-container {
@@ -5141,7 +5156,6 @@ text-align: center;
 		box-sizing: border-box;
 		float: left;
 		margin-left: 2.5%;
-/* 		max-height: 480px !important; */
 	}
 	
 	.page-template-static_content-php .tekserve-single-post img,
@@ -5198,6 +5212,15 @@ text-align: center;
 		width: 100%;
 		background-color: transparent;
 		padding: 0;
+	}
+	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element {
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+	
+	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element.rightside {
+		margin-left: -2.5% !important;
 	}
 	
 	.section .detailBox {
@@ -5277,6 +5300,24 @@ text-align: center;
 		line-height: 1em !important;
 	}
 	
+	.page-template-static_content-php .wpb_row {
+		background-image: none !important;
+	}
+	
+	p, .section p {
+		text-align: left;
+	}
+	
+	.max450,
+	.max550,
+	.max650,
+	.max750,
+	.max850,
+	.max950,
+	.max1050 {
+		max-height: 5000px;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
@@ -5326,20 +5367,9 @@ text-align: center;
 		font-size: .625em;
 	}
 	
-	p, .section p {
-		font-size: 1em;
-		line-height: 1.25em;
-		text-align: left;
-		font-weight: bold;
-	}
-	
 	p b, .section p b, p strong, .section p strong {
 		font-weight: 200;
 		font-size: 1.3em;
-	}
-	
-	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element, .page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element, .page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
-		background-color: rgba(70,70,80,.7);
 	}
 	
 	ul#emma-form-elements li.emma-form-row {
@@ -5374,28 +5404,6 @@ text-align: center;
 	
 	#categories-4, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_anual_archive, #Front_Page .widget_knrauthorlistwidget {
 		margin: 1em auto;
-	}
-	
-	.max450 {
-		max-height: 5000px;
-	}
-	
-	.max550 {
-		max-height: 5000px;
-	}
-	
-	.max650 {
-		max-height: 5000px;
-	}
-	
-	.max750 {
-		max-height: 5000px;
-	}
-		
-	.max850,
-	.max950,
-	.max1050 {
-		max-height: 5000px;
 	}
 	
 	.entry-content ul.certificationlogos li {
