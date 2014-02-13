@@ -3328,6 +3328,7 @@ table.sortable tr:nth-child(even) { background: #f6f6f6 !important; }
 table.sortable th,
 table.sortable td {
     border: 1px solid #40a8c9 !important;
+    vertical-align: middle !important;
 }
 
 /*  Style & Width of Particular Columns */
@@ -3350,6 +3351,29 @@ table.sortable tr td a img {
 table.sortable td a {
 	height: 0;
 	width: 0;
+}
+
+#tekserves-vendors td a,
+#tekserves-vendors td a:visited {
+	font-size: 2.5em;
+	font-weight: 900;
+	color: #004d72;
+}
+
+#tekserves-vendors td a:hover {
+	color: #f36f37;
+}
+
+#tekserves-vendors thead {
+	display: none;
+}
+
+#tekserves-vendors td:first-child {
+	width: 50px;
+}
+
+#tekserves-vendors td {
+	padding: 1em;
 }
 
 /* MagicNav
