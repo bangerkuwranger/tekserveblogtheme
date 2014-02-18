@@ -872,6 +872,10 @@ h2 a:hover,
 	list-style-position: inside;
 }
 
+.htwoList h2 {
+	font-size: 1em;
+}
+
 .single h1 {
 	text-align: center;
 }
@@ -890,9 +894,17 @@ h3, .hthreeList {
 	font-weight: bold;
 }
 
+.hthreeList h3 {
+	font-size: 1em;
+}
+
 h4, .hfourList {
 	font-size: 1.25em;
 	font-weight: bold;
+}
+
+.hfourList h4 {
+	font-size: 1em;
 }
 
 h5,
@@ -906,7 +918,7 @@ h6,
 }
 
 .htwoList p, .hthreeList p, .hfourList p, .htwoList ul li, .hthreeList ul li, .hfourList ul li, .htwoList ol li, .hthreeList ol li, .hfourList ol li {
-	font-size: 1em;
+	font-size: .45em;
 	font-weight: normal;
 	text-indent: 0;
 }
