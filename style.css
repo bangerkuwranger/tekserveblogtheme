@@ -2751,7 +2751,9 @@ color: #f06c34 !important;
 	padding: 1em;
 }
 
-.section .drawer .collapseomatic, .section .collapseomatic.drawertrigger, .section .drawer .collapseomatic.drawertrigger {
+.section .drawer .collapseomatic,
+.section .collapseomatic.drawertrigger, 
+.section .drawer .collapseomatic.drawertrigger {
 	background-position: right 45%;
 	background-repeat: no-repeat;
 	padding: 10px 30px 10px 0px;
@@ -2765,6 +2767,13 @@ color: #f06c34 !important;
 	z-index: 5;
 	background-size: 30px;
 	margin-bottom: 0 !important;
+}
+
+.section h1 .collapseomatic.drawertrigger,
+.section h2 .collapseomatic.drawertrigger,
+.section h3 .collapseomatic.drawertrigger,
+.section h4 .collapseomatic.drawertrigger {
+	font-size: 1em;
 }
 
 #content .section .wpb_text_column .collapseomatic.drawertrigger,
@@ -2889,13 +2898,45 @@ color: #f06c34 !important;
 	color: #004d72;
 }
 
-.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a,
 .page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active a {
 	color: #f36f37;
 }
 
 .page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active.ui-state-hover a {
 	color: #004d72;
+	cursor: default;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon,
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon {
+	background-image: url(images/ltbluearrowrt.svg);
+	height: 48px;
+	width: 48px;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon:before {
+	font-size: .75em;
+	font-weight: inherit;
+	color: #40a8c9;
+	content: 'show';
+	position: absolute;
+	right: 48px;
+	top: -10px;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon {
+	background-image: url(images/ltbluearrowdn.svg);
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon:before {
+	font-size: .75em;
+	font-weight: inherit;
+	color: #40a8c9;
+	content: 'hide';
+	position: absolute;
+	right: 48px;
+	top: -10px;
 }
 
 /* Blog Front Page
