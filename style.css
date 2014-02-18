@@ -54,11 +54,13 @@
 * Post Alternation
 * Page Sections
 * Drawers
+* Accordion
 * Blog Front Page
 * Orange Box
 * Detail Boxes
 * Testimonials
 * Case Studies
+* Rentals
 * StortTable Post
 * MagicNav (deprecated)
 * nRelate Related Articles
@@ -1242,11 +1244,13 @@ outline-offset: 0px;
 outline-width: 2px;
 outline-style: solid;
 }
+
 .bx-wrapper div.limargin a img, 
 .section .twoUp img,
 .wpb_content_element div.tp-caption img,
 .wpb_content_element div img,
-div .footer-folk img {
+div .footer-folk img,
+div .footerMenu a img {
 outline: none;
 }
 
@@ -2867,6 +2871,33 @@ color: #f06c34 !important;
 	display: none;
 }
 
+/* Accordion
+------------------------------------------------------------ */
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header {
+	font-size: 2.5em;
+	font-weight: 900;
+	background-color: #fff !important;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a,
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a {
+	margin: .8em 0 .5em !important;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a {
+	color: #004d72;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active a {
+	color: #f36f37;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active.ui-state-hover a {
+	color: #004d72;
+}
+
 /* Blog Front Page
 ------------------------------------------------------------ */
 
@@ -3304,6 +3335,24 @@ div.orangebox p {
 	padding: 1% 1em;
 }
 
+/* Rentals
+------------------------------------------------------------ */
+
+.tekserverentals-item {
+	padding: 0 1em 4em 0;
+	min-height: 550px;
+}
+
+.tekserverentals-item-image {
+	height: 150px;
+}
+
+.tekserverentals-item-image img {
+	width: auto;
+	height: 100%;
+}
+
+
 /* SortTable Post
 ------------------------------------------------------------ */
 
@@ -3641,6 +3690,7 @@ ul#emma-form-elements li.emma-form-row {
 	width: 70%;
 	max-width: 1200px;
 	min-width: 1024px;
+	font-size: 1em;
 }
 
 .widgets_on_page ul {
@@ -3654,16 +3704,18 @@ ul#emma-form-elements li.emma-form-row {
 	min-width: 280px;
 	max-width: 25%;
 	height: 420px;
+	font-size: 1em
 }
 
 #categories-4 ul, #pippin_simple_authors_widget-2 ul, #archives-4 ul, #Front_Page .widget_knrauthorlistwidget ul, #Front_Page .widget_anual_archive ul {
 	padding: 0;
 	margin: 0;
 	width: 100%;
+	font-size: 1em;
 }
 
  #categories-4 h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2, #Front_Page .widget_knrauthorlistwidget h2, #Front_Page .widget_anual_archive h2 {
-	font-size: 1.1em;
+	font-size: 1.5em;
 	text-align: center;
 	padding-left: .5em;
 }
@@ -4372,8 +4424,39 @@ text-align: center;
 		max-height: 900px;
 	}
 	
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .leftstory .wpb_wrapper {
+		padding: 2em 2em 2em 4em;
+	}
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
+		padding: 2em 4em 2em 2em;
+	}
+	
 }
 
+@media only screen and (min-width: 1400px) {
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .leftstory .wpb_wrapper {
+		padding: 2em 2em 2em 4em;
+	}
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
+		padding: 2em 4em 2em 2em;
+	}
+
+}
+
+@media only screen and (min-width: 1750px) {
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .leftstory .wpb_wrapper {
+		padding: 2em 2em 2em 12em;
+	}
+
+	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
+		padding: 2em 14em 2em 2em;
+	}
+
+}
 
 @media only screen and (max-width: 1200px) {
 
