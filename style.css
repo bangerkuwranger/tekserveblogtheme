@@ -729,6 +729,7 @@ ul.menu li.sfHover ul,
 .entry-content {
 	overflow: hidden;
 	margin-top: 42px;
+	clear: both;
 }
 
 .entry-content p {
