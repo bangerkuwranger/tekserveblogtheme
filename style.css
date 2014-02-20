@@ -3601,6 +3601,10 @@ table.sortable td a {
 	height: 152px !important;
 }
 
+.nrelate_default .nr_panel {
+	font-size: 1em !important;
+}
+
 .nrelate_default .nr_panel .nr_post_title {
 	color: #004d72;
 	font-size: 1.125em;
@@ -3792,7 +3796,7 @@ ul#emma-form-elements li.emma-form-row {
 	width: 100%;
 }
 
-#categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a,, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
+#categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
 	font-weight: normal;
 }
 
