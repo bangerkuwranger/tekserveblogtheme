@@ -136,8 +136,6 @@
 body,
 h1,
 h2,
-h2 a,
-h2 a:visited,
 h3,
 h4,
 h5,
@@ -864,9 +862,6 @@ h1 {
 }
 
 h2,
-h2 a,
-h2 a:visited,
-h2 a:hover,
 .htwoList {
 	font-size: 2.25em;
 	font-weight: 900;
@@ -918,11 +913,29 @@ h6,
 	font-size: .75em;
 }
 
-.htwoList p, .hthreeList p, .hfourList p, .htwoList ul li, .hthreeList ul li, .hfourList ul li, .htwoList ol li, .hthreeList ol li, .hfourList ol li {
+li>ol,
+li>ul {
+	font-size: 16px !important;
+}
+
+.htwoList p {
 	font-size: .45em;
 	font-weight: normal;
 	text-indent: 0;
 }
+
+.hthreeList p {
+	font-size: .675em;
+	font-weight: normal;
+	text-indent: 0;
+}
+
+.hfourList p {
+	font-size: .8em;
+	font-weight: normal;
+	text-indent: 0;
+}
+
 
 
 /* Ordered / Unordered Lists
