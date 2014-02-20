@@ -1487,7 +1487,7 @@ div.gform_footer input.button {
 }
 
 .search-results .page.hentry h2.entry-title a, .search-results .post.hentry h2.entry-title a, .hfeed .page.hentry h2.entry-title a, .hfeed .post.hentry h2.entry-title a {
-	font-size: 1.875 !important;
+	font-size: 1em !important;
 	color: #004d72 !important;
 }
 
