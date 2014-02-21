@@ -298,7 +298,7 @@ $j('document').ready(function() { //call on load
  
 		// Make sure there are no children so we don't edit more than we want.
 		if ($j(this).children().length == 0) {
-			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|MacBook|Mac mini|Mac Pro)/ig, '<span class="trademark">$1</span>');
+			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|Mac mini|Mac Pro|MacBook Pro|MacBook Air)/ig, '<span class="trademark">$1</span>');
 			my_html = my_html.replace(/(iNSIDER)/ig, '<span class="insider">$1</span>');
 			$j(this).html(my_html);
 		}
@@ -337,14 +337,25 @@ $j('document').ready(function() { //call on load
 	$j('.wpb_revslider_element.wpb_content_element').parents('.wpb_wrapper').css('padding-bottom', '0');
 	
 	//add group rel="" to original drawer trigger in collapse-o-matic objects with remote triggers
+	//also add class to drawers open on load
 	$j(".collapseomatic"+"[id^=extra]").each(function() {
 		var id = $j(this).attr('id');
 		if(id != "") {
 			id = id.substring(7);
 			var rel = $j(this).attr('rel');
 			$j('#'+id+'.collapseomatic').attr('rel', rel);
+			if($j('#'+id+'.collapseomatic').hasClass('colomat-close')) {
+				$j(this).addClass('colomat-close');
+			}
 		}
 	});
+	
+	//keep drawers closed on mobile
+	if(clientWidth < 640){
+		$j('.collapseomatic').removeClass('colomat-close'); //call on load if window size < 640
+		$j('.collapseomatic_content').css('display', 'none');
+	}
+	
 	//enably bit.ly for addthis smartlayers
 	var addthis_share = {
 	// ... other options for addthis smartlayers

@@ -54,6 +54,7 @@
 * Post Alternation
 * Page Sections
 * Drawers
+* Accordion
 * Blog Front Page
 * Orange Box
 * Detail Boxes
@@ -135,8 +136,6 @@
 body,
 h1,
 h2,
-h2 a,
-h2 a:visited,
 h3,
 h4,
 h5,
@@ -728,6 +727,7 @@ ul.menu li.sfHover ul,
 .entry-content {
 	overflow: hidden;
 	margin-top: 42px;
+	clear: both;
 }
 
 .entry-content p {
@@ -862,13 +862,14 @@ h1 {
 }
 
 h2,
-h2 a,
-h2 a:visited,
-h2 a:hover,
 .htwoList {
 	font-size: 2.25em;
 	font-weight: 900;
 	list-style-position: inside;
+}
+
+.htwoList h2 {
+	font-size: 1em;
 }
 
 .single h1 {
@@ -889,9 +890,17 @@ h3, .hthreeList {
 	font-weight: bold;
 }
 
+.hthreeList h3 {
+	font-size: 1em;
+}
+
 h4, .hfourList {
 	font-size: 1.25em;
 	font-weight: bold;
+}
+
+.hfourList h4 {
+	font-size: 1em;
 }
 
 h5,
@@ -904,11 +913,29 @@ h6,
 	font-size: .75em;
 }
 
-.htwoList p, .hthreeList p, .hfourList p, .htwoList ul li, .hthreeList ul li, .hfourList ul li, .htwoList ol li, .hthreeList ol li, .hfourList ol li {
-	font-size: 1em;
+li>ol,
+li>ul {
+	font-size: 16px !important;
+}
+
+.htwoList p {
+	font-size: .45em;
 	font-weight: normal;
 	text-indent: 0;
 }
+
+.hthreeList p {
+	font-size: .675em;
+	font-weight: normal;
+	text-indent: 0;
+}
+
+.hfourList p {
+	font-size: .8em;
+	font-weight: normal;
+	text-indent: 0;
+}
+
 
 
 /* Ordered / Unordered Lists
@@ -1474,7 +1501,7 @@ div.gform_footer input.button {
 }
 
 .search-results .page.hentry h2.entry-title a, .search-results .post.hentry h2.entry-title a, .hfeed .page.hentry h2.entry-title a, .hfeed .post.hentry h2.entry-title a {
-	font-size: 1.875 !important;
+	font-size: 1em !important;
 	color: #004d72 !important;
 }
 
@@ -2750,7 +2777,9 @@ color: #f06c34 !important;
 	padding: 1em;
 }
 
-.section .drawer .collapseomatic, .section .collapseomatic.drawertrigger, .section .drawer .collapseomatic.drawertrigger {
+.section .drawer .collapseomatic,
+.section .collapseomatic.drawertrigger, 
+.section .drawer .collapseomatic.drawertrigger {
 	background-position: right 45%;
 	background-repeat: no-repeat;
 	padding: 10px 30px 10px 0px;
@@ -2764,6 +2793,13 @@ color: #f06c34 !important;
 	z-index: 5;
 	background-size: 30px;
 	margin-bottom: 0 !important;
+}
+
+.section h1 .collapseomatic.drawertrigger,
+.section h2 .collapseomatic.drawertrigger,
+.section h3 .collapseomatic.drawertrigger,
+.section h4 .collapseomatic.drawertrigger {
+	font-size: 1em;
 }
 
 #content .section .wpb_text_column .collapseomatic.drawertrigger,
@@ -2868,6 +2904,65 @@ color: #f06c34 !important;
 
 .section .drawer .collapseomatic {
 	display: none;
+}
+
+/* Accordion
+------------------------------------------------------------ */
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header {
+	font-size: 2.5em;
+	font-weight: 900;
+	background-color: #fff !important;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a,
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a {
+	margin: .8em 0 .5em !important;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a {
+	color: #004d72;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-hover a,
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active a {
+	color: #f36f37;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-state-active.ui-state-hover a {
+	color: #004d72;
+	cursor: default;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon,
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon {
+	background-image: url(images/ltbluearrowrt.svg);
+	height: 48px;
+	width: 48px;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon:before {
+	font-size: .75em;
+	font-weight: inherit;
+	color: #40a8c9;
+	content: 'show';
+	position: absolute;
+	right: 48px;
+	top: -10px;
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon {
+	background-image: url(images/ltbluearrowdn.svg);
+}
+
+.page-template-static_content-php .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon:before {
+	font-size: .75em;
+	font-weight: inherit;
+	color: #40a8c9;
+	content: 'hide';
+	position: absolute;
+	right: 48px;
+	top: -10px;
 }
 
 /* Blog Front Page
@@ -3506,6 +3601,10 @@ table.sortable td a {
 	height: 152px !important;
 }
 
+.nrelate_default .nr_panel {
+	font-size: 1em !important;
+}
+
 .nrelate_default .nr_panel .nr_post_title {
 	color: #004d72;
 	font-size: 1.125em;
@@ -3697,7 +3796,7 @@ ul#emma-form-elements li.emma-form-row {
 	width: 100%;
 }
 
-#categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a,, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
+#categories-4 ul li a, #categories-4 ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
 	font-weight: normal;
 }
 
