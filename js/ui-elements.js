@@ -263,6 +263,8 @@ $j('document').ready(function() { //call on load
 	$j('h2').parent('li').addClass('htwoList');
 	$j('h3').parent('li').addClass('hthreeList');
 	$j('h4').parent('li').addClass('hfourList');
+	//remove that from widgets
+	$j('h2').parent('li.widget').removeClass('htwoList');
 
 	var bgimgsrc;
 	var objectparentsection;

@@ -536,7 +536,7 @@ function tekserve_footer() {
 	echo '<div class="centercopy">';
 	echo 'Copyright &copy; ';
 	echo date('Y');
-	echo ' <a href="http://www.tekserve.com">Tekserve Corportation</a>';
+	echo ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
 	echo '</div>';
 	echo '<div class="rightcopy">';
 	echo ' <a href="http://nytm.org/made">Dilligently Made in NYC</a>';
