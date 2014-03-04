@@ -15,14 +15,10 @@
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 add_action( 'genesis_loop', 'tekserve_redirect_genesis_404' );
-/**
- * This function outputs a 404 "Not Found" error message
- *
- * @since 1.6
- */
+
  
 /**
- * URL REDIRECT TEST
+ * URL REDIRECT - dgiglio@tekserve.com
  *
  * urls must NOT begine with http://
  * urls must use * for wildcards in addition to setting wildcard and/or preserve_path key to true
@@ -30,6 +26,8 @@ add_action( 'genesis_loop', 'tekserve_redirect_genesis_404' );
  * the old url CANNOT contain a hash (#) as this is not available to the server
  * broadest urls must be at the end of the list! -> tekserve.com/cpus/mac/* before teksere.com/cpus/* before tekserve.com/* 
  */
+ 
+ // redirect rules array
 $redirect_rules = array(
 	
 	array('old_url'       => 'www.tekserve.com/service/mac-repairs-and-upgrades', 
@@ -565,6 +563,12 @@ $redirect_rules = array(
 	),	  		  
 );
 
+
+// SET CURRENT ASSUMED subdomain and URL to www.tekserve.com
+
+$base_domain = 'tekserve.com';
+$base_subdomain = 'www';
+
 /**
  * get_redirect_url
  *
@@ -588,6 +592,7 @@ $redirect_rules = array(
  * 		check for complete match
  * if rule equires peserving path, then append the rest of the path information
  */
+ 
 function get_redirect_url( $url, $redirect_rules )
 {
 	// get parts for current path
@@ -640,9 +645,6 @@ function get_redirect_url( $url, $redirect_rules )
 	return '404';
 }
 
- 
- 
-
 
 /**
  * TESTS
@@ -656,67 +658,137 @@ function get_redirect_url( $url, $redirect_rules )
  * wildcard, preserve path, with trailing slash -> http://www.tekserve.com/testthisout/
  */ 
  
+ // get the URL
+ 
+function curPageURL() {
+//bring in baseURL/sub
+global $base_domain;
+global $base_subdomain;
+//build actual url
+$pageURL = '';
+// $pageURL .= 'http';
+// if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+// $pageURL .= "://";
+if ($_SERVER["SERVER_PORT"] != "80") {
+	$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+} else {
+	$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+}
+//change base URL/sub as necessary
+$newbase = str_replace( 'maintekserve.staging.wpengine', 'www.tekserve', $pageURL );
+if( $newbase != $pageURL ) {
+	$base_domain = 'wpengine.com';
+	$base_subdomain = 'maintekserve.staging';
+	return $newbase;	
+}
+unset( $newbase );
+$newbase = str_replace( 'maintekserve.wpengine', 'www.tekserve', $pageURL );
+if( $newbase != $pageURL ) {
+	$base_domain = 'wpengine.com';
+	$base_subdomain = 'maintekserve';
+	return $newbase;	
+}
+unset( $newbase );
+return $pageURL;
+}
+ 
+/**
+ * This function outputs a 404 "Not Found" error message
+ *
+ * @since 1.6
+ */
+ //modified to call dave's redir function, output 404 only if no found redir in that thar long array ^
  
 function tekserve_redirect_genesis_404() {
 
+	//establish globals
+	
+	global $redirect_rules;
+	
+	global $base_domain;
+	
+	global $base_subdomain;
 
-$url = urldecode(@$_REQUEST['url']);
+// 	$url = urldecode(@$_REQUEST['url']);
 
-// var_dump($_REQUEST['url']);
-// var_dump(parse_url($_SERVER['SCRIPT_URI'].'?'.$_SERVER['QUERY_STRING']));
-// array( array( (string) old_url, (string) new_url, (bool) wildcard, (bool) preserve_path )
+	$url = curPageUrl();
 
-$redirect_to = get_redirect_url( $url, $redirect_rules );
-echo 'REDIRECT TO: '.$redirect_to;
-	/* here */
+	$redirect_to = get_redirect_url( $url, $redirect_rules );
+	
+	//handle the aliases --- why no work?? check tomoroow
+	
+// 	if ( $base_subdomain == 'maintekserve.staging' ) {
+// 		$redirect_to = str_replace( 'www.tekserve', 'maintekserve.staging.wpengine', $pageURL );
+// 	}
+// 	
+// 	if ( $base_subdomain == 'maintekserve' ) {
+// 		$redirect_to = str_replace( 'www.tekserve', 'maintekserve.wpengine', 'www.tekserve', $pageURL );
+// 	}
 
-	echo genesis_html5() ? '<article class="entry">' : '<div class="post hentry">';
+	//process 404
+	
+	if ( $redirect_to == '404') {
 
-		printf( '<h1 class="entry-title">%s</h1>', __( 'Not found, error 404', 'genesis' ) );
-		echo '<div class="entry-content">';
+		echo genesis_html5() ? '<article class="entry">' : '<div class="post hentry">';
+			
+			printf( '<h1 class="entry-title">%s</h1>', __( 'Not found, error 404', 'genesis' ) );
+// 			echo '<p>this URL : ';
+// 			var_dump( $url );
+// 			echo '</p><p>New Url: ';
+// 			var_dump( $redirect_to );
+// 			echo '</p>';
+			echo '<div class="entry-content">';
 
-			if ( genesis_html5() ) :
+				if ( genesis_html5() ) :
 
-				echo '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), home_url() ) . '</p>';
+					echo '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), home_url() ) . '</p>';
 
-				echo '<p>' . get_search_form() . '</p>';
+					echo '<p>' . get_search_form() . '</p>';
 
-			else :
-	?>
+				else :
+		?>
 
-			<p><?php printf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it with the information below.', 'genesis' ), home_url() ); ?></p>
+				<p><?php printf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it with the information below.', 'genesis' ), home_url() ); ?></p>
 
-			<h4><?php _e( 'Pages:', 'genesis' ); ?></h4>
-			<ul>
-				<?php wp_list_pages( 'title_li=' ); ?>
-			</ul>
+				<h4><?php _e( 'Pages:', 'genesis' ); ?></h4>
+				<ul>
+					<?php wp_list_pages( 'title_li=' ); ?>
+				</ul>
 
-			<h4><?php _e( 'Categories:', 'genesis' ); ?></h4>
-			<ul>
-				<?php wp_list_categories( 'sort_column=name&title_li=' ); ?>
-			</ul>
+				<h4><?php _e( 'Categories:', 'genesis' ); ?></h4>
+				<ul>
+					<?php wp_list_categories( 'sort_column=name&title_li=' ); ?>
+				</ul>
 
-			<h4><?php _e( 'Authors:', 'genesis' ); ?></h4>
-			<ul>
-				<?php wp_list_authors( 'exclude_admin=0&optioncount=1' ); ?>
-			</ul>
+				<h4><?php _e( 'Authors:', 'genesis' ); ?></h4>
+				<ul>
+					<?php wp_list_authors( 'exclude_admin=0&optioncount=1' ); ?>
+				</ul>
 
-			<h4><?php _e( 'Monthly:', 'genesis' ); ?></h4>
-			<ul>
-				<?php wp_get_archives( 'type=monthly' ); ?>
-			</ul>
+				<h4><?php _e( 'Monthly:', 'genesis' ); ?></h4>
+				<ul>
+					<?php wp_get_archives( 'type=monthly' ); ?>
+				</ul>
 
-			<h4><?php _e( 'Recent Posts:', 'genesis' ); ?></h4>
-			<ul>
-				<?php wp_get_archives( 'type=postbypost&limit=100' ); ?>
-			</ul>
+				<h4><?php _e( 'Recent Posts:', 'genesis' ); ?></h4>
+				<ul>
+					<?php wp_get_archives( 'type=postbypost&limit=100' ); ?>
+				</ul>
 
-<?php
-			endif;
+	<?php
+				endif;
 
-			echo '</div>';
+				echo '</div>';
 
-		echo genesis_html5() ? '</article>' : '</div>';
+			echo genesis_html5() ? '</article>' : '</div>';
+	}
+	//redirect to calculated url if there is one
+	else {
+		echo '<h1>URL: </h1><h2>'.$redirect_to.'</h2>';
+		var_dump($redirect_to);
+// 		wp_redirect( $redirect_to, 301 );
+		exit;
+	}
 
 }
 
