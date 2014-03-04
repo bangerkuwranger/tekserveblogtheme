@@ -28,7 +28,7 @@ add_action( 'genesis_loop', 'tekserve_redirect_genesis_404' );
  * urls must use * for wildcards in addition to setting wildcard and/or preserve_path key to true
  * this is not currently set up to with redirects based on query strings
  * the old url CANNOT contain a hash (#) as this is not available to the server
- * broadest urls must be at the end of the list! -> tekserve.com/* after teksere.com/cpus/* after tekserve.com/cpus/mac/* 
+ * broadest urls must be at the end of the list! -> tekserve.com/cpus/mac/* before teksere.com/cpus/* before tekserve.com/* 
  */
 $redirect_rules = array(
 	
@@ -640,16 +640,9 @@ function get_redirect_url( $url, $redirect_rules )
 	return '404';
 }
 
-echo '<pre>'; 
  
-$url = urldecode(@$_REQUEST['url']);
+ 
 
-// var_dump($_REQUEST['url']);
-// var_dump(parse_url($_SERVER['SCRIPT_URI'].'?'.$_SERVER['QUERY_STRING']));
-// array( array( (string) old_url, (string) new_url, (bool) wildcard, (bool) preserve_path )
-
-$redirect_to = get_redirect_url( $url, $redirect_rules );
-echo 'REDIRECT TO: '.$redirect_to;
 
 /**
  * TESTS
@@ -665,6 +658,17 @@ echo 'REDIRECT TO: '.$redirect_to;
  
  
 function tekserve_redirect_genesis_404() {
+
+
+$url = urldecode(@$_REQUEST['url']);
+
+// var_dump($_REQUEST['url']);
+// var_dump(parse_url($_SERVER['SCRIPT_URI'].'?'.$_SERVER['QUERY_STRING']));
+// array( array( (string) old_url, (string) new_url, (bool) wildcard, (bool) preserve_path )
+
+$redirect_to = get_redirect_url( $url, $redirect_rules );
+echo 'REDIRECT TO: '.$redirect_to;
+	/* here */
 
 	echo genesis_html5() ? '<article class="entry">' : '<div class="post hentry">';
 
