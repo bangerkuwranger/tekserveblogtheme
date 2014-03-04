@@ -34,8 +34,7 @@ $datedetails = str_replace('-', 'To', $datedetails);
 		<h3><?php echo $datedetails ?></h3>
 		<!-- Event meta -->
 		<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-		<h3 style="display: block; margin-bottom: 1em;">At&nbsp;
-		<?php echo tribe_get_venue_link();
+		<h3 style="display: block; margin-bottom: 1em;">At <?php echo tribe_get_venue_link();
 		echo tribe_get_full_address(); ?>
 		</h3>
 		<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
