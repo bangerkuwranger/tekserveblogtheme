@@ -556,11 +556,11 @@ $redirect_rules = array(
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
-	array('old_url'       => 'www.tekserve.com/*', 
-		  'new_url'       => 'store.tekserve.com/*', 
-		  'wildcard'      => TRUE, 
-		  'preserve_path' => TRUE 
-	),	  		  
+// 	array('old_url'       => 'www.tekserve.com/*', 
+// 		  'new_url'       => 'store.tekserve.com/*', 
+// 		  'wildcard'      => TRUE, 
+// 		  'preserve_path' => TRUE 
+// 	),	  		  
 );
 
 
@@ -715,15 +715,7 @@ function tekserve_redirect_genesis_404() {
 
 	$redirect_to = get_redirect_url( $url, $redirect_rules );
 	
-	//handle the aliases --- why no work?? check tomoroow
-	
-// 	if ( $base_subdomain == 'maintekserve.staging' ) {
-// 		$redirect_to = str_replace( 'www.tekserve', 'maintekserve.staging.wpengine', $pageURL );
-// 	}
-// 	
-// 	if ( $base_subdomain == 'maintekserve' ) {
-// 		$redirect_to = str_replace( 'www.tekserve', 'maintekserve.wpengine', 'www.tekserve', $pageURL );
-// 	}
+	//handle the aliases 
 
 	//process 404
 	
@@ -731,7 +723,7 @@ function tekserve_redirect_genesis_404() {
 
 		echo genesis_html5() ? '<article class="entry">' : '<div class="post hentry">';
 			
-			printf( '<h1 class="entry-title">%s</h1>', __( 'Not found, error 404', 'genesis' ) );
+// 			printf( '<h1 class="entry-title">%s</h1>', __( 'Not found, error 404', 'genesis' ) );
 // 			echo '<p>this URL : ';
 // 			var_dump( $url );
 // 			echo '</p><p>New Url: ';
@@ -741,39 +733,45 @@ function tekserve_redirect_genesis_404() {
 
 				if ( genesis_html5() ) :
 
-					echo '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), home_url() ) . '</p>';
+// 					echo '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), home_url() ) . '</p>';
+					echo '<div id="main" class="col-main" style="background: #f36f37; height: 380px;">
+								<div class="page-title" style="background: #004d72; padding: 10px; color: white; height: 220px; border: none;">
+										<div id="errorpic" style="position: absolute; left: 0px; top:0px; z-index: 5;">
+										<img src="http://www.tekserve.com/skin/frontend/tekserve/tekstore/images/503ayus.png" style="height: 240px; width: 240px;" />
+										</div>
+									<h1 style="text-align: right; font-weight: 900; font-size: 10em; color: #fff; position: relative; top: 40px;">404\'d!</h1>
+									<p style="text-align: right; font-size: 3em; position: relative; top: 70px;">
+									We\'ll be back soon...
+									</p>
+								</div>
+								<div style="font-size: 1.5em; padding: 20px; line-height: 1.6em; text-align: left;">
+								<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to our <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below. If you need help, we\'re available by phone (&nbsp;<a style="font-weight: bold; color: #004d72;" href="tel:212.929.3645">212.929.3645</a>&nbsp;) and email (&nbsp;<a style="font-weight: bold; color: #004d72;" href="mailto:info@tekserve.com">info@tekserve.com</a>&nbsp;). See you shortly!', 'genesis' ), home_url() ) . '</p>
+								</div>
+							</div>
+						</div>';
 
 					echo '<p>' . get_search_form() . '</p>';
 
 				else :
 		?>
-
-				<p><?php printf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it with the information below.', 'genesis' ), home_url() ); ?></p>
-
+				<div id="main" class="col-main" style="background: #f36f37; height: 320px; position: relative">
+								<div class="page-title" style="background: #004d72; padding: 10px; color: white; height: 220px; border: none; position:relative; margin: 0;">
+										<div id="errorpic" style="position: absolute; left: 0px; top:0px; z-index: 5;">
+										<img src="http://www.tekserve.com/skin/frontend/tekserve/tekstore/images/503ayus.png" style="height: 240px; width: 240px;" />
+										</div>
+									<h1 style="text-align: right; font-weight: 900; font-size: 10em; color: #fff; position: relative; top: 32px; margin: 0;">404'd!</h1>
+								</div>
+								<div style="font-size: 1.5em; padding: 20px; line-height: 1.6em; text-align: left;">
+				<p style="color: #fff !important;"><?php printf( __( 'The page you are looking for no longer exists. Perhaps you can return back to our <a href="%s" style="color: #004d72; font-weight: 900;">homepage</a> and see if you can find what you are looking for. Or, you can try finding it with the information below. If you need help, we\'re available by phone (&nbsp;<a style="font-weight: bold; color: #004d72;" href="tel:212.929.3645">212.929.3645</a>&nbsp;) and email (&nbsp;<a style="font-weight: bold; color: #004d72;" href="mailto:info@tekserve.com">info@tekserve.com</a>&nbsp;). See you shortly!', 'genesis' ), home_url() ); ?></p>
+								</div>
+							</div>
+						</div>
 				<h4><?php _e( 'Pages:', 'genesis' ); ?></h4>
 				<ul>
 					<?php wp_list_pages( 'title_li=' ); ?>
 				</ul>
 
-				<h4><?php _e( 'Categories:', 'genesis' ); ?></h4>
-				<ul>
-					<?php wp_list_categories( 'sort_column=name&title_li=' ); ?>
-				</ul>
-
-				<h4><?php _e( 'Authors:', 'genesis' ); ?></h4>
-				<ul>
-					<?php wp_list_authors( 'exclude_admin=0&optioncount=1' ); ?>
-				</ul>
-
-				<h4><?php _e( 'Monthly:', 'genesis' ); ?></h4>
-				<ul>
-					<?php wp_get_archives( 'type=monthly' ); ?>
-				</ul>
-
-				<h4><?php _e( 'Recent Posts:', 'genesis' ); ?></h4>
-				<ul>
-					<?php wp_get_archives( 'type=postbypost&limit=100' ); ?>
-				</ul>
+				
 
 	<?php
 				endif;
@@ -784,9 +782,18 @@ function tekserve_redirect_genesis_404() {
 	}
 	//redirect to calculated url if there is one
 	else {
-		echo '<h1>URL: </h1><h2>'.$redirect_to.'</h2>';
-		var_dump($redirect_to);
-// 		wp_redirect( $redirect_to, 301 );
+		if ( $base_subdomain == 'maintekserve.staging' ) {
+			$redirect_to = str_replace( 'www.tekserve', 'maintekserve.staging.wpengine', $redirect_to );
+		}
+		if ( $base_subdomain == 'maintekserve' ) {
+			$redirect_to = str_replace( 'www.tekserve', 'maintekserve.wpengine', 'www.tekserve', $redirect_to );
+		}
+		$protocol = 'http';
+		if ($_SERVER["HTTPS"] == "on") {$protocol .= "s";}
+		$protocol .= "://";
+		$redirect_to = $protocol.$redirect_to;
+// 		var_dump($redirect_to);
+		wp_redirect( $redirect_to, 301 );
 		exit;
 	}
 
