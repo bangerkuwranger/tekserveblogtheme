@@ -2552,6 +2552,13 @@ color: #f06c34 !important;
 
 .entry-title a, .entry-title a:hover {font-weight: 900;}
 
+.search-results #content h2.entry-title > a {
+	color: #004d72;
+}
+.search-results #content h2.entry-title > a:hover {
+	color: #40a8c9;
+}
+
 /* Page Sections
 ------------------------------------------------------------ */
 .section {
