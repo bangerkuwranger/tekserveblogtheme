@@ -19,6 +19,18 @@ $event_id = get_the_ID();
 $datedetails = tribe_events_event_schedule_details();
 $datedetails = str_replace('@', 'From', $datedetails);
 $datedetails = str_replace('-', 'To', $datedetails);
+$organizer = tribe_get_organizer();
+if ( strpos( $organizer, 'Tekserve' ) !== false ) {
+	$organizer = '';
+}
+else {
+	$organizer = '<div><h3 style="margin-bottom: 1em;">Presented by: '.$organizer.'</h3></div>';
+}
+$event_link = tribe_get_event_website_url();
+if ( !empty( $event_link ) ) {
+	$event_link = '<div><h3 style="margin-bottom: 1em;">Visit the <a href="'.$event_link.'">Event Page</a> provided by the presenter.</h3></div>';
+}
+
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
@@ -37,6 +49,8 @@ $datedetails = str_replace('-', 'To', $datedetails);
 		<h3 style="display: block; margin-bottom: 1em;">At <?php echo tribe_get_venue_link();
 		echo tribe_get_full_address(); ?>
 		</h3>
+		<?php echo $organizer; ?>
+		<?php echo $event_link ?>
 		<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 		<?php echo tribe_events_event_recurring_info_tooltip(); ?>
 		<?php  if ( tribe_get_cost() ) :  ?>

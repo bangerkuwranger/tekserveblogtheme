@@ -4285,6 +4285,14 @@ li.tribe-events-nav-previous a {
 	list-style: decimal inside !important;
 } 
 
+#tribe-events-content > div.tribe-events-schedule.updated.published.tribe-clearfix > ul > li > div.tribe-related-events-thumbnail {
+	display: none;
+}
+
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title {
+	display: block;
+}
+
 
 @media only screen and (-moz-min-device-pixel-ratio:2), only screen and (-o-min-device-pixel-ratio:2/1), only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
 	.tribe-events-tooltip .tribe-events-arrow {
