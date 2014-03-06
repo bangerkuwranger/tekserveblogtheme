@@ -292,7 +292,7 @@ $j('document').ready(function() { //call on load
 	});
 	
 	//icaps
-	$j('h1, h2, h3, .detailBoxTrigger, .drawertrigger, .tekserve-case-study-cta').each(function () {
+	$j('h1, h2, h3, h1 a, h2 a, h3 a, .detailBoxTrigger, .drawertrigger, .tekserve-case-study-cta').each(function () {
 		var my_html = $j(this).html();
 		var my_old_html = $j(this).html();
  
