@@ -298,7 +298,7 @@ $j('document').ready(function() { //call on load
  
 		// Make sure there are no children so we don't edit more than we want.
 		if ($j(this).children().length == 0) {
-			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|Mac mini|Mac Pro|MacBook Pro|MacBook Air|iCloud|iLife|iWork|AppleCare|Apple)/ig, '<span class="trademark">$1</span>');
+			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|Mac mini|Mac Pro|MacBook Pro|MacBook Air|iCloud|iLife|iWork|iPhoto|iMovie|iCal|iTunes|AppleCare|Apple)/ig, '<span class="trademark">$1</span>');
 			my_html = my_html.replace(/(iNSIDER)/ig, '<span class="insider">$1</span>');
 			$j(this).html(my_html);
 		}
