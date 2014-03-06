@@ -49,23 +49,25 @@ function mobileCloseButton() {
 
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
-	$j('.bgwrapper').css('position', 'relative');
-	viewWidth = $j(window).width();
-	var viewMargin = (viewWidth - 960) / 2;
-	var viewMoveBig = $j('#content').css('padding-left');
-	viewMoveBig = viewMoveBig.substring(0, viewMoveBig.length - 2);
-	var extraMargin = $j('#inner > .wrap').css('margin-left');
-	extraMargin = extraMargin.substring(0, extraMargin.length - 2);
-	viewMoveBig = parseInt(viewMoveBig, 10) + parseInt(extraMargin, 10);
-	var viewMoveSmall = viewWidth * .1;
-	$j('.bgwrapper').css('width', viewWidth);
-	if (viewWidth <= 960) {
-		$j('.bgwrapper').css('padding','0 10%');
-		$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
-	}
-	else {
-		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
-		$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
+	if($j('.bgwrapper').length) {
+		$j('.bgwrapper').css('position', 'relative');
+		viewWidth = $j(window).width();
+		var viewMargin = (viewWidth - 960) / 2;
+		var viewMoveBig = $j('#content').css('padding-left');
+		viewMoveBig = viewMoveBig.substring(0, viewMoveBig.length - 2);
+		var extraMargin = $j('#inner > .wrap').css('margin-left');
+		extraMargin = extraMargin.substring(0, extraMargin.length - 2);
+		viewMoveBig = parseInt(viewMoveBig, 10) + parseInt(extraMargin, 10);
+		var viewMoveSmall = viewWidth * .1;
+		$j('.bgwrapper').css('width', viewWidth);
+		if (viewWidth <= 960) {
+			$j('.bgwrapper').css('padding','0 10%');
+			$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
+		}
+		else {
+			$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
+			$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
+		}
 	}
 }
 
