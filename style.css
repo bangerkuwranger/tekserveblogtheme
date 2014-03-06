@@ -4055,6 +4055,7 @@ body.events-list #wrap div#inner {
 
 #tribe-events {
 	background-color: rgba(255,255,255,.75);
+	padding: 1em;
 }
 
 div.tribe-events-content img {
