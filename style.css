@@ -4479,6 +4479,10 @@ button.positive:hover {
 	text-align: right;
 }
 
+form#status-front.status-front {
+	float: right;
+}
+
 #status-content .buttons {
 	display: inline-block;
 }
@@ -5090,6 +5094,16 @@ text-align: center;
 	
 	div.gform_wrapper [id*="choice"] {
 		width: auto;
+	}
+		
+	.max450,
+	.max550,
+	.max650,
+	.max750,
+	.max850,
+	.max950,
+	.max1050 {
+		max-height: 5000px;
 	}
 	
 }
@@ -5718,16 +5732,6 @@ text-align: center;
 	
 	p, .section p {
 		text-align: left;
-	}
-	
-	.max450,
-	.max550,
-	.max650,
-	.max750,
-	.max850,
-	.max950,
-	.max1050 {
-		max-height: 5000px;
 	}
 	
 	.wpb_revslider_element {
