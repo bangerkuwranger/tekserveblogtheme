@@ -2014,6 +2014,129 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
 	color: #004d72;
 }
 
+#ui-datepicker-div.ui-datepicker {
+    width: 216px;
+    height: auto;
+    margin: 5px auto 0;
+    font: 9pt Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#ui-datepicker-div.ui-datepicker a {
+    text-decoration: none;
+}
+
+#ui-datepicker-div.ui-datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#ui-datepicker-div .ui-datepicker-header {
+    background-color: #004d72; /* set the header background color */
+    color: #fff;
+    font-weight: bold;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    line-height: 30px;
+    min-height: 30px !important;
+    border: 0;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+
+#ui-datepicker-div.ui-datepicker thead {
+    background: #fff;
+    border-bottom: 1px solid #004d72;
+}
+
+#ui-datepicker-div.ui-datepicker th {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 6pt;
+    padding: 5px 0;
+    color: #004d72;
+    text-shadow: none;
+}
+
+#ui-datepicker-div.ui-datepicker tbody td {
+    padding: 0;
+    border-top: 1px solid #004d72;
+    border-right: 1px solid #004d72;
+}
+
+#ui-datepicker-div.ui-datepicker tbody td:last-child {
+    border-right: 0px;
+}
+
+#ui-datepicker-div.ui-datepicker tbody tr {
+    border-bottom: 1px solid #004d72;
+}
+
+#ui-datepicker-div.ui-datepicker tbody tr:last-child {
+    border-bottom: 0px;
+}
+
+#ui-datepicker-div.ui-datepicker td span, 
+#ui-datepicker-div.ui-datepicker td a {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #004d72;
+    text-shadow: none;
+}
+
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-default {
+    background: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-hover {
+    background: #f36f37;
+    color: #fff;
+}
+
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-active {
+    background: #f36f37; /* set the active date background color */
+    border: none; /* set the active date border color */
+    color: #fff; /* set the active date font color */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    position: relative;
+    margin: -1px;
+}
+
+label {
+	text-transform: uppercase;
+	font-weight: 900;
+	display: block;
+	margin: 0;
+}
+
+label.lower {
+	float: left;
+	text-transform: lowercase;
+	font-weight: bold;
+}
+
+.lightblue label,
+.darkblue label,
+.orange label {
+	color: #fff;
+}
+
+
 
 /* Apparition Green
 ------------------------------------------------------------ */
