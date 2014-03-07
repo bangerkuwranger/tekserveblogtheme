@@ -2136,6 +2136,10 @@ label.lower {
 	color: #fff;
 }
 
+::-webkit-datetime-edit {
+	display: none;
+}
+
 
 
 /* Apparition Green
@@ -2547,6 +2551,13 @@ color: #f06c34 !important;
 .even h2 a:hover {color:#40a8c9;}
 
 .entry-title a, .entry-title a:hover {font-weight: 900;}
+
+.search-results #content h2.entry-title > a {
+	color: #004d72;
+}
+.search-results #content h2.entry-title > a:hover {
+	color: #40a8c9;
+}
 
 /* Page Sections
 ------------------------------------------------------------ */
@@ -3542,6 +3553,96 @@ div.orangebox p {
 	height: 100%;
 }
 
+.ui-dialog {
+    left: 0;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0.2em;
+    position: absolute;
+    top: 0;
+    z-index: 250;
+    background: #fff;
+    box-shadow: 1px 1px 10px #334;
+    max-width: 250px;
+}
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.4em 1em;
+    position: relative;
+    background: #004d72;
+    color: white;
+    min-height: 24px;
+}
+.ui-dialog .ui-dialog-title {
+    float: left;
+    margin: 0.1em 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    max-width: 180px;
+    display: inline-block;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    height: 20px;
+    margin: -10px 0 0;
+    padding: 1px;
+    position: absolute;
+    right: 0.3em;
+    top: 50%;
+	border-radius: 12px 0 12px;
+	background-color: #f36f37;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 900;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover {
+	background-color: #40a8c9;
+}
+.ui-dialog .ui-dialog-content {
+    background: #fff;
+    border: 0 none;
+    overflow: auto;
+    padding: 0.5em 1em;
+    position: relative;
+    width: 300px !important;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    background-image: none;
+    border-width: 1px 0 0;
+    margin-top: 0.5em;
+    padding: 0.3em 1em 0.5em 0.4em;
+    text-align: left;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+    cursor: pointer;
+    margin: 0.5em 0.4em 0.5em 0;
+}
+.ui-dialog .ui-resizable-se {
+    background-position: 16px 16px;
+    bottom: -5px;
+    height: 12px;
+    right: -5px;
+    width: 12px;
+}
+.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+#addDialog .item-decrement,
+#addDialog .item-increment,
+#addDialog .item-price,
+#addDialog .item-deposit,
+#addDialog .item-remove {
+	display: none !important;
+}
 
 /* SortTable Post
 ------------------------------------------------------------ */
@@ -3954,6 +4055,7 @@ body.events-list #wrap div#inner {
 
 #tribe-events {
 	background-color: rgba(255,255,255,.75);
+	padding: 1em;
 }
 
 div.tribe-events-content img {
@@ -4183,6 +4285,14 @@ li.tribe-events-nav-previous a {
 #tribe-events-pg-template .tribe-events-content  ol {
 	list-style: decimal inside !important;
 } 
+
+#tribe-events-content > div.tribe-events-schedule.updated.published.tribe-clearfix > ul > li > div.tribe-related-events-thumbnail {
+	display: none;
+}
+
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title {
+	display: block;
+}
 
 
 @media only screen and (-moz-min-device-pixel-ratio:2), only screen and (-o-min-device-pixel-ratio:2/1), only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
@@ -5617,6 +5727,10 @@ text-align: center;
 	.max950,
 	.max1050 {
 		max-height: 5000px;
+	}
+	
+	.wpb_revslider_element {
+		display: none !important;
 	}
 	
 }

@@ -49,23 +49,25 @@ function mobileCloseButton() {
 
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
-	$j('.bgwrapper').css('position', 'relative');
-	viewWidth = $j(window).width();
-	var viewMargin = (viewWidth - 960) / 2;
-	var viewMoveBig = $j('#content').css('padding-left');
-	viewMoveBig = viewMoveBig.substring(0, viewMoveBig.length - 2);
-	var extraMargin = $j('#inner > .wrap').css('margin-left');
-	extraMargin = extraMargin.substring(0, extraMargin.length - 2);
-	viewMoveBig = parseInt(viewMoveBig, 10) + parseInt(extraMargin, 10);
-	var viewMoveSmall = viewWidth * .1;
-	$j('.bgwrapper').css('width', viewWidth);
-	if (viewWidth <= 960) {
-		$j('.bgwrapper').css('padding','0 10%');
-		$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
-	}
-	else {
-		$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
-		$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
+	if($j('.bgwrapper').length) {
+		$j('.bgwrapper').css('position', 'relative');
+		viewWidth = $j(window).width();
+		var viewMargin = (viewWidth - 960) / 2;
+		var viewMoveBig = $j('#content').css('padding-left');
+		viewMoveBig = viewMoveBig.substring(0, viewMoveBig.length - 2);
+		var extraMargin = $j('#inner > .wrap').css('margin-left');
+		extraMargin = extraMargin.substring(0, extraMargin.length - 2);
+		viewMoveBig = parseInt(viewMoveBig, 10) + parseInt(extraMargin, 10);
+		var viewMoveSmall = viewWidth * .1;
+		$j('.bgwrapper').css('width', viewWidth);
+		if (viewWidth <= 960) {
+			$j('.bgwrapper').css('padding','0 10%');
+			$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
+		}
+		else {
+			$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
+			$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
+		}
 	}
 }
 
@@ -292,13 +294,13 @@ $j('document').ready(function() { //call on load
 	});
 	
 	//icaps
-	$j('h1, h2, h3, .detailBoxTrigger, .drawertrigger, .tekserve-case-study-cta').each(function () {
+	$j('h1, h2, h3, h1 a, h2 a, h3 a, .detailBoxTrigger, .drawertrigger, .tekserve-case-study-cta').each(function () {
 		var my_html = $j(this).html();
 		var my_old_html = $j(this).html();
  
 		// Make sure there are no children so we don't edit more than we want.
 		if ($j(this).children().length == 0) {
-			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|Mac mini|Mac Pro|MacBook Pro|MacBook Air)/ig, '<span class="trademark">$1</span>');
+			my_html = my_html.replace(/(iPad|iPhone|iMac|iPod|iOS|Mac OS X|Mac mini|Mac Pro|MacBook Pro|MacBook Air|iCloud|iLife|iWork|iPhoto|iMovie|iCal|iTunes|AppleCare|Apple)/ig, '<span class="trademark">$1</span>');
 			my_html = my_html.replace(/(iNSIDER)/ig, '<span class="insider">$1</span>');
 			$j(this).html(my_html);
 		}

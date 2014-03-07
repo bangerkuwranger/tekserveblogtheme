@@ -67,6 +67,15 @@ $has_venue_address = ( $venue_address ) ? ' location': '';
 			<?php echo implode( ', ', $venue_details) ; ?>
 		</div> <!-- .tribe-events-venue-details -->
 	<?php endif; ?>
+	<!-- Presenter Display Info -->
+	<?php $organizer = tribe_get_organizer();
+	if ( strpos( $organizer, 'Tekserve' ) !== false ) {
+		$organizer = '';
+	}
+	else {
+		$organizer = '<div><h3 style="margin-bottom: 1em;">Presented by: '.$organizer.'</h3></div>';
+	}
+	echo $organizer; ?>
 
 </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
