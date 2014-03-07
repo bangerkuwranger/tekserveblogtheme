@@ -4293,6 +4293,9 @@ li.tribe-events-nav-previous a {
 
 .tribe-events-single ul.tribe-related-events .tribe-related-events-title {
 	display: block;
+	max-width: 300px;
+	white-space: normal;
+	text-indent: 0;
 }
 
 
