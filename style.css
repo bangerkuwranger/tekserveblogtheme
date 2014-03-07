@@ -4117,6 +4117,7 @@ span.tribe-events-list-separator-month span {
 #tribe-events-bar #tribe-bar-form input, #tribe-events-bar #tribe-bar-form label {
 	color: white;
 	border-color: white;
+	font-size: 18px;
 }
 
 #tribe-events-bar #tribe-bar-form .tribe-bar-submit input[type=submit] {
