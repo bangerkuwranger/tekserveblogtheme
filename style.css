@@ -3644,6 +3644,29 @@ div.orangebox p {
 	display: none !important;
 }
 
+.tekserve_rental_request_container {
+	position: relative;
+	width: 100%;
+}
+
+.tekserve_rental_request_container .tekserve_rental_request {
+	width: 25%;
+	padding: 1em;
+	display: inline-block;
+}
+
+.tekserve_rental_request_container .tekserve_rental_request_line_items {
+	width: 60%;
+	padding: 1em;
+	float: right;
+	display: inline-block;
+}
+
+.section a.simpleCart_checkout.button {
+	float: right;
+	font-size: 3em;
+}
+
 /* SortTable Post
 ------------------------------------------------------------ */
 
@@ -5109,6 +5132,17 @@ text-align: center;
 		max-height: 5000px;
 	}
 	
+	.tekserve_rental_request_container .tekserve_rental_request {
+		width: 100%;
+		display: block;
+	}
+
+	.tekserve_rental_request_container .tekserve_rental_request_line_items {
+		width: 100%;
+		float: none;
+		display: block;
+	}
+	
 }
 
 @media (max-width:1024px) and (min-width:768px) {
@@ -5741,9 +5775,18 @@ text-align: center;
 		display: none !important;
 	}
 	
+	.section a.simpleCart_checkout.button {
+		float: none;
+		font-size: 2em;
+	}
+	
 }
 
 @media only screen and (max-width: 500px) {
+	
+	.section a.simpleCart_checkout.button {
+		max-width: 150px;
+	}
 	
 	#inner {
 		width: 320px;
