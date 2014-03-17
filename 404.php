@@ -29,14 +29,20 @@ add_action( 'genesis_loop', 'tekserve_redirect_genesis_404' );
  
  // redirect rules array
 $redirect_rules = array(
+
+	array('old_url'       => 'www.tekserve.com/business/deploy_cvapps', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/deploy_cvapps', 
+		  'wildcard'      => FALSE, 
+		  'preserve_path' => FALSE 
+	),	
 	
 	array('old_url'       => 'www.tekserve.com/service/mac-repairs-and-upgrades', 
-		  'new_url'       => 'www.tekserve.com/service/', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/iphone-service', 
-		  'new_url'       => 'www.tekserve.com/service/#iphone', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#iphone', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -492,7 +498,7 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE ),
 
 	array('old_url'       => 'www.tekserve.com/business/*', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -551,8 +557,8 @@ $redirect_rules = array(
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
-	array('old_url'       => 'www.tekserve.com/business-solutions/', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+	array('old_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
