@@ -4469,6 +4469,16 @@ h2.tribe-events-list-event-title a:hover, .tribe-events-list-event-description a
 	font-weight: bold;
 }
 
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px) {
+	body.events-gridview { min-width: 550px; }
+	.events-gridview #inner { min-width: 550px; }
+	.events-gridview .tribe-events-thismonth, .tribe-events-othermonth { min-width: 50px !important; max-width:60px !important; }
+    .events-gridview   #tribe-events-calendar-header { padding-top: 3em !important; }
+	.events-gridview .tribe-events-calendar-buttons { top:0 !important; left:0 !important; }
+       .events-gridview .tribe-events-calendar-widget td a.tribe-events-mini-has-event { cursor: pointer !important; }
+}
+
 
 /* Repair Status
 ------------------------------------------------------------ */
