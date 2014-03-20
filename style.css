@@ -581,6 +581,44 @@ ul.menu li.sfHover ul,
 	padding: 0 0 0 20px;
 }
 
+.tekserve_custom_search .search-option-menu {
+	float: right;
+	box-sizing: border-box;
+	position: relative;
+	top: -31px;
+	left: 70px;
+	font-size: 12px;
+	min-width: 120px;
+}
+
+.tekserve_custom_search .search-form {
+/* 	right: 60px; */
+}
+
+.tekserve_custom_search input.search-input {
+	min-width: 220px;
+}
+
+.tekserve_custom_search #search-option {
+	-webkit-appearance: menulist;
+	-moz-appearance: menulist;
+	-o-appearance: menulist;
+	appearance: menulist;
+	padding-left: 1em;
+	height: 20px;
+	background-color: #40a8c9;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+ul.tekserve_custom_search_menu {
+	width: 960px !important;
+}
+
+.menu li.right.search {
+	padding: 0;
+}
 
 /* Inner
 ------------------------------------------------------------ */
@@ -4824,7 +4862,7 @@ text-align: center;
 	}
 	
 	.menu-primary li {
-		text-align: center;
+/* 		text-align: center; */
 	}
 	
 	.nrelate_default.nr_150 a.nr_panel {
@@ -4952,7 +4990,7 @@ text-align: center;
 	}
 
 	.menu li.right {
-		display: none;
+/* 		display: none; */
 	}
 
 	.menu li li {
@@ -5378,17 +5416,17 @@ text-align: center;
 	}
 
 	ul.menu.genesis-nav-menu.menu-primary {
-	text-align: left;
+		text-align: left;
 	}
 	
 	ul.menu.genesis-nav-menu.menu-primary li {
-	height: 42px;
-	margin-left: 1em;
+		height: 42px;
+		margin-left: 1em;
 	}
 	
 	ul.menu.genesis-nav-menu.menu-primary li a {
-	font-size: 2em;
-	font-weight: normal;
+		font-size: 2em;
+		font-weight: normal;
 	}
 	
 	.menu li.right.search {
@@ -5397,27 +5435,38 @@ text-align: center;
 	
 	form.searchform.search-form {
 /* 	top: 5px; */
-	width: 280px;
+		width: 280px;
 	}
 	
 	input.s.search-input {
-	height: 40px;
-	font-size: 1.5em;
+		height: 40px;
+		font-size: 1.5em;
+	}
+	
+	.tekserve_custom_search #search-option {
+		height: 40px;
+	}
+	
+	.tekserve_custom_search .search-option-menu {
+		font-size: 18px;
+		min-width: 180px;
+		top: -50px;
+		left: 150px;
 	}
 	
 	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
-	width: 280px !important;
+		width: 280px !important;
 	}
 	
 	.single #content-sidebar-wrap #sidebar {
-	float: right;
-	width: 90%;
-	display: block;
-	min-width: 300px;
-	position: relative;
-	right: 5%;
-	border-top: 16px solid #40a8c9;
-	padding-top: 24px;
+		float: right;
+		width: 90%;
+		display: block;
+		min-width: 300px;
+		position: relative;
+		right: 5%;
+		border-top: 16px solid #40a8c9;
+		padding-top: 24px;
 	}
 
 }
@@ -5465,7 +5514,7 @@ text-align: center;
 	}
 	ul.menu.genesis-nav-menu.menu-primary,
 	.menu-primary {
-		width: 320px;
+		width: 320px !important;
 		padding: 5px 0 0;
 		min-height: 1.1em;
 /* 		border: solid 1px #aaa; */
@@ -5566,6 +5615,17 @@ text-align: center;
 	li.right.search {
 	list-style: none;
 	margin-top: 30px;
+	}
+	
+	.tekserve_custom_search .search-option-menu {
+		top: -38px;
+		left: 32px;
+		font-size: 16px;
+		min-width: 125px;
+	}
+	
+	.tekserve_custom_search #search-option {
+		height: 28px;
 	}
 	
 	#nav .wrap {

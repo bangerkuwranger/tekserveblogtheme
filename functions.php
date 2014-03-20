@@ -167,7 +167,12 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
         	return $menu;
                if( genesis_get_option( 'nav_extras' ) )
                 return $menu;
-        $menu .= sprintf( '<li class="custom-search">%s</li>', __( genesis_search_form( $echo ) ) );
+        if ( function_exists( 'tekserve_divert_relevanissi' ) ) {
+			$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( tekserve_custom_search( $echo ) ) );
+        }
+        else {
+        	$menu .= sprintf( '<li class="custom-search right search">%s</li>', __( genesis_search_form( $echo ) ) );
+        }
         return $menu;
 }
 

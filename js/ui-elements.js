@@ -402,4 +402,9 @@ $j('document').ready(function() { //call on load
 		}
 	}, 1000);
 	
+	//make menu fit larger search box if tekserve custom search exists
+	if($j('.tekserve_custom_search').length != 0) {
+		$j('.tekserve_custom_search').parents('.menu-primary').addClass('tekserve_custom_search_menu');
+	}
+	
 });
