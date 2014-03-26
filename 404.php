@@ -37,7 +37,7 @@ $redirect_rules = array(
 	),	
 	
 	array('old_url'       => 'www.tekserve.com/service/mac-repairs-and-upgrades', 
-		  'new_url'       => 'www.tekserve.com/repairs-and-services/', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#mac-repair', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -47,27 +47,27 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/data-backup-and-recovery', 
-		  'new_url'       => 'www.tekserve.com/service/#backup-recovery', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#backup-recovery', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/status', 
-		  'new_url'       => 'www.tekserve.com/service/#status', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#status', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/trade-in', 
-		  'new_url'       => 'www.tekserve.com/service/#tradein-recycling', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#tradein-recycling', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/recycling', 
-		  'new_url'       => 'www.tekserve.com/service/#tradein-recycling', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#tradein-recycling', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/*', 
-		  'new_url'       => 'www.tekserve.com/service/', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -87,37 +87,37 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/request-rental', 
-		  'new_url'       => 'rentals.tekserve.com/#equipment', 
+		  'new_url'       => 'rentals.tekserve.com/#request-rental', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/rental-faq', 
-		  'new_url'       => 'rentals.tekserve.com/#faq', 
+		  'new_url'       => 'rentals.tekserve.com/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/retina', 
-		  'new_url'       => 'rentals.tekserve.com/#mbp', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-portables', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/macbook-pro', 
-		  'new_url'       => 'rentals.tekserve.com/#mbp', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-portables', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/mac-pro', 
-		  'new_url'       => 'rentals.tekserve.com/#macpro', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-desktops', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/ipad', 
-		  'new_url'       => 'rentals.tekserve.com/#ipad', 
+		  'new_url'       => 'rentals.tekserve.com/#ios-devices', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/imac#mini', 
-		  'new_url'       => 'rentals.tekserve.com/#mini', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-desktops', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -127,7 +127,7 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/projectors', 
-		  'new_url'       => 'rentals.tekserve.com/#projectors', 
+		  'new_url'       => 'rentals.tekserve.com/#accessories', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -137,32 +137,32 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/vintage-electronics', 
-		  'new_url'       => 'rentals.tekserve.com/#vintage', 
+		  'new_url'       => 'rentals.tekserve.com/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/ipad#mini', 
-		  'new_url'       => 'rentals.tekserve.com/#ipadmini', 
+		  'new_url'       => 'rentals.tekserve.com/#ios-devices', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/ipad#ipod', 
-		  'new_url'       => 'rentals.tekserve.com/#ipodtouch', 
+		  'new_url'       => 'rentals.tekserve.com/#ios-devices', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/imac#imac', 
-		  'new_url'       => 'rentals.tekserve.com/#imac', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-desktops', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/rentals/equipment/imac', 
-		  'new_url'       => 'rentals.tekserve.com/#imac', 
+		  'new_url'       => 'rentals.tekserve.com/#mac-dekstops', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/blog/wp-content/uploads/2012/12/TekserveCreditCardApprovalForm.pdf', 
-		  'new_url'       => 'rentals.teksserve.com/wp-content/uploads/2013/11/TekserveCreditCardApprovalForm.pdf', 
+		  'new_url'       => 'rentals.teksserve.com/wp-content/uploads/2014/03/TekserveCreditCardApprovalForm.pdf', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -197,7 +197,7 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/insider-terms-conditions/', 
-		  'new_url'       => 'www.tekserve.com/insider/#terms', 
+		  'new_url'       => 'www.tekserve.com/insider/#insider-terms-and-conditions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -212,12 +212,12 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/events/tekserve-academy/', 
-		  'new_url'       => 'events.tekserve.com/#academy', 
+		  'new_url'       => 'events.tekserve.com/tekserve-academy', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/events/creative-fridays/', 
-		  'new_url'       => 'events.tekserve.com/#creativefridays', 
+		  'new_url'       => 'events.tekserve.com/creative-fridays', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -273,87 +273,87 @@ $redirect_rules = array(
 		  
 		  
 	array('old_url'       => 'www.tekserve.com/about/store-location-and-hours/', 
-		  'new_url'       => 'www.tekserve.com/about/#hours', 
+		  'new_url'       => 'www.tekserve.com/about-us/#hours-directions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/contact-us', 
-		  'new_url'       => 'www.tekserve.com/#contact', 
+		  'new_url'       => 'www.tekserve.com/about-us/#hours-directions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/careers/', 
-		  'new_url'       => 'www.tekserve.com/about/#careers', 
+		  'new_url'       => 'www.tekserve.com/careers', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/social-responsibility/', 
-		  'new_url'       => 'www.tekserve.com/about/#responsibility', 
+		  'new_url'       => 'www.tekserve.com/social-responsibility/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/press/', 
-		  'new_url'       => 'www.tekserve.com/about/#mentions', 
+		  'new_url'       => 'www.tekserve.com/press-mentions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/media-resources/', 
-		  'new_url'       => 'www.tekserve.com/about/#forpress', 
+		  'new_url'       => 'www.tekserve.com/about-us/#forpress', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/history/', 
-		  'new_url'       => 'www.tekserve.com/about/', 
+		  'new_url'       => 'www.tekserve.com/about-us/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/*', 
-		  'new_url'       => 'www.tekserve.com/about/', 
+		  'new_url'       => 'www.tekserve.com/about-us/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE ),		  
 		  
 	array('old_url'       => 'www.tekserve.com/business/products/', 
-		  'new_url'       => 'www.tekserve.com/business/#partners', 
+		  'new_url'       => 'www.tekserve.com/vendors/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/products/*', 
-		  'new_url'       => 'www.tekserve.com/business/#partners', 
+		  'new_url'       => 'www.tekserve.com/vendors/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business-case-studies/', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/case-studies/', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/case-studies/*', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business-knowledge/', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business-knowledge/*', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business-contact-us/', 
-		  'new_url'       => 'www.tekserve.com/business/#contact', 
+		  'new_url'       => 'www.tekserve.com/business/#hours-directions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/Contact-Us/', 
-		  'new_url'       => 'www.tekserve.com/business/#contact', 
+		  'new_url'       => 'www.tekserve.com/business/#hours-directions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -443,52 +443,52 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/Press/', 
-		  'new_url'       => 'www.tekserve.com/about/#mentions', 
+		  'new_url'       => 'www.tekserve.com/press-mentions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/Press/*', 
-		  'new_url'       => 'www.tekserve.com/about/#mentions', 
+		  'new_url'       => 'www.tekserve.com/press-mentions', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/hours-and-location/', 
-		  'new_url'       => 'www.tekserve.com/about/#hours', 
+		  'new_url'       => 'www.tekserve.com/business/#hours-directions', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/careers/', 
-		  'new_url'       => 'www.tekserve.com/about/#careers', 
+		  'new_url'       => 'www.tekserve.com/careers/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/about/management-team/', 
-		  'new_url'       => 'www.tekserve.com/about/', 
+		  'new_url'       => 'www.tekserve.com/about-us/#executive-team', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/about/social-responsibility/', 
-		  'new_url'       => 'www.tekserve.com/about/#responsibility', 
+		  'new_url'       => 'www.tekserve.com/social-responsibility', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/press-resources/', 
-		  'new_url'       => 'www.tekserve.com/about/#forpress', 
+		  'new_url'       => 'www.tekserve.com/about-us/#forpress', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/about/history/', 
-		  'new_url'       => 'www.tekserve.com/about/', 
+		  'new_url'       => 'www.tekserve.com/about-us/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/Mac-Service/', 
-		  'new_url'       => 'www.tekserve.com/service/', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/#mac-repair', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/rentals-and-leasing', 
-		  'new_url'       => 'rentals.tekserve.com/#leasing', 
+		  'new_url'       => 'rentals.tekserve.com/leasing', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -518,12 +518,12 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/training', 
-		  'new_url'       => 'www.tekserve.com/business/#services', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/#services', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/tradein', 
-		  'new_url'       => 'www.tekserve.com/service/#tradein-recycling', 
+		  'new_url'       => 'www.tekserve.com/trade-in', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -533,22 +533,22 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/tekserve-business-site/', 
-		  'new_url'       => 'www.tekserve.com/business/', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/store/weborderfaq.php', 
-		  'new_url'       => 'www.tekserve.com/policies/#order-return', 
+		  'new_url'       => 'www.tekserve.com/ordering-shipping-returns', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/ordering-returns/', 
-		  'new_url'       => 'www.tekserve.com/policies/#order-return', 
+		  'new_url'       => 'www.tekserve.com/ordering-shipping-returns/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/store/trade-in.php', 
-		  'new_url'       => 'www.tekserve.com/service/#tradein-recycling', 
+		  'new_url'       => 'www.tekserve.com/trade-in/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -561,7 +561,22 @@ $redirect_rules = array(
 		  'new_url'       => 'www.tekserve.com/business-solutions/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
-	),	  
+	),
+	array('old_url'       => 'www.tekserve.com/rentals/*', 
+		  'new_url'       => 'rentals.tekserve.com', 
+		  'wildcard'      => TRUE, 
+		  'preserve_path' => FALSE 
+	),
+	array('old_url'       => 'www.tekserve.com/service/*', 
+		  'new_url'       => 'www.tekserve.com/repairs-and-services/', 
+		  'wildcard'      => TRUE, 
+		  'preserve_path' => FALSE 
+	),
+	array('old_url'       => 'www.tekserve.com/rentals/*', 
+		  'new_url'       => 'www.tekserve.com/business-solutions/', 
+		  'wildcard'      => TRUE, 
+		  'preserve_path' => FALSE 
+	),
 // 	array('old_url'       => 'www.tekserve.com/*', 
 // 		  'new_url'       => 'store.tekserve.com/*', 
 // 		  'wildcard'      => TRUE, 
@@ -601,6 +616,7 @@ $base_subdomain = 'www';
  
 function get_redirect_url( $url, $redirect_rules )
 {
+	global $redirect_rules;
 	// get parts for current path
 	$url_parts = parse_url($url);
 	// clean url
@@ -788,11 +804,14 @@ function tekserve_redirect_genesis_404() {
 	}
 	//redirect to calculated url if there is one
 	else {
+// 		var_dump($redirect_to);
+// 		var_dump($base_domain);
+// 		var_dump($base_subdomain);
 		if ( $base_subdomain == 'maintekserve.staging' ) {
 			$redirect_to = str_replace( 'www.tekserve', 'maintekserve.staging.wpengine', $redirect_to );
 		}
 		if ( $base_subdomain == 'maintekserve' ) {
-			$redirect_to = str_replace( 'www.tekserve', 'maintekserve.wpengine', 'www.tekserve', $redirect_to );
+			$redirect_to = str_replace( 'www.tekserve', 'maintekserve.wpengine', $redirect_to );
 		}
 		$protocol = 'http';
 		if ($_SERVER["HTTPS"] == "on") {$protocol .= "s";}
