@@ -17,8 +17,8 @@ function blogSectionHeight() {// sets height for blog front page sections to hei
 $j('document').ready(function() { //call on load
 	blogSectionHeight();
 	//toggle orange box headers
-	$j( ".page-template-static_content-php #categories-4 h2" ).click(function() {
-		$j('#categories-4 ul li').slideToggle();
+	$j( ".page-template-static_content-php .widget.widget_categories h2" ).click(function() {
+		$j('.widget.widget_categories ul li').slideToggle();
 	});
 	$j( ".page-template-static_content-php #Front_Page .widget_knrauthorlistwidget h2" ).click(function() {
 		$j('#Front_Page .widget_knrauthorlistwidget ul li').slideToggle();
