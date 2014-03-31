@@ -67,6 +67,7 @@
 * Sidebar / Front Page Widgets
 * Calendar & Events
 * Repair Status
+* Sitemap
 * Revolution Slider
 * Responsive Design
 
@@ -1843,6 +1844,11 @@ label {
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: 900;
 	font-size: 1.5em;
+}
+
+cite.fn,
+span.says {
+	color: #fff;
 }
 
 /* Responsive Table
@@ -4602,6 +4608,17 @@ form#status-front.status-front {
 #status-wrapper #status-content h3 {
 	color: #f36f37;
 	text-transform: uppercase;
+}
+
+/* Repair Status
+------------------------------------------------------------ */
+
+.slickmap #primaryNav li a {
+	background-image: none;
+}
+
+.slickmap #primaryNav li li a {
+	padding: 10px 1.25em;
 }
 
 /* Revolution Slider
