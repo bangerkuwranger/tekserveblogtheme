@@ -5,12 +5,12 @@
 	Author: StudioPress / Chad A. Carino
 	Author URI: http://www.tekserve.com/
  
-	Version: 1.1
+	Version: 1.2
  
 	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
  
 	Template: genesis
-	Template Version: 1.1
+	Template Version: 1.2
  
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -4610,8 +4610,17 @@ form#status-front.status-front {
 	text-transform: uppercase;
 }
 
-/* Repair Status
+/* Sitemap
 ------------------------------------------------------------ */
+
+.slickmap #primaryNav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.slickmap #primaryNav li li li a {
+	width: 50%;
+}
 
 .slickmap #primaryNav li a {
 	background-image: none;
@@ -4911,6 +4920,25 @@ text-align: center;
 	
 }
 
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
+
+	.slickmap #primaryNav li a,
+	.slickmap #primaryNav li a:link::before,
+	.slickmap #primaryNav li a:visited::before {
+		font-size: 1em !important;
+	}
+	
+	.slickmap #primaryNav li li a,
+	.slickmap #primaryNav li li a:link::before,
+	.slickmap #primaryNav li li a:visited::before,
+	.slickmap #primaryNav li li li a,
+	.slickmap #primaryNav li li li a:link::before,
+	.slickmap #primaryNav li li li a:visited::before {
+		font-size: .75em !important;
+	}
+
+}
+
 @media only screen and (max-width: 1024px) {
 
 	body {
@@ -5206,6 +5234,43 @@ text-align: center;
 		width: 100%;
 		float: none;
 		display: block;
+	}
+		
+	.slickmap #primaryNav li {
+		width: 100%;
+	}
+	.slickmap #primaryNav li#home a {
+		width: auto;
+	}
+	
+	.slickmap.sitemap {
+		margin-right: 0;
+		padding: 0;
+	}
+	
+	.slickmap #primaryNav li#home {
+		background-image: none;
+	}
+	
+	.slickmap #primaryNav li,
+	.slickmap #primaryNav #home,
+	.slickmap #primaryNav li:last-child {
+		background-image: none;
+	}
+	
+	.slickmap #primaryNav li li {
+		background: url('../../plugins/slickmap/images/vertical-line.png') center bottom repeat-y;
+	}
+	
+	.slickmap #primaryNav li li li {
+		background: url('../../plugins/slickmap/images/L3-center.png') left center no-repeat;
+	}
+	.slickmap #primaryNav li li li:last-child {
+		background: url('../../plugins/slickmap/images/L3-bottom.png') left center no-repeat;
+	}
+	
+	.slickmap #primaryNav li li li a {
+		width: 80%;
 	}
 	
 }
@@ -5867,6 +5932,20 @@ text-align: center;
 		font-size: 2em;
 	}
 	
+	.slickmap #primaryNav li,
+	.slickmap #primaryNav #home,
+	.slickmap #primaryNav li:last-child {
+		background-image: none;
+	}
+	
+	.slickmap #primaryNav li li {
+		background: url('../../plugins/slickmap/images/vertical-line.png') center bottom repeat-y;
+	}
+	
+	.slickmap #primaryNav li li ul {
+		display: none;
+	}
+		
 }
 
 @media only screen and (max-width: 500px) {
@@ -6107,4 +6186,10 @@ span.trademark:after {
 	font-size: .25em;
 	vertical-align: text-top;
 	line-height: 1em;
+}
+
+.at4m-dock a, .at4m-dock-toggle a {
+	background-color: #e2e2e2;
+	color: #004d72 !important;
+	opacity: 1;
 }

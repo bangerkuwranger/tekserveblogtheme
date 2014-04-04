@@ -287,7 +287,7 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/about/contact-us', 
-		  'new_url'       => 'www.tekserve.com/about-us/#hours-directions', 
+		  'new_url'       => 'www.tekserve.com/about-us/#contact', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -357,12 +357,12 @@ $redirect_rules = array(
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business-contact-us/', 
-		  'new_url'       => 'www.tekserve.com/business/#hours-directions', 
+		  'new_url'       => 'www.tekserve.com/business/#contact', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/business/Contact-Us/', 
-		  'new_url'       => 'www.tekserve.com/business/#hours-directions', 
+		  'new_url'       => 'www.tekserve.com/business/#contact', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
@@ -596,11 +596,11 @@ $redirect_rules = array(
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => TRUE, 
 	),
-// 	array('old_url'       => 'www.tekserve.com/*', 
-// 		  'new_url'       => 'store.tekserve.com/*', 
-// 		  'wildcard'      => TRUE, 
-// 		  'preserve_path' => TRUE 
-// 	),	  		  
+	array('old_url'       => 'www.tekserve.com/*', 
+		  'new_url'       => 'store.tekserve.com/*', 
+		  'wildcard'      => TRUE, 
+		  'preserve_path' => TRUE 
+	),	  		  
 );
 
 

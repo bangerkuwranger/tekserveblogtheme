@@ -123,7 +123,7 @@ function scrollToID(targetID, delay, isHash, offsetV) {
 	}
 	console.log('pretrigoff - '+offset_trigger);
 	console.log('offsetV - '+offsetV);
-	offset_trigger = offset_trigger - 150 - offsetV;
+	offset_trigger = offset_trigger - 50 - offsetV;
 	console.log(offset_top);
 	console.log(offset_trigger);
 	setTimeout(function(){

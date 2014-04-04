@@ -63,25 +63,25 @@
 	src: url('./fonts/fontawesome/fontawesome-webfont.woff') format('woff'), url('./fonts/fontawesome/fontawesome-webfont.ttf') format('truetype');
 }
 
-p, div, a {
+.tekserve-sig p, .tekserve-sig div, .tekserve-sig a {
 	font-family: 'Tekvetica' Helvetica, Arial, sans-serif !important;
 	color: #004d72 !important;
 }
 
-p strong, div strong, a strong {
+.tekserve-sig p strong, .tekserve-sig div strong, .tekserve-sig a strong {
 	font-family: 'Tekvetica' Helvetica, Arial, sans-serif !important;
 	color: #004d72 !important;
 	font-weight: 900;
-	text-transform: uppercase;
+/* 	text-transform: uppercase; */
 }
 
-div strong.teklogo {
+.tekserve-sig div strong.teklogo {
 	font-family: 'Bandit', sans-serif !important;
 	color: #40a8c9 !important;
 	font-size: 1.75em;
 }
 
-a, a:visited {
+.tekserve-sig a, .tekserve-sig a:visited {
 	color: #f36f37 !important;
 	text-decoration: none !important;
 	margin-left: 1.5em;
@@ -90,15 +90,15 @@ a, a:visited {
 	padding-right: .5em;
 }
 
-a:hover {
+.tekserve-sig a:hover {
 	color: #40a8c9 !important;
 }
 
-a:last-child {
+.tekserve-sig a:last-child {
 	border: 0 !important;
 }
 
-a.weblink:before {
+.tekserve-sig a.weblink:before {
     content: "\f0ac";
     font-family: FontAwesome;
     font-style: normal;
@@ -111,7 +111,7 @@ a.weblink:before {
     left: -1.25em;
 }
 
-a.bloglink:before {
+.tekserve-sig a.bloglink:before {
     content: "\f0a1";
     font-family: FontAwesome;
     font-style: normal;
@@ -124,7 +124,7 @@ a.bloglink:before {
     left: -1.25em;
 }
 
-a.tweetlink:before {
+.tekserve-sig a.tweetlink:before {
     content: "\f099";
     font-family: FontAwesome;
     font-style: normal;
@@ -137,7 +137,7 @@ a.tweetlink:before {
     left: -1.25em;
 }
 
-a.fblink:before {
+.tekserve-sig a.fblink:before {
     content: "\f082";
     font-family: FontAwesome;
     font-style: normal;
@@ -150,7 +150,7 @@ a.fblink:before {
     left: -1.25em;
 }
 
-a.lilink:before {
+.tekserve-sig a.lilink:before {
     content: "\f08c";
     font-family: FontAwesome;
     font-style: normal;
@@ -163,6 +163,6 @@ a.lilink:before {
     left: -1.25em;
 }
 
-span.noshow {
+.tekserve-sig span.noshow {
 	display: none !important;
 }
