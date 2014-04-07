@@ -86,7 +86,9 @@ if ( !empty( $event_link ) ) {
 
 			
 			</div><!-- .hentry .vevent -->
-		<?php if( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments','no' ) == 'yes' ) { comments_template(); } ?>
+		<?php /*  Changed out comments_template() function (native WP) in favor of Genesis version, genesis_get_comments_template()  */
+		if( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments','no' ) == 'yes' ) { genesis_get_comments_template(); } ?>
+
 	<?php endwhile; ?>
 
 	<!-- Event footer -->
