@@ -11,6 +11,8 @@
  * @author Modern Tribe Inc.
  *
  */
+ 
+genesis_do_subnav();
 
 if ( !defined('ABSPATH') ) { die('-1'); }
 
@@ -48,15 +50,16 @@ if ( !empty( $event_link ) ) {
 		<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 		<h3 style="display: block; margin-bottom: 1em;">At <?php echo tribe_get_venue_link();
 		echo tribe_get_full_address(); ?>
+		<?php  if ( tribe_get_cost() ) :  ?>
+			<span class="tribe-events-divider">|</span>
+			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+		<?php endif; ?>
 		</h3>
 		<?php echo $organizer; ?>
 		<?php echo $event_link ?>
 		<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 		<?php echo tribe_events_event_recurring_info_tooltip(); ?>
-		<?php  if ( tribe_get_cost() ) :  ?>
-			<span class="tribe-events-divider">|</span>
-			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-		<?php endif; ?>
+		
 	</div>
 
 	<!-- Event header -->

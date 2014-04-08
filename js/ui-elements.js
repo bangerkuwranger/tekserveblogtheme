@@ -154,6 +154,21 @@ function swapHeaderImgs(pageWidth) {
 	}
 }
 
+function moveWaywardSubnav() {
+	if($j('.tribe-is-responsive #subnav').length != 0) {
+		var subNav = $j('.tribe-is-responsive #subnav').detach();
+		$j( "#inner" ).before(subNav);
+	}
+	if($j('.category #subnav').length != 0) {
+		var subNav = $j('.category #subnav').detach();
+		$j( "#inner" ).before(subNav);
+	}
+	if($j('.single-post #subnav').length != 0) {
+		var subNav = $j('.single-post #subnav').detach();
+		$j( "#inner" ).before(subNav);
+	}
+}
+
 $j('document').ready(function() { //call on load
 
 	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
@@ -168,6 +183,7 @@ $j('document').ready(function() { //call on load
 	});
 	
 	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
+	moveWaywardSubnav(); //move the subnav into place on an events or blog page
 	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
 	stretchSection(); //stretch sections widths at load
 	

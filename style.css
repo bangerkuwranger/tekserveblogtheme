@@ -5,12 +5,12 @@
 	Author: StudioPress / Chad A. Carino
 	Author URI: http://www.tekserve.com/
  
-	Version: 1.2
+	Version: 1.2.1
  
 	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
  
 	Template: genesis
-	Template Version: 1.2
+	Template Version: 2.0
  
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -264,6 +264,21 @@ body.custom-background {
 	z-index: 999;
 }
 
+#subnav {
+	background-color: #40a8c9;
+}
+
+.tribe-is-responsive #subnav {
+	background-color: #004d72;
+	background-image: url('images/events-subnav.svg');
+	background-position: 0 0;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.tribe-is-responsive #subnav .menu-secondary {
+	background-color: #004d72;
+}
 
 /* Wrap
 ------------------------------------------------------------ */
@@ -289,7 +304,12 @@ body.custom-background {
 }
 
 #nav .wrap {
-	width: 100%
+	width: 100%;
+}
+
+#subnav .wrap {
+	width: 950px !important;
+	text-align: center;
 }
 
 #title-area {
@@ -395,7 +415,6 @@ body.custom-background {
 ------------------------------------------------------------ */
 
 .menu-primary,
-.menu-secondary,
 #header .menu {
 	background-color: #f36f37;
 	clear: both;
@@ -403,6 +422,16 @@ body.custom-background {
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow: hidden;
 	width: 950px;
+}
+
+.menu-secondary {
+	background-color: #40a8c9;
+	width: auto;
+	clear: both;
+	color: #fff;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	display: inline-block;
 }
 
 #header .menu {
@@ -442,6 +471,7 @@ body.custom-background {
 .menu-secondary a,
 #header .menu a,
 .menu-primary .current-menu-item a,
+.menu-secondary .current-menu-item a,
 #header .menu .current-menu-item a {
 	color: #fff;
 	display: block;
@@ -453,6 +483,10 @@ body.custom-background {
 	font-weight: 200;
 }
 
+.menu-secondary .menu-item-object-category.current-menu-item a {
+	color: #004d72;
+}
+
 #header .menu a {
 	padding: 48px 20px;
 }
@@ -461,10 +495,15 @@ body.custom-background {
 .menu-primary li:hover a,
 .menu-secondary li a:hover,
 .menu-secondary li:hover a,
-.menu-secondary .current-menu-item a,
 #header .menu li a:hover,
 #header .menu li:hover a {
 	color: #004d72;
+}
+
+.tribe-is-responsive .menu-secondary li.menu-item-object-category.current-menu-item a,
+.tribe-is-responsive .menu-secondary li a:hover,
+.tribe-is-responsive .menu-secondary li:hover a {
+	color: #f36f37;
 }
 
 .menu-primary li li a,
@@ -670,7 +709,7 @@ ul.tekserve_custom_search_menu {
 	border-radius: 50%;
 	background-color: #40a8c9;
 	padding: 2px 4px 0;
-	width: 18px;
+	width: 28px;
 	display: inline-block;
 	text-align: center;
 	margin: 0 .2em;
@@ -1866,6 +1905,10 @@ table.responsivetable {
 	font-size: 1em;
 	color: #004d72;
 	background: #fff;
+}
+
+table.responsivetable td {
+	display: table-cell;
 }
 
 table.responsivetable>thead>tr>th,
@@ -4459,6 +4502,15 @@ h2.tribe-events-list-event-title a:hover, .tribe-events-list-event-description a
 	color: #40a8c9;
 }
 
+h2.tribe-events-page-title a,
+h2.tribe-events-page-title a:visited {
+	color: #40a8c9;
+}
+
+.tribe-is-responsive h2.tribe-events-page-title a:hover {
+	color: #f36f37;
+}
+
 #tribe-events-content h2.tribe-events-page-title {
 	font-size: 2.2em;
 	font-weight: 900;
@@ -5037,6 +5089,24 @@ text-align: center;
 		display: inline-block;
 		float: none;
 	}
+	
+	#subnav .menu-secondary li {
+		width: 25%;
+		border: none;
+		text-align: left;
+		max-width: 250px;
+		text-indent: 0;
+	}
+	
+	#subnav .wrap {
+		width: 80% !important;
+		text-align: center;
+	}
+	
+	.menu-secondary a {
+		font-weight: 400;
+		font-size: 1.1em;
+	}
 
 	.menu-primary a,
 	.menu-secondary a,
@@ -5299,6 +5369,14 @@ text-align: center;
 		width: 125%;
 	}
  */
+ 
+ 	table td {
+ 		display: block;
+ 	}
+ 	
+ 	table td img {
+ 		width: auto !important;
+ 	}
 
 	.apparition-landing #inner,
 	#inner {
@@ -5684,12 +5762,18 @@ text-align: center;
 		left: 50%;
 		margin-left: -90px;
 	}
+	
 	#nav {
 		width: auto;
 		box-shadow: none;
 		background: none;
-
 	}
+	
+	#subnav .menu-secondary li {
+		width: 40%;
+		text-transform: uppercase;
+	}
+	
 	.search-form {
 		position: relative;
 		right: 18px;

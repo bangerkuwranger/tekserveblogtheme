@@ -56,6 +56,13 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer'
 ) );
 
+/** Move Subnav to page area before content container */
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_before_content', 'genesis_do_subnav' );
+
+/** Genesis Single Post Navigation: Reverse link direction */
+define( 'GSPN_REVERSE_LINK_DIRECTION', TRUE );
+
 /** Add new image sizes */
 add_image_size( 'featured-circle', 300, 300, TRUE );
 add_image_size( 'featured-square', 300, 300, TRUE );
@@ -183,6 +190,7 @@ function include_local_scripts() {
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
  	wp_enqueue_script ( 'scroll-into-view', get_stylesheet_directory_uri() . '/js/jquery.scrollintoview.min.js', array( 'jquery' ), '', true );
+ 	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -286,6 +294,14 @@ array(
 			'slug' 		=> 'genesis-simple-hooks',
 			'required' 	=> true,
 			'version' 	=> '2.0.0',
+			'force_activation' 	=> true,
+		),
+		
+		array(
+			'name' 		=> 'Genesis Simple Menus',
+			'slug' 		=> 'genesis-simple-menus',
+			'required' 	=> true,
+			'version' 	=> '0.2',
 			'force_activation' 	=> true,
 		),
 		

@@ -20,6 +20,8 @@
  *
  */
  
+ genesis_do_subnav();
+ 
 if ( !defined('ABSPATH') ) { die('-1'); }
 
 $organizer_id = get_the_ID();
