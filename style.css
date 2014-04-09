@@ -3633,11 +3633,12 @@ div.orangebox p {
 
 .tekserverentals-item-image {
 	height: 150px;
+	text-align: center;
 }
 
 .tekserverentals-item-image img {
+	max-height: 100%;
 	width: auto;
-	height: 100%;
 }
 
 .ui-dialog {
@@ -3750,7 +3751,7 @@ div.orangebox p {
 }
 
 .section a.simpleCart_checkout.button {
-	float: right;
+	float: left;
 	font-size: 3em;
 }
 
@@ -6035,7 +6036,7 @@ text-align: center;
 @media only screen and (max-width: 500px) {
 	
 	.section a.simpleCart_checkout.button {
-		max-width: 150px;
+		max-width: 250px;
 	}
 	
 	#inner {
