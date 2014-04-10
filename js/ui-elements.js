@@ -111,15 +111,25 @@ function scrollToID(targetID, delay, isHash, offsetV) {
 	if(offsetV == "" || offsetV == undefined) {
 		offsetV = 0;
 	}
-	console.log(delay);
-    var offset_top = $j('#find-'+targetID.substring(1)).offset();
-    var offset_trigger = $j('#extra1-'+targetID.substring(1)).offset();
-	offset_trigger = offset_trigger.top;
-	if(($j('#extra1-'+targetID.substring(1)).attr('name')) && (isHash == true)) {
-		offset_trigger = $j('#extra1-'+targetID.substring(1)).attr('name');
+	console.log(targetID);
+	if( $j('#find-'+targetID.substring(1)).length != 0 ) {
+		var offset_top = $j('#find-'+targetID.substring(1)).offset();
+	}
+    var offset_trigger;
+    if( $j('#extra1-'+targetID.substring(1)).length != 0 ) {
+		offset_trigger = $j('#extra1-'+targetID.substring(1)).offset();
+		offset_trigger = offset_trigger.top;
+		if(($j('#extra1-'+targetID.substring(1)).attr('name')) && (isHash == true)) {
+			offset_trigger = $j($j('#extra1-'+targetID.substring(1)).attr('name')).offset().top;
+		}
 	}
 	if(!offset_trigger) {
-		offset_trigger = target_offset.top;
+		if(!offset_top) {
+			offset_trigger = $j(targetID).offset().top;
+		}
+		else {
+			offset_trigger = offset_top;
+		}
 	}
 	console.log('pretrigoff - '+offset_trigger);
 	console.log('offsetV - '+offsetV);

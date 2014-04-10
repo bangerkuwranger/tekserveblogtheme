@@ -2073,9 +2073,10 @@ div.gform_wrapper .gform_footer input {
 }
 
 #gforms_confirmation_message {
-	font-size: 1.5em;
+	font-size: 3.5em;
 	color: #f36f37;
 	font-weight: bold;
+	margin-top: 2em;
 }
 
 .orange div.gform_wrapper .gform_fields .gfield .gfield_description,
