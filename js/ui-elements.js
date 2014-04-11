@@ -177,6 +177,14 @@ function moveWaywardSubnav() {
 		var subNav = $j('.single-post #subnav').detach();
 		$j( "#inner" ).before(subNav);
 	}
+	if($j('.archive #subnav').length != 0) {
+		var subNav = $j('.single-post #subnav').detach();
+		$j( "#inner" ).before(subNav);
+	}
+	if($j('.search-results #subnav').length != 0) {
+		var subNav = $j('.single-post #subnav').detach();
+		$j( "#inner" ).before(subNav);
+	}
 }
 
 $j('document').ready(function() { //call on load

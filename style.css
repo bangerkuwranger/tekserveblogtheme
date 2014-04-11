@@ -1592,6 +1592,10 @@ div.gform_footer input.button {
 	background: none;
 }
 
+#inner #content .entry-content {
+	padding-top: 1em;
+}
+
 
 /* Footer Widgets
 ------------------------------------------------------------ */
