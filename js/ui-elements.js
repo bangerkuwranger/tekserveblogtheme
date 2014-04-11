@@ -181,6 +181,7 @@ function moveWaywardSubnav() {
 
 $j('document').ready(function() { //call on load
 
+	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
 	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
 	$j('.dsection').addClass('thinMan');
 	$j('.dboxsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for detailBox containers
@@ -190,11 +191,14 @@ $j('document').ready(function() { //call on load
 		wrapperbgcolor = $j(this).css('background-color');
 		$j(this).wrap('<div class="bgwrapper" style="background:'+wrapperbgcolor+';" />');//creates full width wrapper element with correct background color
 		wrapperbgcolor = color2color(wrapperbgcolor, 'rgba', true, '.65'); //converts background color to rgba with 65% opacity, then adds that to left, right, and drawer content
+		if($j(this).hasClass('dboxsection')) { //dbox wrapper moved to exterior of vc row, fixes edge to edge color of dbox section row
+			var $jwrapper = $j(this).parent();
+			$j(this).parents('.wpb_row').before($jwrapper);
+		}
 	});
 	
 	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
 	moveWaywardSubnav(); //move the subnav into place on an events or blog page
-	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
 	stretchSection(); //stretch sections widths at load
 	
 	var clientWidth = document.documentElement.clientWidth;

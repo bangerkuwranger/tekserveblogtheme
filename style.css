@@ -5,7 +5,7 @@
 	Author: StudioPress / Chad A. Carino
 	Author URI: http://www.tekserve.com/
  
-	Version: 1.2.1
+	Version: 1.2.2
  
 	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
  
@@ -5141,6 +5141,10 @@ text-align: center;
 	.section {
 		width: 90%;
 	}
+	.section.dboxsection {
+		min-width: 960px;
+		max-width: 100%;
+	}
 	
 	.section p, .section h1, .section .button, .section .drawer .collapseomatic {
 /* 		font-size: .8em; */
@@ -5345,6 +5349,14 @@ text-align: center;
 		width: 80%;
 	}
 	
+	.section.dboxsection {
+ 		min-width: 768px;
+ 	}
+ 	
+ 	.tribe-is-responsive #subnav {
+ 		display: none;
+ 	}
+	
 }
 
 @media (max-width:1024px) and (min-width:768px) {
@@ -5371,6 +5383,10 @@ text-align: center;
 		width: 125%;
 	}
  */
+ 
+	.section.dboxsection {
+ 		min-width: 640px;
+ 	}
  
  	table td {
  		display: block;
@@ -6030,6 +6046,11 @@ text-align: center;
 	
 	.slickmap #primaryNav li li ul {
 		display: none;
+	}
+	
+	.section.dboxsection {
+		min-width: 0px;
+		max-width: 1000%;
 	}
 		
 }
