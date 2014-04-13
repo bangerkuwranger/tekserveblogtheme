@@ -1730,6 +1730,13 @@ div.gform_footer input.button {
 	display: none !important;
 }
 
+#live_chat a img {
+	margin-left: -15px;
+	margin-top: -15px;
+	max-height: 15px;
+	width: auto;
+}
+
 
 /* Footer
 ------------------------------------------------------------ */
