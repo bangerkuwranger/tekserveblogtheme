@@ -5,7 +5,7 @@
 	Author: StudioPress / Chad A. Carino
 	Author URI: http://www.tekserve.com/
  
-	Version: 1.2.2
+	Version: 1.2.3
  
 	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
  
@@ -1723,6 +1723,11 @@ div.gform_footer input.button {
 
 #footer-widgets .latest-tweets a:hover {
 	color: #fff;
+}
+
+#live_chat .lpPoweredBy,
+#live_chat .lpEmtStarRating {
+	display: none !important;
 }
 
 
