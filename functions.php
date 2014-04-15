@@ -551,8 +551,8 @@ function tekserve_footer() {
 	echo '<div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div>';
 	echo '<div class="creds">';
 	echo '<div class="leftcopy">';
-	echo '<a href="http://maintekserve.wpengine.com/terms-of-use/">Terms of Use</a> | ';
-	echo '<a href="http://maintekserve.wpengine.com/privacy-policy/">Privacy Policy</a>';
+	echo '<a href="http://www.tekserve.com/terms-of-use/">Terms of Use</a> | ';
+	echo '<a href="http://www.tekserve.com/privacy-policy/">Privacy Policy</a>';
 	echo '</div>';
 	echo '<div class="centercopy">';
 	echo 'Copyright &copy; ';
