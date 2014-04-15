@@ -5261,6 +5261,8 @@ text-align: center;
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
 		background-color: rgba(255,255,255,.8);
 		padding: 1em;
+		position: relative;
+		top: -1em;
 	}
 
 	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,

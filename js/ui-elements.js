@@ -111,6 +111,10 @@ function scrollToID(targetID, delay, isHash, offsetV) {
 	if(offsetV == "" || offsetV == undefined) {
 		offsetV = 0;
 	}
+	if(targetID.indexOf('.') !== -1) {
+		targetID = '';
+		return false;
+	}
 	console.log(targetID);
 	if( $j('#find-'+targetID.substring(1)).length != 0 ) {
 		var offset_top = $j('#find-'+targetID.substring(1)).offset();
