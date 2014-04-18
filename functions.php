@@ -565,6 +565,14 @@ function tekserve_footer() {
 	echo '</div>';
 }
 
+/** All headers link to home page */
+add_filter('genesis_seo_title', 'sp_seo_title', 10, 3);
+function sp_seo_title($title, $inside, $wrap) {
+	$inside = sprintf( '<a href="http://www.tekserve.com" title="%s">%s</a>', 'Go to Tekserve Homepage from this page - ' . esc_attr( get_bloginfo('name') ), get_bloginfo('name') );
+	$title = sprintf('<%s id="title">%s</%s>', $wrap, $inside, $wrap);
+	return $title;
+}
+
 /** Widget area for special notices sitewide */
 // Register widget area
 genesis_register_sidebar( array(
