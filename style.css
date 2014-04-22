@@ -3394,6 +3394,10 @@ div.orangebox p {
 
 /* home page */
 
+.page-template-static_content-php.tekserve-faq-boxes #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
+	padding-bottom: 0;
+}
+
 .tekserve-faq-boxes #section-container {
 	padding: 0 0 63px;
 }
@@ -3413,7 +3417,12 @@ div.orangebox p {
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 	color: #004d72;
 	font-weight:900;
-	margin: .8em .2em .5em;
+	margin: .8em .5em .5em;
+}
+
+.tekserve-faq-boxes .hero-search #searchform label {
+	font-size: 2.625em;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 }
 
 .tekserve-faq-boxes .hero-search {
@@ -3424,6 +3433,8 @@ div.orangebox p {
 	width: 60%;
 	max-width: 800px;
 	float: none !important;
+	padding: 24px 1em;
+	border-radius: 12px;
 }
 
 .tekserve-faq-boxes .hero-search .btn-black {
@@ -3434,9 +3445,9 @@ div.orangebox p {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
   -webkit-font-smoothing: antialiased;
-  -moz-border-radius: 7px; 
-  -webkit-border-radius: 7px;
-  border-radius: 7px; 
+  -moz-border-radius: 12px 0 12px; 
+  -webkit-border-radius: 12px 0 12px;
+  border-radius: 12px 0 12px; 
 }
 
 .tekserve-faq-boxes .btn-custom {
@@ -3452,9 +3463,9 @@ div.orangebox p {
 	transition: background .10s ease-in-out;
 	-moz-transition: background .10s ease-in-out;
 	-webkit-transition: background .10s ease-in-out;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 12px 0 12px;
+	-moz-border-radius: 12px 0 12px;
+	border-radius: 12px 0 12px;
 }
 
 .tekserve-faq-boxes .btn-black {
@@ -3468,13 +3479,14 @@ div.orangebox p {
 	transition: background .10s ease-in-out;
 	-moz-transition: background .10s ease-in-out;
 	-webkit-transition: background .10s ease-in-out;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 12px 0 12px;
+	-moz-border-radius: 12px 0 12px;
+	border-radius: 12px 0 12px;
 }
 
 .tekserve-faq-boxes #boxes-container {
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+	margin-top: 4em;
 }
 
 .tekserve-faq-boxes #boxes-container h1 {
@@ -3507,9 +3519,9 @@ div.orangebox p {
 	margin: 0 auto 10px;background-color: rgba(243, 111, 55, 1);
 	padding: 50px 30px 32px;
 	border: solid 1px rgba(243, 111, 55, 1);
-	-moz-border-radius: 7px; 
-	-webkit-border-radius: 7px;
-	border-radius: 7px; 
+	-moz-border-radius: 12px; 
+	-webkit-border-radius: 12px;
+	border-radius: 12px; 
 }
 
 .tekserve-faq-boxes .boxes {
@@ -3600,6 +3612,22 @@ border-radius: 4px;}
 	padding-bottom: 54px;
 }
 
+.page-template-static_content-php.tekserve-faq-boxes .tekserve-single-post {
+	padding: 0;
+}
+
+.page-template-static_content-php.tekserve-faq-boxes .tekserve-single-post img {
+	float: none;
+	outline: none;
+}
+
+.page-template-static_content-php.tekserve-faq-boxes .tekserve-single-post h2 {
+	font-size: 1.25em;
+}
+
+.page-template-static_content-php.tekserve-faq-boxes .tekserve-single-post .tekserve-single-post-meta {
+	display: none;
+}
 
 /* ie button fix */
 .tekserve-faq-boxes #menu ul a:hover, .hero-search .btn, .btn-primary {border-radius: 0px\9}
