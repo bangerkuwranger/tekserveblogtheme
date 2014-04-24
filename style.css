@@ -3511,14 +3511,15 @@ div.orangebox p {
 
 	.tekserve-faq-boxes #boxes-container h1 {
 		top: -20px;
-		color: #f36f37;
-		font-size: .75em;
+		color: #004d72;
+		font-size: 2.75em;
 	}
 	
 }
 
 .tekserve-faq-boxes .box {
-	margin: 0 auto 10px;background-color: rgba(243, 111, 55, 1);
+	margin: 0 auto 10px !important;
+	background-color: rgba(243, 111, 55, 1);
 	padding: 50px 30px 32px;
 	border: solid 1px rgba(243, 111, 55, 1);
 	-moz-border-radius: 12px; 
@@ -3543,7 +3544,7 @@ div.orangebox p {
 
 .tekserve-faq-boxes .box-title {
 	text-align: center;
-	padding: 25px 0 6px;
+	padding: 0;
 }
 
 .tekserve-faq-boxes .box-title h2 a {
@@ -3553,7 +3554,14 @@ div.orangebox p {
 	-o-transition: color .1s linear;
 	-ms-transition: color .1s linear;
 	transition: color .1s linear;
+	min-height: 2.5em;
+	display: inline-block;
 }
+
+.tekserve-faq-boxes .box-title h2 {
+	margin: 0;
+}
+
 .tekserve-faq-boxes .box-title h2 a:hover {text-decoration: none;color: #004d72;
 }
 
@@ -5252,6 +5260,10 @@ text-align: center;
 	.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid .rightstory .wpb_wrapper {
 		padding: 2em 14em 2em 2em;
 	}
+	
+	.tekserve-faq-boxes .box-title h2 a {
+		font-size: 1em;
+	}
 
 }
 
@@ -5305,6 +5317,12 @@ text-align: center;
 		position: relative;
 		right: 60px;
 	}
+	
+	.tekserve-faq-boxes .box-title h2 a {
+		font-size: .75em;
+	}
+	
+
 	
 }
 
@@ -5692,6 +5710,9 @@ text-align: center;
  	.tribe-is-responsive #subnav {
  		display: none;
  	}
+ 	.tekserve-faq-boxes div.row.boxes.wpb_row.vc_row-fluid {
+		min-width: 100% !important;
+	}
 	
 }
 
@@ -5887,6 +5908,16 @@ text-align: center;
 	.rev_slider_wrapper .rev_slider .tp-caption.size96 {
 		font-size: 76px !important;
 	}
+	
+	.tekserve-faq-boxes.page-template-static_content-php #wrap #inner .wrap #content .vc_row-fluid.boxes .vc_span4 {
+		width: 50%;
+	}
+	
+		
+	.vc_responsive.tekserve-faq-boxes div.vc_row-fluid.boxes div[class*="vc_span"] {
+		max-width: 320px !important;
+		margin: 0 auto !important;
+	}
 
 	
 }
@@ -6038,7 +6069,7 @@ text-align: center;
 	}
 	ul.menu.genesis-nav-menu.menu-primary,
 	.menu-primary {
-		width: 320px !important;
+		width: 300px !important;
 		padding: 5px 0 0;
 		min-height: 1.1em;
 /* 		border: solid 1px #aaa; */
@@ -6635,4 +6666,10 @@ span.trademark:after {
 	background-color: #e2e2e2;
 	color: #004d72 !important;
 	opacity: 1;
+}
+
+@media only screen and (max-width: 320px) {
+	.page-template-static_content-php * {
+		max-width: 320px !important;
+	}
 }

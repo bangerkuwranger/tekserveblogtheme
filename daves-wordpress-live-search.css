@@ -1,0 +1,122 @@
+/** Dave's WordPress Live Search CSS **/
+ul.search_results {
+	display: block;
+	background-color:#fff;
+	width:50%;
+	max-width: 500px;
+	max-height: 640px;
+	position:absolute;
+	top:10px;
+	left:0px;
+	overflow:hidden;
+	z-index: 9999;	
+	list-style-type: none;
+	list-style-image: none;
+	list-style-position: outside;
+	padding: 0px;
+	margin: 0px;
+	-moz-box-shadow: 0px 3px 9px #011011;
+	-webkit-box-shadow: 0px 3px 9px #011011;
+	box-shadow: 0px 3px 9px #011011;
+	border-radius: 12px;
+	opacity: 9;
+}
+
+ul.search_results li {
+	display: block;
+	padding: .25em 1em .25em;
+	margin: 0px 0px 0px 0px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #aaa;
+	text-align: left;	
+	color: #004d72;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+ul.search_results li:hover {
+	background-color: #fff;	
+}
+
+
+ul.search_results li a, ul.search_results li a:visited {
+	display: block;
+	color: #40a8c9;
+	margin-left: 0px;
+	text-decoration: none;
+	font-weight: 200;
+	width: 90%;
+	height: 100%;
+	margin: 0;
+	padding: 0 1em;
+	text-indent: 0;
+}
+
+ul.search_results li:hover a {
+    color: #fff;
+    background: #004d72;
+    border-radius: 12px 0 12px;
+    opacity: 1;
+}
+
+ul.search_results p#daves-wordpress-live-search_author {
+	margin: 0px;
+	font-size: 90%;
+	font-weight: 200;
+}
+
+ul.search_results p#daves-wordpress-live-search_date {
+	margin: 0px;
+	font-size: 90%;
+}
+
+/* BEGIN post thumbnails */
+ul.search_results li.post_with_thumb a {
+	width:150px;
+	float:left;
+	margin-bottom: 5px;
+}
+
+ul.search_results li.post_with_thumb img.post_thumb {
+	float: left;
+	margin: 3px 10px 10px 0px;
+	height: 48px;
+	width: 48px;
+	border: 1px solid #888;
+}
+/* END post thumbnails */
+
+/* BEGIN post excerpt */
+ul.search_results .excerpt, ul.search_results .meta {
+	font-size: 75%;
+	width: 100%;
+}
+/* END post excerpt */
+
+ul.search_results .clearfix {
+	float: none !important;
+	clear: both !important;
+}
+
+.search_footer {
+	background-color: #004d72;
+	width: 100%;
+	text-align: right;
+	padding: .5em 0;
+	font-size: .9em;
+	text-transform: uppercase;
+}
+
+.search_footer a,
+.search_footer a:visited {
+	color: #fff;	
+	margin-right: 1em;
+}
+
+.search_footer:hover a {
+	color: #f36f37;
+}
+
+#search_results_activity_indicator {
+z-index:999999;
+}
