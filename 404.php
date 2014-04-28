@@ -798,7 +798,7 @@ function tekserve_redirect_genesis_404() {
 				<div id="main" class="col-main" style="background: #f36f37; height: 320px; position: relative">
 								<div class="page-title" style="background: #004d72; padding: 10px; color: white; height: 220px; border: none; position:relative; margin: 0;">
 										<div id="errorpic" style="position: absolute; left: 0px; top:0px; z-index: 5;">
-										<img src="http://www.tekserve.com/skin/frontend/tekserve/tekstore/images/503ayus.png" style="height: 240px; width: 240px;" />
+										<img src='<?php echo get_stylesheet_directory_uri(); ?>/images/404ayus.png' style="height: 240px; width: 240px;" />
 										</div>
 									<h1 style="text-align: right; font-weight: 900; font-size: 10em; color: #fff; position: relative; top: 32px; margin: 0;">404'd!</h1>
 								</div>
