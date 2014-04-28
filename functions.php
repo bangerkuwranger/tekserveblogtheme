@@ -3,7 +3,7 @@
 require_once( get_template_directory() . '/lib/init.php' );
 
 /** Set Localization (do not remove) */
-load_child_theme_textdomain( 'apparition', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'apparition' ) );
+load_child_theme_textdomain( 'apparition', apply_filters( 'child_theme_textdomain', get_stylesheet_directory_uri() . '/languages', 'apparition' ) );
 
 /** Child theme (do not remove) */
 define( 'CHILD_THEME_NAME', __( 'Apparition Theme', 'apparition' ) );
@@ -196,7 +196,7 @@ add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
 /** Include PHP class to request user include functional plugins;
 (these functions were 3rd party or non-presentational) */
-require_once get_stylesheet_directory() . '/class-tgm-plugin-activation.php';
+require_once get_stylesheet_directory_uri() . '/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'apparition_tekserve_register_required_plugins' );
 /**
@@ -224,7 +224,7 @@ function apparition_tekserve_register_required_plugins() {
 array(
 			'name'     				=> 'TGM Example Plugin', // The plugin name
 			'slug'     				=> 'tgm-example-plugin', // The plugin slug (typically the folder name)
-			'source'   				=> get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
+			'source'   				=> get_stylesheet_directory_uri() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
 			'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
@@ -262,7 +262,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.0',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/collapse-pro-matic.zip'
 		),
 		
 		array(
@@ -311,7 +311,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.0',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/get-to-tekserve.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/get-to-tekserve.zip'
 		),
 		
 		array(
@@ -328,7 +328,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.8',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/gravityforms.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/gravityforms.zip'
 		),
 		
 		array(
@@ -345,7 +345,7 @@ array(
 			'required' 	=> false,
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/relevanissi-divert.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/relevanissi-divert.zip'
 		),
 		
 		array(
@@ -354,7 +354,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '4.1',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/revslider.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/revslider.zip'
 		),
 		
 		array(
@@ -371,7 +371,7 @@ array(
 			'required' 	=> false,
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/slickmap.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/slickmap.zip'
 		),
 		
 		array(
@@ -388,7 +388,7 @@ array(
 			'required' 	=> false,
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/tekserve-case-studies.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-case-studies.zip'
 		),
 		
 		array(
@@ -397,7 +397,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/tekserve-footer-folk.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-footer-folk.zip'
 		),
 		
 		array(
@@ -414,7 +414,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.1',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/tekserve-shared-data.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-shared-data.zip'
 		),
 		
 		array(
@@ -423,7 +423,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.4',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/tekserve-single-post-shortcode.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-single-post-shortcode.zip'
 		),
 		
 		array(
@@ -440,7 +440,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.2.1',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/tekserve-vcbuttons.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-vcbuttons.zip'
 		),
 				
 		array(
@@ -465,7 +465,7 @@ array(
 			'required' 	=> true,
 			'version' 	=> '4.1',
 			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory() . '/lib/js_composer.zip'
+			'source'	=> get_stylesheet_directory_uri() . '/lib/js_composer.zip'
 		),
 		
 		array(
