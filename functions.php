@@ -253,16 +253,16 @@ array(
 			'slug' 		=> 'advanced-custom-fields',
 			'required' 	=> true,
 			'version' 	=> '4.2.2',
-			'force_activation' 	=> true,
+			'force_activation' 	=> false,
 		),
 				
 		array(
 			'name' 		=> 'Collapse-Pro-Matic',
 			'slug' 		=> 'collapse-pro-matic',
 			'required' 	=> true,
-			'version' 	=> '0.5',
+			'version' 	=> '1.0',
 			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic-v0.5.zip'
+			'source'	=> get_stylesheet_directory() . '/lib/collapse-pro-matic.zip'
 		),
 		
 		array(
@@ -306,9 +306,18 @@ array(
 		),
 		
 		array(
+			'name' 		=> 'Get to Tekserve',
+			'slug' 		=> 'get-to-tekserve',
+			'required' 	=> true,
+			'version' 	=> '1.0',
+			'force_activation' 	=> true,
+			'source'	=> get_stylesheet_directory() . '/lib/get-to-tekserve.zip'
+		),
+		
+		array(
 			'name' 		=> 'Google Analyticator',
 			'slug' 		=> 'google-analyticator',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '6.4.5',
 			'force_activation' 	=> false,
 		),
@@ -317,24 +326,33 @@ array(
 			'name' 		=> 'Gravity Forms',
 			'slug' 		=> 'gravityforms',
 			'required' 	=> true,
-			'version' 	=> '1.7.11',
-			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory() . '/lib/gravityforms_1.7.12.zip'
+			'version' 	=> '1.8',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/gravityforms.zip'
 		),
 		
 		array(
 			'name' 		=> 'Relevanissi',
 			'slug' 		=> 'relevanssi',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '3.1.9',
 			'force_activation' 	=> false,
+		),
+		
+		array(
+			'name' 		=> 'Relevanissi Divert',
+			'slug' 		=> 'relevanissi-divert',
+			'required' 	=> false,
+			'version' 	=> '1.0',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/relevanissi-divert.zip'
 		),
 		
 		array(
 			'name' 		=> 'Revolution Slider',
 			'slug' 		=> 'revslider',
 			'required' 	=> true,
-			'version' 	=> '3.0.95',
+			'version' 	=> '4.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory() . '/lib/revslider.zip'
 		),
@@ -348,42 +366,79 @@ array(
 		),
 		
 		array(
+			'name' 		=> 'SlickMap CSS Sitemap',
+			'slug' 		=> 'slickmap',
+			'required' 	=> false,
+			'version' 	=> '1.0',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/slickmap.zip'
+		),
+		
+		array(
 			'name' 		=> 'SortTable Post',
 			'slug' 		=> 'sorttable-post',
 			'required' 	=> true,
 			'version' 	=> '4.2',
 			'force_activation' 	=> true,
 		),
-				
+		
+		array(
+			'name' 		=> 'Tekserve Case Studies',
+			'slug' 		=> 'tekserve-case-studies',
+			'required' 	=> false,
+			'version' 	=> '1.0',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/tekserve-case-studies.zip'
+		),
+		
+		array(
+			'name' 		=> 'Tekserve Footer Folk',
+			'slug' 		=> 'tekserve-footer-folk',
+			'required' 	=> true,
+			'version' 	=> '1.0',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/tekserve-footer-folk.zip'
+		),
+		
 		array(
 			'name' 		=> 'Tekserve Press Mentions',
 			'slug' 		=> 'tekserve-press-mentions',
+			'required' 	=> false,
+			'version' 	=> '1.2',
+			'force_activation' 	=> false,
+		),
+		
+		array(
+			'name' 		=> 'Tekserve Shared Data',
+			'slug' 		=> 'tekserve-shared-data',
 			'required' 	=> true,
 			'version' 	=> '1.1',
-			'force_activation' 	=> true,
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/tekserve-shared-data.zip'
 		),
 		
 		array(
 			'name' 		=> 'Tekserve Single Post Shortcode',
 			'slug' 		=> 'tekserve-single-post-shortcode',
 			'required' 	=> true,
-			'version' 	=> '1.1',
-			'force_activation' 	=> true,
+			'version' 	=> '1.4',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory() . '/lib/tekserve-single-post-shortcode.zip'
 		),
 		
 		array(
 			'name' 		=> 'Tekserve Testimonials',
 			'slug' 		=> 'tekserve-testimonials',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '1.0',
-			'force_activation' 	=> true,
+			'force_activation' 	=> false,
 		),
 		
 		array(
 			'name' 		=> 'Tekserve VCButtons',
 			'slug' 		=> 'tekserve-vcbuttons',
 			'required' 	=> true,
-			'version' 	=> '1.0',
+			'version' 	=> '1.2.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory() . '/lib/tekserve-vcbuttons.zip'
 		),
@@ -399,16 +454,16 @@ array(
 		array(
 			'name' 		=> 'Widgets on Pages',
 			'slug' 		=> 'widgets-on-pages',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '0.0.12',
-			'force_activation' 	=> true,
+			'force_activation' 	=> false,
 		),
 		
 		array(
 			'name' 		=> 'WPBakery Visual Composer',
 			'slug' 		=> 'js_composer',
 			'required' 	=> true,
-			'version' 	=> '3.6.14.1',
+			'version' 	=> '4.1',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory() . '/lib/js_composer.zip'
 		),
@@ -416,9 +471,9 @@ array(
 		array(
 			'name' 		=> 'WYSIWYG Widgets',
 			'slug' 		=> 'wysiwyg-widgets',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '2.3.1',
-			'force_activation' 	=> true,
+			'force_activation' 	=> false,
 		),
 
 	);
