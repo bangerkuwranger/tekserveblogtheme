@@ -196,7 +196,7 @@ add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
 /** Include PHP class to request user include functional plugins;
 (these functions were 3rd party or non-presentational) */
-require_once get_stylesheet_directory_uri() . '/class-tgm-plugin-activation.php';
+require_once get_stylesheet_directory() . '/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'apparition_tekserve_register_required_plugins' );
 /**
