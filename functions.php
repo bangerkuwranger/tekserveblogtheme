@@ -366,6 +366,14 @@ array(
 		),
 		
 		array(
+			'name' 		=> 'Shortcodes Pro',
+			'slug' 		=> 'shortcodes-pro',
+			'required' 	=> true,
+			'version' 	=> '1.1',
+			'force_activation' 	=> false,
+		),
+		
+		array(
 			'name' 		=> 'SlickMap CSS Sitemap',
 			'slug' 		=> 'slickmap',
 			'required' 	=> false,
@@ -445,7 +453,7 @@ array(
 		
 		array(
 			'name' 		=> 'Templatera',
-			'slug' 		=> 'T=templatera',
+			'slug' 		=> 'templatera',
 			'required' 	=> false,
 			'version' 	=> '1.0.4',
 			'force_activation' 	=> false,
