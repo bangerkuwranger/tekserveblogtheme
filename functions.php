@@ -362,7 +362,7 @@ array(
 			'name' 		=> 'Revolution Slider',
 			'slug' 		=> 'revslider',
 			'required' 	=> true,
-			'version' 	=> '4.3',
+			'version' 	=> '4.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/revslider.zip'
 		),
@@ -465,7 +465,7 @@ array(
 			'name' 		=> 'Templatera',
 			'slug' 		=> 'templatera',
 			'required' 	=> false,
-			'version' 	=> '1.0.4',
+			'version' 	=> '1.0',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/templatera.zip'
 		),
