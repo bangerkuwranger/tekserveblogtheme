@@ -266,6 +266,14 @@ array(
 		),
 		
 		array(
+			'name' 		=> "Dave's WordPress Live Search",
+			'slug' 		=> 'daves-wordpress-live-search',
+			'required' 	=> true,
+			'version' 	=> '4.1',
+			'force_activation' 	=> false,
+		),
+		
+		array(
 			'name' 		=> 'Emma Emarketing Plugin for WordPress',
 			'slug' 		=> 'emma-emarketing-plugin',
 			'required' 	=> true,
