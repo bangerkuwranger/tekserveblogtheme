@@ -169,26 +169,26 @@ function swapHeaderImgs(pageWidth) {
 }
 
 function moveWaywardSubnav() {
-	if($j('.tribe-is-responsive #subnav').length != 0) {
-		var subNav = $j('.tribe-is-responsive #subnav').detach();
-		$j( "#inner" ).before(subNav);
-	}
-	if($j('.category #subnav').length != 0) {
-		var subNav = $j('.category #subnav').detach();
-		$j( "#inner" ).before(subNav);
-	}
-	if($j('.single-post #subnav').length != 0) {
-		var subNav = $j('.single-post #subnav').detach();
-		$j( "#inner" ).before(subNav);
-	}
-	if($j('.archive #subnav').length != 0) {
-		var subNav = $j('.single-post #subnav').detach();
-		$j( "#inner" ).before(subNav);
-	}
-	if($j('.search-results #subnav').length != 0) {
-		var subNav = $j('.single-post #subnav').detach();
-		$j( "#inner" ).before(subNav);
-	}
+// 	if($j('.tribe-is-responsive #subnav').length != 0) {
+// 		var subNav = $j('.tribe-is-responsive #subnav').detach();
+// 		$j( "#inner" ).before(subNav);
+// 	}
+// 	if($j('.category #subnav').length != 0) {
+// 		var subNav = $j('.category #subnav').detach();
+// 		$j( "#inner" ).before(subNav);
+// 	}
+// 	if($j('.single-post #subnav').length != 0) {
+// 		var subNav = $j('.single-post #subnav').detach();
+// 		$j( "#inner" ).before(subNav);
+// 	}
+// 	if($j('.archive #subnav').length != 0) {
+// 		var subNav = $j('.single-post #subnav').detach();
+// 		$j( "#inner" ).before(subNav);
+// 	}
+// 	if($j('.search-results #subnav').length != 0) {
+// 		var subNav = $j('.single-post #subnav').detach();
+// 		$j( "#inner" ).before(subNav);
+// 	}
 }
 
 $j('document').ready(function() { //call on load

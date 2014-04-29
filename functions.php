@@ -57,8 +57,10 @@ add_theme_support( 'genesis-structural-wraps', array(
 ) );
 
 /** Move Subnav to page area before content container */
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_before_content', 'genesis_do_subnav' );
+add_action( 'genesis_after_header', 'genesis_do_subnav' );
 
 /** Genesis Single Post Navigation: Reverse link direction */
 define( 'GSPN_REVERSE_LINK_DIRECTION', TRUE );
