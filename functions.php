@@ -683,3 +683,7 @@ function add_caps()
 }
 
 add_action( 'admin_init', 'add_caps' );
+
+// redirect rss aggregator link
+add_filter( 'wprss_ftp_link_post_title', 'wprss_ftp_link_post_title_to_source' );
+function wprss_ftp_link_post_title_to_source() { return TRUE; }

@@ -69,6 +69,7 @@
 * Calendar & Events
 * Repair Status
 * Sitemap
+* RSS / Post / Isotope
 * Revolution Slider
 * Responsive Design
 
@@ -5015,6 +5016,24 @@ form#status-front.status-front {
 
 .slickmap #primaryNav li li a {
 	padding: 10px 1.25em;
+}
+
+/* RSS / Post / Isotope
+------------------------------------------------------------ */
+
+.teaser_grid_container li.isotope-item {
+	text-indent: 0;
+	padding: 0 1em !important;
+}
+
+.teaser_grid_container h2.post-title {
+	font-size: .75em;
+	text-indent: 0;
+}
+
+.teaser_grid_container div.entry-content p {
+	font-size: .5em;
+	text-indent: 0;
 }
 
 /* Revolution Slider
