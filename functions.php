@@ -18,8 +18,8 @@ function apparition_add_viewport_meta_tag() {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
-/** Force full width content layout */
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+/** Force full width content layout - disabled to allow selection */
+// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 /** Add support for custom background */
 add_theme_support( 'custom-background' );
