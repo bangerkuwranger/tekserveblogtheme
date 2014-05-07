@@ -15,7 +15,7 @@ add_theme_support( ‘html5′ );
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'apparition_add_viewport_meta_tag' );
 function apparition_add_viewport_meta_tag() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+	echo '<meta name="viewport" content="initial-scale=1">';
 }
 
 /** Force full width content layout - disabled to allow selection */
