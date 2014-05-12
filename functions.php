@@ -9,8 +9,8 @@ load_child_theme_textdomain( 'apparition', apply_filters( 'child_theme_textdomai
 define( 'CHILD_THEME_NAME', __( 'Apparition Theme', 'apparition' ) );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/themes/apparition' );
 
-/** Add HTML5 support */
-add_theme_support( ‘html5′ );
+/** Add HTML5 support *///anotherheadachforanotherday
+// add_theme_support( 'html5' );
 
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'apparition_add_viewport_meta_tag' );
