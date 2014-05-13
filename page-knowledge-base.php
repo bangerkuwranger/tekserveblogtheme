@@ -27,7 +27,7 @@ function tekserve_faq_subcat_toggle() {
 				var changeLink = $(this).attr("catlink");
 				$(this).find("a.expand-link").attr("href", changeLink);
 				$(this).find("i.icon-folder-close").removeClass("icon-folder-close").addClass("icon-chevron-right");
-				$(this).children("li.sub-category-l1-link").fadeOut();
+				$(this).children("li.sub-category-l1-link").hide();
 			}
 		});
 		$(".sub-categories.level-1.hasKids").click(function(){
@@ -39,7 +39,7 @@ function tekserve_faq_subcat_toggle() {
 			}
 			else {
 				$(this).find("i.icon-folder-close").removeClass("icon-folder-close").addClass("icon-folder-open");
-				$(this).children("li.sub-category-l1-link").fadeOut();
+				$(this).children("li.sub-category-l1-link").hide();
 				$(this).addClass("open");
 			}
 			$("ul.sub-categories.level-2.parent-"+thisId).slideToggle();
@@ -63,6 +63,7 @@ function tekserve_faq_edition_title() {
 remove_action( 'genesis_after_post_title', 'genesis_post_meta' );
 remove_action( 'genesis_post_title', 'genesis_do_post_title' );
 remove_action( 'genesis_post_content', 'genesis_do_post_content' );
+add_action( 'genesis_after_entry', 'genesis_do_post_content' );
 
 function get_total_cat_count($term_id = array()){
     
