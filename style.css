@@ -1906,6 +1906,7 @@ span.says {
 	color: #fff;
 }
 
+
 /* Responsive Table
 ------------------------------------------------------------ */
 
@@ -4801,6 +4802,14 @@ h2.tribe-events-page-title a:visited {
 	font-weight: bold;
 }
 
+#pings .even a {
+	color: #004d72; 
+}
+
+#pings .even p {
+	color: #fff; 
+}
+
 /* iPhone [portrait + landscape] */
 @media only screen and (max-device-width: 640px) {
 
@@ -4869,6 +4878,7 @@ h2.tribe-events-page-title a:visited {
 	li.tribe-events-nav-previous a span {
 		padding-left: 1em !important;
 	}
+	
 }
 
 
