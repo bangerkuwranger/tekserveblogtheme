@@ -25,7 +25,17 @@ function getContrast() { // set contrasting color based on background color
 		contrastColor = 'rgb(64, 168, 201)';
 	}
 }
-
+function chokeWidth(chokeAction) {
+	if (chokeAction == 'choke'){
+		$j('#wrap').css({'width': '320px', 'padding': 0, 'margin': 0, 'overflow-x': 'hidden'});
+	}
+	else if (chokeAction == 'unchoke'){
+		$j('#wrap').css({'width': 'auto', 'padding': 0, 'margin': 0, 'overflow-x': 'scroll'});
+	}
+	else {
+		console.log('pass an action to chokeWidth, you dope');
+	}
+}
 
 function mobileMeta() {
 	$j('head').append('<meta id="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes">');
@@ -59,12 +69,18 @@ function stretchSection() {  //function is called on load and on window resize; 
 		extraMargin = extraMargin.substring(0, extraMargin.length - 2);
 		viewMoveBig = parseInt(viewMoveBig, 10) + parseInt(extraMargin, 10);
 		var viewMoveSmall = viewWidth * .1;
-		$j('.bgwrapper').css('width', viewWidth);
-		if (viewWidth <= 960) {
+		if (viewWidth <=500) {
+			$j('.bgwrapper').css('width', 300);
+			$j('.bgwrapper').css('padding','0 10px');
+			$j('.bgwrapper').css('left', 0);
+		}
+		else if (viewWidth <= 960) {
+			$j('.bgwrapper').css('width', viewWidth);
 			$j('.bgwrapper').css('padding','0 10%');
 			$j('.bgwrapper').css('left', '-'+viewMoveSmall+'px');
 		}
 		else {
+			$j('.bgwrapper').css('width', viewWidth);
 			$j('.bgwrapper').css('padding','0 '+viewMargin+'px');
 			$j('.bgwrapper').css('left', '-'+viewMoveBig+'px');
 		}
@@ -74,6 +90,12 @@ function stretchSection() {  //function is called on load and on window resize; 
 $j(window).resize(function() { //call on window resize
 	stretchSection(); //resize call for section stretch
 	clientWidth = $j(window).width();
+	if(clientWidth < 500) {
+		chokeWidth('choke');
+	}
+	if(clientWidth > 500) {
+		chokeWidth('unchoke');
+	}
 	if(clientWidth < 627) {
 		moveSearchMobile(); //call on resize if window size becomes < 640, moves search outside of nav
 	}
@@ -92,10 +114,10 @@ $j(window).resize(function() { //call on window resize
 function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
     if ($j(window).scrollTop() > $jdiv.data("top")) { 
-        $j('#nav').css({'position': 'fixed', 'top': '0', 'width': '100%'}); 
+        $j('#nav').css({'position': 'fixed', 'top': '0'}); 
     }
     else {
-        $j('#nav').css({'position': 'static', 'top': 'auto', 'width': '100%'});
+        $j('#nav').css({'position': 'static', 'top': 'auto'});
     }
 }
 
@@ -448,5 +470,7 @@ $j('document').ready(function() { //call on load
 	if($j('.tekserve_custom_search').length != 0) {
 		$j('.tekserve_custom_search').parents('.menu-primary').addClass('tekserve_custom_search_menu');
 	}
-	
+	if(clientWidth < 500){
+		chokeWidth('choke');
+	}
 });

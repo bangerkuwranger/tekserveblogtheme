@@ -183,7 +183,7 @@ function tekserve_faq_kb_loop() {
 						$post_icon = 'icon-picture';
 						break;
 					default:
-						$post_icon = 'icon-file-alt';
+						$post_icon = 'icon-question-sign';
 						break;
 				}
 				$content .= '<li><i class="' . $post_icon . '"></i><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></li>';
