@@ -117,7 +117,7 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
         $j('#nav').css({'position': 'fixed', 'top': '0'}); 
     }
     else {
-        $j('#nav').css({'position': 'static', 'top': 'auto'});
+        $j('#nav').css({'position': 'static', 'width': '100%', 'top': 'auto'});
     }
 }
 

@@ -81,13 +81,13 @@
 
 @font-face {
   font-family: 'Tekvetica';
-	src: url('./fonts/tekvetica/Tekvetica-Bold.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Bold.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-Bold.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Bold.ttf') format('truetype');
 	font-style: normal;
 	font-weight: bold;
 }
 @font-face {
-	src: url('./fonts/tekvetica/Tekvetica-BoldItal.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-BoldItal.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-BoldItal.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-BoldItal.ttf') format('truetype');
 	font-family: 'Tekvetica';
 	font-style: italic;
@@ -95,28 +95,28 @@
 }
 @font-face {
 	font-family: 'Tekvetica';
-	src: url('./fonts/tekvetica/Tekvetica-Heavy.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Heavy.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-Heavy.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Heavy.ttf') format('truetype');
 	font-style: normal;
 	font-weight: 900;
 }
 @font-face {
 	font-family: 'Tekvetica';
-	src: url('./fonts/tekvetica/Tekvetica-Italic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Italic.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-Italic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Italic.ttf') format('truetype');
 	font-style: italic;
 	font-weight: normal;
 }
 @font-face {
 	font-family: 'Tekvetica';
-	src: url('./fonts/tekvetica/Tekvetica-Regular.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Regular.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-Regular.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Regular.ttf') format('truetype');
 	font-style: normal;
 	font-weight: normal;
 }
 @font-face {
 	font-family: 'Tekvetica';
-	src: url('./fonts/tekvetica/Tekvetica-Thin.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-Thin.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-Thin.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-Thin.ttf') format('truetype');
 	font-style: normal;
 	font-weight: 200;
@@ -124,7 +124,7 @@
 @font-face {
 	font-family: 'Tekvetica';
 	src: local('Tekvetica-ThinItalic');
-	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.eot?') format('eot');
+	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.eot?#iefix') format('eot');
 	src: url('./fonts/tekvetica/Tekvetica-ThinItalic.woff') format('woff'), url('./fonts/tekvetica/Tekvetica-ThinItalic.ttf') format('truetype');
 	font-style: italic;
 	font-weight: 200;
@@ -168,7 +168,8 @@ textarea,
 input,
 select,
 textarea {
-	border: 1px solid #40a8c9;
+	outline: 1px solid #40a8c9;
+	border: none;
 }
 
 input,
@@ -257,9 +258,9 @@ body.custom-background {
 
 #nav {
 	background-color: #f36f37;
-	-moz-box-shadow: 0px 3px 9px #011011;
-	-webkit-box-shadow: 0px 3px 9px #011011;
-	box-shadow: 0px 3px 9px #011011;
+	-moz-box-shadow: 0 3px 9px #011011;
+	-webkit-box-shadow: 0 3px 9px #011011;
+	box-shadow: 0 3px 9px #011011;
 	text-transform: uppercase;
 	z-index: 999;
 }
@@ -376,10 +377,10 @@ body.custom-background {
 }
 
 #wrap #header {
-	-o-box-shadow: 0px 3px 9px #011011;
-	-moz-box-shadow: 0px 3px 9px #011011;
-	-webkit-box-shadow: 0px 3px 9px #011011;
-	box-shadow: 0px 3px 9px #011011;
+	-o-box-shadow: 0 3px 9px #011011;
+	-moz-box-shadow: 0 3px 9px #011011;
+	-webkit-box-shadow: 0 3px 9px #011011;
+	box-shadow: 0 3px 9px #011011;
 	background: #004d72 !important;
 	background-position: top center !important;
 	z-index: 1001;
@@ -394,9 +395,9 @@ body.custom-background {
 	font-weight: 900;
 	text-transform: uppercase;
 	padding: 5px 0 15px;
-	-webkit-box-shadow: inset 0px 3px 9px 3px rgba(1,16,17,0.4);
-	-moz-box-shadow: inset 0px 3px 9px 3px rgba(1,16,17,0.4);
-	box-shadow: inset 0px 3px 9px 3px rgba(1,16,17,0.4);
+	-webkit-box-shadow: inset 0 3px 9px 3px rgba(1,16,17,0.4);
+	-moz-box-shadow: inset 0 3px 9px 3px rgba(1,16,17,0.4);
+	box-shadow: inset 0 3px 9px 3px rgba(1,16,17,0.4);
 }
 
 #special-notice:hover {
@@ -407,9 +408,6 @@ body.custom-background {
 	color: white;
 }
 
-#special-notice a:hover {
-/* 	color: #f36f37; */
-}
 
 /* Navigation Menus
 ------------------------------------------------------------ */
@@ -478,7 +476,6 @@ body.custom-background {
 	padding: 15px 20px;
 	position: relative;
 	text-decoration: none;
-	position: relative;
 	top: -15px;
 	font-weight: 200;
 }
@@ -758,6 +755,8 @@ ul.tekserve_custom_search_menu {
 #content,
 #content-sidebar-wrap {
 	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
 	width: 100%;
@@ -767,6 +766,8 @@ ul.tekserve_custom_search_menu {
 }
 .single #sidebar {
 	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
 	width: 25%;
@@ -792,6 +793,8 @@ ul.tekserve_custom_search_menu {
 
 .single.content-sidebar #content {
 	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
 	width: 75%;
@@ -1344,7 +1347,7 @@ div h2 img,
 div h3 img,
 div h4 img {
 outline-color: #40a8c9;
-outline-offset: 0px;
+outline-offset: 0;
 outline-width: 2px;
 outline-style: solid;
 }
@@ -1374,14 +1377,14 @@ tfoot .pagination ul li {
 	height: auto;
 	line-height: 27px;
 	list-style-type: none;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-	margin-top: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
 	text-align: left;
 	width: auto;
 }
@@ -1546,11 +1549,11 @@ div.gform_footer input.button {
 ------------------------------------------------------------ */
 
 .search-results .even a img.alignleft, .archive .hfeed .even a img.alignleft {
-	margin: 0 5px 0px 30px;
+	margin: 0 5px 0 30px;
 }
 
 .search-results .odd a img, .archive .hfeed .odd a img  {
-	margin: 0 30px 0px 5px;
+	margin: 0 30px 0 5px;
 }
 
 .search-results .hentry a img, .archive .hfeed .hentry a img, .blog .hfeed .post a img {
@@ -1567,7 +1570,7 @@ div.gform_footer input.button {
 }
 
 .archive .hfeed .hentry a img.alignright {
-	margin: 0px 5px 0 30px;
+	margin: 0 5px 0 30px;
 }
 
 .archive .hfeed .hentry img.alignright, .archive .hfeed .hentry img.alignleft, .hentry .alignleft img, .hentry .alignright img {
@@ -1812,6 +1815,7 @@ div.gform_footer input.button {
 #url {
 	-moz-box-shadow: 0 0 5px #ddd inset;
 	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-webkit-box-shadow: 0 0 5px #ddd inset;
 	background-color: #fff;
 	box-shadow: 0 0 5px #ddd inset;
@@ -1882,7 +1886,7 @@ label {
 
 .comment {
 	background-color: #004f72;
-	border: 2px solid #fff;
+	outline: 2px solid #fff;
 	border-right: none;
 }
 
@@ -1913,7 +1917,7 @@ span.says {
 table.responsivetable {
 	border-collapse: separate;
 	border-spacing: 0;
-	border: 1px solid #f36f37;
+	outline: 1px solid #f36f37;
 	border-top: none;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -1979,6 +1983,8 @@ div.gform_wrapper div.gform_body {
 div.gform_wrapper input,
 div.gform_wrapper select,
 div.gform_wrapper textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background-color: #fff;
 	margin: 0 0 .5em;
@@ -1992,6 +1998,7 @@ div.gform_wrapper textarea {
 
 div.gform_footer input.button {
 	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
 	font-size: 1.5em;
@@ -2175,7 +2182,7 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
 }
 
 #ui-datepicker-div.ui-datepicker tbody td:last-child {
-    border-right: 0px;
+    border-right: 0;
 }
 
 #ui-datepicker-div.ui-datepicker tbody tr {
@@ -2183,7 +2190,7 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
 }
 
 #ui-datepicker-div.ui-datepicker tbody tr:last-child {
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 #ui-datepicker-div.ui-datepicker td span, 
@@ -2869,7 +2876,7 @@ color: #f06c34 !important;
 .section:before,
 .section:after {
 	display: table;
-	height: 0px;
+	height: 0;
 	content: "";
 }
 
@@ -3021,7 +3028,7 @@ color: #f06c34 !important;
 .section .drawer .collapseomatic.drawertrigger {
 	background-position: right 45%;
 	background-repeat: no-repeat;
-	padding: 10px 30px 10px 0px;
+	padding: 10px 30px 10px 0;
 	text-align: left;
 	font-size: 1.25em;
 	color: #004d72;
@@ -3078,7 +3085,6 @@ color: #f06c34 !important;
 	background-image: url(images/ltbluearrowrt.svg);
 	background-repeat: no-repeat;
 	padding: 0 0 10px 16px;
-	/*border: 1px dotted blue;*/
 	cursor: pointer;
 	background-color: inherit;
 }
@@ -3099,9 +3105,9 @@ color: #f06c34 !important;
 }
 
 .collapseomatic_excerpt, .collapseomatic_content {
-	margin-top: 0px;
+	margin-top: 0;
 	margin-left: 16px;
-	padding: 0px;
+	padding: 0;
 }
 
 .content_collapse_wrapper {
@@ -3414,7 +3420,7 @@ div.orangebox p {
 
 .tekserve-faq-boxes .hero-title h1 {
 	font-size: 90px;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+	text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.4);
 	color: #004d72;
 	font-weight:900;
 	width: 70%;
@@ -3424,7 +3430,7 @@ div.orangebox p {
 
 .tekserve-faq-boxes .hero-search #searchform label {
 	font-size: 2.625em;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+	text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.4);
 }
 
 .tekserve-faq-boxes .hero-search {
@@ -3437,6 +3443,11 @@ div.orangebox p {
 	float: none !important;
 	padding: 24px 1em;
 	border-radius: 12px;
+}
+
+.tekserve-faq-boxes .hero-search #searchform label,
+.tekserve-faq-boxes #boxes-container h1 {
+	color: #f36f37;
 }
 
 .tekserve-faq-boxes .hero-search .btn-black {
@@ -3456,8 +3467,8 @@ div.orangebox p {
 	font-size: 14px;
 	line-height: 20px;
 	padding: 7px 11px;
-	border: 1px solid #BBB;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	outline: 1px solid #BBB;
+	outline-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	background: #f36f37 none;
 	color: white;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.36);
@@ -3474,8 +3485,8 @@ div.orangebox p {
 	font-size: 14px;
 	line-height: 20px;
 	padding: 7px 11px;
-	border: 1px solid #BBB;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	outline: 1px solid #BBB;
+	outline-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	background-color: #004d72;
 	color: white;
 	transition: background .10s ease-in-out;
@@ -3487,8 +3498,12 @@ div.orangebox p {
 }
 
 .tekserve-faq-boxes #boxes-container {
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+	text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.4);
 	margin-top: 4em;
+}
+
+.tekserve-faq-boxes #boxes-container .box {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 }
 
 .tekserve-faq-boxes #boxes-container h1 {
@@ -3500,14 +3515,11 @@ div.orangebox p {
 
 	.tekserve-faq-boxes #boxes-container h1 {
 		top: -20px;
-		color: #f36f37;
-		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
-		font-size: .5em;
 	}
 
 }
 
-@media(min-width:480px) and (max-width:767px){
+@media(min-width:320px) and (max-width:767px){
 
 	.tekserve-faq-boxes #boxes-container h1 {
 		top: -20px;
@@ -3521,7 +3533,7 @@ div.orangebox p {
 	margin: 0 auto 10px !important;
 	background-color: rgba(243, 111, 55, 1);
 	padding: 50px 30px 32px;
-	border: solid 1px rgba(243, 111, 55, 1);
+	outline: solid 1px rgba(243, 111, 55, 1);
 	-moz-border-radius: 12px; 
 	-webkit-border-radius: 12px;
 	border-radius: 12px; 
@@ -3591,7 +3603,7 @@ div.orangebox p {
 .tekserve-faq-boxes .video-title h2 {font-size: 34px;padding: 20px 0;margin: 20px 0 20px; text-align: center;text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);}
 .tekserve-faq-boxes .label-popular {position:relative;bottom:6px;}
 .tekserve-faq-boxes .video-bg {background-color:#eeeeee;border-top: solid 1px #e8e8e8;}
-.tekserve-faq-boxes .box-video {margin-top: 0px; background-color: #222;height: 390px;text-align: center;background-size:cover;background-repeat: no-repeat;background-position: center center;
+.tekserve-faq-boxes .box-video {margin-top: 0; background-color: #222;height: 390px;text-align: center;background-size:cover;background-repeat: no-repeat;background-position: center center;
 -moz-border-radius: 4px;
 -webkit-border-radius: 4px;
 border-radius: 4px;
@@ -3640,9 +3652,9 @@ border-radius: 4px;}
 }
 
 /* ie button fix */
-.tekserve-faq-boxes #menu ul a:hover, .hero-search .btn, .btn-primary {border-radius: 0px\9}
+.tekserve-faq-boxes #menu ul a:hover, .hero-search .btn, .btn-primary {border-radius: 0\9}
 
-.tekserve-faq-boxes #hero-image { background-position: 0% 0px;}
+.tekserve-faq-boxes #hero-image { background-position: 0% 0;}
 
 /* custom template styles */
 
@@ -3826,7 +3838,8 @@ border-radius: 4px;}
 	color: #004d72 !important;
 }
 
-.tekserve-faq-device-image img {
+.tekserve-faq-device-image img,
+.tekserve-faq-os-image img {
 	width: 100%;
 	max-width: 300px;
 	height: auto;
@@ -3923,7 +3936,7 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 .section .detailBox:before,
 .section .detailBox:after {
 	display: table;
-	height: 0px;
+	height: 0;
 	content: "";
 }
 
@@ -4316,7 +4329,7 @@ table.sortable tr:nth-child(even) { background: #f6f6f6 !important; }
 /* Table Border Color */
 table.sortable th,
 table.sortable td {
-    border: 1px solid #40a8c9 !important;
+    outline: 1px solid #40a8c9 !important;
     vertical-align: middle !important;
 }
 
@@ -4498,7 +4511,7 @@ table.sortable td a {
 
 .nrelate_default .nr_panel:hover .nr_img {
 	background: none repeat scroll 0 0 #004d72;
-	border: 1px solid #004d72 !important;
+	border: none !important;
 	outline: 1px solid #004d72;
 }
 
@@ -4604,7 +4617,7 @@ ul#emma-form-elements li.emma-form-row {
 .wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #Front_Page .widget_categories ul li, #Front_Page .widget.widget_categories ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, #Front_Page .widget_knrauthorlistwidget ul li, #Front_Page .widget_anual_archive ul li {
 	list-style: none !important;
 	margin-bottom: 1em !important;
-	text-indent: 0px !important;
+	text-indent: 0 !important;
 }
 
 .wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #Front_Page .widget.widget_categories ul li a, #Front_Page .widget.widget_categories ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_categories ul li a, #Front_Page .widget_categories ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
@@ -5315,18 +5328,18 @@ form#status-front.status-front {
 	font-size: 16px;
 }
 
-.rev_slider_wrapper .rev_slider .tp-caption.darkbluetxt{
+.rev_slider_wrapper .rev_slider .tp-caption.darkbluetxt {
 	position: absolute; 
 	color: #004d72; 
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
-	padding: 0px 4px; 
+	padding: 0 4px; 
 	padding-top: 1px;
-	margin: 0px; 
-	border-width: 0px; 
+	margin: 0; 
+	border-width: 0; 
 	border-style: none; 
-	background-color:transparent;
+	background-color: transparent;
 								
 }
 
@@ -5336,10 +5349,10 @@ form#status-front.status-front {
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
-	padding: 0px 4px; 
+	padding: 0 4px; 
 	padding-top: 1px;
-	margin: 0px; 
-	border-width: 0px; 
+	margin: 0; 
+	border-width: 0; 
 	border-style: none; 
 	background-color:transparent;						
 		}
@@ -5350,10 +5363,10 @@ form#status-front.status-front {
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
-	padding: 0px 4px; 
+	padding: 0 4px; 
 	padding-top: 1px;
-	margin: 0px; 
-	border-width: 0px; 
+	margin: 0; 
+	border-width: 0; 
 	border-style: none; 
 	background-color:transparent;
 						
@@ -5365,10 +5378,10 @@ form#status-front.status-front {
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
-	padding: 0px 4px; 
+	padding: 0 4px; 
 	padding-top: 1px;
-	margin: 0px; 
-	border-width: 0px; 
+	margin: 0; 
+	border-width: 0; 
 	border-style: none; 								
 }
 
@@ -5520,13 +5533,13 @@ text-align: center;
 	}
 	
 	.tekserve-fax-boxes #hero-image {
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center top; }
-}
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top; 
+	}
 	
 }
 
@@ -5734,30 +5747,6 @@ text-align: center;
 		display: inline-block;
 		float: none;
 	}
-	
-	#subnav .menu-secondary li {
-		width: 25%;
-		border: none;
-		text-align: left;
-		max-width: 250px;
-		text-indent: 0;
-	}
-	
-	#subnav .wrap {
-		width: 80% !important;
-		text-align: center;
-	}
-	
-	.menu-secondary a {
-		font-weight: 400;
-		font-size: 1.1em;
-	}
-
-	.menu-primary a,
-	.menu-secondary a,
-	#header .menu a {
-		border: none;
-	}
 
 	.menu li.right {
 /* 		display: none; */
@@ -5810,6 +5799,14 @@ text-align: center;
 	
 	ul.menu.genesis-nav-menu.menu-primary {
 		width: 100%;
+	}
+	
+	.tekserve-faq-boxes .hero-title h1 {
+		min-width: 0;
+	}
+	
+	.tekserve-faq-boxes #hero-image {
+		background-image: url();
 	}
 	
 	#Front_Page .widget.widget_categories, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_knrauthorlistwidget, #Front_Page .widget_anual_archive {
@@ -5889,7 +5886,8 @@ text-align: center;
 		background-color: rgba(255,255,255,.8);
 		padding: 1em;
 		position: relative;
-		top: -1em;
+		top: 1em;
+		padding-top: 0;
 	}
 
 	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
@@ -6005,6 +6003,10 @@ text-align: center;
 		min-width: 100% !important;
 	}
 	
+	.menu-primary li:nth-last-child(2) {
+		border-right: none;
+	}
+	
 }
 
 @media (max-width:1024px) and (min-width:768px) {
@@ -6031,7 +6033,7 @@ text-align: center;
 	}
 	
 	.menu-primary li.custom-search {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 	
 	.menu-primary li {
@@ -6048,6 +6050,31 @@ text-align: center;
 	}
  */
  
+ 	#subnav .menu-secondary li {
+		width: 25%;
+		border: none;
+		text-align: left;
+		max-width: 250px;
+		text-indent: 0;
+	}
+	
+	#subnav .wrap {
+		width: 80% !important;
+		text-align: center;
+	}
+	
+	.menu-secondary a,
+	.menu-secondary .current-menu-item a {
+		font-weight: 400;
+		font-size: 1.1em;
+	}
+
+	.menu-primary a,
+	.menu-secondary a,
+	#header .menu a {
+		border: none;
+	}
+ 
  	h2.knowledge-base-root-title {
 		font-size: 1.5em !important;
 	}
@@ -6056,7 +6083,8 @@ text-align: center;
 		font-size: 1em !important;
 	}
 
-	.single-tekserve_faq_device .section {
+	.single-tekserve_faq_device .section,
+	.single-tekserve_faq_os .section {
 		position: relative;
 		width: 200%;
 		overflow-x: hidden;
@@ -6369,19 +6397,27 @@ text-align: center;
 	.section .detailBox .detailBox-detail {
 		width: 360px;
 	}
+	
+	ul.tekserve_custom_search_menu {
+		width: 100%!important;
+	}
 
 	ul.menu.genesis-nav-menu.menu-primary {
-		text-align: left;
+		text-align: center;
 	}
 	
 	ul.menu.genesis-nav-menu.menu-primary li {
-		height: 42px;
+		height: 1em;
 		margin-left: 1em;
 	}
 	
 	ul.menu.genesis-nav-menu.menu-primary li a {
-		font-size: 2em;
-		font-weight: normal;
+		font-size: .75em;
+		font-weight: 200;
+	}
+	
+	ul.menu.genesis-nav-menu.menu-primary li.tekserve_custom_search {
+		margin-bottom: 2em;
 	}
 	
 	.menu li.right.search {
@@ -6394,19 +6430,23 @@ text-align: center;
 	}
 	
 	input.s.search-input {
-		height: 40px;
-		font-size: 1.5em;
+		height: 1.5em;
+		font-size: 1em;
 	}
 	
 	.tekserve_custom_search #search-option {
-		height: 40px;
+		height: 1.5em;
 	}
 	
 	.tekserve_custom_search .search-option-menu {
-		font-size: 18px;
+		font-size: 1em;
 		min-width: 180px;
-		top: -50px;
+		top: -34px;
 		left: 150px;
+	}
+	
+	#inner {
+		margin-top: 1em !important;
 	}
 	
 	#respond .comment-form p input, #respond .comment-form p textarea, #author, #comment, #email, #url {
@@ -6444,10 +6484,7 @@ text-align: center;
 	}
 
 	h1,
-	h2,
-	h2 a,
-	h2 a:visited,
-	h2 a:hover {
+	h2 {
 		font-size: 1.175em;
 	}
 
@@ -6472,10 +6509,7 @@ text-align: center;
 		width: 290px !important;
 		padding: 5px 0 0;
 		min-height: 1.1em;
-/* 		border: solid 1px #aaa; */
 		background: #f36f37 url(images/navmenumobile@2x.png) no-repeat 10px 7px;
-/* 		border-radius: 5px; */
-		
 		background-size: 50%;
 	}
 	.menu-primary li {
@@ -6606,7 +6640,7 @@ text-align: center;
 	background-position: center;
 	position: absolute;
 	top: -80px;
-	right: 0px;
+	right: 0;
 	display: none;
 	}
 	
@@ -6642,6 +6676,16 @@ text-align: center;
 		margin-left: 2.5%;
 	}
 	
+	.tekserve-faq-boxes #boxes-container {
+		margin-top: 0;
+	}
+	
+	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
+	.page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element,
+	.page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
+		background-color: transparent;
+	}
+	
 	.page-template-static_content-php .tekserve-single-post img,
 	.page-template-static_content-php .tekserve-single-post #tekserve-single-post-excerpt,
 	#Front_Page .widget.widget_categories ul li,
@@ -6671,7 +6715,7 @@ text-align: center;
 	.nrelate_default a.nr_panel {
 		margin: 0 auto 25px !important;
 		width: 100% !important;
-		min-height: 0px !important;
+		min-height: 0 !important;
 	}
 	
 	div.orangebox {
@@ -6816,7 +6860,7 @@ text-align: center;
 	}
 	
 	.section.dboxsection {
-		min-width: 0px;
+		min-width: 0;
 		max-width: 1000%;
 	}
 	
@@ -6831,6 +6875,20 @@ text-align: center;
 	
 	.tekserve-faq-boxes #hero {
 		height: auto;
+	}
+	
+	.hentry .tekserve_faq_device a img,
+	.hentry .tekserve_faq_os a img {
+		width: 200px;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.vc_span7.wpb_column.column_container.tekserve-faq-col-right .tekserve-faq-slide-link .tekserve-faq-slide-title {
+		margin-left: 1em;
+		font-size: 1.175em;
+		display: inline-block;
+		width: 100%;
 	}
 		
 }
@@ -6869,19 +6927,19 @@ text-align: center;
 	}
 	
 	h1, .section h1 {
-		font-size: 1.75em;
-	}
-	
-	h2, .section h2 {
-		font-size: 1.5em;
-	}
-	
-	h3, .section h3 {
 		font-size: 1.25em;
 	}
 	
-	h4, .section h4 {
+	h2, .section h2 {
+		font-size: 1.175em;
+	}
+	
+	h3, .section h3 {
 		font-size: 1.125em;
+	}
+	
+	h4, .section h4 {
+		font-size: 1em;
 	}
 	
 	h5, .section h5 {
@@ -6894,7 +6952,7 @@ text-align: center;
 	
 	p b, .section p b, p strong, .section p strong {
 		font-weight: 200;
-		font-size: 1.3em;
+		font-size: 1.125em;
 	}
 	
 	ul#emma-form-elements li.emma-form-row {
@@ -6904,9 +6962,17 @@ text-align: center;
 	.status-front .label {
 		font-size: 1.25em;
 	}
+	
+	div.gform_wrapper .gfield_label {
+		font-size: 1.175em
+	}
+	
+	.tekserve-single-post .tekserve-single-post-button {
+		font-size: 1.175em;
+	}
 
 	#status-content .status-front .statusField {
-		font-size: 1.5em;
+		font-size: 1.175em;
 		padding: 0;
 	}
 
@@ -7096,8 +7162,10 @@ span.trademark:after {
 	opacity: 1;
 }
 
+/* 
 @media only screen and (max-width: 320px) {
 	.page-template-static_content-php * {
 		max-width: 320px !important;
 	}
 }
+ */
