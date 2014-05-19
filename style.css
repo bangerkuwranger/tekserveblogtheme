@@ -3510,8 +3510,6 @@ div.orangebox p {
 	font-size: 14px;
 	line-height: 20px;
 	padding: 7px 11px;
-	outline: 1px solid #BBB;
-	outline-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	background-color: #004d72;
 	color: white;
 	transition: background .10s ease-in-out;
@@ -3558,7 +3556,6 @@ div.orangebox p {
 	margin: 0 auto 10px !important;
 	background-color: rgba(243, 111, 55, 1);
 	padding: 50px 30px 32px;
-	outline: solid 1px rgba(243, 111, 55, 1);
 	-moz-border-radius: 12px; 
 	-webkit-border-radius: 12px;
 	border-radius: 12px; 
