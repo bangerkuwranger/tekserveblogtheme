@@ -618,14 +618,22 @@ ul.menu li.sfHover ul,
 	padding: 0 0 0 20px;
 }
 
+.tekserve_custom_search .search-form input:focus + .search-option-menu #search-option {
+	opacity: .2;
+}
+
 .tekserve_custom_search .search-option-menu {
 	float: right;
 	box-sizing: border-box;
 	position: relative;
-	top: -31px;
-	left: 70px;
+	top: -30px;
+	left: 77px;
 	font-size: 12px;
 	min-width: 120px;
+}
+
+.tekserve_custom_search .search-option-menu #search-option {
+	outline: none;
 }
 
 .tekserve_custom_search .search-form {
@@ -634,6 +642,8 @@ ul.menu li.sfHover ul,
 
 .tekserve_custom_search input.search-input {
 	min-width: 220px;
+	color: #004d72;
+	outline: none;
 }
 
 .tekserve_custom_search #search-option {
@@ -647,6 +657,7 @@ ul.menu li.sfHover ul,
 	color: #fff;
 	font-weight: bold;
 	text-transform: uppercase;
+	width: auto;
 }
 
 ul.tekserve_custom_search_menu {
@@ -3841,8 +3852,10 @@ border-radius: 4px;}
 .tekserve-faq-device-image img,
 .tekserve-faq-os-image img {
 	width: 100%;
-	max-width: 300px;
+	max-width: 200px;
 	height: auto;
+	float: left;
+	margin-right: 2em;
 }
 
 #tekserve-faq-questions {
@@ -6044,35 +6057,11 @@ text-align: center;
 
 @media only screen and (max-width: 768px) {
 
-/* 
-	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
-		width: 125%;
-	}
- */
- 
- 	#subnav .menu-secondary li {
-		width: 25%;
-		border: none;
-		text-align: left;
-		max-width: 250px;
-		text-indent: 0;
-	}
-	
+
+
 	#subnav .wrap {
 		width: 80% !important;
 		text-align: center;
-	}
-	
-	.menu-secondary a,
-	.menu-secondary .current-menu-item a {
-		font-weight: 400;
-		font-size: 1.1em;
-	}
-
-	.menu-primary a,
-	.menu-secondary a,
-	#header .menu a {
-		border: none;
 	}
  
  	h2.knowledge-base-root-title {
@@ -6348,6 +6337,13 @@ text-align: center;
 		display: none;
 	}
 	
+		
+	.tekserve-faq-device-image img,
+	.tekserve-faq-os-image img {
+		margin-right: 0;
+		margin-bottom: 2em;
+	}
+	
 }
 
 @media (max-width:800px) and (min-width:640px) {
@@ -6504,6 +6500,7 @@ text-align: center;
 		width:100%;
 		max-width:100%;
 	}
+	
 	ul.menu.genesis-nav-menu.menu-primary,
 	.menu-primary {
 		width: 290px !important;
@@ -6588,15 +6585,22 @@ text-align: center;
 		background: none;
 	}
 	
+	#subnav .menu-secondary {
+		margin: 10px auto;
+	}
+	
 	#subnav .menu-secondary li {
-		width: 40%;
+		width: 90%;
 		text-transform: uppercase;
+		border: none;
+		text-align: left;
+		max-width: 250px;
+		text-indent: 0;
 	}
 	
 	.search-form {
 		position: relative;
 		right: 18px;
-/* 		top: -6px; */
 		float: none;
 		width: 280px;
 		margin: 0 auto;
@@ -6890,10 +6894,20 @@ text-align: center;
 		display: inline-block;
 		width: 100%;
 	}
+	
+	.single .tekserve_faq_os h1.entry-title,
+	.single .tekserve_faq_device h1.entry-title {
+		width: 50%;
+	}
 		
 }
 
 @media only screen and (max-width: 500px) {
+
+	.single .tekserve_faq_os h1.entry-title,
+	.single .tekserve_faq_devicee h1.entry-title {
+		width: 280px;
+	}
 	
 	ul.category-posts li,
 	ul.sub-categories,
