@@ -590,41 +590,41 @@ $args = array(
 //magicNav has been deprecated.
 
 //This (updater) is deprecated for launch, remains for data cleanup project
-/** Register Custom Taxonomy for content update assignments */
-if ( ! function_exists('updater') ) {
-	function updater()  {
-		$labels = array(
-			'name'                       => 'Updaters',
-			'singular_name'              => 'Updater',
-			'menu_name'                  => 'Updater',
-			'all_items'                  => 'All Updaters',
-			'parent_item'                => 'Parent Updater',
-			'parent_item_colon'          => 'Parent Updater:',
-			'new_item_name'              => 'New Updater Name',
-			'add_new_item'               => 'Add New Updater',
-			'edit_item'                  => 'Edit Updater',
-			'update_item'                => 'Update Updater',
-			'separate_items_with_commas' => 'Separate Updaters with commas',
-			'search_items'               => 'Search Updaters',
-			'add_or_remove_items'        => 'Add or remove Updaters',
-			'choose_from_most_used'      => 'Choose from existing Updaters',
-		);
-		$args = array(
-			'labels'                     => $labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => false,
-			'query_var'                  => 'updater',
-			'rewrite'                    => false,
-		);
-		register_taxonomy( 'updater', 'post', $args );
-}
-// Hook into the 'init' action
-add_action( 'init', 'updater', 0 );
-}
+// /** Register Custom Taxonomy for content update assignments */
+// if ( ! function_exists('updater') ) {
+// 	function updater()  {
+// 		$labels = array(
+// 			'name'                       => 'Updaters',
+// 			'singular_name'              => 'Updater',
+// 			'menu_name'                  => 'Updater',
+// 			'all_items'                  => 'All Updaters',
+// 			'parent_item'                => 'Parent Updater',
+// 			'parent_item_colon'          => 'Parent Updater:',
+// 			'new_item_name'              => 'New Updater Name',
+// 			'add_new_item'               => 'Add New Updater',
+// 			'edit_item'                  => 'Edit Updater',
+// 			'update_item'                => 'Update Updater',
+// 			'separate_items_with_commas' => 'Separate Updaters with commas',
+// 			'search_items'               => 'Search Updaters',
+// 			'add_or_remove_items'        => 'Add or remove Updaters',
+// 			'choose_from_most_used'      => 'Choose from existing Updaters',
+// 		);
+// 		$args = array(
+// 			'labels'                     => $labels,
+// 			'hierarchical'               => false,
+// 			'public'                     => true,
+// 			'show_ui'                    => true,
+// 			'show_admin_column'          => true,
+// 			'show_in_nav_menus'          => true,
+// 			'show_tagcloud'              => false,
+// 			'query_var'                  => 'updater',
+// 			'rewrite'                    => false,
+// 		);
+// 		register_taxonomy( 'updater', 'post', $args );
+// }
+// // Hook into the 'init' action
+// add_action( 'init', 'updater', 0 );
+// }
 
 /** Customize the credits */
 remove_action( 'genesis_footer', 'genesis_do_footer' );

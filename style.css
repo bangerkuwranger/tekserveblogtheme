@@ -165,11 +165,15 @@ textarea,
 	background-color: #fff;
 }
 
-input,
+input:text,
 select,
 textarea {
-	outline: 1px solid #40a8c9;
 	border: none;
+}
+
+input:text,
+textarea {
+	outline: 1px solid #40a8c9;
 }
 
 input,
@@ -183,6 +187,15 @@ textarea {
 
 select {
 	width: 100%;
+	-webkit-appearance: menulist;
+	-moz-appearance: menulist;
+	-o-appearance: menulist;
+	appearance: menulist;
+	padding-left: 1em;
+	background-color: #40a8c9;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 li,
@@ -1544,6 +1557,7 @@ div.gform_footer input.button {
 	width: 100%;
 	border-radius: 6px;
 	height: 20px;
+	border: none;
 }
 
 #header .searchform {
