@@ -5,7 +5,7 @@
 	Author: StudioPress / Chad A. Carino
 	Author URI: http://www.tekserve.com/
  
-	Version: 1.2.4
+	Version: 1.3
  
 	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
  
@@ -594,9 +594,8 @@ ul.menu li.sfHover ul,
 .search-form {
 	position: relative;
 	right: -20px;
-/* 	top: -6px; */
 	float: right;
-	width: 150px;
+	width: 200px;
 }
 .tinynav { display: none }
 
@@ -636,11 +635,10 @@ ul.menu li.sfHover ul,
 }
 
 .tekserve_custom_search .search-option-menu {
-	float: right;
 	box-sizing: border-box;
 	position: relative;
 	top: -30px;
-	left: 77px;
+	left: 85px;
 	font-size: 12px;
 	min-width: 120px;
 }
@@ -654,7 +652,7 @@ ul.menu li.sfHover ul,
 }
 
 .tekserve_custom_search input.search-input {
-	min-width: 220px;
+	min-width: 200px;
 	color: #004d72;
 	outline: none;
 }
@@ -4624,32 +4622,32 @@ ul#emma-form-elements li.emma-form-row {
 }
 
 
-#wpp-2, #rfb_widget-2, #atfi_widget-2, #categories-2, #ace-categories, #Front_Page .widget.widget_categories, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_knrauthorlistwidget, #Front_Page .widget_anual_archive {
+#wpp-2, #sidebar .widget.widget_categories, #rfb_widget-2, #atfi_widget-2, #ace-categories, #Front_Page .widget.widget_categories, #pippin_simple_authors_widget-2, #archives-4, #Front_Page .widget_knrauthorlistwidget, #Front_Page .widget_anual_archive {
 	background-color: #f36f37 !important;
 	border-radius: 24px !important;
 	padding: 24px !important;
 	margin-bottom: 1em !important;
 }
 
-#wpp-2 div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #categories-2 div h4, #ace-categories div h4, #Front_Page .widget.widget_categories h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2, #Front_Page .widget_categories h4, #Front_Page .widget_knrauthorlistwidget h2, #Front_Page .widget_anual_archive h2 {
+#wpp-2 div h4, #sidebar .widget.widget_categories div h4, #rfb_widget-2 div h4, #atfi_widget-2 div h4, #ace-categories div h4, #Front_Page .widget.widget_categories h2, #pippin_simple_authors_widget-2 h2, #archives-4 h2, #Front_Page .widget_categories h4, #Front_Page .widget_knrauthorlistwidget h2, #Front_Page .widget_anual_archive h2 {
 	color: white !important;
 	text-transform: uppercase !important;
 	font-size: 1.5em !important;
 	font-weight: 900 !important;
 }
 
-.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #categories-2 ul li, #ace-categories ul li, #Front_Page .widget_categories ul li, #Front_Page .widget.widget_categories ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, #Front_Page .widget_knrauthorlistwidget ul li, #Front_Page .widget_anual_archive ul li {
+.wpp-list li, .rfb_posts li, #atfi_widget-2 ul li, #sidebar .widget.widget_categories ul li, #ace-categories ul li, #Front_Page .widget_categories ul li, #Front_Page .widget.widget_categories ul li, #pippin_simple_authors_widget-2 ul li, #archives-4 ul li, #Front_Page .widget_knrauthorlistwidget ul li, #Front_Page .widget_anual_archive ul li {
 	list-style: none !important;
 	margin-bottom: 1em !important;
 	text-indent: 0 !important;
 }
 
-.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #categories-2 ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #Front_Page .widget.widget_categories ul li a, #Front_Page .widget.widget_categories ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_categories ul li a, #Front_Page .widget_categories ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
+.wpp-list li a, .wpp-list li a:visited, #rfb_widget-2 .rfbp-text p, #rfb_widget-2 div p a, #atfi_widget-2 ul li, #sidebar .widget.widget_categories ul li a, #ace-categories ul li a, #ace-categories ul li a:visited, #Front_Page .widget.widget_categories ul li a, #Front_Page .widget.widget_categories ul li a:visited, #pippin_simple_authors_widget-2 ul li a, #pippin_simple_authors_widget-2 ul li a:visited, #archives-4 ul li a, #archives-4 ul li a:visited, #Front_Page .widget_categories ul li a, #Front_Page .widget_categories ul li a:visited, #Front_Page .widget_knrauthorlistwidget ul li a, #Front_Page .widget_knrauthorlistwidget ul li a:visited, #Front_Page .widget_anual_archive ul li a, #Front_Page .widget_anual_archive ul li a:visited {
 	color: white !important;
 	font-size: 1.125em !important;
 }
 
-.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #categories-2 ul li a:hover, #ace-categories ul li a:hover, #Front_Page .widget.widget_categories ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover, #Front_Page .widget_categories ul li a:hover, #Front_Page .widget_knrauthorlistwidget ul li a:hover, #Front_Page .widget_anual_archive ul li a:hover {
+.wpp-list li a:hover, #rfb_widget-2 div p a:hover, #sidebar .widget.widget_categories ul li a:hover, #ace-categories ul li a:hover, #Front_Page .widget.widget_categories ul li a:hover, #pippin_simple_authors_widget-2 ul li a:hover, #archives-4 ul li a:hover, #Front_Page .widget_categories ul li a:hover, #Front_Page .widget_knrauthorlistwidget ul li a:hover, #Front_Page .widget_anual_archive ul li a:hover {
 	color: #004d72 !important;
 }
 
@@ -5907,7 +5905,7 @@ text-align: center;
 	}
 	
 	.page-template-static_content-php div.wpb_text_column.wpb_content_element {
-		background-color: rgba(255,255,255,.8);
+/* 		background-color: rgba(255,255,255,.8); */
 		padding: 1em;
 		position: relative;
 		top: 1em;
@@ -5917,7 +5915,7 @@ text-align: center;
 	.page-template-static_content-php .darkblue div.wpb_text_column.wpb_content_element,
 	.page-template-static_content-php .lightblue div.wpb_text_column.wpb_content_element,
 	.page-template-static_content-php .orange div.wpb_text_column.wpb_content_element {
-		background-color: rgba(0,0,0,.2);
+/* 		background-color: rgba(0,0,0,.2); */
 	}
 	
 	.page-template-static_content-php .nogrey div.wpb_text_column.wpb_content_element  {
@@ -6029,6 +6027,10 @@ text-align: center;
 	
 	.menu-primary li:nth-last-child(2) {
 		border-right: none;
+	}
+	
+	.tekserve_custom_search .search-option-menu {
+		float: right;
 	}
 	
 }
@@ -6167,6 +6169,10 @@ text-align: center;
  		display: block;
  	}
  	
+ 	#tribe-events-content .tribe-events-calendar td {
+ 		display: table-cell;
+ 	}
+ 	
  	table td img {
  		width: auto !important;
  	}
@@ -6178,12 +6184,14 @@ text-align: center;
 	
 	.single h1.entry-title,
 	h1,
-	h2,
-	h2 a,
-	h2 a:visited,
-	h2 a:hover {
+	h2 {
 		clear: both;
 		font-size: 1.25em;
+	}
+	
+	h2 a {
+		clear: both;
+		font-size: 1em;
 	}
 
 	.even img.alignleft,
@@ -6353,6 +6361,24 @@ text-align: center;
 	.tekserve-faq-os-image img {
 		margin-right: 0;
 		margin-bottom: 2em;
+	}
+	
+	#ui-datepicker-div.ui-datepicker tbody td {
+		display: table-cell;
+	}
+	
+	#tribe-events-footer .tribe-events-sub-nav li a {
+		background: transparent;
+		color: #f36f37;
+		display: inline;
+	}
+	
+	#tribe-events-footer .tribe-events-sub-nav li a:hover {
+		color: #004d72;
+	}
+	
+	#tribe-events-footer .tribe-events-sub-nav li a[rel='prev'] {
+		margin-bottom: -980px;
 	}
 	
 }
@@ -6621,6 +6647,8 @@ text-align: center;
 		font-weight: bold;
 		height: 28px;
 		color: #004d72;
+		border: 1px solid #40a8c9;
+		border-right: none;
 	}
 	li.right.search {
 	list-style: none;
@@ -6632,6 +6660,7 @@ text-align: center;
 		left: 32px;
 		font-size: 16px;
 		min-width: 125px;
+		float: right;
 	}
 	
 	.tekserve_custom_search #search-option {
@@ -6734,7 +6763,7 @@ text-align: center;
 	}
 	
 	div.orangebox {
-		right: 27px;
+		right: .75em;
 		width: 280px;
 	}
 	
@@ -6764,6 +6793,14 @@ text-align: center;
 	
 	.page-template-static_content-php .vc_span6 div.wpb_text_column.wpb_content_element.rightside {
 		margin-left: -2.5% !important;
+	}
+	
+	#showHiddenForm {
+		margin-bottom: 1em;
+	}
+	
+	#footer-widgets .widget-area ul li {
+		text-indent: 0;
 	}
 	
 	.section .detailBox {
@@ -6857,7 +6894,18 @@ text-align: center;
 	
 	.section a.simpleCart_checkout.button {
 		float: none;
-		font-size: 2em;
+		font-size: 1.25em;
+	}
+	
+	.tekserverental-checkout .tekserverental-shipping label,
+	.tekserverental-checkout .tekserverental-checkout-form label {
+		font-size: 1.125em;
+		padding-top: 1em;
+	}
+	
+	.tekserverental-checkout .tekserverental-shipping label.lower,
+	.tekserverental-checkout .tekserverental-checkout-form label.lower {
+		padding: .25em 0 1em;
 	}
 	
 	.slickmap #primaryNav li,
@@ -6910,6 +6958,46 @@ text-align: center;
 	.single .tekserve_faq_device h1.entry-title {
 		width: 50%;
 	}
+	.tekserve-testimonial .tekserve-testimonial-quote,
+    .section .tekserve-case-study{
+    	font-size: 1em;
+    }
+    
+    .tekserve-testimonial .tekserve-testimonial-quote p,
+    .section .tekserve-case-study p {
+    	font-size: .75em;
+    }
+    
+    .tekserve-testimonial .tekserve-testimonial-source {
+    	font-size: 1em;
+    }
+    
+    .section .tekserve-case-study {
+    	font-size: .75em;
+    }
+    
+    .section .tekserve-case-study p {
+    	font-size: 1em;
+    	font-weight: 200 !important;
+    }
+    
+    h2.tribe-events-list-event-title a,
+    h2.tribe-events-list-event-title a:visited,
+    .tribe-events-list-event-description a:visited,
+    .tribe-events-list-event-description a {
+    	font-size: .8em;
+    }
+    
+    .tribe-events-list .tribe-events-loop .tribe-events-content>p {
+    	display: none;
+    }
+    
+    .single-tribe_events #tribe-events-content h2.tribe-events-single-event-title,
+    .tribe-events-before-html h2,
+    .tribe-events-after-html h2,
+    #tribe-events-pg-template .tribe-events-content h2 {
+    	font-size: 1.125em !important;
+    }
 		
 }
 
@@ -7111,7 +7199,78 @@ text-align: center;
 		width: 200px;
 		display: block !important;
 	}
+	
+	.section .tekserverentals-cart-container {
+		width: 84%;
+		right: 0;
+		left: 1.5em;
+		top: 40px;
+		overflow-x: hidden;
+	}
+	
+	.section .tekserverentals-cart-container .simpleCart_items .headerRow div,
+	#addDialog .headerRow.div {
+		padding: .125em;
+		font-size: .5em
+	}
+	.section .tekserverentals-cart-container .simpleCart_items .itemRow div,
+	#addDialog .itemRow div {
+		padding: .25em;
+		font-size: .4em;
+	}
+	
+	.section .tekserverentals-cart-container .simpleCart_items .itemRow .item-decrement,
+	.section .tekserverentals-cart-container .simpleCart_items .itemRow .item-increment {
+		display: none;
+	}
+	
+	.section .tekserverentals-cart-container .simpleCart_items .itemRow .item-name,
+	#addDialog .itemRow .item-name {
+		width: 75px;
+	}
+	
+	.section .tekserverentals-cart-totals>div>div,
+	.section .tekserverentals-cart-totals>div>span {
+		padding: .1em;
+		font-size: .75em;
+	}
 
+	.section div.tekserverentals-cart-container div.emptyCart-button,
+	.section .tekserverentals-cart-container div.tekserverentals-cart-hidebutton,
+	.section div.tekserverentals-cart-container div.tekserverentals-cart-showbutton.button {
+		font-size: .75em;
+	}
+	
+	.section .tekserverentals-cart-container div.emptyCart-button {
+		margin-left: 106px;
+	}
+	
+	.section .tekserverentals-cart-container div.tekserverentals-cart-hidebutton.button {
+		width: auto;
+		margin-left: 148px;
+	}
+	
+	.section .tekserverentals-cart-container div.tekserverentals-cart-showbutton.button {
+		width: auto;
+		margin-left: 140px;
+	}
+	
+	.tekserve_rental_request_container .tekserve_rental_request_line_items table td {
+		display: table-cell;
+	}
+	
+	.single-rentalrequest #subnav {
+		display: none;
+	}
+	
+	#inner #tribe-events-pg-template {
+		padding: 1em 0;
+	}
+	
+	#tribe-bar-form #tribe-bar-views [name="tribe-bar-view"] {
+		display: none !important;
+	}
+		
 }
 
 #page {

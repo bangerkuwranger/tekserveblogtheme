@@ -11,7 +11,6 @@
  *
  */
  
- genesis_do_subnav();
 
 if ( !defined('ABSPATH') ) { die('-1'); } ?>
 

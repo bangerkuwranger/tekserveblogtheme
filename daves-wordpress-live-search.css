@@ -32,6 +32,7 @@ ul.search_results li {
 	color: #004d72;
 	background-color: #fff;
 	text-decoration: none;
+	text-indent: 0;
 }
 
 ul.search_results li:hover {

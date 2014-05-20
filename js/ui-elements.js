@@ -190,7 +190,7 @@ function swapHeaderImgs(pageWidth) {
 	}
 }
 
-function moveWaywardSubnav() {
+// function moveWaywardSubnav() {
 // 	if($j('.tribe-is-responsive #subnav').length != 0) {
 // 		var subNav = $j('.tribe-is-responsive #subnav').detach();
 // 		$j( "#inner" ).before(subNav);
@@ -211,7 +211,7 @@ function moveWaywardSubnav() {
 // 		var subNav = $j('.single-post #subnav').detach();
 // 		$j( "#inner" ).before(subNav);
 // 	}
-}
+// }
 
 $j('document').ready(function() { //call on load
 
@@ -232,7 +232,6 @@ $j('document').ready(function() { //call on load
 	});
 	
 	$j('#nav .wrap').append('<div class="closeButton" onmouseover="$j(this).remove();" onclick="$j(this).remove();">&nbsp;</div>'); //add close button to mobile nav
-	moveWaywardSubnav(); //move the subnav into place on an events or blog page
 	stretchSection(); //stretch sections widths at load
 	
 	var clientWidth = document.documentElement.clientWidth;
