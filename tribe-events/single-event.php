@@ -57,11 +57,11 @@ if ( !empty( $event_link ) ) {
 		</h3>
 		<?php echo $organizer; ?>
 		<?php echo $event_link ?>
-		<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
+		
 		<?php echo tribe_events_event_recurring_info_tooltip(); ?>
 		
 	</div>
-
+	<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 	<!-- Event header -->
 	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
 		<!-- Navigation -->
