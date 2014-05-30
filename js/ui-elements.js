@@ -45,11 +45,23 @@ function remMobileMeta() {
 	$j('#apple-mobile-web-app-capable, #apple-mobile-web-app-status-bar-style').remove();
 }
 
+var theSearchBox;
+
 function moveSearchMobile () {  //moves search outside of nav node; called on page load and window resize
-	$j('.right.search').insertAfter('#nav');
+	if(isCatalog) {
+		theSearchBox = $j('.right.search').detach();
+	}
+	else {
+		$j('.right.search').insertAfter('#nav');
+	}
 }
 function moveSearchBack () {  //moves search back into nav node; called on window resize
-	$j('.right.search').insertAfter('#nav div ul li:last-child');
+	if(isCatalog) {
+		$j(theSearchBox).insertAfter('#nav div ul li:last-child');
+	}
+	else {
+		$j('.right.search').insertAfter('#nav div ul li:last-child');
+	}
 }
 
 function mobileCloseButton() {
@@ -113,12 +125,14 @@ $j(window).resize(function() { //call on window resize
 
 function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
-    if ($j(window).scrollTop() > $jdiv.data("top")) { 
-        $j('#nav').css({'position': 'fixed', 'top': '0'}); 
-    }
-    else {
-        $j('#nav').css({'position': 'static', 'width': '100%', 'top': 'auto'});
-    }
+    if (isCatalog == false) {
+		if ($j(window).scrollTop() > $jdiv.data("top")) { 
+			$j('#nav').css({'position': 'fixed', 'top': '0'}); 
+		}
+		else {
+			$j('#nav').css({'position': 'static', 'width': '100%', 'top': 'auto'});
+		}
+	}
 }
 
 //function to scroll to object with ID targetID. Include hash symbol in targetID when calling function.
@@ -212,9 +226,10 @@ function swapHeaderImgs(pageWidth) {
 // 		$j( "#inner" ).before(subNav);
 // 	}
 // }
-
+var isCatalog = false;
 $j('document').ready(function() { //call on load
 
+	isCatalog =  $j('body').hasClass('tekserve-catalog-book');
 	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
 	$j('.dsection').parents('.wpb_wrapper, .wpb_column').addClass('thinMan');//set initial class for drawer containers
 	$j('.dsection').addClass('thinMan');

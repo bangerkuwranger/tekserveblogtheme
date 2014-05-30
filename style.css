@@ -471,6 +471,8 @@ body.custom-background {
 	height: 24px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	text-indent: 0 !important;
+	margin-left: -.35em !important;
 }
 
 .menu-primary li:last-child,
