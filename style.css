@@ -6501,6 +6501,10 @@ text-align: center;
 
 @media only screen and (max-width: 640px) {
 
+	.noSe {
+		display: none !important;
+	}
+	
 	#inner {
 		width: 568px;
 		overflow: hidden;
@@ -7303,9 +7307,7 @@ text-align: center;
 	padding-bottom: 0 !important;
 	margin-bottom: 0 !important;
 }
-.noSe {
-	display: none !important;
-}
+
 
 .page-template-static_content-php .wpb_row {
 	margin-bottom: 0 !important;
