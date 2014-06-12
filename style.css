@@ -276,6 +276,23 @@ body.custom-background {
 	box-shadow: 0 3px 9px #011011;
 	text-transform: uppercase;
 	z-index: 999;
+	width: 100%;
+	position: static;
+	top: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#nav.floating-menu {
+	position: fixed;
+	top: 0;
+	opacity: .5;
+}
+
+#nav.floating-menu:hover {
+	opacity: 1;
 }
 
 #subnav {
@@ -5659,6 +5676,21 @@ text-align: center;
 	#showHiddenForm {
 		display: none !important;
 	}
+	
+	body.admin-bar {
+		margin-top: -28px;
+		padding-bottom: 28px;
+	}
+	#wpadminbar {
+		top: auto !important;
+		bottom: 0;
+	}
+	#wpadminbar .quicklinks>ul>li {
+		position:relative;
+	}
+	#wpadminbar .ab-top-menu>.menupop>.ab-sub-wrapper {
+		bottom:28px;
+	}
 
 }
 
@@ -5800,6 +5832,10 @@ text-align: center;
 
 	#footer-widgets .latest-tweets {
 		margin: -40px 0 40px;
+	}
+	
+	#nav.floating-menu {
+		opacity: 1;
 	}
 	
 	.section {

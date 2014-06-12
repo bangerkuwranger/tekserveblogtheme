@@ -127,10 +127,11 @@ function fixDiv() { //fixes nav to top screen as user scrolls down
     var $jdiv = $j("#nav");
     if (isCatalog == false) {
 		if ($j(window).scrollTop() > $jdiv.data("top")) { 
-			$j('#nav').css({'position': 'fixed', 'top': '0'}); 
+			$j('#nav').addClass('floating-menu'); 
+			
 		}
 		else {
-			$j('#nav').css({'position': 'static', 'width': '100%', 'top': 'auto'});
+			$j('#nav').removeClass('floating-menu');
 		}
 	}
 }
