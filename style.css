@@ -70,6 +70,7 @@
 * Repair Status
 * Sitemap
 * RSS / Post / Isotope
+* Pardot
 * Revolution Slider
 * Responsive Design
 
@@ -5360,6 +5361,75 @@ form#status-front.status-front {
 .teaser_grid_container div.entry-content p {
 	font-size: .5em;
 	text-indent: 0;
+}
+/* Pardot
+------------------------------------------------------------ */
+
+.widget iframe.pardotform,
+.widget html {
+	border: 0;
+	height: auto;
+	min-height: 275px;
+	min-width: 270px;
+	overflow: hidden;
+	background: transparent !important;
+}
+
+.pardot-content form.form h4 {
+	color: #40a8c9;
+	font-weight: 900;
+	text-transform: uppercase;
+	line-height: 1;
+	font-size: 1.25em !important;
+	margin-top: 0 !important;
+}
+
+.pardot-content form.form p label {
+	float: left;
+	width: 97%;
+	color: #f36f37;
+	text-transform: uppercase;
+	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+	display: block;
+	margin: 0;
+}
+
+.pardot-content form.form h6 {
+	color: #f36f37;
+}
+
+.pardot-content form.form p input[type='submit'] {
+	-moz-border-radius: 12px 0 12px;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-border-radius: 12px 0 12px;
+	-webkit-transition: all 0.2s ease-in-out;
+	color: #fff;
+	border-radius: 12px 0 12px;
+	border: none;
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 1em 0;
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	padding: .25em .33em .2em;
+	float: left !important;
+	min-width: 200px;
+	width: 100%;
+	border: 0px ridge #40a8c9;
+	color: #FFF;
+	background-color: #40a8c9;
+	border-radius: 6px;
+	padding: 4px 8px;
+}
+
+.pardot-content form.form p input[type='submit']:hover {
+	border: 0px solid #000;
+	color: #fff;
+	background-color: #f37f37;
 }
 
 /* Revolution Slider

@@ -166,7 +166,7 @@ function scrollToID(targetID, delay, isHash, offsetV) {
 	}
 	if(!offset_trigger) {
 		if(!offset_top) {
-			offset_trigger = $j(targetID).offset().top;
+			offset_trigger = $j('#'+targetID).offset().top;
 		}
 		else {
 			offset_trigger = offset_top;
