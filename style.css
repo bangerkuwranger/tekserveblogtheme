@@ -5354,14 +5354,20 @@ form#status-front.status-front {
 }
 
 .teaser_grid_container h2.post-title {
+	font-size: 1em;
+	text-indent: 0;
+}
+
+.teaser_grid_container div.entry-content {
 	font-size: .75em;
 	text-indent: 0;
 }
 
-.teaser_grid_container div.entry-content p {
-	font-size: .5em;
-	text-indent: 0;
+.teaser_grid_container a.vc_read_more {
+	text-transform: uppercase;
+	font-weight: 900;
 }
+
 /* Pardot
 ------------------------------------------------------------ */
 
