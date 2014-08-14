@@ -65,6 +65,13 @@ add_action( 'genesis_after_header', 'genesis_do_subnav' );
 /** Genesis Single Post Navigation: Reverse link direction */
 define( 'GSPN_REVERSE_LINK_DIRECTION', TRUE );
 
+add_action('get_header', 'remove_page_titles');
+function remove_page_titles() {
+	if( get_post_type() == 'page' ) {
+		remove_action('genesis_post_title', 'genesis_do_post_title');
+	}
+}
+
 /** Add new image sizes */
 add_image_size( 'featured-circle', 300, 300, TRUE );
 add_image_size( 'featured-square', 300, 300, TRUE );
@@ -188,11 +195,20 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
- 	wp_enqueue_script ( 'scroll-into-view', get_stylesheet_directory_uri() . '/js/jquery.scrollintoview.min.js', array( 'jquery' ), '', true );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
+//  	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'jquery-ui-core' );
+	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'icaps', get_stylesheet_directory_uri() . '/js/icaps.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
+	$jsdata = array(
+		'cssurl'	=> get_stylesheet_directory_uri()
+	);
+	wp_localize_script( 'loadpage', 'themeInfo', $jsdata );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -459,15 +475,6 @@ array(
 			'version' 	=> '1.2.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-vcbuttons.zip'
-		),
-		
-		array(
-			'name' 		=> 'Templatera',
-			'slug' 		=> 'templatera',
-			'required' 	=> false,
-			'version' 	=> '1.0',
-			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory_uri() . '/lib/templatera.zip'
 		),
 				
 		array(

@@ -25,7 +25,25 @@ function getContrast() { // set contrasting color based on background color
 		contrastColor = 'rgb(64, 168, 201)';
 	}
 }
-function chokeWidth(chokeAction) {
+
+function goToAnchor() { //rewrite anchor action needed thanks to crazy image requirements
+	hash = document.location.hash;
+	if (hash !="") {
+		setTimeout(function() {
+			if (location.hash) {
+				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
+				window.scrollTo(0, 0);
+				window.location.href = hash;
+				window.scrollBy(0, offset);
+			}
+		}, 500);
+	}
+	else {
+		return false;
+	}
+}
+
+function chokeWidth(chokeAction) { // force mobile width, even on dynamic plugin elements that extend beyond body
 	if (chokeAction == 'choke'){
 		$j('#wrap').css({'width': '320px', 'padding': 0, 'margin': 0, 'overflow-x': 'hidden'});
 	}
@@ -64,10 +82,6 @@ function moveSearchBack () {  //moves search back into nav node; called on windo
 	}
 }
 
-function mobileCloseButton() {
-
-		$j('#nav .wrap .closeButton').toggle();
-}
 
 //stretchSection needs browser detection to set % correctly
 function stretchSection() {  //function is called on load and on window resize; stretches bgwrapper to viewport width and sets pos & padding
@@ -99,6 +113,23 @@ function stretchSection() {  //function is called on load and on window resize; 
 	}
 }
 
+function fixDiv() { //fixes nav to top screen as user scrolls down, add offset to content
+    var $jdiv = $j("#nav");
+    if (isCatalog == false) {
+		if ($j(window).scrollTop() > $jdiv.data("top")) { 
+			$jdiv.addClass('floating-menu');
+			var offset = parseInt( $jdiv.outerHeight(true) ) + parseInt( $j('#header').outerHeight(true) ) + parseInt( $j('#subnav').outerHeight(true) );
+			console.log(offset);
+			$j('#inner').css('margin-top', offset+'px');
+			
+		}
+		else {
+			$jdiv.removeClass('floating-menu');
+			$j('#inner').css('margin-top', 0);
+		}
+	}
+}
+
 $j(window).resize(function() { //call on window resize
 	stretchSection(); //resize call for section stretch
 	clientWidth = $j(window).width();
@@ -121,70 +152,15 @@ $j(window).resize(function() { //call on window resize
 		remMobileMeta(); //call on resize if window size > 1024, rems apple's happy lil metas for ios
 	}
 	swapHeaderImgs(clientWidth); //call on resize if window size becomes < 768, swaps image to mobile
+	fixDiv();
 });
 
-function fixDiv() { //fixes nav to top screen as user scrolls down
-    var $jdiv = $j("#nav");
-    if (isCatalog == false) {
-		if ($j(window).scrollTop() > $jdiv.data("top")) { 
-			$j('#nav').addClass('floating-menu'); 
-			
-		}
-		else {
-			$j('#nav').removeClass('floating-menu');
-		}
-	}
-}
 
-//function to scroll to object with ID targetID. Include hash symbol in targetID when calling function.
+
+//deprecated
 
 function scrollToID(targetID, delay, isHash, offsetV) {
-	if(isHash == "" || isHash == undefined) {
-		isHash = false;
-	}
-	if(delay == "" || delay == undefined) {
-		delay = 0;
-	}
-	if(offsetV == "" || offsetV == undefined) {
-		offsetV = 0;
-	}
-	if(targetID.indexOf('.') !== -1) {
-		targetID = '';
-		return false;
-	}
-	console.log(targetID);
-	if( $j('#find-'+targetID.substring(1)).length != 0 ) {
-		var offset_top = $j('#find-'+targetID.substring(1)).offset();
-	}
-    var offset_trigger;
-    if( $j('#extra1-'+targetID.substring(1)).length != 0 ) {
-		offset_trigger = $j('#extra1-'+targetID.substring(1)).offset();
-		offset_trigger = offset_trigger.top;
-		if(($j('#extra1-'+targetID.substring(1)).attr('name')) && (isHash == true)) {
-			offset_trigger = $j($j('#extra1-'+targetID.substring(1)).attr('name')).offset().top;
-		}
-	}
-	if(!offset_trigger) {
-		if(!offset_top) {
-			offset_trigger = $j('#'+targetID).offset().top;
-		}
-		else {
-			offset_trigger = offset_top;
-		}
-	}
-	console.log('pretrigoff - '+offset_trigger);
-	console.log('offsetV - '+offsetV);
-	offset_trigger = offset_trigger - 50 - offsetV;
-	console.log(offset_top);
-	console.log(offset_trigger);
-	setTimeout(function(){
-		$j('html, body').animate({
-			scrollTop: offset_trigger
-		}, { 
-			duration: 500, 
-			easing: 'swing'
-		});
-	}, delay);
+	gotToAnchor();
 }
 
 //function to swap programmatically added mobile header image url with existing header image url.
@@ -206,7 +182,7 @@ function swapHeaderImgs(pageWidth) {
 }
 
 var isCatalog = false;
-$j('document').ready(function() { //call on load
+$j(window).bind("load", function() { //call on load
 
 	isCatalog =  $j('body').hasClass('tekserve-catalog-book');
 	$j('.tekserve_vendors').addClass('bgwrapper');//add bgwrapper to vendors, ala drawers (i.e. inside of row containers. Allows independence from VC framework.)
@@ -443,21 +419,6 @@ $j('document').ready(function() { //call on load
 		}
 	});
 	
-	//scroll to id, intransigent swine! ///////NEED TO FIND HEIGHT of closed Drawer
-	setTimeout(function() {
-		$j('.drawertrigger').each(function() {
-			var myOffset = ($j(this).offset()).top;
-			$j(this).attr('name', myOffset);
-		});
-	
-		if(window.location.hash) {
-			var hashTarget = window.location.hash;
-			console.log(hashTarget);
-			if($j(hashTarget).hasClass('find-me')){
-				scrollToID(hashTarget, 500, true);
-			}
-		}
-	}, 1000);
 	
 	//make menu fit larger search box if tekserve custom search exists
 	if($j('.tekserve_custom_search').length != 0) {
@@ -466,4 +427,5 @@ $j('document').ready(function() { //call on load
 	if(clientWidth < 500){
 		chokeWidth('choke');
 	}
+	goToAnchor();
 });
