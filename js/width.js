@@ -179,7 +179,7 @@ function unstackEm() {
 
 //moves search outside of nav node; called on page load and window resize
 function moveSearchMobile() {  
-		$j('.right.search').insertAfter('#nav').wrap("<div class='innerRowWrap' />");
+		$j('.right.search').insertBefore('#inner .wrap').wrap("<div class='innerRowWrap' />");
 } //end moveSearchMobile()
 
 //moves search back into nav node; called on window resize
