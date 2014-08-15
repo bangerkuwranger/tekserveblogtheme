@@ -273,6 +273,14 @@ array(
 			'version' 	=> '4.2.2',
 			'force_activation' 	=> false,
 		),
+		
+		array(
+			'name' 		=> 'Better WordPress Minify',
+			'slug' 		=> 'bwp-minify',
+			'required' 	=> true,
+			'version' 	=> '1.3.1',
+			'force_activation' 	=> false,
+		),
 				
 		array(
 			'name' 		=> 'Collapse-Pro-Matic',
