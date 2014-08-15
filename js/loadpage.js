@@ -29,6 +29,12 @@ $j(function() {
 
 $j(window).bind('load', function() {
 
+	rearrangeContent(clientWidth); ////pass window width to various functions in width.js on full load
+		$j(window).resize(function() {
+			clientWidth = document.documentElement.clientWidth;
+			rearrangeContent(clientWidth);
+		});  //pass window width to various functions in width.js on resize
+
 	if ($j('body').hasClass('page')) {
 		
 		//remove empty paragraphs
@@ -61,12 +67,6 @@ $j(window).bind('load', function() {
 		
 		}); //end $j('.vc_row').each( function()
 		
-		rearrangeContent(clientWidth); ////pass window width to various functions in width.js on full load
-		$j(window).resize(function() {
-			clientWidth = document.documentElement.clientWidth;
-			rearrangeContent(clientWidth);
-		});  //pass window width to various functions in width.js on resize
-		
 		additionalFunctions(); //call external routines
 		
 		console.log('loaded');
@@ -77,6 +77,8 @@ $j(window).bind('load', function() {
 		goToAnchor();
 		bindAnchors();
 	} //end if ( $j('body').hasClass('page') )
+	
+	
 
 }); //end onload function
 

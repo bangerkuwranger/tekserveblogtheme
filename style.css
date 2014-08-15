@@ -5958,6 +5958,10 @@ span.trademark:after {
 display: none;
 }
 
+.search-results .entry-content {
+margin-top: 0;
+}
+
 .noSe {
 	display: none !important;
 }
