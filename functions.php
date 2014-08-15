@@ -67,7 +67,7 @@ define( 'GSPN_REVERSE_LINK_DIRECTION', TRUE );
 
 add_action('get_header', 'remove_page_titles');
 function remove_page_titles() {
-	if( get_post_type() == 'page' ) {
+	if( get_post_type() == 'page' && !(is_search()) ) {
 		remove_action('genesis_post_title', 'genesis_do_post_title');
 	}
 }
@@ -81,6 +81,15 @@ genesis_unregister_layout( 'sidebar-content' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
+
+add_filter( 'get_the_content_more_link', 'search_page_read_more_link' );
+function search_page_read_more_link() {
+if ( is_search() ):
+	return '... <a class="more-link" href="' . get_permalink() . '">See This Result</a>';
+	else:
+	return '... <a class="more-link" href="' . get_permalink() . '">Read More...</a>';
+	endif;
+}
 
 
 /** Add odd/even post class */

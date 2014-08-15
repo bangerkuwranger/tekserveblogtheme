@@ -341,7 +341,7 @@ body.custom-background {
 }
 
 #inner .wrap {
-	width: 1200px;
+	max-width: 1200px;
 }
 
 .page #inner .wrap {
@@ -5954,6 +5954,9 @@ span.trademark:after {
 	opacity: 1;
 }
 
+.search-results .post-meta {
+display: none;
+}
 
 .noSe {
 	display: none !important;
