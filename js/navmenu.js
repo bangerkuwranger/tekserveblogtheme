@@ -34,20 +34,32 @@ function navInit() {
   	
   	//bind fixDiv() to window scroll; enables fixed topnav
   	$j(window).scroll(fixDiv);
+  	
+  	//add active class to items pointing to current subdomain (not counting www)
+  	activateSubdomainNavItems();
 	
 } //end navInit()
 
-function fixDiv() { //fixes nav to top screen as user scrolls down, add offset to content
+
+//fixes nav to top screen as user scrolls down, add offset to content
+function fixDiv() { 
+
     var $jdiv = $j("#nav");
 	if ($j(window).scrollTop() > $jdiv.data("top")) { 
 		$jdiv.addClass('floating-menu');
-// 		var offset = parseInt( $jdiv.outerHeight(true) ) + parseInt( $j('#header').outerHeight(true) ) + parseInt( $j('#subnav').outerHeight(true) );
-// 		console.log(offset);
-// 		$j('#inner').css('margin-top', offset+'px');
-		
 	}
 	else {
 		$jdiv.removeClass('floating-menu');
-// 		$j('#inner').css('margin-top', 0);
 	} //end if ($j(window).scrollTop() > $jdiv.data("top"))
+	
 } //end fixDiv()
+
+//adds active class to menu items for subdomains when on that subdomain
+function activateSubdomainNavItems() {
+	var whereAmI = window.URL;
+	$j('.menu-primary li.menu-item').each(function() {
+		if ($j(this).attr('href') == whereAmI) {
+			$j(this).addClass('current-menu-item');
+		} //end if($j(this).attr('href') == whereAmI)
+	}); //end $j('.menu-primary li.menu-item').each(function()
+} //end activateSubdomainNavItems()

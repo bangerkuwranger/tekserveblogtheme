@@ -546,16 +546,14 @@ body.custom-background {
 }
 
 .menu-primary li:last-child,
+.menu-primary li:nth-last-child(2),
 .menu-secondary li:last-child {
 	border: none;
 }
 
 .menu-primary a,
 .menu-secondary a,
-#header .menu a,
-.menu-primary .current-menu-item a,
-.menu-secondary .current-menu-item a,
-#header .menu .current-menu-item a {
+#header .menu a {
 	color: #fff;
 	display: block;
 	padding: 15px 20px;
@@ -613,7 +611,10 @@ body.custom-background {
 #header .menu li li a:hover,
 .menu-primary li.current-menu-item a,
 .menu-secondary li.current-menu-item a,
-#header .menu li.current-menu-item a {
+#header .menu li.current-menu-item a,
+.menu-primary .current-page-ancestor a,
+.menu-secondary .current-page-ancestor a,
+#header .menu .current-page-ancestor a  {
 	color: #004d72;
 }
 
@@ -702,10 +703,11 @@ ul.menu li.sfHover ul,
 		min-height: 1.5em;
 		background: #f36f37 url(images/navmenumobile@2x.png) no-repeat 50%;
 		background-size: 60%;
+		font-size: 1.5em;
 	}
 	.menu-primary li {
 		display: none; /* hide all <li> items */
-		margin: 0;
+		margin: 0 0 .5em;
 	}
 	#nav .current {
 		display: block; /* show only current <li> item */
@@ -2281,6 +2283,35 @@ table.footable.breakpoint>tbody>tr.footable-detail-show>td.footable-last-column.
 		margin: 2em 0;
 	}
 	
+}
+
+@media only screen and (max-width: 500px) {
+
+	.department_directory table.responsivetable {
+		outline: 0;
+	}
+	
+	.department_directory table.responsivetable:before {
+		content: 'Directory:';
+		font-size: 1.75em;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+	
+	.department_directory table.responsivetable thead {
+		display: none;
+	}
+	
+	.department_directory table.responsivetable td {
+		display: block;
+		margin-bottom: 1em;
+		max-width: 80%;
+	}
+	
+	.department_directory table.responsivetable tr td:first-child {
+		font-weight: 900;
+	}
+
 }
 
 
