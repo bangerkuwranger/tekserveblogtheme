@@ -307,7 +307,7 @@ body.custom-background {
 #nav.floating-menu {
 	position: fixed;
 	top: 0;
-	opacity: .5;
+	opacity: .9;
 }
 
 #nav.floating-menu:hover {

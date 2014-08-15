@@ -31,5 +31,23 @@ function navInit() {
 	$j( ".menu-primary" ).click(function() {
     		$j( this ).toggleClass( "hovermenu" );
   	});
+  	
+  	//bind fixDiv() to window scroll; enables fixed topnav
+  	$j(window).scroll(fixDiv);
 	
 } //end navInit()
+
+function fixDiv() { //fixes nav to top screen as user scrolls down, add offset to content
+    var $jdiv = $j("#nav");
+	if ($j(window).scrollTop() > $jdiv.data("top")) { 
+		$jdiv.addClass('floating-menu');
+// 		var offset = parseInt( $jdiv.outerHeight(true) ) + parseInt( $j('#header').outerHeight(true) ) + parseInt( $j('#subnav').outerHeight(true) );
+// 		console.log(offset);
+// 		$j('#inner').css('margin-top', offset+'px');
+		
+	}
+	else {
+		$jdiv.removeClass('floating-menu');
+// 		$j('#inner').css('margin-top', 0);
+	} //end if ($j(window).scrollTop() > $jdiv.data("top"))
+} //end fixDiv()

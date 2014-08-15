@@ -144,12 +144,16 @@ function untabletV() {
 
 function tabletH() {
 	if (prevWidth >= tH) {
+	
+		mobileMeta();
 		
 	} //end if(prevWidth >= tH)
 } //end tabletH()
 
 function untabletH() {
 	if (prevWidth < tH) {
+		
+		remMobileMeta();
 		
 	} //endif(prevWidth < tH) {
 } //end untabletH()
@@ -209,3 +213,14 @@ function shutMobileDrawers() {
 		$j('.collapseomatic_content').css('display', 'none');
 	} //end if ( !($j('body').data('hasRun')) )
 } //end shutMobileDrawers()
+
+//add web-app meta to head
+function mobileMeta() {
+	$j('head').append('<meta id="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes">');
+	$j('head').append('<meta id="apple-mobile-web-app-status-bar-style" name="apple-mobile-web-app-status-bar-style" content="black">');
+} //end mobileMeta()
+
+//remove web-app meta from head
+function remMobileMeta() {
+	$j('#apple-mobile-web-app-capable, #apple-mobile-web-app-status-bar-style').remove();
+} //end remMobileMeta()

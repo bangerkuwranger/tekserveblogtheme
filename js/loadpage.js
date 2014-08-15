@@ -74,6 +74,8 @@ $j(window).bind('load', function() {
 		$j('#pageLoad').remove();
 		$j('#inner').slideDown(); // show content after assigning classes
 		$rev_slider.revprev().revnext(); //reload first slide after revslider to avoid squishing
+		goToAnchor();
+		bindAnchors();
 	} //end if ( $j('body').hasClass('page') )
 
 }); //end onload function
@@ -83,7 +85,7 @@ $j(window).bind('load', function() {
 ******/
 
 function scrollToID() {
-	return false;
+	goToAnchor();
 }
 
 /******
@@ -95,3 +97,43 @@ function additionalFunctions() {
 	detailBoxBinder();
 	
 } //end additionalFunctions()
+
+/******
+	anchor handler processes offset for nav that is removed from document flow
+******/
+
+//rewrite anchor action needed thanks to crazy image requirements
+function goToAnchor() { 
+	hash = document.location.hash;
+	if (hash !="") {
+		setTimeout(function() {
+			if (location.hash) {
+				window.scrollTo(0, 0);
+				$j('#nav').addClass('floating-menu');
+				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
+				window.location.href = hash;
+				window.scrollBy(0, offset);
+			} //end if (location.hash)
+		}, 500); //end setTimeout(function()
+	}
+	else {
+		return false;
+	} //end if (hash !="")
+} //end gotToAnchor()
+
+//same as goToAnchor, but for anchor elements targeting the same page
+function bindAnchors() {
+	$j("a[href^='#']").addClass('anchor').click(function(event) {
+		event.preventDefault();
+		var pageHash = $j(this).attr('href');
+		setTimeout(function() {
+			if (pageHash != "" && pageHash != "#" && pageHash != "#!") {
+				window.scrollTo(0, 0);
+				$j('#nav').addClass('floating-menu');
+				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
+				window.location.href = pageHash;
+				window.scrollBy(0, offset);
+			} //end if (location.hash)
+		}, 500); //end setTimeout(function()
+	}); //end .click(function()
+} //end bindAnchors()
