@@ -3,7 +3,7 @@
 ******/
 
 var $j = jQuery; 
-var loader = '<div id="pageLoad" class="innerRowWrap" style="margin: 0 auto; text-align: center; padding: 2em 0;"><img src="' + themeInfo['cssurl'] + '/images/ajax-loader.gif" alt="Page Loading" /></div>';
+var loader = '<div id="pageLoad"><img src="' + themeInfo['cssurl'] + '/images/ajax-loader.gif" alt="Page Loading" /></div>';
 var clientWidth = document.documentElement.clientWidth;
 var $rev_slider;
 
