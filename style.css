@@ -189,10 +189,10 @@ textarea {
 
 select {
 	width: 100%;
-	-webkit-appearance: menulist;
+	-webkit-appearance: list-menu;
 	-moz-appearance: menulist;
-	-o-appearance: menulist;
-	appearance: menulist;
+	-o-appearance: list-menu;
+	appearance: list-menu;
 	padding-left: 1em;
 	background-color: #40a8c9;
 	color: #fff;
@@ -668,7 +668,6 @@ ul.menu li.sfHover ul,
 }
 .search-form {
 	position: relative;
-	right: -20px;
 	float: right;
 	width: 200px;
 }
@@ -838,13 +837,13 @@ ul.tekserve_custom_search_menu {
 	li.right.search {
 		list-style: none;
 		margin-top: 2em;
+		text-align: center;
 	}
 
 	.search-form {
 		position: relative;
-		right: 18px;
 		float: none;
-		width: 280px;
+		width: 200px;
 		margin: 0 auto;
 	}
 	
@@ -862,7 +861,7 @@ ul.tekserve_custom_search_menu {
 		left: 32px;
 		font-size: 1.34px;
 		min-width: 125px;
-		float: right;;
+		float: right;
 	}
 	
 	.tekserve_custom_search #search-option {
@@ -3251,6 +3250,14 @@ color: #f06c34 !important;
 	
 }
 
+@media only screen and (max-width: 500px) {
+	
+	.innerRowWrap {
+		max-width: 290px !important;
+	}
+	
+}
+
 /* Drawers
 ------------------------------------------------------------ */
 
@@ -3828,7 +3835,7 @@ border-radius: 4px;}
 }
 
 /* ie button fix */
-.tekserve-faq-boxes #menu ul a:hover, .hero-search .btn, .btn-primary {border-radius: 0\9}
+.tekserve-faq-boxes #menu ul a:hover, .hero-search .btn, .btn-primary {border-radius: 9}
 
 .tekserve-faq-boxes #hero-image { background-position: 0% 0;}
 
@@ -5843,7 +5850,7 @@ text-align: center;
 
 }
         
-//***misc***//
+/***misc***/
 
 #page {
 	position: absolute;
@@ -5920,11 +5927,3 @@ span.trademark:after {
 .noSe {
 	display: none !important;
 }
-
-/* 
-@media only screen and (max-width: 320px) {
-	.page .page * {
-		max-width: 320px !important;
-	}
-}
- */
