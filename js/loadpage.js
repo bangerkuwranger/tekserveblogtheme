@@ -13,6 +13,7 @@ var $rev_slider;
 
 $j(function() {
 
+	//Create loading image and insert into body while rearranging elements
 	if ($j('body').hasClass('page')) {
 		$j('#footer-widgets').before(loader);
 		console.log('loading');
@@ -20,7 +21,7 @@ $j(function() {
 	
 	//Initialize nav menu functions
 	navInit();
-
+	
 });
 
 /******
@@ -29,18 +30,12 @@ $j(function() {
 
 $j(window).bind('load', function() {
 
-	rearrangeContent(clientWidth); ////pass window width to various functions in width.js on full load
-		$j(window).resize(function() {
-			clientWidth = document.documentElement.clientWidth;
-			rearrangeContent(clientWidth);
-		});  //pass window width to various functions in width.js on resize
-
 	if ($j('body').hasClass('page')) {
 		
 		//remove empty paragraphs
 		$j('p:empty').remove();
 
-		//create internal wraps for text color/width of internal content
+		//create internal wraps for text color/width of internal content, add fullHeight class to page columns with contrasting backgrounds to row with correct bgcolor wrap
 		$j('.vc_row').each(function() {
 			console.log(this);
 			var bgcolor = $j(this).css('background-color');
@@ -48,22 +43,54 @@ $j(window).bind('load', function() {
 			
 				case "rgb(0, 77, 114)":
 					//darkblue
-					$j(this).find('.wpb_column').wrapAll("<div class='innerRowWrap darkblue' />");
+					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap darkblue' />");
 					break;
 				case "rgb(64, 168, 201)":
 					//lightblue
-					$j(this).find('.wpb_column').wrapAll("<div class='innerRowWrap lightblue' />");
+					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap lightblue' />");
 					break;
 				case "rgb(243, 111, 55)":
 					//orange
-					$j(this).find('.wpb_column').wrapAll("<div class='innerRowWrap orange' />");
+					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap orange' />");
 					break;
 				default:
 					//assumed white, catchall at least wraps any other color
-					$j(this).find('.wpb_column').wrapAll("<div class='innerRowWrap' />");
+					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap' />");
 					
 			
 			} //end switch(bgcolor)
+			
+			$j(this).find(".wpb_column").filter(function() {
+				return this.className.match(/\bvc_custom/);
+			}).each(function() {
+				var colbg = $j(this).css('background-color');
+				if ( colbg != bgcolor ) {
+					
+					$j(this).addClass('fullHeight');
+					
+					switch (colbg) {
+			
+						case "rgb(0, 77, 114)":
+							//darkblue
+							$j(this).wrap("<div class='darkblue' />");
+							break;
+						case "rgb(64, 168, 201)":
+							//lightblue
+							$j(this).wrap("<div class='lightblue' />");
+							break;
+						case "rgb(243, 111, 55)":
+							//orange
+							$j(this).wrap("<div class='orange' />");
+							break;
+						default:
+							//assumed white, catchall at least wraps any other color
+							$j(this).wrap("<div class='white' />");
+					
+					} //end switch(colbg)
+					
+				} //end if ($j(this).css('background-color') != bgcolor)
+				
+			}); //end $j(this).find(".wpb_column[class^='vc_custom']").each(function()
 		
 		}); //end $j('.vc_row').each( function()
 		
@@ -71,13 +98,20 @@ $j(window).bind('load', function() {
 		
 		console.log('loaded');
 		$rev_slider = $j(".rev_slider");
-		$j('#pageLoad').remove();
+		$j('#pageLoad').slideUp();
 		$j('#inner').slideDown(); // show content after assigning classes
-		$rev_slider.revprev().revnext(); //reload first slide after revslider to avoid squishing
+		setTimeout(function() {
+			$rev_slider.revprev().revnext(); //reload first slide after revslider to avoid squishing
+		}, 200);
 		goToAnchor();
 		bindAnchors();
 	} //end if ( $j('body').hasClass('page') )
 	
+	rearrangeContent(clientWidth); ////pass window width to various functions in width.js on full load
+	$j(window).resize(function() {
+		clientWidth = document.documentElement.clientWidth;
+		rearrangeContent(clientWidth);
+	});  //pass window width to various functions in width.js on resize
 	
 
 }); //end onload function

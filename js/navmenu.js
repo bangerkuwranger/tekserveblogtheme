@@ -36,7 +36,7 @@ function navInit() {
   	$j(window).scroll(fixDiv);
   	
   	//add active class to items pointing to current subdomain (not counting www)
-  	activateSubdomainNavItems();
+//   	activateSubdomainNavItems();
 	
 } //end navInit()
 
@@ -55,11 +55,15 @@ function fixDiv() {
 } //end fixDiv()
 
 //adds active class to menu items for subdomains when on that subdomain
-function activateSubdomainNavItems() {
-	var whereAmI = window.URL;
-	$j('.menu-primary li.menu-item').each(function() {
-		if ($j(this).attr('href') == whereAmI) {
-			$j(this).addClass('current-menu-item');
-		} //end if($j(this).attr('href') == whereAmI)
-	}); //end $j('.menu-primary li.menu-item').each(function()
-} //end activateSubdomainNavItems()
+// function activateSubdomainNavItems() {
+// 	var whereAmI = window.URL;
+// 	$j('.menu-primary li.menu-item').each(function() {
+// 		var thisURL = $j(this).attr('href');
+// 		if ( thisURL == whereAmI) {
+// 			$j(this).addClass('current-menu-item');
+// 		}
+// 		else if ( (thisURL.indexOf('www') < 1) && (this.hostname == whereAmI.hostname) ) {
+// 			$j(this).addClass('current-page-ancestor');
+// 		} //end if($j(this).attr('href') == whereAmI)
+// 	}); //end $j('.menu-primary li.menu-item').each(function()
+// } //end activateSubdomainNavItems()

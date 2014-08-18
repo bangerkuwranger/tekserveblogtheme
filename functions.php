@@ -72,6 +72,16 @@ function remove_page_titles() {
 	}
 }
 
+/** Add Twitter Meta to single post pages **/
+add_action('wp_head','twitterMeta');
+
+function twitterMeta() {
+	if( is_single() ) {
+		echo '<meta name="twitter:widgets:csp" content="on">';
+	}
+}
+
+
 /** Add new image sizes */
 add_image_size( 'featured-circle', 300, 300, TRUE );
 add_image_size( 'featured-square', 300, 300, TRUE );
