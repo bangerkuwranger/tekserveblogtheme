@@ -4791,6 +4791,28 @@ table.sortable td a {
 	padding: 1em;
 }
 
+#sidebar .nrelate_default a.nr_panel,
+#sidebar .nrelate_default a.nr_panel:hover {
+	margin-right: 1em !important;
+	padding: 0;
+	max-width: 60px;
+}
+
+#sidebar .nrelate_default .nr_panel .nr_post_title {
+	font-weight: normal;
+	font-size: .75em;
+}
+
+#sidebar .nrelate_default a.nr_panel .nr_img_div img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+#sidebar .nrelate_default h3.nr_title {
+	font-size: 1.75em;
+	font-weight: bold;
+}
+
 .nrelate_default .nr_img_div {
 	border: none !important;
 }
