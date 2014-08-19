@@ -6,8 +6,6 @@
  * Override this template in your own theme by creating a file at [your-theme]/tribe-events/list/single-event.php
  *
  * @package TribeEventsCalendar
- * @since  3.0
- * @author Modern Tribe Inc.
  *
  */
 
@@ -26,20 +24,23 @@ if ($venue_address = tribe_get_meta( 'tribe_event_venue_address' ) ) {
 	$venue_details[] = $venue_address;	
 }
 // Venue microformats
-$has_venue = ( $venue_details ) ? ' vcard': '';
 $has_venue_address = ( $venue_address ) ? ' location': '';
 ?>
 
 <!-- Event Cost -->
-<?php if ( tribe_get_cost() ) : ?> 
+<?php if ( tribe_get_cost() ) { ?> 
 	<div class="tribe-events-event-cost">
 		<span><?php echo tribe_get_cost( null, true ); ?></span>
 	</div>
-<?php endif; ?>
+<?php } else { ?>
+	<div class="tribe-events-event-cost">
+		<span>Free</span>
+	</div>
+<?php } ?>
 
 <!-- Event Title -->
 <?php do_action( 'tribe_events_before_the_event_title' ) ?>
-<h2 class="tribe-events-list-event-title summary">
+<h2 class="tribe-events-list-event-title entry-title summary">
 	<a class="url" href="<?php echo tribe_get_event_link() ?>" title="<?php the_title() ?>" rel="bookmark">
 		<?php the_title() ?>
 	</a>
@@ -48,7 +49,7 @@ $has_venue_address = ( $venue_address ) ? ' location': '';
 
 <!-- Event Meta -->
 <?php do_action( 'tribe_events_before_the_meta' ) ?>
-<div class="tribe-events-event-meta <?php echo $has_venue . $has_venue_address; ?>">
+<div class="tribe-events-event-meta vcard"> <div class="author <?php echo $has_venue_address; ?>">
 
 	<!-- Schedule & Recurrence Details -->
 	<div class="updated published time-details">
@@ -77,7 +78,7 @@ $has_venue_address = ( $venue_address ) ? ' location': '';
 	}
 	echo $organizer; ?>
 
-</div><!-- .tribe-events-event-meta -->
+</div> </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
 <!-- Event Image -->

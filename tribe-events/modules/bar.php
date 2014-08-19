@@ -22,7 +22,6 @@ global $wp;
 $current_url = esc_url( add_query_arg( $wp->query_string, '', home_url( $wp->request ) ) );
 
  ?>
-
 <?php do_action('tribe_events_bar_before_template') ?>
 <div id="tribe-events-bar">
 

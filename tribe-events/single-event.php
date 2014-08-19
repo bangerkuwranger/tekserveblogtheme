@@ -106,3 +106,11 @@ if ( !empty( $event_link ) ) {
 	</div><!-- #tribe-events-footer -->
 
 </div><!-- #tribe-events-content -->
+<script type="text/javascript">
+	jQuery(function() {
+		if (jQuery('ul.tribe-related-events').length > 0) {
+			jQuery('.tribe-events-related-events-title').insertAfter('.tribe_events.entry');
+			jQuery('.tribe-related-events').insertAfter('.tribe-events-related-events-title');
+		}
+	});
+</script>
