@@ -227,6 +227,40 @@ table td, table th {
 	text-align: left;
 }
 
+
+.orange h1,
+.darkblue h1,
+.lightblue h1,
+.orange h2,
+.darkblue h2,
+.lightblue h2,
+.orange h3,
+.darkblue h3,
+.lightblue h3,
+.orange h4,
+.darkblue h4,
+.lightblue h4,
+.orange h5,
+.darkblue h5,
+.lightblue h5,
+.orange h6,
+.darkblue h6,
+.lightblue h6,
+.orange p,
+.darkblue p,
+.lightblue p,
+.orange ul,
+.darkblue ul,
+.lightblue ul,
+.orange ol,
+.darkblue ol,
+.lightblue ol,
+.orange li,
+.darkblue li,
+.lighblue li {
+	color: #fff;
+}
+
 /* Defaults - Responsive
 ------------------------------------------------------------ */
 
