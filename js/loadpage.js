@@ -36,7 +36,7 @@ $j(window).bind('load', function() {
 		$j('p:empty').remove();
 
 		//create internal wraps for text color/width of internal content, add fullHeight class to page columns with contrasting backgrounds to row with correct bgcolor wrap
-		$j('.vc_row').each(function() {
+		$j('.vc_row, .wpb_row').each(function() {
 			console.log(this);
 			var bgcolor = $j(this).css('background-color');
 			switch (bgcolor) {
