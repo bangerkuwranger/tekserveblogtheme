@@ -37,60 +37,77 @@ $j(window).bind('load', function() {
 
 		//create internal wraps for text color/width of internal content, add fullHeight class to page columns with contrasting backgrounds to row with correct bgcolor wrap
 		$j('.vc_row, .wpb_row').each(function() {
-			console.log(this);
-			var bgcolor = $j(this).css('background-color');
-			switch (bgcolor) {
+
+			if ( !( $j(this).hasClass('vc_inner') ) ) {
+
+				console.log(this);
+				var bgcolor = $j(this).css('background-color');
+				switch (bgcolor) {
 			
-				case "rgb(0, 77, 114)":
-					//darkblue
-					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap darkblue' />");
-					break;
-				case "rgb(64, 168, 201)":
-					//lightblue
-					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap lightblue' />");
-					break;
-				case "rgb(243, 111, 55)":
-					//orange
-					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap orange' />");
-					break;
-				default:
-					//assumed white, catchall at least wraps any other color
-					$j(this).find('.wpb_column, .nr_popular_placeholder').wrapAll("<div class='innerRowWrap' />");
+					case "rgb(0, 77, 114)":
+						//darkblue
+						var $cols = $j(this).contents().detach();
+						$j(this).prepend("<div class='innerRowWrap darkblue' />");
+						var $wrap = $j(this).children('.innerRowWrap');
+						$cols.prependTo($wrap);
+						break;
+					case "rgb(64, 168, 201)":
+						//lightblue
+						var $cols = $j(this).contents().detach();
+						$j(this).prepend("<div class='innerRowWrap lightblue' />");
+						var $wrap = $j(this).children('.innerRowWrap');
+						$cols.prependTo($wrap);
+						break;
+					case "rgb(243, 111, 55)":
+						//orange
+						var $cols = $j(this).contents().detach();
+						$j(this).prepend("<div class='innerRowWrap orange' />");
+						var $wrap = $j(this).children('.innerRowWrap');
+						$cols.prependTo($wrap);
+						break;
+					default:
+						//assumed white, catchall at least wraps any other color
+						var $cols = $j(this).contents().detach();
+						$j(this).prepend("<div class='innerRowWrap' />");
+						var $wrap = $j(this).children('.innerRowWrap');
+						$cols.prependTo($wrap);
 					
 			
-			} //end switch(bgcolor)
+				} //end switch(bgcolor)
 			
-			$j(this).find(".wpb_column").filter(function() {
-				return this.className.match(/\bvc_custom/);
-			}).each(function() {
-				var colbg = $j(this).css('background-color');
-				if ( colbg != bgcolor ) {
+				$j(this).find(".wpb_column").filter(function() {
+					return this.className.match(/\bvc_custom/);
+				}).each(function() {
+					var colbg = $j(this).css('background-color');
+					if ( colbg != bgcolor ) {
 					
-					$j(this).addClass('fullHeight');
+						$j(this).addClass('fullHeight');
 					
-					switch (colbg) {
+						switch (colbg) {
 			
-						case "rgb(0, 77, 114)":
-							//darkblue
-							$j(this).wrap("<div class='darkblue' />");
-							break;
-						case "rgb(64, 168, 201)":
-							//lightblue
-							$j(this).wrap("<div class='lightblue' />");
-							break;
-						case "rgb(243, 111, 55)":
-							//orange
-							$j(this).wrap("<div class='orange' />");
-							break;
-						default:
-							//assumed white, catchall at least wraps any other color
-							$j(this).wrap("<div class='white' />");
+							case "rgb(0, 77, 114)":
+								//darkblue
+								$j(this).wrap("<div class='darkblue' />");
+								break;
+							case "rgb(64, 168, 201)":
+								//lightblue
+								$j(this).wrap("<div class='lightblue' />");
+								break;
+							case "rgb(243, 111, 55)":
+								//orange
+								$j(this).wrap("<div class='orange' />");
+								break;
+							default:
+								//assumed white, catchall at least wraps any other color
+								$j(this).wrap("<div class='white' />");
 					
-					} //end switch(colbg)
+						} //end switch(colbg)
 					
-				} //end if ($j(this).css('background-color') != bgcolor)
+					} //end if ($j(this).css('background-color') != bgcolor)
 				
-			}); //end $j(this).find(".wpb_column[class^='vc_custom']").each(function()
+				}); //end $j(this).find(".wpb_column[class^='vc_custom']").each(function()
+				
+			} //end if ( !( $j(this).hasClass('vc_inner') ) )
 		
 		}); //end $j('.vc_row').each( function()
 		
