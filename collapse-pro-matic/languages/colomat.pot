@@ -1,0 +1,220 @@
+# Copyright (C) 2013 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/colomat\n"
+"POT-Creation-Date: 2013-11-20 16:52:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: collapse-pro-matic.php:306
+msgid "Settings"
+msgstr ""
+
+#: collapse-pro-matic.php:326 collapse-pro-matic.php:510
+#: collapse-pro-matic.php:532
+msgid "Click to toggle"
+msgstr ""
+
+#: collapse-pro-matic.php:327
+msgid "Collapse-Pro-Matic Settings"
+msgstr ""
+
+#: collapse-pro-matic.php:338
+msgid "Style"
+msgstr ""
+
+#: collapse-pro-matic.php:345
+msgid "Light"
+msgstr ""
+
+#: collapse-pro-matic.php:346
+msgid "Dark"
+msgstr ""
+
+#: collapse-pro-matic.php:357
+msgid "Select Light for sites with lighter backgrounds. Select Dark for sites with darker backgrounds."
+msgstr ""
+
+#: collapse-pro-matic.php:362
+msgid "Tag Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:364
+msgid "HTML tag use to wrap the trigger text. See %sTag Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:369
+msgid "Offset Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:371
+msgid "Default offset value for Findme Attribute."
+msgstr ""
+
+#: collapse-pro-matic.php:376
+msgid "Wrap Tag Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:378
+msgid "HTML tag use to wrap the entire collapse element. See %sElwraptag Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:383
+msgid "Wrap Class Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:385
+msgid "Class used to wrap the entire collapse element. See %sElwrapclass Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:390
+msgid "Targtag Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:392
+msgid "HTML tag use for the target element. See %sTargtag Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:397
+msgid "Trigpos Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:401
+msgid "Above"
+msgstr ""
+
+#: collapse-pro-matic.php:402
+msgid "Below"
+msgstr ""
+
+#: collapse-pro-matic.php:413
+msgid "Position the title trigger above or below the target. See %sTrigpos Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:418
+msgid "Targpos Attribute"
+msgstr ""
+
+#: collapse-pro-matic.php:422
+msgid "Block"
+msgstr ""
+
+#: collapse-pro-matic.php:423
+msgid "Inline"
+msgstr ""
+
+#: collapse-pro-matic.php:434
+msgid "Position the target as an inline or block element. See %sTargpos Attribute%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:444
+msgid "Collapse/Expand Duration"
+msgstr ""
+
+#: collapse-pro-matic.php:446
+msgid "A string or number determining how long the animation will run. See %sDuration%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:451
+msgid "Animation Effect"
+msgstr ""
+
+#: collapse-pro-matic.php:458
+msgid "Slide Only"
+msgstr ""
+
+#: collapse-pro-matic.php:459
+msgid "Slide & Fade"
+msgstr ""
+
+#: collapse-pro-matic.php:470
+msgid "Animation effect to use while collapsing and expanding. See %sAnimation Effect%s in the documentation for more info."
+msgstr ""
+
+#: collapse-pro-matic.php:475
+msgid "Cookie Expires"
+msgstr ""
+
+#: collapse-pro-matic.php:476
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: collapse-pro-matic.php:477
+msgid "How many days before cookie expires."
+msgstr ""
+
+#: collapse-pro-matic.php:482
+msgid "Nested Sub Expands"
+msgstr ""
+
+#: collapse-pro-matic.php:484
+msgid "How many nested subexpand levels."
+msgstr ""
+
+#: collapse-pro-matic.php:489
+msgid "Custom Style"
+msgstr ""
+
+#: collapse-pro-matic.php:491
+msgid "Custom CSS style for <em>ultimate flexibility</em>"
+msgstr ""
+
+#: collapse-pro-matic.php:499
+msgid "Save Changes"
+msgstr ""
+
+#: collapse-pro-matic.php:511
+msgid "About"
+msgstr ""
+
+#: collapse-pro-matic.php:514
+msgid "Remove clutter, save space. Display and hide additional content in a SEO friendly way. Wrap any content&mdash;including other shortcodes&mdash;into a lovely jQuery expanding and collapsing element."
+msgstr ""
+
+#: collapse-pro-matic.php:517
+msgid "%sDetailed documentation%s, complete with working demonstrations of all shortcode attributes, is available for your instructional enjoyment."
+msgstr ""
+
+#: collapse-pro-matic.php:518
+msgid "A %scomplete list of pro features%s is also available."
+msgstr ""
+
+#: collapse-pro-matic.php:520
+msgid "If this plugin %s, please consider %ssharing your story%s with others."
+msgstr ""
+
+#: collapse-pro-matic.php:533
+msgid "Register Plugin"
+msgstr ""
+
+#: collapse-pro-matic.php:535
+msgid "To recieve plugin updates you must register your plugin. Enter your Receipt ID and email address used to purchase the plugin below."
+msgstr ""
+
+#: collapse-pro-matic.php:539
+msgid "Receipt ID"
+msgstr ""
+
+#: collapse-pro-matic.php:541
+msgid "Receipt ID is found in the Purchase Receipt"
+msgstr ""
+
+#: collapse-pro-matic.php:546
+msgid "Email"
+msgstr ""
+
+#: collapse-pro-matic.php:548
+msgid "Email address used to purchase plugin"
+msgstr ""
+
+#: collapse-pro-matic.php:554
+msgid "Register"
+msgstr ""

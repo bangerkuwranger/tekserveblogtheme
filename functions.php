@@ -281,22 +281,15 @@ array(
 			'name' 		=> 'AddThis Smart Layers',
 			'slug' 		=> 'addthis-smart-layers',
 			'required' 	=> true,
-			'version' 	=> '1.0.4',
+			'version' 	=> '1.0.10',
 			'force_activation' 	=> true,
 		),
 
-		array(
-			'name' 		=> 'Advanced Custom Fields',
-			'slug' 		=> 'advanced-custom-fields',
-			'required' 	=> true,
-			'version' 	=> '4.2.2',
-			'force_activation' 	=> false,
-		),
 		
 		array(
 			'name' 		=> 'Better WordPress Minify',
 			'slug' 		=> 'bwp-minify',
-			'required' 	=> true,
+			'required' 	=> false,
 			'version' 	=> '1.3.1',
 			'force_activation' 	=> false,
 		),
@@ -305,7 +298,7 @@ array(
 			'name' 		=> 'Collapse-Pro-Matic',
 			'slug' 		=> 'collapse-pro-matic',
 			'required' 	=> true,
-			'version' 	=> '1.0',
+			'version' 	=> '1.0.2',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/collapse-pro-matic.zip'
 		),
@@ -315,14 +308,6 @@ array(
 			'slug' 		=> 'daves-wordpress-live-search',
 			'required' 	=> true,
 			'version' 	=> '4.1',
-			'force_activation' 	=> false,
-		),
-		
-		array(
-			'name' 		=> 'Emma Emarketing Plugin for WordPress',
-			'slug' 		=> 'emma-emarketing-plugin',
-			'required' 	=> true,
-			'version' 	=> '1.0.5',
 			'force_activation' 	=> false,
 		),
 		
@@ -346,7 +331,7 @@ array(
 			'name' 		=> 'Genesis Simple Hooks',
 			'slug' 		=> 'genesis-simple-hooks',
 			'required' 	=> true,
-			'version' 	=> '2.0.0',
+			'version' 	=> '2.0.1',
 			'force_activation' 	=> true,
 		),
 		
@@ -354,7 +339,7 @@ array(
 			'name' 		=> 'Genesis Simple Menus',
 			'slug' 		=> 'genesis-simple-menus',
 			'required' 	=> true,
-			'version' 	=> '0.2',
+			'version' 	=> '0.3',
 			'force_activation' 	=> true,
 		),
 		
@@ -362,7 +347,7 @@ array(
 			'name' 		=> 'Get to Tekserve',
 			'slug' 		=> 'get-to-tekserve',
 			'required' 	=> true,
-			'version' 	=> '1.0',
+			'version' 	=> '1.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/get-to-tekserve.zip'
 		),
@@ -371,7 +356,7 @@ array(
 			'name' 		=> 'Google Analyticator',
 			'slug' 		=> 'google-analyticator',
 			'required' 	=> false,
-			'version' 	=> '6.4.5',
+			'version' 	=> '6.4.7.3',
 			'force_activation' 	=> false,
 		),
 				
@@ -379,16 +364,24 @@ array(
 			'name' 		=> 'Gravity Forms',
 			'slug' 		=> 'gravityforms',
 			'required' 	=> true,
-			'version' 	=> '1.8',
+			'version' 	=> '1.8.11',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/gravityforms.zip'
+		),
+		
+		array(
+			'name' 		=> 'Pardot',
+			'slug' 		=> 'pardot',
+			'required' 	=> false,
+			'version' 	=> '1.3.10',
+			'force_activation' 	=> false,
 		),
 		
 		array(
 			'name' 		=> 'Relevanissi',
 			'slug' 		=> 'relevanssi',
 			'required' 	=> false,
-			'version' 	=> '3.1.9',
+			'version' 	=> '3.3.5',
 			'force_activation' 	=> false,
 		),
 		
@@ -405,7 +398,7 @@ array(
 			'name' 		=> 'Revolution Slider',
 			'slug' 		=> 'revslider',
 			'required' 	=> true,
-			'version' 	=> '4.1',
+			'version' 	=> '4.1.3',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/revslider.zip'
 		),
@@ -414,7 +407,7 @@ array(
 			'name' 		=> 'Scalable Vector Graphics (SVG)',
 			'slug' 		=> 'scalable-vector-graphics-svg',
 			'required' 	=> true,
-			'version' 	=> '2.1.1',
+			'version' 	=> '2.3.1',
 			'force_activation' 	=> true,
 		),
 		
@@ -422,7 +415,7 @@ array(
 			'name' 		=> 'Shortcodes Pro',
 			'slug' 		=> 'shortcodes-pro',
 			'required' 	=> true,
-			'version' 	=> '1.1',
+			'version' 	=> '1.1.5',
 			'force_activation' 	=> false,
 		),
 		
@@ -456,9 +449,18 @@ array(
 			'name' 		=> 'Tekserve Footer Folk',
 			'slug' 		=> 'tekserve-footer-folk',
 			'required' 	=> true,
-			'version' 	=> '1.0',
+			'version' 	=> '1.2',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-footer-folk.zip'
+		),
+		
+		array(
+			'name' 		=> 'Tekserve Google Analytics Events',
+			'slug' 		=> 'tekserve-ga-events',
+			'required' 	=> true,
+			'version' 	=> '1.2',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-ga-events.zip'
 		),
 		
 		array(
@@ -473,8 +475,8 @@ array(
 			'name' 		=> 'Tekserve Shared Data',
 			'slug' 		=> 'tekserve-shared-data',
 			'required' 	=> true,
-			'version' 	=> '1.1',
-			'force_activation' 	=> false,
+			'version' 	=> '1.2',
+			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-shared-data.zip'
 		),
 		
@@ -499,7 +501,7 @@ array(
 			'name' 		=> 'Tekserve VCButtons',
 			'slug' 		=> 'tekserve-vcbuttons',
 			'required' 	=> true,
-			'version' 	=> '1.2.1',
+			'version' 	=> '1.2.2',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-vcbuttons.zip'
 		),
@@ -524,7 +526,7 @@ array(
 			'name' 		=> 'WPBakery Visual Composer',
 			'slug' 		=> 'js_composer',
 			'required' 	=> true,
-			'version' 	=> '4.1',
+			'version' 	=> '4.3.3',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/js_composer.zip'
 		),
@@ -533,7 +535,7 @@ array(
 			'name' 		=> 'WYSIWYG Widgets',
 			'slug' 		=> 'wysiwyg-widgets',
 			'required' 	=> false,
-			'version' 	=> '2.3.1',
+			'version' 	=> '2.3.4',
 			'force_activation' 	=> false,
 		),
 
