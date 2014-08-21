@@ -55,6 +55,7 @@
 * Page Sections
 * Drawers
 * Accordion
+* Rental Tabs
 * Blog Front Page
 * FAQs
 * Detail Boxes
@@ -2584,6 +2585,8 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    padding: .5em;
+	background: #004d72;
 }
 
 #ui-datepicker-div.ui-datepicker a {
@@ -2608,6 +2611,15 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
     border: 0;
     text-shadow: none;
     text-transform: uppercase;
+    text-align: center;
+}
+
+#ui-datepicker-div .ui-datepicker-header .ui-datepicker-prev {
+	float: left;
+}
+
+#ui-datepicker-div .ui-datepicker-header .ui-datepicker-next {
+	float: right;
 }
 
 
@@ -2629,6 +2641,11 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
     padding: 0;
     border-top: 1px solid #004d72;
     border-right: 1px solid #004d72;
+    background: #fff;
+}
+
+#ui-datepicker-div.ui-datepicker tbody td.ui-state-disabled {
+	background: #eee;
 }
 
 #ui-datepicker-div.ui-datepicker tbody td:last-child {
@@ -2662,12 +2679,15 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
     box-shadow: none;
 }
 
-#ui-datepicker-div .ui-datepicker-calendar .ui-state-hover {
-    background: #f36f37;
+#ui-datepicker-div .ui-datepicker-calendar .ui-datepicker-today a,
+#ui-datepicker-div .ui-datepicker-calendar td.ui-datepicker-today .ui-state-hover  {
+    background: #40a8c9;
     color: #fff;
 }
 
-#ui-datepicker-div .ui-datepicker-calendar .ui-state-active {
+#ui-datepicker-div .ui-datepicker-calendar .ui-datepicker-today .ui-state-active,
+#ui-datepicker-div .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-active,
+#ui-datepicker-div .ui-datepicker-calendar td .ui-state-hover {
     background: #f36f37; /* set the active date background color */
     border: none; /* set the active date border color */
     color: #fff; /* set the active date font color */
@@ -2676,7 +2696,11 @@ div.gform_wrapper .gform_fields .gfield_description.gfield validation_error {
     box-shadow: none;
     text-shadow: none;
     position: relative;
-    margin: -1px;
+}
+
+#ui-datepicker-div .ui-datepicker-calendar td .ui-state-hover {
+	background: rgba(243, 111, 55, .6);
+	margin: 0;
 }
 
 label {
@@ -3218,7 +3242,8 @@ color: #f06c34 !important;
 }
 
 .innerRowWrap .wpb_text_column,
-.innerRowWrap .gform_wrapper {
+.innerRowWrap .gform_wrapper,
+.innerRowWrap .tekserverental-dates {
 	padding: 2em 0;
 }
 
@@ -3583,10 +3608,135 @@ color: #f06c34 !important;
 	top: -10px;
 }
 
-/* Blog Front Page
+/* Rental Tabs
 ------------------------------------------------------------ */
 
-/*requires page to use static_content template */
+.innerRowWrap .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
+	background: transparent;
+}
+
+.innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
+	margin-bottom: 2em !important;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li {
+	font-size: 2em;
+	text-align: center;
+	text-indent: 0;
+	padding: 0 .5em;
+	border-right: 2px solid #40a8c9;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li:last-child {
+	border-right: 0;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default {
+	background: transparent;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active {
+	background: transparent;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default a {
+	color: #40a8c9;
+	padding: .5em 0;
+	position: relative;
+	font-weight: 200;
+}
+
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-hover a,
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active a {
+	color: #f36f37;
+}
+.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active a:after {
+	content: '\f107';
+	font-family: fontawesome;
+	display: block;
+	position: absolute;
+	left: 45%;
+	bottom: -.5em;
+}
+
+
+/* Rental Tabs - Responsive
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 960px) {
+
+	.innerRowWrap .wpb_content_element .wpb_tour_tabs_wrapper {
+		width: 100%;
+	}
+
+	.innerRowWrap .wpb_content_element .wpb_tabs_nav li {
+		font-size: 1.25em;
+	}
+	
+	.innerRowWrap .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tab,
+	.innerRowWrap .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tab .vc_inner {
+		padding: 0;
+	}
+	
+	#content  .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
+		display: block;
+		margin: 0 auto 2em;
+		width: 70%;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	#content .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
+		float: left;
+		width: 25%;
+		display: inline-block;
+	}
+	
+	.innerRowWrap .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
+		width: 70%;
+		float: right;
+	}
+	
+	.innerRowWrap .wpb_content_element .wpb_tabs_nav li {
+		border-right: 0;
+		display: inline-block;
+	}
+	
+	.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active a:after {
+		content: '\f105';
+		font-family: fontawesome;
+		display: inline;
+		position: absolute;
+		left: 105%;
+		bottom: auto;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	#content .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav,
+	.innerRowWrap .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
+		width: 100%;
+		float: none;
+	}
+	
+	.innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active a:after {
+	content: '\f107';
+	font-family: fontawesome;
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: -.5em;
+}
+
+}
+
+
+/* Blog Front Page
+------------------------------------------------------------ */
 
 .page .page #wrap #inner .wrap {
 	width: 100%;
@@ -4625,7 +4775,7 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 
 .tekserverentals-item-image {
 	height: 150px;
-	text-align: center;
+	text-align: left;
 }
 
 .tekserverentals-item-image img {
@@ -4730,22 +4880,54 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 }
 
 .tekserve_rental_request_container .tekserve_rental_request {
-	width: 25%;
 	padding: 1em;
-	display: inline-block;
 }
 
-.tekserve_rental_request_container .tekserve_rental_request_line_items {
-	width: 60%;
-	padding: 1em;
-	float: right;
-	display: inline-block;
+.tekserve_rental_request_delivery,
+.tekserve_rental_request_totals,
+.tekserve_rental_request_container .tekserve_rental_request_line_items
+.tekserve_rental_request_notes,
+.tekserve_rental_request_customer {
+	max-width: 400px;
+	display: block;
 }
+
 
 .page a.simpleCart_checkout.button {
 	float: left;
 	font-size: 3em;
 }
+
+/* Rentals - Responsive
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 960px) {
+
+	.innerRowWrap .tekserverentals-item-add-to-cart input {
+		display: block;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.innerRowWrap .tekserverentals-item-add-to-cart input {
+		display: inline-block;
+	}
+	
+	.tekserverentals-item {
+		padding: 2em 0;
+		min-height: 0;
+		border-bottom: 1px dotted #004d72;
+	}
+	
+	.page a.simpleCart_checkout.button {
+		font-size: 1.75em;
+	}
+	
+
+}
+
 
 /* SortTable Post
 ------------------------------------------------------------ */
@@ -5588,7 +5770,7 @@ h2.tribe-events-page-title a:visited {
 
 	div#tribe-events-footer {
 		border-radius: 0 0 12px 12px;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		overflow: hidden;
 	}
 

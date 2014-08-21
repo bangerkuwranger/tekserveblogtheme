@@ -180,7 +180,7 @@ function bindAnchors() {
 		event.preventDefault();
 		var pageHash = $j(this).attr('href');
 		setTimeout(function() {
-			if (pageHash != "" && pageHash != "#" && pageHash != "#!") {
+			if (pageHash != "" && pageHash != "#" && pageHash != "#!" && pageHash.indexOf("tab-") === -1 ) {
 				window.scrollTo(0, 0);
 				$j('#nav').addClass('floating-menu');
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
