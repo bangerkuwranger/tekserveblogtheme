@@ -52,13 +52,13 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'nav',
 	'subnav',
 	'inner',
-	'footer-widgets',
+	'footer-ets',
 	'footer'
 ) );
 
 /** Move Subnav to page area before content container */
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_after_header', 'genesis_do_subnav' );
 
@@ -217,6 +217,7 @@ function include_local_scripts() {
 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
+ 	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
 //  	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
 	wp_enqueue_script ( 'jquery-ui-core' );
 	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
@@ -723,3 +724,82 @@ add_action( 'admin_init', 'add_caps' );
 // redirect rss aggregator link
 add_filter( 'wprss_ftp_link_post_title', 'wprss_ftp_link_post_title_to_source' );
 function wprss_ftp_link_post_title_to_source() { return TRUE; }
+
+/****
+	Footer Folk
+****/
+
+//add footer folk before footer
+add_action( 'genesis_before_footer', 'footer_folk' );
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+
+/**  Shortcode for footer folk  **/
+function footer_folk(){
+$zagat = get_stylesheet_directory_uri() . '/footer-images/logos/zagat.png';
+$foursquare = get_stylesheet_directory_uri() . '/footer-images/logos/foursquare-logo.png';
+$folk = get_stylesheet_directory_uri() . '/rotate.php';
+$html = '<div class="footer-folk">
+<ul class="certificationlogos">
+<li>
+<a target="_blank" title="Tekserve Corp. BBB Business Review" href="http://www.bbb.org/new-york-city/business-reviews/computers-service-and-repair/tekserve-corp-in-new-york-ny-23092/#bbbonlineclick"><img alt="Tekserve Corp. BBB Business Review" style="border: 0;" src="http://seal-newyork.bbb.org/seals/blue-seal-96-50-tekserve-corp-23092.png" /></a>
+</li>
+<li id="yelp-biz-badge-rrc-T-yDGKZZA71nkGQoPQCCng">Tekserve
+</li>
+<li>
+<a href="http://www.zagat.com/s/tekserve-new-york">
+<img src="'.$zagat.'" />
+</a>
+</li>
+<li>
+<a href="https://foursquare.com/v/tekserve-new-york-ny/422f8e00f964a520f81f1fe3"><img src="'.$foursquare.'" class="foursquare" />
+<span style="margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; color: #fff; cursor: default; display: inline-block; font-size: 12px; font-weight: bold; padding: 5px 0; text-align: center; text-shadow: rgba(0, 0, 0, 0.1) 0 -1px 0; width: 30px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 17px; float: none; line-height: 32px; margin-right: 23px; padding: 0 10px 0 20px; width: 57px; background: #69bf13; position: relative; top: -15px;"><span itemprop="ratingValue">8.9</span><sup>/<span itemprop="bestRating">10</span></sup></span>
+</a>
+</li>
+</ul>
+<div class="footer-folk-image">
+<img src="'.$folk.'" />
+</div>
+
+</div>
+
+<script type="text/javascript">
+					!function(doc, id){
+  var js;
+  var scriptElement = doc.getElementsByTagName("script")[0];
+  if (!doc.getElementById(id)) {
+    js = doc.createElement("script");
+    js.id = id;
+    js.src = "//dyn.yelpcdn.com/biz_badge_js/rrc/T-yDGKZZA71nkGQoPQCCng.js";
+    scriptElement.parentNode.insertBefore(js, scriptElement);
+  }
+} (document, "yelp-biz-badge-script-rrc-T-yDGKZZA71nkGQoPQCCng");
+
+
+</script>
+
+';
+echo $html;
+}
+add_shortcode( 'footerfolk', 'footer_folk' );
+
+//template-tag for footer-folk inside visual composer
+function tekserve_footer_folk_vc() {
+	$html = "<div class='wpb_row vc_row-fluid' style='margin-bottom: 0px !important; margin-bottom: 0px !important; border-bottom-width: 0px !important;'>
+	<div class='vc_col-sm-12 wpb_column vc_column_container' style='min-height: 0px;'>
+		<div class='wpb_wrapper' style='padding-bottom: 0px;'>".footer_folk()."</div></div></div>";
+	echo $html;
+}
+
+/**  Visual Composer button  **/
+if (function_exists('vc_map')) {
+	vc_map( array(
+	   "name" => __("Footer Folk"),
+	   "base" => "footerfolk",
+	   "class" => "",
+	   "icon" => "icon-wpb-footerfolk",
+	   "category" => __('Content'),
+	   "admin_enqueue_css" => array(get_stylesheet_directory_uri().'/tekserve-footer-folk/footer-folk.css')
+	)	);
+}
+

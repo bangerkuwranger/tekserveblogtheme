@@ -15,7 +15,7 @@ $j(function() {
 
 	//Create loading image and insert into body while rearranging elements
 	if ($j('body').hasClass('page')) {
-		$j('#footer-widgets').before(loader);
+		$j('.footer-folk').before(loader);
 		console.log('loading');
 	}
 	
