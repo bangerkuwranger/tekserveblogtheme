@@ -53,7 +53,8 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'subnav',
 	'inner',
 	'footer-ets',
-	'footer'
+	'footer',
+	'footer-widgets'
 ) );
 
 /** Move Subnav to page area before content container */
@@ -214,21 +215,26 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
- 	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
+
+//  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.min.js' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
- 	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
-//  	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
+//  	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
-	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'icaps', get_stylesheet_directory_uri() . '/js/icaps.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
+	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
+//
+//	debug includes
+//
+// 	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'icaps', get_stylesheet_directory_uri() . '/js/icaps.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ), '', true );
 	$jsdata = array(
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
-	wp_localize_script( 'loadpage', 'themeInfo', $jsdata );
+	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -444,15 +450,6 @@ array(
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-case-studies.zip'
-		),
-		
-		array(
-			'name' 		=> 'Tekserve Footer Folk',
-			'slug' 		=> 'tekserve-footer-folk',
-			'required' 	=> true,
-			'version' 	=> '1.2',
-			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-footer-folk.zip'
 		),
 		
 		array(
@@ -740,6 +737,7 @@ $zagat = get_stylesheet_directory_uri() . '/footer-images/logos/zagat.png';
 $foursquare = get_stylesheet_directory_uri() . '/footer-images/logos/foursquare-logo.png';
 $folk = get_stylesheet_directory_uri() . '/rotate.php';
 $html = '<div class="footer-folk">
+<div class="footer-folk-wrap">
 <ul class="certificationlogos">
 <li>
 <a target="_blank" title="Tekserve Corp. BBB Business Review" href="http://www.bbb.org/new-york-city/business-reviews/computers-service-and-repair/tekserve-corp-in-new-york-ny-23092/#bbbonlineclick"><img alt="Tekserve Corp. BBB Business Review" style="border: 0;" src="http://seal-newyork.bbb.org/seals/blue-seal-96-50-tekserve-corp-23092.png" /></a>
@@ -759,6 +757,8 @@ $html = '<div class="footer-folk">
 </ul>
 <div class="footer-folk-image">
 <img src="'.$folk.'" />
+</div>
+
 </div>
 
 </div>
