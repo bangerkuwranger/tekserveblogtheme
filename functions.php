@@ -799,7 +799,7 @@ if (function_exists('vc_map')) {
 	   "class" => "",
 	   "icon" => "icon-wpb-footerfolk",
 	   "category" => __('Content'),
-	   "admin_enqueue_css" => array(get_stylesheet_directory_uri().'/tekserve-footer-folk/footer-folk.css')
+	   "admin_enqueue_css" => array(get_stylesheet_directory_uri().'/footer-folk.css')
 	)	);
 }
 

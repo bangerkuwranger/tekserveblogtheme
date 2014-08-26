@@ -129,6 +129,13 @@ $j(function() {
 	
 	//Initialize nav menu functions
 	navInit();
+		
+	//bind hover class to special notice if there is a link present
+	if ($j('#special-notice a').length > 0 ) {
+		$j('#special-notice a').hover(function() {
+			$j('#special-notice').toggleClass('hover');
+		});
+	}
 	
 });
 
@@ -303,7 +310,6 @@ function bindAnchors() {
 	noconflict declaration, global vars
 ******/
 
-var $j = jQuery;
 var currentWidth;
 var prevWidth;
 var theSearchBox;
