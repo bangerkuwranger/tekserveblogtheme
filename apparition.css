@@ -2449,6 +2449,7 @@ table.footable.breakpoint>tbody>tr.footable-detail-show>td.footable-last-column.
 		font-size: 1.75em;
 		font-weight: 900;
 		text-transform: uppercase;
+		margin-left: .5em;
 	}
 	
 	.department_directory table.responsivetable thead {
@@ -3462,6 +3463,7 @@ color: #f06c34 !important;
 	
 	.innerRowWrap {
 		max-width: 290px !important;
+		overflow-x: hidden;
 	}
 	
 }
