@@ -221,7 +221,7 @@ function include_local_scripts() {
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
 //  	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
-	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
 //
 //	debug includes
 //
@@ -230,7 +230,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
-	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ), '', true );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
 	$jsdata = array(
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
@@ -731,54 +731,42 @@ add_action( 'genesis_before_footer', 'footer_folk' );
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 
+
 /**  Shortcode for footer folk  **/
-function footer_folk(){
+function footer_folk() {
 $zagat = get_stylesheet_directory_uri() . '/footer-images/logos/zagat.png';
 $foursquare = get_stylesheet_directory_uri() . '/footer-images/logos/foursquare-logo.png';
 $folk = get_stylesheet_directory_uri() . '/rotate.php';
-$html = '<div class="footer-folk">
-<div class="footer-folk-wrap">
-<ul class="certificationlogos">
-<li>
-<a target="_blank" title="Tekserve Corp. BBB Business Review" href="http://www.bbb.org/new-york-city/business-reviews/computers-service-and-repair/tekserve-corp-in-new-york-ny-23092/#bbbonlineclick"><img alt="Tekserve Corp. BBB Business Review" style="border: 0;" src="http://seal-newyork.bbb.org/seals/blue-seal-96-50-tekserve-corp-23092.png" /></a>
-</li>
-<li id="yelp-biz-badge-rrc-T-yDGKZZA71nkGQoPQCCng">Tekserve
-</li>
-<li>
-<a href="http://www.zagat.com/s/tekserve-new-york">
-<img src="'.$zagat.'" />
-</a>
-</li>
-<li>
-<a href="https://foursquare.com/v/tekserve-new-york-ny/422f8e00f964a520f81f1fe3"><img src="'.$foursquare.'" class="foursquare" />
-<span style="margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; color: #fff; cursor: default; display: inline-block; font-size: 12px; font-weight: bold; padding: 5px 0; text-align: center; text-shadow: rgba(0, 0, 0, 0.1) 0 -1px 0; width: 30px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 17px; float: none; line-height: 32px; margin-right: 23px; padding: 0 10px 0 20px; width: 57px; background: #69bf13; position: relative; top: -15px;"><span itemprop="ratingValue">8.9</span><sup>/<span itemprop="bestRating">10</span></sup></span>
-</a>
-</li>
-</ul>
-<div class="footer-folk-image">
-<img src="'.$folk.'" />
-</div>
-
-</div>
-
+if( get_post_type() == "page" ) {
+	$html = '<div id="pageLoad"><img src="' . get_stylesheet_directory_uri() . '/images/ajax-loader.gif" alt="Page Loading" /></div>';
+}
+else {
+	$html = null;
+}
+$html .= '
+<div id="footer-folk" class="footer-folk" style="display:none;">
+	<div class="footer-folk-wrap">
+		<ul class="certificationlogos">
+			<li id="bbblogo">
+			</li>
+			<li id="yelp-biz-badge-rrc-T-yDGKZZA71nkGQoPQCCng">
+				Tekserve
+			</li>
+			<li id="zagatrating">
+			</li>
+			<li id="foursquare">
+			</li>
+		</ul>
+		<div id="footerfolk" class="footer-folk-image">
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">
-					!function(doc, id){
-  var js;
-  var scriptElement = doc.getElementsByTagName("script")[0];
-  if (!doc.getElementById(id)) {
-    js = doc.createElement("script");
-    js.id = id;
-    js.src = "//dyn.yelpcdn.com/biz_badge_js/rrc/T-yDGKZZA71nkGQoPQCCng.js";
-    scriptElement.parentNode.insertBefore(js, scriptElement);
-  }
-} (document, "yelp-biz-badge-script-rrc-T-yDGKZZA71nkGQoPQCCng");
-
-
+	var zagaturl = "'.$zagat.'", foursquareurl = "'.$foursquare.'", folkurl = "'.$folk.'";
 </script>
-
 ';
+wp_enqueue_script ( 'footerfolk', get_stylesheet_directory_uri() . '/js/folk.js', array( 'jquery' ), '', true );
 echo $html;
 }
 add_shortcode( 'footerfolk', 'footer_folk' );

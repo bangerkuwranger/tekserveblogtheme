@@ -406,7 +406,7 @@ body.custom-background {
 }
 
 #pageLoad {
-	margin: 1em auto;
+	margin: 8em auto;
 	text-align: center;
 	padding: 2em 0;
 	border-bottom: 4px solid #004d72;
@@ -2221,7 +2221,7 @@ ul.certificationlogos {
 	list-style: none;
 	display: table;
 	width: 100%;
-	max-width: 800px;
+	max-width: 620px;
 	margin: 0 auto;
 }
 
@@ -2245,9 +2245,9 @@ ul.certificationlogos li img.foursquare {
 @media only screen and (max-width: 768px) {
 
 	ul.certificationlogos {
-		max-width: 100%;
+		max-width: 92%;
 	}
-
+	
 }
 
 /* Comments
