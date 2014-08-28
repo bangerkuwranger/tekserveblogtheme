@@ -239,6 +239,7 @@ $j(window).bind('load', function() {
 		rearrangeContent(clientWidth);
 	});  //pass window width to various functions in width.js on resize
 	
+	setEventsBG();
 
 }); //end onload function
 
@@ -570,3 +571,14 @@ function stackFullHeight() {
 	$j('.fullHeight').css('height', 'auto');
 
 } //end stackFullHeight()
+
+/******
+	events background
+******/
+
+function setEventsBG() {
+	if( $j('body.events-single #wrap div#inner, body.events-archive #wrap div#inner').length > 0 ) {
+		var eventsBG = 'url(' + themeInfo["cssurl"] + '/random-image/rotate.php)';
+		$j('body.events-single #wrap div#inner, body.events-archive #wrap div#inner').css('backgroundImage', eventsBG);
+	}
+}

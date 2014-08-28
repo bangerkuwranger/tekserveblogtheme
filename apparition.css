@@ -5291,7 +5291,7 @@ div.tribe-events-map-wrap {
 
 body.events-single #wrap div#inner,
 body.events-archive #wrap div#inner {
-	background-image: url(./random-image/rotate.php);
+	background: #fff;
 	background-position: bottom right;
 	background-size: contain;
 	background-repeat: no-repeat;
