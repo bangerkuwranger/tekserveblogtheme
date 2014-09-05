@@ -1,21 +1,3 @@
-/*
-	Theme Name: Apparition_Tekserve / Genesis Child Theme
-	Theme URI: http://www.studiopress.com/themes/apparition
-	Description: Apparition is a one column child theme created for the Genesis Framework.
-	Author: StudioPress / Chad A. Carino
-	Author URI: http://www.tekserve.com/
- 
-	Version: 1.4.6
- 
-	Tags: black, blue, green, orange, pink, red, white, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
- 
-	Template: genesis
-	Template Version: 2.0
- 
-	License: GNU General Public License v2.0 (or later)
-	License URI: http://www.opensource.org/licenses/gpl-license.php
-*/
-
 /* Table of Contents
 
 * Import Fonts
@@ -42,6 +24,7 @@
 * Footer Widgets
 * Latest Tweets
 * Footer
+* Footer Folk
 * Comments
 * Responsive Table
 * Gravity Forms
@@ -423,9 +406,11 @@ body.custom-background {
 }
 
 #pageLoad {
-	margin: 0 auto;
+	margin: 8em auto;
 	text-align: center;
 	padding: 2em 0;
+	border-bottom: 4px solid #004d72;
+	border-top: 4px solid #004d72;
 }
 
 .page .page .innerRowWrap {
@@ -549,7 +534,7 @@ body.custom-background {
 	box-shadow: inset 0 3px 9px 3px rgba(1,16,17,0.4);
 }
 
-#special-notice:hover {
+#special-notice.hover {
 	background-color: #40a8c9;
 }
 
@@ -1659,6 +1644,17 @@ p.wp-caption-text {
 	float: none;
 }
 
+.wpb_single_image.outline img {
+	border: 4px solid #40a8c9;
+	margin: 2em 0;
+	border-radius: 12px;
+}
+
+.orange .wpb_single_image.outline img,
+.lightblue .wpb_single_image.outline img {
+	border-color: #fff;
+}
+
 /* Images - Responsive
 ------------------------------------------------------------ */
 
@@ -1907,7 +1903,8 @@ div.gform_footer input.button {
 	background: none;
 }
 
-#inner #content .entry-content {
+.search-results #inner #content .entry-content,
+.archive #inner #content .entry-content {
 	padding-top: 1em;
 }
 
@@ -2200,6 +2197,59 @@ div.gform_footer input.button {
 
 }
 
+/* Footer Folk
+------------------------------------------------------------ */
+
+/* path to the icon file should be relative to the css file where you place your css rules (this file) */
+.wpb_bootstrap_modals .wpb-content-layouts .wpb-layout-element-button .icon-wpb-footerfolk { background-image: url(images/footerfolk.png); background-size: contain; }
+ 
+/* .wpb_{shortcode_base} .wpb_element_wrapper selector can be used to add background image to VC shortcode block in the Visual Composer Editor working canvas */
+.wpb_footerfolk .wpb_element_wrapper { background-image: url(images/footerfolk.png); background-size: 32px; height: 30px; }
+
+.footer-folk {
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.footer-folk-wrap {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+ul.certificationlogos {
+	list-style: none;
+	display: table;
+	width: 100%;
+	max-width: 620px;
+	margin: 0 auto;
+}
+
+ul.certificationlogos li {
+	list-style: none;
+	display: inline;
+	max-width: 210px;
+}
+
+ul.certificationlogos li img {
+	width: auto !important;
+	height: auto !important;
+	max-width: 200px;
+	max-height: 55px;
+}
+
+ul.certificationlogos li img.foursquare {
+	max-width: 135px;
+}
+
+@media only screen and (max-width: 768px) {
+
+	ul.certificationlogos {
+		max-width: 92%;
+	}
+	
+}
+
 /* Comments
 ------------------------------------------------------------ */
 
@@ -2399,6 +2449,7 @@ table.footable.breakpoint>tbody>tr.footable-detail-show>td.footable-last-column.
 		font-size: 1.75em;
 		font-weight: 900;
 		text-transform: uppercase;
+		margin-left: .5em;
 	}
 	
 	.department_directory table.responsivetable thead {
@@ -3412,6 +3463,7 @@ color: #f06c34 !important;
 	
 	.innerRowWrap {
 		max-width: 290px !important;
+		overflow-x: hidden;
 	}
 	
 }
@@ -3867,6 +3919,87 @@ color: #f06c34 !important;
 /* FAQs
 ------------------------------------------------------------ */
 
+/* faq post */
+
+#toc_container .toc_list a,
+#toc_container .toc_list li {
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+
+.single-post.has-toc h1.entry-title {
+	font-size: 3em;
+}
+
+.single-post h2 img.alignleft {
+	width: auto;
+	max-width: 1em;
+	height: 1em;
+	margin: 0 1em 0 0;
+}
+
+.single-post #toc_container.toc_transparent {
+	border: 4px inset;
+	display: block;
+/* 	background-color: #eee; */
+}
+
+.single-post #toc_container ul li,
+.single-post #toc_container ul ul li {
+	text-indent: 0;
+	padding-left: 0;
+}
+
+.single-post #toc_container ul.toc_list>li {
+	padding-top: 100px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.single-post #toc_container ul li a {
+	font-size: 2.25em;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding-left: .5em;
+}
+
+.single-post .wrap #content #toc_container > ul > li {
+	list-style: none;
+/* 	border: 4px solid #fff; */
+}
+
+.single-post .wrap #content #toc_container > ul > li:hover {
+/* 	border-color: #40a8c9; */
+	background-color: #fff;
+}
+
+.single-post .wrap #content #toc_container > ul > li > ul > li {
+	list-style: inside square;
+}
+
+.single-post .wrap #content #toc_container ul ul li a {
+	font-size: 1em;
+	color: #40a8c9 !important;
+}
+
+.single-post #toc_container ul.toc_list>li>a {
+	display: inline-block;
+	background-color: rgba(255,255,255,.8);
+	min-width: 200px;
+}
+
+
+.single-post .wrap #content #toc_container > ul > li:hover > a {
+	color: #004d72 !important;
+	text-decoration: none;
+	background-color: rgba(255,255,255,.98);
+}
+
+.single-post .wrap #content #toc_container > ul > li > a:hover {
+	text-decoration: underline;
+}
+
 /* home page */
 
 .page .page.tekserve-faq-boxes #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
@@ -3976,24 +4109,6 @@ color: #f06c34 !important;
 .tekserve-faq-boxes #boxes-container h1 {
 	text-align: center;
 	margin-top: 20px;
-}
-
-@media (max-width: 480px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-	}
-
-}
-
-@media(min-width:320px) and (max-width:767px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-		color: #004d72;
-		font-size: 2.75em;
-	}
-	
 }
 
 .tekserve-faq-boxes .box {
@@ -4387,6 +4502,35 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item {
 
 ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 	margin-right: 1em;
+}
+
+/* FAQs - Responsive
+------------------------------------------------------------ */
+
+@media (max-width: 500px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+	}
+	
+	.single-post.has-toc h2 img.alignleft {
+		float: none;
+		max-width: 200px;
+		display: block;
+		margin: 0 0 .5em;
+		height: auto;
+	}
+
+}
+
+@media(min-width:320px) and (max-width:767px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+		color: #004d72;
+		font-size: 2.75em;
+	}
+	
 }
 
 /* Detail Boxes
@@ -5239,7 +5383,7 @@ div.tribe-events-map-wrap {
 
 body.events-single #wrap div#inner,
 body.events-archive #wrap div#inner {
-	background-image: url(./random-image/rotate.php);
+	background: #fff;
 	background-position: bottom right;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -6128,6 +6272,11 @@ form#status-front.status-front {
 	text-transform: uppercase;
 }
 
+.wpb_teaser_grid .categories_filter li a,
+.wpb_categories_filter li a {
+	padding: 0 .5em;
+}
+
 /* Pardot
 ------------------------------------------------------------ */
 
@@ -6216,7 +6365,7 @@ form#status-front.status-front {
 
 .rev_slider_wrapper .rev_slider .tp-caption.darkbluetxt {
 	position: absolute; 
-	color: #004d72; 
+	color: #004d72 !important; 
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
@@ -6231,7 +6380,7 @@ form#status-front.status-front {
 
 .rev_slider_wrapper .rev_slider .tp-caption.orangetxt{
 	position: absolute; 
-	color: #f36f37; 
+	color: #f36f37 !important; 
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
@@ -6245,7 +6394,7 @@ form#status-front.status-front {
 
 .rev_slider_wrapper .rev_slider .tp-caption.lightbluetxt{
 	position: absolute; 
-	color: #40a8c9; 
+	color: #40a8c9 !important; 
 	text-shadow: none;
 	line-height: 1.5em; 
 	font-family: Tekvetica; 
@@ -6262,7 +6411,7 @@ form#status-front.status-front {
 	position: absolute; 
 	color: #fff; 
 	text-shadow: none;
-	line-height: 1.5em; 
+	line-height: 1.5em !important; 
 	font-family: Tekvetica; 
 	padding: 0 4px; 
 	padding-top: 1px;
@@ -6291,57 +6440,56 @@ form#status-front.status-front {
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size14 {
-	font-size: 14px !important; 
-	line-height: 1em !important;
+	font-size: 0.875em !important; 
+	line-height: 1.5em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size28 {
-	font-size: 28px !important;
-	line-height: 1em !important;
+	font-size: 1.75em !important;
+	line-height: 1.5em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size36 {
-	font-size: 36px !important;
-	line-height: 1em !important;
+	font-size: 2.25em !important;
+	line-height: 1.5em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size48 {
-	font-size: 48px !important;
-	line-height: .75em !important;
+	font-size: 3em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size60 {
-	font-size: 60px !important;
+	font-size: 3.75em !important;
 	line-height: 1em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size72 {
-	font-size: 72px !important;
+	font-size: 4.5em !important;
 	line-height: 1.1em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.size96 {
-	font-size: 96px !important;
+	font-size: 6em !important;
 	line-height: 1.1em !important;
 }
 
 .rev_slider_wrapper .rev_slider .tp-caption.center {
-	text-align: center;
+	text-align: center !important;
 }
 
 
 .rev_slider_wrapper .rev_slider .tp-caption.bold {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 
 .rev_slider_wrapper .rev_slider .tp-caption.heavy {
-	font-weight: 900;
+	font-weight: 900 !important;
 }
 
 
 .rev_slider_wrapper .rev_slider .tp-caption.thin {
-	font-weight: 200;
+	font-weight: 200 !important;
 }
 
 .wpb_content_element {
@@ -6354,16 +6502,32 @@ form#status-front.status-front {
 	bottom: 0;
 }
 
-.rev_slider_wrapper .rev_slider .leftjustify {
+.rev_slider_wrapper .rev_slider .tp-caption.leftjustify {
 text-align: left;
 }
 
-.rev_slider_wrapper .rev_slider .rightjustify {
+.rev_slider_wrapper .rev_slider .tp-caption.rightjustify {
 text-align: right;
 }
 
-.rev_slider_wrapper .rev_slider .centerjustify {
+.rev_slider_wrapper .rev_slider .tp-caption.centerjustify {
 text-align: center;
+}
+
+.rev_slider_wrapper .rev_slider .tp-caption.whitegradientboxright {
+	height: 100% !important;
+	width: 4em !important;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjc1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,1) 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
+	top: 0;
+	right: 0;
+	left: auto;
 }
 
 /* Revolution Slider - Responsive

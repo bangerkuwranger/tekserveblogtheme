@@ -52,13 +52,14 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'nav',
 	'subnav',
 	'inner',
-	'footer-widgets',
-	'footer'
+	'footer-ets',
+	'footer',
+	'footer-widgets'
 ) );
 
 /** Move Subnav to page area before content container */
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_after_header', 'genesis_do_subnav' );
 
@@ -214,20 +215,26 @@ function genesis_search_primary_nav_menu( $menu, stdClass $args ){
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
- 	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.js' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
+
+//  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.min.js' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
-//  	wp_enqueue_script ( 'ui-elements', get_stylesheet_directory_uri() . '/js/ui-elements.js', array( 'jquery' ), '', true );
+//  	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
-	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'icaps', get_stylesheet_directory_uri() . '/js/icaps.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
-	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
+// 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
+//
+//	debug includes
+//
+// 	wp_enqueue_script ( 'detailbox', get_stylesheet_directory_uri() . '/js/detailbox.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'icaps', get_stylesheet_directory_uri() . '/js/icaps.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
 	$jsdata = array(
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
-	wp_localize_script( 'loadpage', 'themeInfo', $jsdata );
+	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -443,15 +450,6 @@ array(
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-case-studies.zip'
-		),
-		
-		array(
-			'name' 		=> 'Tekserve Footer Folk',
-			'slug' 		=> 'tekserve-footer-folk',
-			'required' 	=> true,
-			'version' 	=> '1.2',
-			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-footer-folk.zip'
 		),
 		
 		array(
@@ -723,3 +721,73 @@ add_action( 'admin_init', 'add_caps' );
 // redirect rss aggregator link
 add_filter( 'wprss_ftp_link_post_title', 'wprss_ftp_link_post_title_to_source' );
 function wprss_ftp_link_post_title_to_source() { return TRUE; }
+
+/****
+	Footer Folk
+****/
+
+//add footer folk before footer
+add_action( 'genesis_before_footer', 'footer_folk' );
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+
+
+/**  Shortcode for footer folk  **/
+function footer_folk() {
+$zagat = get_stylesheet_directory_uri() . '/footer-images/logos/zagat.png';
+$foursquare = get_stylesheet_directory_uri() . '/footer-images/logos/foursquare-logo.png';
+$folk = get_stylesheet_directory_uri() . '/rotate.php';
+if( get_post_type() == "page" ) {
+	$html = '<div id="pageLoad"><img src="' . get_stylesheet_directory_uri() . '/images/ajax-loader.gif" alt="Page Loading" /></div>';
+}
+else {
+	$html = null;
+}
+$html .= '
+<div id="footer-folk" class="footer-folk" style="display:none;">
+	<div class="footer-folk-wrap">
+		<ul class="certificationlogos">
+			<li id="bbblogo">
+			</li>
+			<li id="yelp-biz-badge-rrc-T-yDGKZZA71nkGQoPQCCng">
+				Tekserve
+			</li>
+			<li id="zagatrating">
+			</li>
+			<li id="foursquare">
+			</li>
+		</ul>
+		<div id="footerfolk" class="footer-folk-image">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var zagaturl = "'.$zagat.'", foursquareurl = "'.$foursquare.'", folkurl = "'.$folk.'";
+</script>
+';
+wp_enqueue_script ( 'footerfolk', get_stylesheet_directory_uri() . '/js/folk.js', array( 'jquery' ), '', true );
+echo $html;
+}
+add_shortcode( 'footerfolk', 'footer_folk' );
+
+//template-tag for footer-folk inside visual composer
+function tekserve_footer_folk_vc() {
+	$html = "<div class='wpb_row vc_row-fluid' style='margin-bottom: 0px !important; margin-bottom: 0px !important; border-bottom-width: 0px !important;'>
+	<div class='vc_col-sm-12 wpb_column vc_column_container' style='min-height: 0px;'>
+		<div class='wpb_wrapper' style='padding-bottom: 0px;'>".footer_folk()."</div></div></div>";
+	echo $html;
+}
+
+/**  Visual Composer button  **/
+if (function_exists('vc_map')) {
+	vc_map( array(
+	   "name" => __("Footer Folk"),
+	   "base" => "footerfolk",
+	   "class" => "",
+	   "icon" => "icon-wpb-footerfolk",
+	   "category" => __('Content'),
+	   "admin_enqueue_css" => array(get_stylesheet_directory_uri().'/footer-folk.css')
+	)	);
+}
+

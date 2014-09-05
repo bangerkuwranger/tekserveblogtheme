@@ -2,8 +2,7 @@
 	noconflict declaration, global vars
 ******/
 
-var $j = jQuery; 
-var loader = '<div id="pageLoad"><img src="' + themeInfo['cssurl'] + '/images/ajax-loader.gif" alt="Page Loading" /></div>';
+var $j = jQuery;
 var clientWidth = document.documentElement.clientWidth;
 var $rev_slider;
 
@@ -12,35 +11,17 @@ var $rev_slider;
 *******/
 
 $j(function() {
-
-	//Create loading image and insert into body while rearranging elements
-	if ($j('body').hasClass('page')) {
-		$j('#footer-widgets').before(loader);
-		console.log('loading');
-	}
 	
 	//Initialize nav menu functions
 	navInit();
-	
-});
-
-/******
-	call on page fully loaded
-******/
-
-$j(window).bind('load', function() {
-
+		
 	if ($j('body').hasClass('page')) {
 		
-		//remove empty paragraphs
-		$j('p:empty').remove();
-
 		//create internal wraps for text color/width of internal content, add fullHeight class to page columns with contrasting backgrounds to row with correct bgcolor wrap
 		$j('.vc_row, .wpb_row').each(function() {
 
 			if ( !( $j(this).hasClass('vc_inner') ) ) {
 
-				console.log(this);
 				var bgcolor = $j(this).css('background-color');
 				switch (bgcolor) {
 			
@@ -111,17 +92,39 @@ $j(window).bind('load', function() {
 		
 		}); //end $j('.vc_row').each( function()
 		
-		additionalFunctions(); //call external routines
-		
-		console.log('loaded');
-		$rev_slider = $j(".rev_slider");
-		$j('#pageLoad').slideUp();
 		$j('#inner').slideDown(); // show content after assigning classes
-		setTimeout(function() {
+
+	} //end if ( $j('body').hasClass('page') )
+
+
+	
+});
+
+/******
+	call on page fully loaded
+******/
+
+$j(window).bind('load', function() {
+
+	//bind hover class to special notice if there is a link present
+	if ($j('#special-notice a').length > 0 ) {
+		$j('#special-notice a').hover(function() {
+			$j('#special-notice').toggleClass('hover');
+		});
+	} //end if ($j('#special-notice a').length > 0 )
+	
+	if ($j('body').hasClass('page')) {
+		//remove empty paragraphs
+		$j('p:empty').remove();
+		additionalFunctions(); //call external routines
+		$rev_slider = $j(".rev_slider");
+		if ($rev_slider.length > 0){
 			$rev_slider.revprev().revnext(); //reload first slide after revslider to avoid squishing
-		}, 200);
+		} //end if ($rev_slider.length > 0)
 		goToAnchor();
 		bindAnchors();
+		$j('#pageLoad').slideUp();
+		initFooterFolk();
 	} //end if ( $j('body').hasClass('page') )
 	
 	rearrangeContent(clientWidth); ////pass window width to various functions in width.js on full load
