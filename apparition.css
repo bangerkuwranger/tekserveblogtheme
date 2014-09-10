@@ -432,7 +432,7 @@ body.custom-background {
 
 #header {
 	background-position: top center !important;
-	background-color: #111;
+	background-color: #004d72;
 	min-height: 120px;
 	overflow: hidden;
 	width: 100%;
@@ -1730,13 +1730,20 @@ input[type="button"],
 input[type="submit"] {
 	-moz-transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
-	background-color: #111;
-	border: none;
-	color: #fff;
+	border: 0;
 	cursor: pointer;
 	font-family: 'Tekvetica', Helvetica, sans-serif;
-	line-height: 21px;
-	padding: 7px 10px 6px;
+	line-height: 1.375em;
+	border-radius: 12px 0;
+	background-color: #004d72;
+	cursor: pointer;
+	display: inline-block;
+	padding: .25em 1em .15em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 1.5em;
+	margin: .5em 0;
 	text-decoration: none;
 	transition: all 0.2s ease-in-out;
 }
@@ -1759,7 +1766,7 @@ div.gform_footer input.button,
 	margin: 1em 0 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: 6px 10px 3px !important;
+	padding: .25em 1em .15em !important;
 	cursor: pointer;
 	float: right;
 }
@@ -1783,7 +1790,7 @@ div.gform_footer input.button {
 	background-color: #004d72;
 	cursor:pointer;
 	display: inline-block;
-	padding: 0 1em;
+	padding: .25em 1em .15em;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
@@ -2503,8 +2510,14 @@ div.gform_footer input.button {
 	box-shadow: none;
 	color: #fff;
 	font-size: 1.5em;
-	border-radius: 12px 0 12px 0;
+	border-radius: 12px 0;
 	background-color: #f36f37;
+	padding: .25em 1em .15em;
+}
+
+div.gform_footer input.button:hover {
+	background-color: #40a8c9;
+
 }
 
 .innerRowWrap .gform_wrapper input.button {
@@ -2808,6 +2821,11 @@ label.lower {
 .ginput_container li[class^="gchoice"] label {
 	display: inline;
 	margin-left: 1em;
+}
+
+form.post-password-form {
+	max-width: 960px;
+	margin: 1em auto;
 }
 
 /* Gravity Forms - Responsive
@@ -3279,7 +3297,7 @@ color: #f06c34 !important;
 	background-color: #004d72;
 	cursor:pointer;
 	display: inline-block;
-	padding: 0 1em;
+	padding: .25em 1em .15em;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
@@ -3919,87 +3937,6 @@ color: #f06c34 !important;
 /* FAQs
 ------------------------------------------------------------ */
 
-/* faq post */
-
-#toc_container .toc_list a,
-#toc_container .toc_list li {
-	-webkit-transition: all .5s ease-out;
-	-moz-transition: all .5s ease-out;
-	transition: all .5s ease-out;
-}
-
-.single-post.has-toc h1.entry-title {
-	font-size: 3em;
-}
-
-.single-post h2 img.alignleft {
-	width: auto;
-	max-width: 1em;
-	height: 1em;
-	margin: 0 1em 0 0;
-}
-
-.single-post #toc_container.toc_transparent {
-	border: 4px inset;
-	display: block;
-/* 	background-color: #eee; */
-}
-
-.single-post #toc_container ul li,
-.single-post #toc_container ul ul li {
-	text-indent: 0;
-	padding-left: 0;
-}
-
-.single-post #toc_container ul.toc_list>li {
-	padding-top: 100px;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-}
-
-.single-post #toc_container ul li a {
-	font-size: 2.25em;
-	font-weight: 900;
-	text-transform: uppercase;
-	padding-left: .5em;
-}
-
-.single-post .wrap #content #toc_container > ul > li {
-	list-style: none;
-/* 	border: 4px solid #fff; */
-}
-
-.single-post .wrap #content #toc_container > ul > li:hover {
-/* 	border-color: #40a8c9; */
-	background-color: #fff;
-}
-
-.single-post .wrap #content #toc_container > ul > li > ul > li {
-	list-style: inside square;
-}
-
-.single-post .wrap #content #toc_container ul ul li a {
-	font-size: 1em;
-	color: #40a8c9 !important;
-}
-
-.single-post #toc_container ul.toc_list>li>a {
-	display: inline-block;
-	background-color: rgba(255,255,255,.8);
-	min-width: 200px;
-}
-
-
-.single-post .wrap #content #toc_container > ul > li:hover > a {
-	color: #004d72 !important;
-	text-decoration: none;
-	background-color: rgba(255,255,255,.98);
-}
-
-.single-post .wrap #content #toc_container > ul > li > a:hover {
-	text-decoration: underline;
-}
-
 /* home page */
 
 .page .page.tekserve-faq-boxes #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
@@ -4060,15 +3997,16 @@ color: #f06c34 !important;
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
   -webkit-font-smoothing: antialiased;
-  -moz-border-radius: 12px 0 12px; 
-  -webkit-border-radius: 12px 0 12px;
-  border-radius: 12px 0 12px; 
+  -moz-border-radius: 12px 0; 
+  -webkit-border-radius: 12px 0;
+  border-radius: 12px 0;
+  padding: .25em 1em .15em;
 }
 
 .tekserve-faq-boxes .btn-custom {
 	font-size: 14px;
 	line-height: 20px;
-	padding: 7px 11px;
+	padding: .25em 1em .15em;
 	outline: 1px solid #BBB;
 	outline-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	background: #f36f37 none;
@@ -4078,23 +4016,23 @@ color: #f06c34 !important;
 	transition: background .10s ease-in-out;
 	-moz-transition: background .10s ease-in-out;
 	-webkit-transition: background .10s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
-	-moz-border-radius: 12px 0 12px;
-	border-radius: 12px 0 12px;
+	-webkit-border-radius: 12px 0;
+	-moz-border-radius: 12px 0;
+	border-radius: 12px 0;
 }
 
 .tekserve-faq-boxes .btn-black {
 	font-size: 14px;
 	line-height: 20px;
-	padding: 7px 11px;
+	padding: .25em 1em .15em;
 	background-color: #004d72;
 	color: white;
 	transition: background .10s ease-in-out;
 	-moz-transition: background .10s ease-in-out;
 	-webkit-transition: background .10s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
-	-moz-border-radius: 12px 0 12px;
-	border-radius: 12px 0 12px;
+	-webkit-border-radius: 12px 0;
+	-moz-border-radius: 12px 0;
+	border-radius: 12px 0;
 }
 
 .tekserve-faq-boxes #boxes-container {
@@ -4109,6 +4047,24 @@ color: #f06c34 !important;
 .tekserve-faq-boxes #boxes-container h1 {
 	text-align: center;
 	margin-top: 20px;
+}
+
+@media (max-width: 480px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+	}
+
+}
+
+@media(min-width:320px) and (max-width:767px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+		color: #004d72;
+		font-size: 2.75em;
+	}
+	
 }
 
 .tekserve-faq-boxes .box {
@@ -4502,35 +4458,6 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item {
 
 ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 	margin-right: 1em;
-}
-
-/* FAQs - Responsive
------------------------------------------------------------- */
-
-@media (max-width: 500px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-	}
-	
-	.single-post.has-toc h2 img.alignleft {
-		float: none;
-		max-width: 200px;
-		display: block;
-		margin: 0 0 .5em;
-		height: auto;
-	}
-
-}
-
-@media(min-width:320px) and (max-width:767px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-		color: #004d72;
-		font-size: 2.75em;
-	}
-	
 }
 
 /* Detail Boxes
@@ -4965,7 +4892,7 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
     position: absolute;
     right: 0.3em;
     top: 50%;
-	border-radius: 12px 0 12px;
+	border-radius: 12px 0;
 	background-color: #f36f37;
 	cursor: pointer;
 	display: inline-block;
@@ -5257,11 +5184,11 @@ table.sortable td a {
 }
 
 .nrelate div.continueButton {
-	border-radius: 12px 0 12px;
+	border-radius: 12px 0;
 	background-color: #004d72;
 	cursor: pointer;
 	display: inline-block;
-	padding: .25em 1em;
+	padding: .25em 1em .15em;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
@@ -5368,7 +5295,8 @@ h4.widget-title {
 #tribe_events_filters_wrapper input[type=submit], .tribe-events-button,
 #tribe-events .tribe-events-button {
 	background-color: #004d72 !important;
-	border-radius: 12px 0 12px !important;
+	border-radius: 12px 0 !important;
+	padding: .25em 1em .15em !important;
 }
 
 div.tribe-events-map-wrap {
@@ -5383,7 +5311,7 @@ div.tribe-events-map-wrap {
 
 body.events-single #wrap div#inner,
 body.events-archive #wrap div#inner {
-	background: #fff;
+	background-image: url(./random-image/rotate.php);
 	background-position: bottom right;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -5766,8 +5694,8 @@ h2.tribe-events-page-title a:visited {
 	font-weight: 900;
 	text-transform: uppercase;
 	background: #f36f37;
-	border-radius: 12px 0 12px;
-	padding: .25em .5em 0;
+	border-radius: 12px 0;
+	padding: .25em .5em .15em;
 }
 
 .tribe-events-list-event-description a.tribe-events-read-more:hover {
@@ -5917,7 +5845,7 @@ h2.tribe-events-page-title a:visited {
 		padding: .5em 1em .25em;
 		line-height: 2;
 		background-color: #fdfdfd;
-		border-radius: 12px 0 12px;
+		border-radius: 12px 0;
 	}
 
 }
@@ -6135,13 +6063,13 @@ h2.tribe-events-page-title a:visited {
 }
 
 button.positive {
-	-moz-border-radius: 12px 0 12px;
+	-moz-border-radius: 12px 0;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
+	-webkit-border-radius: 12px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	background-color: #40a8c9;
 	color: #fff;
-	border-radius: 12px 0 12px;
+	border-radius: 12px 0;
 	border: none;
 	display: inline-block;
 	font-size: 2.25em;
@@ -6150,7 +6078,7 @@ button.positive {
 	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: .2em .3em .1em;
+	padding: .25em 1em .15em;
 	font-family: Tekvetica;
 	cursor: pointer;
 }
@@ -6187,13 +6115,13 @@ form#status-front.status-front {
 }
 
 #fail-msg .button {
-	-moz-border-radius: 12px 0 12px;
+	-moz-border-radius: 12px 0;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
+	-webkit-border-radius: 12px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	background-color: #40a8c9;
 	color: #fff;
-	border-radius: 12px 0 12px;
+	border-radius: 12px 0;
 	border: none;
 	display: inline-block;
 	font-size: 2.25em;
@@ -6202,7 +6130,7 @@ form#status-front.status-front {
 	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: .4em .3em .2em;
+	padding: .25em 1em .15em;
 	font-family: Tekvetica;
 	cursor: pointer;
 }
@@ -6272,11 +6200,6 @@ form#status-front.status-front {
 	text-transform: uppercase;
 }
 
-.wpb_teaser_grid .categories_filter li a,
-.wpb_categories_filter li a {
-	padding: 0 .5em;
-}
-
 /* Pardot
 ------------------------------------------------------------ */
 
@@ -6316,12 +6239,12 @@ form#status-front.status-front {
 }
 
 .pardot-content form.form p input[type='submit'] {
-	-moz-border-radius: 12px 0 12px;
+	-moz-border-radius: 12px 0;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
+	-webkit-border-radius: 12px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	color: #fff;
-	border-radius: 12px 0 12px;
+	border-radius: 12px 0;
 	border: none;
 	display: block;
 	font-size: 1.5em;
@@ -6330,7 +6253,7 @@ form#status-front.status-front {
 	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: .25em .33em .2em;
+	padding: .25em  1em .15em;
 	float: left !important;
 	min-width: 200px;
 	width: 100%;
