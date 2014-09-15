@@ -3937,6 +3937,87 @@ color: #f06c34 !important;
 /* FAQs
 ------------------------------------------------------------ */
 
+/* faq post */
+
+#toc_container .toc_list a,
+#toc_container .toc_list li {
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+
+.single-post.has-toc h1.entry-title {
+	font-size: 3em;
+}
+
+.single-post h2 img.alignleft {
+	width: auto;
+	max-width: 1em;
+	height: 1em;
+	margin: 0 1em 0 0;
+}
+
+.single-post #toc_container.toc_transparent {
+	border: 4px inset;
+	display: block;
+/* 	background-color: #eee; */
+}
+
+.single-post #toc_container ul li,
+.single-post #toc_container ul ul li {
+	text-indent: 0;
+	padding-left: 0;
+}
+
+.single-post #toc_container ul.toc_list>li {
+	padding-top: 100px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.single-post #toc_container ul li a {
+	font-size: 2.25em;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding-left: .5em;
+}
+
+.single-post .wrap #content #toc_container > ul > li {
+	list-style: none;
+/* 	border: 4px solid #fff; */
+}
+
+.single-post .wrap #content #toc_container > ul > li:hover {
+/* 	border-color: #40a8c9; */
+	background-color: #fff;
+}
+
+.single-post .wrap #content #toc_container > ul > li > ul > li {
+	list-style: inside square;
+}
+
+.single-post .wrap #content #toc_container ul ul li a {
+	font-size: 1em;
+	color: #40a8c9 !important;
+}
+
+.single-post #toc_container ul.toc_list>li>a {
+	display: inline-block;
+	background-color: rgba(255,255,255,.8);
+	min-width: 200px;
+}
+
+
+.single-post .wrap #content #toc_container > ul > li:hover > a {
+	color: #004d72 !important;
+	text-decoration: none;
+	background-color: rgba(255,255,255,.98);
+}
+
+.single-post .wrap #content #toc_container > ul > li > a:hover {
+	text-decoration: underline;
+}
+
 /* home page */
 
 .page .page.tekserve-faq-boxes #wrap #inner .wrap #content .vc_row-fluid .wpb_column .wpb_wrapper {
@@ -4047,24 +4128,6 @@ color: #f06c34 !important;
 .tekserve-faq-boxes #boxes-container h1 {
 	text-align: center;
 	margin-top: 20px;
-}
-
-@media (max-width: 480px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-	}
-
-}
-
-@media(min-width:320px) and (max-width:767px){
-
-	.tekserve-faq-boxes #boxes-container h1 {
-		top: -20px;
-		color: #004d72;
-		font-size: 2.75em;
-	}
-	
 }
 
 .tekserve-faq-boxes .box {
@@ -4458,6 +4521,78 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item {
 
 ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 	margin-right: 1em;
+}
+
+/* related sidebar */
+
+.tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-description {
+	color: #004d72;
+}
+
+.tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .price {
+	color: #f36f37;
+	font-size: 1.5em;
+}
+
+.tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .button,
+.tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button {
+	background-color: #f36f37;
+	color: #fff;
+	border-radius: 12px 0 12px;
+	border: none;
+	font-size: 1.5em;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 1em 0 0;
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	padding: 6px 10px 3px !important;
+	margin-left: 1em;
+	line-height: 1.3125em;
+}
+
+
+.tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button {
+	margin-left: 0;
+}
+
+a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .button,
+a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button {
+	background: #40a8c9;
+}
+
+.tekserve-celebros-related-items-single-data {
+	padding-bottom: 1em;
+	border-bottom: 1px dotted #40a8c9;
+}
+
+/* FAQs - Responsive
+------------------------------------------------------------ */
+
+@media (max-width: 500px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+	}
+	
+	.single-post.has-toc h2 img.alignleft {
+		float: none;
+		max-width: 200px;
+		display: block;
+		margin: 0 0 .5em;
+		height: auto;
+	}
+
+}
+
+@media(min-width:320px) and (max-width:767px){
+
+	.tekserve-faq-boxes #boxes-container h1 {
+		top: -20px;
+		color: #004d72;
+		font-size: 2.75em;
+	}
+	
 }
 
 /* Detail Boxes
@@ -6198,6 +6333,11 @@ form#status-front.status-front {
 
 .wpb_teaser_grid_heading {
 	text-transform: uppercase;
+}
+
+.wpb_teaser_grid .categories_filter li a,
+.wpb_categories_filter li a {
+	padding: 0 .5em;
 }
 
 /* Pardot
