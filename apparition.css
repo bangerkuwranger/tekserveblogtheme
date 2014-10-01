@@ -350,6 +350,10 @@ body.custom-background {
 	background-repeat: no-repeat;
 }
 
+.tribe-is-responsive #special-notice {
+	background-color: #40a8c9;
+}
+
 .tribe-is-responsive #subnav .menu-secondary {
 	background-color: transparent;
 }
