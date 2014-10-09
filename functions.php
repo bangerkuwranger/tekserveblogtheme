@@ -791,3 +791,76 @@ if (function_exists('vc_map')) {
 	)	);
 }
 
+/****
+	Tekbutton
+****/
+
+add_shortcode( 'tekbutton', 'tekbutton' );
+
+function tekbutton( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'linkurl' => '#!'
+	), $atts, 'tekbutton' );
+	return '<a href="' . $a['linkurl'] . '"><span class="button">' . $content . '</span></a>';
+}
+
+/****
+	Invisible Line
+****/
+
+add_shortcode( 'invisibleline', 'invisible_line' );
+
+function invisible_line() {
+	return '<hr style="visibility: hidden; clear: both; height: 1em;" /><br/>';
+}
+
+/****
+	Map Trigger
+****/
+
+add_shortcode( 'maptrigger', 'map_trigger' );
+
+function map_trigger( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'group' => 'triggers',
+		'title' => $content
+	), $atts, 'maptrigger' );
+	return '<div class="collapseomatic colomat-visited drawertrigger" id="trigger-get-directions" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" onclick="getToTekserveLoadScript();">' . $content . '</div>';
+}
+
+/****
+	Drawer Trigger
+****/
+
+add_shortcode( 'drawertrigger', 'drawer_trigger' );
+
+function drawer_trigger( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'drawerid'	=> 'nodrawer',
+		'title'		=> $content,
+		'swaptitle'	=> '',
+		'group'		=> 'triggers'
+	), $atts, 'drawertrigger' );
+	return '<div class="drawertrigger-container"><div class="collapseomatic colomat-visited drawertrigger scroll-to-trigger" id="extra1-' . $a['drawerid'] . '" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" >' . $content . '</div><div id="swap-' . $a['drawerid'] . '" style="display:none;">' . $a['swaptitle'] . '</div></div>';
+}
+
+/****
+	Editor Buttons for Shortcodes
+****/
+
+add_action( 'init', 'apparition_tinymce_buttons' );
+
+function apparition_tinymce_buttons() {
+    add_filter( "mce_external_plugins", "add_apparition_tinymce_buttons" );
+    add_filter( 'mce_buttons', 'register_apparition_tinymce_buttons' );
+}
+
+function add_apparition_tinymce_buttons( $plugin_array ) {
+    $plugin_array['apparition'] = get_stylesheet_directory_uri() . '/tinymce/apparition-buttons.js';
+    return $plugin_array;
+}
+
+function register_apparition_tinymce_buttons( $buttons ) {
+    array_push( $buttons, 'tekbutton', 'invisibleline', 'drawertrigger', 'maptrigger' ); 
+    return $buttons;
+}

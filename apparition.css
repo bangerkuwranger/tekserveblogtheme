@@ -1082,6 +1082,14 @@ ul.tekserve_custom_search_menu {
 	padding: 0;
 }
 
+.single #sidebar{
+	padding-right: 1em;
+}
+
+.single.content-sidebar #content {
+	padding-left: 1em;
+}
+
 .single.content-sidebar #content {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -3387,23 +3395,25 @@ color: #f06c34 !important;
 
 .darkblue p a,
 .darkblue p a:visited {
-	color: #40a8c9;
+	color: #f36f37;
 }
 
 .lightblue p a,
 .lightblue p a:visited {
-	color: #f36f37;
+	color: #004d72;
 }
 
-.orange a:hover, .lightblue a:hover {
-	color:#004d72;
+.orange a:hover,
+.darkblue p a:hover {
+	color:#40a8c9;
 }
 
 .darkblue a:hover {
 	color:#40a8c9;
 }
 
-.darkblue p a:hover {
+.lightblue a:hover,
+.lightblue p a:hover {
 	color: #f36f37;
 }
 
