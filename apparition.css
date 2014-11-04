@@ -908,6 +908,66 @@ ul.tekserve_custom_search_menu {
 	padding: 0;
 }
 
+.menu-primary li .quick-access { 
+	position: relative; 
+}
+
+.menu-primary li ul.links { 
+	position: absolute;
+	left: 0;
+	top: 2em;
+	padding: 0;
+	display: inline; 
+	height: 1em;
+	margin-left: 1em;
+	width: auto;
+}
+
+.menu-primary li ul.links li { 
+	display:inline;
+	font-size: .75em;
+	padding: 0;
+	height: 1em;
+	border: 0; 
+}
+
+.menu-primary li ul.links li a {
+	color: #fff;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.menu-primary li ul.links li a:hover {
+	color: #004d72;
+	text-decoration: none;
+}
+
+.menu-primary li ul.links li a {
+	border-right: 1px solid #fff;
+	padding: 0 .75em; 
+}
+
+.menu-primary li ul.links li.last a {
+	border-right: 0;
+}
+
+.menu-primary {
+	min-height: 4em;
+}
+
+.tekserve_custom_search input.search-submit {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	right: 0;
+	font-size: .75em;
+	border-radius: 6px 0;
+}
+		
+
 /* Primary Navigation Extras - Responsive
 ------------------------------------------------------------ */
 
