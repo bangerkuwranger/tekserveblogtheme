@@ -947,6 +947,28 @@ ul.tekserve_custom_search_menu {
 		height: 28px;
 	}
 	
+	.tekserve_custom_search .quick-access .links {
+		margin-left: 4em;
+	}
+	
+	.tekserve_custom_search .quick-access .links,
+	.tekserve_custom_search .quick-access .links li {
+		list-style: none;
+	}
+	
+	.tekserve_custom_search .quick-access .links li {
+		float: left;
+	}
+	
+	.tekserve_custom_search .quick-access .links li a {
+		border-right: 1px solid #f36f37;
+		padding: 0 .5em;
+	}
+	
+	.tekserve_custom_search .quick-access .links li.last a {
+		border: 0;
+	}
+	
 }
 
 /* Inner
