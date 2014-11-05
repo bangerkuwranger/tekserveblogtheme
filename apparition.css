@@ -6800,13 +6800,21 @@ div.tp-caption.sft.slidelink.hasclicklistener a {
 	outline: none;
 }
 
+span.rtrademark,
 span.trademark,
 span.insider {
 	text-transform: none !important;
 }
 
-span.trademark:after {
+span.rtrademark:after {
 	content: '®';
+	font-size: .25em;
+	vertical-align: text-top;
+	line-height: 1em;
+}
+
+span.trademark:after {
+	content: '™';
 	font-size: .25em;
 	vertical-align: text-top;
 	line-height: 1em;
