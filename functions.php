@@ -235,6 +235,9 @@ function include_local_scripts() {
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
 	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
+	
+	//testing new menu
+	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
