@@ -1,4 +1,45 @@
+
+ul.menu li:hover > ul.sub-menu,
 ul.menu-primary li.current_page_item ul.sub-menu,
 ul.menu-primary li.current-page-ancestor ul.sub-menu {
 	left: auto;
+	width: auto;
+}
+
+ul.menu li:hover > ul.sub-menu li,
+ul.menu-primary li.current_page_item ul.sub-menu li,
+ul.menu-primary li.current-page-ancestor ul.sub-menu li {
+	float: left;
+	display: inline-block;
+	border: 0;
+}
+
+#wrap>.sub-menu li.menu-item a,
+ul.menu-primary li.current_page_item ul.sub-menu a,
+ul.menu-primary li.current-page-ancestor ul.sub-menu a {
+	background: transparent;
+	border: 0;
+	color: #CAC;
+	width: auto;
+	padding: 1em;
+}
+
+div#wrap {
+	background-color: #40a8c9;
+}
+
+/* these depend on moving the sub-menu out of and directly below the #nav; there will likely be a container or two to hold menu anims. Still need to implement mobile version (likely offcanvas) */
+
+div#wrap #nav .wrap {
+	margin-bottom: 3.25em;
+}
+
+#wrap>.sub-menu {
+	padding: .5em 2em;
+	text-align: center;
+}
+
+#wrap>.sub-menu li.menu-item {
+	list-style: none;
+	display: inline-block;
 }
