@@ -596,13 +596,8 @@ $redirect_rules = array(
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => TRUE, 
 	),
-	array('old_url'       => 'store.tekserve.com/*', 
-		  'new_url'       => 'shop.tekserve.com/*', 
-		  'wildcard'      => TRUE, 
-		  'preserve_path' => TRUE 
-	),
 	array('old_url'       => 'www.tekserve.com/*', 
-		  'new_url'       => 'shop.tekserve.com/*', 
+		  'new_url'       => 'store.tekserve.com/*', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => TRUE 
 	),	  		  
