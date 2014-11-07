@@ -1,3 +1,4 @@
-ul.menu-primary li.current_page_item ul.sub-menu {
+ul.menu-primary li.current_page_item ul.sub-menu,
+ul.menu-primary li.current-page-ancestor ul.sub-menu {
 	left: auto;
 }
