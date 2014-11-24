@@ -238,6 +238,9 @@ function include_local_scripts() {
 	
 	//testing new menu
 	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
+	
+	//tektips structure
+	wp_enqueue_script ( 'tektipsjs', get_stylesheet_directory_uri() . '/js/faqtoc.js', array( 'jquery' ), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 

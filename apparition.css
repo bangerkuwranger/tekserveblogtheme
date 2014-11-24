@@ -456,7 +456,7 @@ body.custom-background {
 	margin: 32px 0 0;
 	width: 25%;
 	background-size: contain !important;
-	background-image: url('images/header.9-8.11-6@2x.svg');
+	background-image: url('images/header@2x.svg');
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 }
@@ -6265,29 +6265,15 @@ h2.tribe-events-page-title a:visited {
 ------------------------------------------------------------ */
 
 .status-front .label {
-	font-size: 2em;
+	font-size: 1.125em;
 	text-transform: uppercase;
 	font-weight: 900;
 	font-family: Tekvetica;
 }
 
-#status-content .status-front .statusField {
-	font-size: 3em;
-	line-height: 1.5em;
-	font-weight: 900;
-	font-family: Tekvetica;
-}
-
-#status-content .status-front .statusField .limit {
-	font-size: .75em;
-	line-height: 1.5em;
-	font-weight: normal;
-	font-family: Tekvetica;
-	padding: 0 0 0 .5em;
-}
 
 #status-content .status-front .limit {
-	font-size: 2.25em;
+	font-size: 1.25em;
 	line-height: 1.5em;
 	font-weight: normal;
 	font-family: Tekvetica;
@@ -6304,7 +6290,7 @@ button.positive {
 	border-radius: 12px 0;
 	border: none;
 	display: inline-block;
-	font-size: 2.25em;
+	font-size: 1.25em;
 	font-weight: 900;
 	text-transform: uppercase;
 	margin: 1em 0;
@@ -6325,17 +6311,16 @@ button.positive:hover {
 }
 
 #status-title {
-	text-align: right;
+	text-align: left;
 }
 
 #status-wrapper {
-	float: right;
-	max-width: 400px;
-	text-align: right;
+
+	text-align: left;
 }
 
 form#status-front.status-front {
-	float: right;
+	float: none;
 }
 
 #status-content .buttons {
@@ -6356,7 +6341,6 @@ form#status-front.status-front {
 	border-radius: 12px 0;
 	border: none;
 	display: inline-block;
-	font-size: 2.25em;
 	font-weight: 900;
 	text-transform: uppercase;
 	margin: 1em 0;
@@ -6371,12 +6355,10 @@ form#status-front.status-front {
 	background-color: #f36f37;
 }
 
-#status-content p {
-	font-size: 1.125em;
-}
 
 #status-content ul li {
 	list-style: none;
+	text-indent: 0;
 }
 
 #status-content ul li h3,
@@ -6384,6 +6366,25 @@ form#status-front.status-front {
 	color: #f36f37;
 	text-transform: uppercase;
 }
+
+.customer-info ul ul.repair-details,
+.customer-info ul ul.repair-details li {
+	margin-left: 0;
+}
+
+#status-wrapper form.errorForm input {
+	background-color: #f36f37;
+	color: #fff;
+}
+
+#status-wrapper form.errorForm .buttons:before {
+	content: 'Please fill all fields';
+	font-weight: bold;
+	font-size: 1.5em;
+	text-transform: lowercase;
+	color: #f36f37;
+}
+
 
 /* Sitemap
 ------------------------------------------------------------ */
