@@ -6383,6 +6383,7 @@ form#status-front.status-front {
 	font-size: 1.5em;
 	text-transform: lowercase;
 	color: #f36f37;
+	display: block;
 }
 
 
