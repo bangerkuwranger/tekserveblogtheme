@@ -9,6 +9,9 @@ ul.menu-primary li.current-page-ancestor ul.sub-menu {
 #nav.floating-menu ul.sub-menu {
 	background-color: #f36f37;
 	top: 2.75em;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 2em;
 }
 
 #nav.floating-menu ul.menu-primary li.current_page_item ul.sub-menu a  {
