@@ -106,9 +106,11 @@ function fixDiv() {
     var $jdiv = $j("#nav");
 	if ($j(window).scrollTop() > $jdiv.data("top")) { 
 		$jdiv.addClass('floating-menu');
+		$j('#footer').addClass('floating');
 	}
 	else {
 		$jdiv.removeClass('floating-menu');
+		$j('#footer').removeClass('floating');
 	} //end if ($j(window).scrollTop() > $jdiv.data("top"))
 	
 } //end fixDiv()
@@ -274,6 +276,7 @@ function goToAnchor() {
 			if (location.hash) {
 				window.scrollTo(0, 0);
 				$j('#nav').addClass('floating-menu');
+				$j('#footer').addClass('floating');
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = hash;
 				window.scrollBy(0, offset);
@@ -294,6 +297,7 @@ function bindAnchors() {
 			if (pageHash != "" && pageHash != "#" && pageHash != "#!" && pageHash.indexOf("tab-") === -1 ) {
 				window.scrollTo(0, 0);
 				$j('#nav').addClass('floating-menu');
+				$j('#footer').addClass('floating');
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = pageHash;
 				window.scrollBy(0, offset);
