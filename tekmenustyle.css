@@ -1,9 +1,15 @@
+#nav ul.primary-menu .ul.submenu {
+	transition: left .5s ease-in-out;
+}
 
-ul.menu li:hover > ul.sub-menu,
-ul.menu-primary li.current_page_item ul.sub-menu,
-ul.menu-primary li.current-page-ancestor ul.sub-menu {
+ul.menu li:hover > ul.sub-menu {
+	display: none;
+}
+
+ul.menu-primary li.current-submenu ul.sub-menu {
 	left: 0;
 	width: auto;
+	display: block;
 }
 
 #nav.floating-menu ul.sub-menu {
@@ -14,13 +20,12 @@ ul.menu-primary li.current-page-ancestor ul.sub-menu {
 	padding-left: 2em;
 }
 
-#nav.floating-menu ul.menu-primary li.current_page_item ul.sub-menu a  {
+#nav.floating-menu ul.menu-primary li.current-submenu ul.sub-menu a  {
 	padding-top: .5em;
 }
 
 ul.menu li:hover > ul.sub-menu li,
-ul.menu-primary li.current_page_item ul.sub-menu li,
-ul.menu-primary li.current-page-ancestor ul.sub-menu li {
+ul.menu-primary li.current-submenu ul.sub-menu li {
 	float: left;
 	display: inline-block;
 	border: 0;
@@ -35,8 +40,7 @@ ul.menu-primary li.current-page-ancestor ul.sub-menu li {
 }
 
 #wrap>.sub-menu li.menu-item a,
-ul.menu-primary li.current_page_item ul.sub-menu a,
-ul.menu-primary li.current-page-ancestor ul.sub-menu a {
+ul.menu-primary li.current-submenu ul.sub-menu a {
 	background: transparent;
 	border: 0;
 	color: #fff;
@@ -46,16 +50,13 @@ ul.menu-primary li.current-page-ancestor ul.sub-menu a {
 	display: block;
 	position: relative;
 	text-decoration: none;
-	font-weight: 200;
 	transition: color .25s ease-out;
 	max-width: 100%;
 }
 
-ul.menu-primary ul.sub-menu li.current_page_item a,
-ul.menu-primary ul.sub-menu li.current-page-ancestor a,
+ul.menu-primary ul.sub-menu li.current-submenu a,
 #wrap>.sub-menu li.menu-item a:hover,
-ul.menu-primary li.current_page_item ul.sub-menu a:hover,
-ul.menu-primary li.current-page-ancestor ul.sub-menu a:hover {
+ul.menu-primary li.current-submenu ul.sub-menu a:hover {
 	color: #004d72;
 }
 

@@ -669,7 +669,7 @@ $args = array(
 /** Customize the credits */
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'tekserve_footer' );
-function tekserve_footer() {
+function tekserve_footer_classic() {
 	echo '<div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div>';
 	echo '<div class="creds">';
 	echo '<div class="leftcopy">';
@@ -685,6 +685,27 @@ function tekserve_footer() {
 	echo ' <a href="http://nytm.org/made">Dilligently Made in NYC</a>';
 	echo '</div>';
 	echo '</div>';
+}
+
+function tekserve_footer() {
+	echo '<div class="vc_row wpb_row vc_row-fluid">';
+	echo '	<div class="vc_col-sm-1 wpb_column vc_column_container">';
+	echo '		<a href="#wrap" rel="nofollow" title="Return to the top of the page" alt="Return to the top of the page"><i class="fa fa-lg fa-caret-square-o-up"></i></a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
+	echo '		copyright &copy; ' . date('Y') . ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
+	echo '		<a href="/terms-of-use/">terms of use</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
+	echo '		<a href="/privacy-policy/">privacy policy</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
+	echo '		<a href="http://nytm.org/made" target="_blank">dilligently made in nyc</a>';
+	echo '	</div>';
+	echo '</div>';
+	
 }
 
 /** All headers link to home page */
