@@ -2035,23 +2035,24 @@ div.gform_footer input.button {
 	background-color: #f36f37;
 	clear: both;
 	color: #fff;
-	font-size: 0.75em;
-	margin: 0 auto;
+	font-size: 1em;
+	font-weight: 200;
+	margin: 0 2em;
 	overflow: hidden;
 	width: 100%;
 }
 
 #footer-widgets .wrap {
 	overflow: hidden;
-	padding: 40px 0 20px;
-	max-width: 960px;
-	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1024px;
+	margin: 0;
 }
 
 #footer-widgets .widget {
 	background: none;
 	border: none;
-	margin: 0 0 20px;
+	margin: 0 0;
 	padding: 0;
 	display: inline-block;
 }
@@ -2090,7 +2091,7 @@ div.gform_footer input.button {
 	box-sizing: border-box;
 	float: left;
 	padding: 0 1.5em;
-	width: 17%;
+	width: auto;
 }
 
 #footer-widgets .widget-wrap h4 {

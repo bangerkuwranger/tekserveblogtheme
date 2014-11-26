@@ -690,7 +690,7 @@ function tekserve_footer_classic() {
 function tekserve_footer() {
 	echo '<div class="vc_row wpb_row vc_row-fluid">';
 	echo '	<div class="vc_col-sm-1 wpb_column vc_column_container">';
-	echo '		<a href="#wrap" rel="nofollow" title="Return to the top of the page" alt="Return to the top of the page"><i class="fa fa-lg fa-caret-square-o-up"></i></a>';
+	echo '		<a href="#wrap" rel="nofollow" title="Return to the top of the page" alt="Return to the top of the page"><i class="fa fa-2x fa-caret-square-o-up"></i></a>';
 	echo '	</div>';
 	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
 	echo '		copyright &copy; ' . date('Y') . ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
