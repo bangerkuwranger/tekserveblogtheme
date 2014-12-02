@@ -88,4 +88,50 @@ div#wrap #nav .wrap {
 
 #footer.floating.footer {
 	bottom: 0px;
+	z-index: 99;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.menu-primary > li, .menu-secondary > li, #header .menu > li {
+		height: auto;
+	}
+	
+	.menu-primary li ul, .menu-secondary li ul, #header .menu li ul {
+		position: relative;
+	}
+	
+	#nav.floating-menu ul.sub-menu,
+	#nav ul.sub-menu,
+	.menu-primary li.current-submenu a {
+		top: 0;
+		background-color: #40a8c9;
+		padding-left: 2em;
+		margin-left: 0;
+		width: 100%;
+	}
+	
+	div#wrap #nav .wrap {
+		margin-bottom: 0;
+	}
+	
+	#footer-widgets.footer-widgets {
+		padding-bottom: 9em;
+	}
+	
+	#footer.footer {
+		padding-bottom: 4em;
+		bottom: -8em;
+	}
+	
+	#footer.footer .innerRowWrap .wpb_column {
+		padding: 0 2.75em;
+	}
+	
+	#header .widget-area {
+		float: left;
+		text-align: left;
+		margin-bottom: 2em;
+	}
+
 }

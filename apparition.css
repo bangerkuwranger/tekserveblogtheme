@@ -249,7 +249,28 @@ table td, table th {
 /* Defaults - Responsive
 ------------------------------------------------------------ */
 
+@media only screen and (min-width: 1400px) {
+
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	select,
+	textarea,
+	ul,
+	ol,
+	li {
+		font-size: 18px;
+	}
+
+}
+
 @media only screen and (max-width: 768px) {
+
 	body,
 	h1,
 	h2,
@@ -265,6 +286,7 @@ table td, table th {
 	li {
 		font-size: 12px;
 	}
+	
 }
 
 /* Hyperlinks
@@ -442,10 +464,18 @@ body.custom-background {
 /* Wrap - Responsive
 ------------------------------------------------------------ */
 
+@media only screen and (max-width: 1024px) {
+
+	.page .page .vc_row {
+		margin: 0;
+		max-width: 960px;
+	}
+
+}
+
 @media only screen and (max-width: 960px) {
 	.page .page .vc_row {
 		padding: 0 1em;
-		margin: 0;
 	}
 }
 
@@ -554,7 +584,8 @@ body.custom-background {
 	background-color: #004d72;
 }
 
-#special-notice a {
+#special-notice a,
+#special-notice p {
 	color: white;
 }
 
@@ -569,23 +600,25 @@ body.custom-background {
 	color: #fff;
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow: hidden;
-	width: 1024px;
+	min-width: 1024px;
+	width: 95%;
 }
 
 .menu-secondary {
 	background-color: transparent;
-	width: 1024px;
+	min-width: 1024px;
 	clear: both;
 	color: #fff;
 	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow: hidden;
 	display: inline-block;
+	width: 95%;
 	
 }
 
 .menu-primary,
 .menu-secondary {
-	margin: 0 2em 0;
+	margin: 0 0 0 2em;
 	padding-bottom: 0;
 }
 
@@ -687,7 +720,7 @@ body.custom-background {
 .menu-primary > .menu-item-home > a,
 .menu-secondary > .menu-item-home > a,
 #header .menu > .menu-item-home > a {
-	font-weight: normal;
+	font-weight: bold;
 }
 
 /* 
@@ -697,7 +730,7 @@ body.custom-background {
  */
 
 .menu-primary .sub-menu > li.current_page_item a {
-	font-weight: normal;
+	font-weight: bold;
 }
 
 .menu-primary li ul,
@@ -762,37 +795,64 @@ ul.menu li.sfHover ul,
 /* Navigation Menus - Responsive
 ------------------------------------------------------------ */
 
+@media only screen and (min-width: 1400px) {
+
+		.menu-primary,
+		#header .menu,
+		.menu-secondary {
+			min-width: 1200px;
+		}
+		
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.menu-primary,
+	#header .menu,
+	.menu-secondary {
+		min-width: 960px;
+		margin: 0 0 0 2em;
+	}
+
+}
+
 @media only screen and (max-width: 960px) {
 
 	.menu-primary,
-	#header .menu {
-		width: 65%;
-		min-height: 8em !important;
+	#header .menu,
+	.menu-secondary {
+/* 		width: 65%; */
+/* 		min-height: 8em !important; */
+		min-width: 320px;
+/* 		margin: 0; */
 	}
 
 	#subnav .wrap {
 		width: 65%;
 		text-align: center;
+/* 		min-width: 320px; */
 	}
 	
 }
 
 @media only screen and (max-width: 740px) {
 
-	.menu-primary { min-height: 12em !important; }
+/* 	.menu-primary { min-height: 12em !important; } */
 
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
 
 	ul.menu.genesis-nav-menu.menu-primary,
 	.menu-primary {
 		width: 290px !important;
+		min-width: 50%;
 		padding: 5px 0 7px;
 		min-height: 1.5em !important;
-		background: #f36f37 url(images/navmenumobile@2x.png) no-repeat 50%;
+		background: #004d72 url(images/navmenumobile@2x.png) no-repeat left 50%;
 		background-size: 60%;
 		font-size: 1.5em;
+		margin: 0 0 0 1em;
 	}
 	.menu-primary li {
 		display: none; /* hide all <li> items */
@@ -815,37 +875,54 @@ ul.menu li.sfHover ul,
 	ul.menu.genesis-nav-menu.menu-primary.hovermenu,
 	.menu-primary.hovermenu {
 		background-image: none;
-		padding-top: 28px !important;
+/* 		padding-top: 28px !important; */
 		padding-left: 1em;
+		margin: 0;
+		width: 100% !important;
 	}
 	
 	.menu-primary.hovermenu li {
 		display: inline-block;
 		border: none;
 		float: none;
-		width: 49%;
+		width: 99%;
+		margin-left: -1.5em !important;
+	}
+		
+	#nav .menu-primary.hovermenu li a {
+		padding-left: 1.5em !important;
+		width: 100%
 	}
 	
-	#nav .menu-primary.hovermenu .current-menu-item a,
-	#nav .menu-primary.hovermenu .current-page-ancestor a,
-	#nav .menu-primary.hovermenu .menu-item-home a {
-		color: #004d72;
+	#nav .menu-primary.hovermenu > .current-menu-item > a,
+	#nav .menu-primary.hovermenu > .current-page-ancestor > a,
+	#nav .menu-primary.hovermenu > .menu-item-home a {
+		font-weight: bold;
 	}
 	
-	.menu-primary.hovermenu .current-menu-item a:before,
-	.menu-primary.hovermenu .current-page-ancestor a:before,
-	.menu-primary.hovermenu .menu-item-home a:before {
-		content: '\f0a4';
+	.menu-primary.hovermenu > .menu-item > a:before {
+		content: '\f0da';
 		font-family: fontawesome;
 		margin-right: .25em;
+	}
+	
+	.menu-primary.hovermenu > .current-submenu > a:before {
+		content: '\f0d7';
 	}
 	
 	.menu-primary .custom-search {
 		margin: 0 0 15px -10px !important;
 	}
 	
+	.menu-primary.hovermenu > .menu-item > .sub-menu,
 	#subnav {
+/* 		height: 0; */
 		display: none;
+	}
+	
+	.menu-primary.hovermenu > .menu-item.current-submenu > .sub-menu {
+/* 		height: auto; */
+		display: block;
 	}
 	
 	.tekserve_custom_search input.search-submit { font-size: 1.3em !important; }
@@ -1824,75 +1901,51 @@ display: none;
 ------------------------------------------------------------ */
 
 input[type="button"],
-input[type="submit"] {
+input[type="submit"],
+.button,
+.tekserve-single-post .tekserve-single-post-button,
+.innerRowWrap .button,
+button {
 	-moz-transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
 	border: 0;
 	cursor: pointer;
 	font-family: 'Tekvetica', Helvetica, sans-serif;
-	line-height: 1.375em;
 	border-radius: 12px 0;
-	background-color: #004d72;
+	background-color: #40a8c9;
 	cursor: pointer;
 	display: inline-block;
-	padding: .25em 1em .15em;
+	padding: .05em .5em .025em !important;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 1.5em;
-	margin: .5em 0;
+	font-size: 1.25em;
+	margin: .5em .15em;
 	text-decoration: none;
 	transition: all 0.2s ease-in-out;
+	-webkit-appearance: none;
 }
 
-div.gform_footer input.button,
+
 #commentform #submit,
 #respond .comment-form .form-submit input {
-	-moz-border-radius: 12px 0 12px;
-	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0 12px;
-	-webkit-transition: all 0.2s ease-in-out;
-	background-color: #004d72;
-	color: #fff;
-	border-radius: 12px 0 12px;
-	border: none;
 	display: block;
-	font-size: 1.5em;
-	font-weight: 900;
-	text-transform: uppercase;
 	margin: 1em 0 0;
 	text-align: center;
-	transition: all 0.2s ease-in-out;
-	padding: .25em 1em .15em !important;
-	cursor: pointer;
 	float: right;
 }
 
-div.gform_footer input.button:hover,
 input:hover[type="button"],
 input:hover[type="submit"],
-#commentform #submit:hover, #respond .comment-form .form-submit input:hover {
-	background-color: #40a8c9;
+#commentform #submit:hover, #respond .comment-form .form-submit input:hover,
+.button:hover,
+.tekserve-single-post .tekserve-single-post-button:hover,
+.innerRowWrap .button:hover,
+button:hover {
+	background-color: #f36f37;
 	border: none;
 	text-decoration: none;
 	color:#fff;
-}
-
-div.gform_footer input.button {
-	margin: 40px auto 30px;
-}
-
-.tekserve-single-post .tekserve-single-post-button {
-	border-radius: 12px 0 12px;
-	background-color: #004d72;
-	cursor:pointer;
-	display: inline-block;
-	padding: .25em 1em .15em;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 900;
-	font-size: 1.5em;
-	margin: .5em 0;
 }
 
 .rightstory .tekserve-single-post .tekserve-single-post-button,
@@ -2123,13 +2176,16 @@ div.gform_footer input.button {
 		font-size: 1em;
 	}
 
+/* 
 	#footer-widgets .widget-area {
 		display: inline;
 		width: auto;
 		text-align: center;
 		font-size: 1.25em;
 	}
+ */
 	
+/* 
 	#footer-widgets .widget-area .textwidget {
 		text-align: left;
 		margin: 0 auto;
@@ -2145,6 +2201,7 @@ div.gform_footer input.button {
 		text-align: center;
 		float: none;
 	}
+ */
 
 }
 
@@ -2294,26 +2351,27 @@ div.gform_footer input.button {
 
 @media only screen and (max-width: 1200px) {
 
-	#footer.footer {
-		padding-bottom: 4em;
+	#footer.footer,
+	#footer-widgets.footer-widgets {
+		padding-bottom: 3em;
+		margin: 0 auto;
 	}
 
 
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 768px) {
 
-/* 
-	#footer .creds {
-		width: 100%;
+	/* 
+#footer-widgets.footer-widgets {
+		padding-bottom: 9em;
 	}
-
-	#footer .gototop,
-	#footer .creds>div {
-		width: 100% !important;
-		text-align: center;
+	#footer.footer {
+		padding-bottom: 4em;
+		bottom: -8em;
 	}
  */
+
 
 }
 
@@ -2837,7 +2895,7 @@ div.gform_wrapper .gfield.gform_validation_container {
 	margin-left: .75em;
 	margin-top: .75em;
 	position: absolute;
-	z-index: 9999;
+	z-index: 99;
 	font-size: 1em;
 	color: #40a8c9;
 	-webkit-transition: color .5s ease-out;
@@ -3100,6 +3158,14 @@ div.gform_wrapper .left_label .gfield.message textarea {
 	.ginput_container select {
 		width: 100%;
 		display: block;
+	}
+	
+}
+
+@media only screen and (max-width: 640px) {
+
+	div.gform_wrapper .gform_footer {
+		right: 1.2em;
 	}
 	
 }
@@ -3540,24 +3606,6 @@ color: #f06c34 !important;
 	font-size: 1em;
 }
 
-.innerRowWrap .button {
-	border-radius: 12px 0 12px;
-	background-color: #004d72;
-	cursor:pointer;
-	display: inline-block;
-	padding: .25em 1em .15em;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 900;
-	font-size: 1.5em;
-	margin: .5em 0;
-}
-
-.innerRowWrap .button:hover {
-	color: #fff;
-	background-color: #f36f37;
-}
-
 .innerRowWrap .wpb_text_column,
 .innerRowWrap .gform_wrapper,
 .innerRowWrap .tekserverental-dates {
@@ -3691,8 +3739,35 @@ color: #f06c34 !important;
 	background-color: rgba(0, 0, 0, .2);
 }
 
+.lightblue input[type="button"],
+.lightblue input[type="submit"],
+.lightblue .button,
+.lightblue .tekserve-single-post .tekserve-single-post-button,
+.lightblue .innerRowWrap .button,
+.lightblue button {
+	background-color: #004d72;
+}
+
+.orange input:hover[type="button"],
+.orange input:hover[type="submit"],
+.orange #commentform #submit:hover, #respond .comment-form .form-submit input:hover,
+.orange .button:hover,
+.orange .tekserve-single-post .tekserve-single-post-button:hover,
+.orange .innerRowWrap .button:hover,
+.orange button:hover {
+	background-color: #004d72;
+}
+
 /* Page Sections - Responsive
 ------------------------------------------------------------ */
+
+@media only screen and (min-width: 1400px) {
+
+	.innerRowWrap {
+		max-width: 1200px;
+	}
+	
+}
 
 @media only screen and (max-width: 960px) {
 
@@ -3727,10 +3802,10 @@ color: #f06c34 !important;
 	
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
 	
 	.innerRowWrap {
-		max-width: 290px !important;
+		max-width: 95% !important;
 		overflow-x: hidden;
 	}
 	

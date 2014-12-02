@@ -85,12 +85,16 @@ function navInit() {
   	
   	//remove class hovermenu on window scroll
   	$j( window ).scroll(function() {
-		$j( ".menu-primary" ).removeClass( "hovermenu" );
+		if ( $j( '#nav' ).hasClass( 'floating-menu' ) ) {
+		
+			$j( ".menu-primary" ).removeClass( "hovermenu" );
+		
+		}
 	});
 	
 	//toggle class hovermenu on click
 	$j( ".menu-primary" ).click(function() {
-    		$j( this ).toggleClass( "hovermenu" );
+		$j( this ).addClass( "hovermenu" );
   	});
   	
   	//bind fixDiv() to window scroll; enables fixed topnav
@@ -438,6 +442,8 @@ function tabletV() {
 	
 		swapHeaderImgs();
 		
+		$j( '.menu-primary' ).addClass( 'menu-mobile' );
+		
 	} //end if(prevWidth >= tV)
 } //end tabletV()
 
@@ -445,6 +451,8 @@ function untabletV() {
 	if (prevWidth < tV) {
 	
 		swapHeaderImgs();
+		
+		$j('.menu-primary').removeClass('menu-mobile');
 		
 	} //endif(prevWidth < tV) {
 } //end untabletV()
