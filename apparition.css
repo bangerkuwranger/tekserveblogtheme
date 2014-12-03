@@ -3821,6 +3821,10 @@ color: #f06c34 !important;
 		overflow-x: hidden;
 	}
 	
+	.innerRowWrap .gform_wrapper {
+		overflow-y: hidden;
+	}
+	
 }
 
 /* Drawers
