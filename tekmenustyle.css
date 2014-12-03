@@ -1,15 +1,19 @@
-#nav ul.primary-menu .ul.submenu {
-	transition: left .5s ease-in-out;
-}
-
-ul.menu li:hover > ul.sub-menu {
-	display: none;
-}
-
-ul.menu-primary li.current-submenu ul.sub-menu {
-	left: 0;
+#nav ul.menu-primary li ul.sub-menu {
 	width: auto;
 	display: block;
+}
+
+#nav ul.menu-primary li:hover ul.sub-menu,
+#nav ul.menu-primary.menu-mobile li ul.sub-menu {
+	display: none;
+	height: 0;
+}
+
+ul.menu-primary li.current-submenu ul.sub-menu,
+#nav ul.menu-primary.menu-mobile li.current-submenu ul.sub-menu,
+#nav ul.menu-primary li.current-submenu:hover ul.sub-menu {
+	display: block;
+	height: auto;
 }
 
 #nav.floating-menu ul.sub-menu {
@@ -20,8 +24,43 @@ ul.menu-primary li.current-submenu ul.sub-menu {
 	padding-left: 2em;
 }
 
+#nav.floating-menu ul.menu-primary li ul.sub-menu {
+	width: 100%;
+}
+
+
 #nav.floating-menu ul.menu-primary li.current-submenu ul.sub-menu a  {
 	padding-top: .5em;
+}
+
+ul.menu-primary li ul.sub-menu li {
+	float: left;
+	display: inline-block;
+	border: 0;
+	list-style-type: none;
+	border: 0;
+	height: 1.5em;
+	/* margin-top: .5em; */
+	margin-bottom: 1em;
+	text-indent: 0 !important;
+	margin-left: -.35em !important;
+	max-width: 320px;
+}
+
+ul.menu-primary li ul.sub-menu li a {
+
+	background: transparent;
+	border: 0;
+	color: #fff;
+	width: auto;
+	padding: 0 1em;
+	font-size: 1em;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	transition: color .25s ease-out;
+	max-width: 100%;
+
 }
 
 ul.menu li:hover > ul.sub-menu li,
@@ -116,7 +155,7 @@ div#wrap #nav .wrap {
 	}
 	
 	#footer-widgets.footer-widgets {
-		padding-bottom: 9em;
+		padding-bottom: 5em;
 	}
 	
 	#footer.footer {
@@ -125,13 +164,26 @@ div#wrap #nav .wrap {
 	}
 	
 	#footer.footer .innerRowWrap .wpb_column {
-		padding: 0 2.75em;
+		padding: 0 2em;
 	}
 	
 	#header .widget-area {
 		float: left;
 		text-align: left;
 		margin-bottom: 2em;
+		width: 100%
 	}
 
+}
+
+@media only screen and (max-width: 640px) {
+
+	#footer-widgets.footer-widgets {
+		padding-bottom: 12em;
+	}
+	
+	#footer.footer {
+		bottom: -12em;
+	}
+	
 }

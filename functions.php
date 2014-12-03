@@ -695,11 +695,11 @@ function tekserve_footer() {
 	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
 	echo '		copyright &copy; ' . date('Y') . ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
 	echo '	</div>';
-	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
-	echo '		<a href="/terms-of-use/">terms of use</a>';
+	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
+	echo '		<a href="/terms-of-use/">terms of use</a> - <a href="/privacy-policy/">privacy policy</a>';
 	echo '	</div>';
-	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
-	echo '		<a href="/privacy-policy/">privacy policy</a>';
+	echo '	<div class="vc_col-sm-1 wpb_column vc_column_container">';
+	echo '		<a href="/sitemap/">sitemap</a>';
 	echo '	</div>';
 	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
 	echo '		<a href="http://nytm.org/made" target="_blank">dilligently made in nyc</a>';

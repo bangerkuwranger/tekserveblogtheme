@@ -737,10 +737,14 @@ body.custom-background {
 .menu-secondary li ul,
 #header .menu li ul {
 	height: auto;
-	left: -9999px;
 	position: absolute;
 	width: 145px;
 	z-index: 9999;
+	opacity: 0;
+}
+
+.menu-secondary li ul {
+	left: -9999px;
 }
 
 .menu-primary li ul a,
@@ -849,8 +853,8 @@ ul.menu li.sfHover ul,
 		min-width: 50%;
 		padding: 5px 0 7px;
 		min-height: 1.5em !important;
-		background: #004d72 url(images/navmenumobile@2x.png) no-repeat left 50%;
-		background-size: 60%;
+		background: #004d72 url(images/mobilemenu.svg) no-repeat left 50%;
+		background-size: 100%;
 		font-size: 1.5em;
 		margin: 0 0 0 1em;
 	}
@@ -2295,6 +2299,7 @@ button:hover {
 #footer.footer .innerRowWrap {
 	color: #fff;
 	font-size: .75em;
+	text-align: center;
 }
 
 #footer p {
@@ -2360,17 +2365,24 @@ button:hover {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
 
 	/* 
 #footer-widgets.footer-widgets {
 		padding-bottom: 9em;
 	}
-	#footer.footer {
-		padding-bottom: 4em;
-		bottom: -8em;
+	
+*/
+
+	#footer.footer .innerRowWrap {
+		font-size: 1em;
+		text-align: left;
 	}
- */
+
+	#footer.footer .innerRowWrap a {
+		font-size: 9px !important;
+	}
+
 
 
 }
