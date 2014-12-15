@@ -127,6 +127,8 @@ $j(function() {
 	
 	//Initialize nav menu functions
 	navInit();
+	initSearch();
+	initModalNews();
 		
 	if ($j('body').hasClass('page')) {
 
@@ -500,14 +502,16 @@ function unstackEm() {
 //moves search outside of nav node; called on page load and window resize
 function moveSearchMobile() {  
 
-		$j('.right.search').insertBefore('#inner .wrap').wrap("<div class='innerRowWrap' />");
+// 		$j('.tekserve-top-widget .searchlink').appendTo('.tekserve-top-widget .tekserve_custom_search');
+		$j('.tekserve-top-widget .searchlink').addClass('mobile');
 		
 } //end moveSearchMobile()
 
 //moves search back into nav node; called on window resize
 function moveSearchBack() {
 
-	$j('.right.search').unwrap().insertAfter('#nav div ul li:last-child');
+// 	$j('.tekserve-top-widget .searchlink').appendTo('.tekserve-top-widget');
+	$j('.tekserve-top-widget .searchlink').removeClass('mobile');
 	
 } //end moveSearchBack()
 
