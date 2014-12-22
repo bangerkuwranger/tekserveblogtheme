@@ -77,7 +77,9 @@ function insertLogoFoursquare() {
 
 function insertFooterFolk() {
 
-	var folk = '<img src="' + folkurl + '" />';
-	$j('#footerfolk').html(folk);
+	// var folk = '<img src="' + folkurl + '" />';
+// 	$j('#footerfolk').html(folk);
+
+	return false;
 	
 } //end insertFooterFolk()
