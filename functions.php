@@ -231,7 +231,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
 	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
-	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
+// 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
 		
 	$jsdata = array(
 		'cssurl'	=> get_stylesheet_directory_uri()
@@ -239,8 +239,8 @@ function include_local_scripts() {
 	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
 	
 	//testing new menu
-	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
-	wp_enqueue_script ( 'tekmenujs', get_stylesheet_directory_uri() . '/js/tekmenustyle.js', array( 'jquery' ) );
+// 	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
+// 	wp_enqueue_script ( 'tekmenujs', get_stylesheet_directory_uri() . '/js/tekmenustyle.js', array( 'jquery' ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
@@ -380,14 +380,6 @@ array(
 			'required' 	=> true,
 			'version' 	=> '2.3.1',
 			'force_activation' 	=> true,
-		),
-		
-		array(
-			'name' 		=> 'Shortcodes Pro',
-			'slug' 		=> 'shortcodes-pro',
-			'required' 	=> true,
-			'version' 	=> '1.1.5',
-			'force_activation' 	=> false,
 		),
 		
 		array(

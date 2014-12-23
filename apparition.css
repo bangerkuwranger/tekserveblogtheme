@@ -786,17 +786,228 @@ ul.menu li.sfHover ul,
 #wpadminbar li:hover ul ul {
 	left: 0;
 }
-/* 
-.search-form {
-	position: relative;
-	float: right;
-	width: 200px;
-}
- */
+
 .tinynav { 
 	display: none;
 }
 
+#nav ul.menu-primary li ul.sub-menu {
+	width: auto;
+	display: block;
+}
+
+#nav ul.menu-primary li:hover ul.sub-menu,
+#nav ul.menu-primary.menu-mobile li ul.sub-menu {
+	display: none;
+	height: 0;
+}
+
+ul.menu-primary li.current-submenu ul.sub-menu,
+#nav ul.menu-primary.menu-mobile li.current-submenu ul.sub-menu,
+#nav ul.menu-primary li.current-submenu:hover ul.sub-menu {
+	display: block;
+	height: auto;
+}
+
+#nav.floating-menu ul.sub-menu {
+	background-color: #f36f37;
+	top: 2.75em;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 2em;
+}
+
+#nav.floating-menu ul.menu-primary li ul.sub-menu {
+	width: 100%;
+}
+
+
+#nav.floating-menu ul.menu-primary li.current-submenu ul.sub-menu a  {
+	padding-top: .5em;
+}
+
+ul.menu-primary li ul.sub-menu li {
+	float: left;
+	display: inline-block;
+	border: 0;
+	list-style-type: none;
+	border: 0;
+	height: 1.5em;
+	margin-bottom: 1em;
+	text-indent: 0 !important;
+	margin-left: -.35em !important;
+	max-width: 320px;
+}
+
+ul.menu-primary li ul.sub-menu li a {
+
+	background: transparent;
+	border: 0;
+	color: #fff;
+	width: auto;
+	padding: 0 1em;
+	font-size: 1em;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	transition: color .25s ease-out;
+	max-width: 100%;
+
+}
+
+ul.menu li:hover > ul.sub-menu li,
+ul.menu-primary li.current-submenu ul.sub-menu li {
+	float: left;
+	display: inline-block;
+	border: 0;
+	list-style-type: none;
+	border: 0;
+	height: 1.5em;
+	margin-bottom: 1em;
+	text-indent: 0 !important;
+	margin-left: -.35em !important;
+	max-width: 320px;
+}
+
+#wrap>.sub-menu li.menu-item a,
+ul.menu-primary li.current-submenu ul.sub-menu a {
+	background: transparent;
+	border: 0;
+	color: #fff;
+	width: auto;
+	padding: 0 1em;
+	font-size: 1em;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	transition: color .25s ease-out;
+	max-width: 100%;
+}
+
+ul.menu-primary ul.sub-menu li.current-submenu a,
+#wrap>.sub-menu li.menu-item a:hover,
+ul.menu-primary li.current-submenu ul.sub-menu a:hover {
+	color: #004d72;
+}
+
+div#wrap {
+	background-color: #f36f37;
+}
+
+div#wrap #nav .wrap {
+	margin-bottom: 2.25em;
+}
+
+#wrap>.sub-menu {
+	padding: .5em 2em;
+	text-align: center;
+}
+
+#wrap>.sub-menu li.menu-item {
+	list-style: none;
+	display: inline-block;
+}
+
+#footer.footer {
+	position: fixed;
+	transition: bottom .5s ease-out;
+	bottom: -64px;
+}
+
+#footer.floating.footer {
+	bottom: 0px;
+	z-index: 99;
+}
+
+
+.tekserve-top-widget ul,
+.tekserve-top-widget ul li {
+	text-indent: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tekserve-top-widget ul { 
+	margin: .5em -.75em .5em 0;
+	position: relative;
+}
+
+.tekserve-top-widget .social-icons li {
+	width: 2em;
+	display: inline-block;
+	margin: 0 1em;
+}
+
+.tekserve-top-widget .social-icons li.tekserve_custom_search {
+	text-indent: 0;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	background: transparent !important;
+}
+
+.tekserve-top-widget .social-icons li a {
+	font-size: 2em;
+	color: #fff;
+}
+
+.tekserve-top-widget .social-icons li.searchlink.active {
+	position: absolute;
+	top: .5em;
+	right: -.75em;
+	font-size: .75em;
+}
+
+.tekserve-top-widget .social-icons li.searchlink.active a {
+	color: #40a8c9;
+}
+
+.tekserve-top-widget .social-icons li a:hover,
+.tekserve-top-widget .social-icons li.searchlink.active a:hover {
+	color: #f36f37;
+}
+
+.tekserve-top-widget .social-icons li.searchlink.active a {
+	color: #40a8c9;
+}
+
+.tekserve_custom_search form {
+	outline: none;
+	width: 0;
+}
+
+.tekserve_custom_search form input {
+	width: 0;
+	border: 0;
+	padding: 0;
+	position: relative;
+	top: -.25em;
+	background-color: #004d72;
+	font-weight: 200;
+}
+
+.tekserve-top-widget .contact-link {
+	position: relative;
+	width: 100px;
+	height: 48px;
+	display: inline-block;
+}
+
+.tekserve-top-widget .contact-link img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.tekserve-top-widget .contact-link img.hoverstate {
+	z-index: 99;
+	opacity: 0;
+}
+
+#search_results_activity_indicator {
+	display: none;
+}
 
 /* Navigation Menus - Responsive
 ------------------------------------------------------------ */
@@ -827,25 +1038,16 @@ ul.menu li.sfHover ul,
 	.menu-primary,
 	#header .menu,
 	.menu-secondary {
-/* 		width: 65%; */
-/* 		min-height: 8em !important; */
 		min-width: 320px;
-/* 		margin: 0; */
 	}
 
 	#subnav .wrap {
 		width: 65%;
 		text-align: center;
-/* 		min-width: 320px; */
 	}
 	
 }
 
-@media only screen and (max-width: 740px) {
-
-/* 	.menu-primary { min-height: 12em !important; } */
-
-}
 
 @media only screen and (max-width: 768px) {
 
@@ -881,7 +1083,6 @@ ul.menu li.sfHover ul,
 	ul.menu.genesis-nav-menu.menu-primary.hovermenu,
 	.menu-primary.hovermenu {
 		background-image: none;
-/* 		padding-top: 28px !important; */
 		padding-left: 1em;
 		margin: 0;
 		width: 100% !important;
@@ -922,16 +1123,74 @@ ul.menu li.sfHover ul,
 	
 	.menu-primary.hovermenu > .menu-item > .sub-menu,
 	#subnav {
-/* 		height: 0; */
 		display: none;
 	}
 	
 	.menu-primary.hovermenu > .menu-item.current-submenu > .sub-menu {
-/* 		height: auto; */
 		display: block;
 	}
 	
-	.tekserve_custom_search input.search-submit { font-size: 1.3em !important; }
+	.tekserve_custom_search input.search-submit { 
+		font-size: 1.3em !important; 
+	}
+	
+	.menu-primary > li, .menu-secondary > li, #header .menu > li {
+		height: auto;
+	}
+	
+	.menu-primary li ul, .menu-secondary li ul, #header .menu li ul {
+		position: relative;
+	}
+	
+	#nav.floating-menu ul.sub-menu,
+	#nav ul.sub-menu,
+	.menu-primary li.current-submenu a {
+		top: 0;
+		background-color: #40a8c9;
+		padding-left: 2em;
+		margin-left: 0;
+		width: 100%;
+	}
+	
+	div#wrap #nav .wrap {
+		margin-bottom: 0;
+	}
+	
+	#footer-widgets.footer-widgets {
+		padding-bottom: 5em;
+	}
+	
+	#footer.footer {
+		padding-bottom: 4em;
+		bottom: -8em;
+	}
+	
+	#footer.footer .innerRowWrap .wpb_column {
+		padding: 0 2em;
+	}
+	
+	#header .widget-area {
+		float: left;
+		text-align: left;
+		margin-bottom: 2em;
+		width: 100%
+	}
+	
+}
+
+@media only screen and (max-width: 640px) {
+
+	#footer-widgets.footer-widgets {
+		padding-bottom: 12em;
+	}
+	
+	#footer.footer {
+		bottom: -12em;
+	}
+
+	.tekserve-top-widget .social-icons li.tekserve_custom_search {
+		position: relative;
+	}
 	
 }
 
@@ -2402,6 +2661,7 @@ ul.certificationlogos {
 	width: 100%;
 	max-width: 620px;
 	margin: 0 auto;
+	padding: 2em 0;
 }
 
 ul.certificationlogos li {
