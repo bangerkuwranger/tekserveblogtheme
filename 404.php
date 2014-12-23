@@ -58,7 +58,7 @@ $redirect_rules = array(
 	array('old_url'       => 'www.tekserve.com/status', 
 		  'new_url'       => 'www.tekserve.com/repairs-and-services/#status', 
 		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
+		  'preserve_path' => TRUE 
 	),	  
 	array('old_url'       => 'www.tekserve.com/service/trade-in', 
 		  'new_url'       => 'www.tekserve.com/trade-in', 

@@ -196,26 +196,26 @@ function bw_images_filter($meta) {
 }
 
 /** Create search box in topnav */
-add_filter( 'wp_nav_menu_items', 'genesis_search_primary_nav_menu', 10, 2 );
-
-function genesis_search_primary_nav_menu( $menu, stdClass $args ){
-        if ( 'primary' != $args->theme_location )
-        	return $menu;
-               if( genesis_get_option( 'nav_extras' ) )
-                return $menu;
-        if ( function_exists( 'tekserve_divert_relevanissi' ) ) {
-			$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( tekserve_custom_search( $echo ) ) );
-        }
-        else {
-        	$menu .= sprintf( '<li class="custom-search right search">%s</li>', __( genesis_search_form( $echo ) ) );
-        }
-        return $menu;
-}
+// add_filter( 'wp_nav_menu_items', 'genesis_search_primary_nav_menu', 10, 2 );
+// 
+// function genesis_search_primary_nav_menu( $menu, stdClass $args ){
+//         if ( 'primary' != $args->theme_location )
+//         	return $menu;
+//                if( genesis_get_option( 'nav_extras' ) )
+//                 return $menu;
+//         if ( function_exists( 'tekserve_divert_relevanissi' ) ) {
+// 			$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( tekserve_custom_search( $echo ) ) );
+//         }
+//         else {
+//         	$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( genesis_search_form( $echo ) ) );
+//         }
+//         return $menu;
+// }
 
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.css' );
 
 //  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.min.js' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
@@ -230,17 +230,18 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
-	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
+// 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
+		
 	$jsdata = array(
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
 	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
 	
 	//testing new menu
-	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
-	
-	//tektips structure
-	wp_enqueue_script ( 'tektipsjs', get_stylesheet_directory_uri() . '/js/faqtoc.js', array( 'jquery' ), '', true );
+// 	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
+// 	wp_enqueue_script ( 'tekmenujs', get_stylesheet_directory_uri() . '/js/tekmenustyle.js', array( 'jquery' ) );
+
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -297,38 +298,12 @@ array(
 			'version' 	=> '1.0.10',
 			'force_activation' 	=> true,
 		),
-
 		
 		array(
-			'name' 		=> 'Better WordPress Minify',
-			'slug' 		=> 'bwp-minify',
-			'required' 	=> false,
-			'version' 	=> '1.3.1',
-			'force_activation' 	=> false,
-		),
-				
-		array(
-			'name' 		=> 'Collapse-Pro-Matic',
-			'slug' 		=> 'collapse-pro-matic',
+			'name' 		=> 'Font Awesome WP',
+			'slug' 		=> 'font-awesome-wp',
 			'required' 	=> true,
-			'version' 	=> '1.0.2',
-			'force_activation' 	=> true,
-			'source'	=> get_stylesheet_directory_uri() . '/lib/collapse-pro-matic.zip'
-		),
-		
-		array(
-			'name' 		=> "Dave's WordPress Live Search",
-			'slug' 		=> 'daves-wordpress-live-search',
-			'required' 	=> true,
-			'version' 	=> '4.1',
-			'force_activation' 	=> false,
-		),
-		
-		array(
-			'name' 		=> 'Font Awesome Icons',
-			'slug' 		=> 'font-awesome',
-			'required' 	=> true,
-			'version' 	=> '3.2.1',
+			'version' 	=> '1.0',
 			'force_activation' 	=> true,
 		),
 		
@@ -391,23 +366,6 @@ array(
 		),
 		
 		array(
-			'name' 		=> 'Relevanissi',
-			'slug' 		=> 'relevanssi',
-			'required' 	=> false,
-			'version' 	=> '3.3.5',
-			'force_activation' 	=> false,
-		),
-		
-		array(
-			'name' 		=> 'Relevanissi Divert',
-			'slug' 		=> 'relevanissi-divert',
-			'required' 	=> false,
-			'version' 	=> '1.0',
-			'force_activation' 	=> false,
-			'source'	=> get_stylesheet_directory_uri() . '/lib/relevanissi-divert.zip'
-		),
-		
-		array(
 			'name' 		=> 'Revolution Slider',
 			'slug' 		=> 'revslider',
 			'required' 	=> true,
@@ -422,14 +380,6 @@ array(
 			'required' 	=> true,
 			'version' 	=> '2.3.1',
 			'force_activation' 	=> true,
-		),
-		
-		array(
-			'name' 		=> 'Shortcodes Pro',
-			'slug' 		=> 'shortcodes-pro',
-			'required' 	=> true,
-			'version' 	=> '1.1.5',
-			'force_activation' 	=> false,
 		),
 		
 		array(
@@ -516,14 +466,6 @@ array(
 			'required' 	=> true,
 			'version' 	=> '1.5.2',
 			'force_activation' 	=> true,
-		),
-		
-		array(
-			'name' 		=> 'Widgets on Pages',
-			'slug' 		=> 'widgets-on-pages',
-			'required' 	=> false,
-			'version' 	=> '0.0.12',
-			'force_activation' 	=> false,
 		),
 		
 		array(
@@ -627,64 +569,28 @@ $args = array(
     return $args;
 }
 
-//magicNav has been deprecated.
-
-//This (updater) is deprecated for launch, remains for data cleanup project
-// /** Register Custom Taxonomy for content update assignments */
-// if ( ! function_exists('updater') ) {
-// 	function updater()  {
-// 		$labels = array(
-// 			'name'                       => 'Updaters',
-// 			'singular_name'              => 'Updater',
-// 			'menu_name'                  => 'Updater',
-// 			'all_items'                  => 'All Updaters',
-// 			'parent_item'                => 'Parent Updater',
-// 			'parent_item_colon'          => 'Parent Updater:',
-// 			'new_item_name'              => 'New Updater Name',
-// 			'add_new_item'               => 'Add New Updater',
-// 			'edit_item'                  => 'Edit Updater',
-// 			'update_item'                => 'Update Updater',
-// 			'separate_items_with_commas' => 'Separate Updaters with commas',
-// 			'search_items'               => 'Search Updaters',
-// 			'add_or_remove_items'        => 'Add or remove Updaters',
-// 			'choose_from_most_used'      => 'Choose from existing Updaters',
-// 		);
-// 		$args = array(
-// 			'labels'                     => $labels,
-// 			'hierarchical'               => false,
-// 			'public'                     => true,
-// 			'show_ui'                    => true,
-// 			'show_admin_column'          => true,
-// 			'show_in_nav_menus'          => true,
-// 			'show_tagcloud'              => false,
-// 			'query_var'                  => 'updater',
-// 			'rewrite'                    => false,
-// 		);
-// 		register_taxonomy( 'updater', 'post', $args );
-// }
-// // Hook into the 'init' action
-// add_action( 'init', 'updater', 0 );
-// }
-
 /** Customize the credits */
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'tekserve_footer' );
 function tekserve_footer() {
-	echo '<div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div>';
-	echo '<div class="creds">';
-	echo '<div class="leftcopy">';
-	echo '<a href="http://www.tekserve.com/terms-of-use/">Terms of Use</a> | ';
-	echo '<a href="http://www.tekserve.com/privacy-policy/">Privacy Policy</a>';
+	echo '<div class="vc_row wpb_row vc_row-fluid">';
+	echo '	<div class="vc_col-sm-1 wpb_column vc_column_container">';
+	echo '		<a href="#wrap" rel="nofollow" title="Return to the top of the page" alt="Return to the top of the page"><i class="fa fa-2x fa-caret-square-o-up"></i></a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
+	echo '		copyright &copy; ' . date('Y') . ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-3 wpb_column vc_column_container">';
+	echo '		<a href="/terms-of-use/">terms of use</a> - <a href="/privacy-policy/">privacy policy</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-1 wpb_column vc_column_container">';
+	echo '		<a href="/sitemap/">sitemap</a>';
+	echo '	</div>';
+	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
+	echo '		<a href="http://nytm.org/made" target="_blank">dilligently made in nyc</a>';
+	echo '	</div>';
 	echo '</div>';
-	echo '<div class="centercopy">';
-	echo 'Copyright &copy; ';
-	echo date('Y');
-	echo ' <a href="http://www.tekserve.com">Tekserve Corporation</a>';
-	echo '</div>';
-	echo '<div class="rightcopy">';
-	echo ' <a href="http://nytm.org/made">Dilligently Made in NYC</a>';
-	echo '</div>';
-	echo '</div>';
+	
 }
 
 /** All headers link to home page */
@@ -763,8 +669,6 @@ $html .= '
 			<li id="foursquare">
 			</li>
 		</ul>
-		<div id="footerfolk" class="footer-folk-image">
-		</div>
 	</div>
 </div>
 
@@ -824,31 +728,31 @@ function invisible_line() {
 	Map Trigger
 ****/
 
-add_shortcode( 'maptrigger', 'map_trigger' );
-
-function map_trigger( $atts, $content = null ) {
-	$a = shortcode_atts( array(
-		'group' => 'triggers',
-		'title' => $content
-	), $atts, 'maptrigger' );
-	return '<div class="collapseomatic colomat-visited drawertrigger" id="trigger-get-directions" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" onclick="getToTekserveLoadScript();">' . $content . '</div>';
-}
+// add_shortcode( 'maptrigger', 'map_trigger' );
+// 
+// function map_trigger( $atts, $content = null ) {
+// 	$a = shortcode_atts( array(
+// 		'group' => 'triggers',
+// 		'title' => $content
+// 	), $atts, 'maptrigger' );
+// 	return '<div class="collapseomatic colomat-visited drawertrigger" id="trigger-get-directions" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" onclick="getToTekserveLoadScript();">' . $content . '</div>';
+// }
 
 /****
 	Drawer Trigger
 ****/
 
-add_shortcode( 'drawertrigger', 'drawer_trigger' );
-
-function drawer_trigger( $atts, $content = null ) {
-	$a = shortcode_atts( array(
-		'drawerid'	=> 'nodrawer',
-		'title'		=> $content,
-		'swaptitle'	=> '',
-		'group'		=> 'triggers'
-	), $atts, 'drawertrigger' );
-	return '<div class="drawertrigger-container"><div class="collapseomatic colomat-visited drawertrigger scroll-to-trigger" id="extra1-' . $a['drawerid'] . '" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" >' . $content . '</div><div id="swap-' . $a['drawerid'] . '" style="display:none;">' . $a['swaptitle'] . '</div></div>';
-}
+// add_shortcode( 'drawertrigger', 'drawer_trigger' );
+// 
+// function drawer_trigger( $atts, $content = null ) {
+// 	$a = shortcode_atts( array(
+// 		'drawerid'	=> 'nodrawer',
+// 		'title'		=> $content,
+// 		'swaptitle'	=> '',
+// 		'group'		=> 'triggers'
+// 	), $atts, 'drawertrigger' );
+// 	return '<div class="drawertrigger-container"><div class="collapseomatic colomat-visited drawertrigger scroll-to-trigger" id="extra1-' . $a['drawerid'] . '" rel="' . $a['group'] . '-highlander" title="' . $a['title'] . '" >' . $content . '</div><div id="swap-' . $a['drawerid'] . '" style="display:none;">' . $a['swaptitle'] . '</div></div>';
+// }
 
 /****
 	Editor Buttons for Shortcodes
@@ -867,6 +771,6 @@ function add_apparition_tinymce_buttons( $plugin_array ) {
 }
 
 function register_apparition_tinymce_buttons( $buttons ) {
-    array_push( $buttons, 'tekbutton', 'invisibleline', 'drawertrigger', 'maptrigger' ); 
+    array_push( $buttons, 'tekbutton', 'invisibleline' ); 
     return $buttons;
 }

@@ -66,7 +66,7 @@ $j('h1, h2, h3, h1 a, h2 a, h3 a, .detailBoxTrigger, .drawertrigger, .tekserve-c
 
 
 /******
-	nav menu position set, init hover behavior
+	nav menu position set, init hover behavior. (Subnav behavior set after page rendered, in initTekNavSubmenu)
 ******/
 
 function navInit() {
@@ -85,12 +85,16 @@ function navInit() {
   	
   	//remove class hovermenu on window scroll
   	$j( window ).scroll(function() {
-		$j( ".menu-primary" ).removeClass( "hovermenu" );
+		if ( $j( '#nav' ).hasClass( 'floating-menu' ) ) {
+		
+			$j( ".menu-primary" ).removeClass( "hovermenu" );
+		
+		}
 	});
 	
 	//toggle class hovermenu on click
 	$j( ".menu-primary" ).click(function() {
-    		$j( this ).toggleClass( "hovermenu" );
+		$j( this ).addClass( "hovermenu" );
   	});
   	
   	//bind fixDiv() to window scroll; enables fixed topnav
@@ -106,9 +110,11 @@ function fixDiv() {
     var $jdiv = $j("#nav");
 	if ($j(window).scrollTop() > $jdiv.data("top")) { 
 		$jdiv.addClass('floating-menu');
+		$j('#footer').addClass('floating');
 	}
 	else {
 		$jdiv.removeClass('floating-menu');
+		$j('#footer').removeClass('floating');
 	} //end if ($j(window).scrollTop() > $jdiv.data("top"))
 	
 } //end fixDiv()
@@ -121,6 +127,11 @@ $j(function() {
 	
 	//Initialize nav menu functions
 	navInit();
+// 	initSearch();
+// 	initModalNews();
+
+	//Initialize submenu position
+	$j('.sub-menu').css({'left': -9999, 'opacity': 0});
 		
 	if ($j('body').hasClass('page')) {
 
@@ -241,6 +252,10 @@ $j(window).bind('load', function() {
 	});  //pass window width to various functions in width.js on resize
 	
 	setEventsBG();
+	
+	initTekNavSubmenu();
+	
+	initTitleOnAjaxFormSubmit();
 
 }); //end onload function
 
@@ -274,6 +289,7 @@ function goToAnchor() {
 			if (location.hash) {
 				window.scrollTo(0, 0);
 				$j('#nav').addClass('floating-menu');
+				$j('#footer').addClass('floating');
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = hash;
 				window.scrollBy(0, offset);
@@ -294,6 +310,7 @@ function bindAnchors() {
 			if (pageHash != "" && pageHash != "#" && pageHash != "#!" && pageHash.indexOf("tab-") === -1 ) {
 				window.scrollTo(0, 0);
 				$j('#nav').addClass('floating-menu');
+				$j('#footer').addClass('floating');
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = pageHash;
 				window.scrollBy(0, offset);
@@ -434,6 +451,8 @@ function tabletV() {
 	
 		swapHeaderImgs();
 		
+		$j( '.menu-primary' ).addClass( 'menu-mobile' );
+		
 	} //end if(prevWidth >= tV)
 } //end tabletV()
 
@@ -441,6 +460,8 @@ function untabletV() {
 	if (prevWidth < tV) {
 	
 		swapHeaderImgs();
+		
+		$j('.menu-primary').removeClass('menu-mobile');
 		
 	} //endif(prevWidth < tV) {
 } //end untabletV()
@@ -488,14 +509,16 @@ function unstackEm() {
 //moves search outside of nav node; called on page load and window resize
 function moveSearchMobile() {  
 
-		$j('.right.search').insertBefore('#inner .wrap').wrap("<div class='innerRowWrap' />");
+// 		$j('.tekserve-top-widget .searchlink').appendTo('.tekserve-top-widget .tekserve_custom_search');
+		$j('.tekserve-top-widget .searchlink').addClass('mobile');
 		
 } //end moveSearchMobile()
 
 //moves search back into nav node; called on window resize
 function moveSearchBack() {
 
-	$j('.right.search').unwrap().insertAfter('#nav div ul li:last-child');
+// 	$j('.tekserve-top-widget .searchlink').appendTo('.tekserve-top-widget');
+	$j('.tekserve-top-widget .searchlink').removeClass('mobile');
 	
 } //end moveSearchBack()
 
@@ -583,3 +606,83 @@ function setEventsBG() {
 		$j('body.events-single #wrap div#inner, body.events-archive #wrap div#inner').css('backgroundImage', eventsBG);
 	}
 }
+
+/******
+	TekNav Submenu
+******/
+
+function initTekNavSubmenu() {
+	$j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').animate( {'left': 0, 'opacity': 1}, 250 );
+	
+	if( $j('body').hasClass('home') ) {
+	
+
+		$j('#nav .menu-primary > .menu-item:first-child').addClass('current-submenu');
+		getSubmenu('#nav .menu-primary > .menu-item:first-child');
+		
+	}
+	else {
+	
+		$j('#nav .current-page-ancestor.menu-item-has-children, #nav .current-menu-item.menu-item-has-children').addClass('current-submenu');
+		
+	}	//end if( $j('body').hasClass('home') )
+	
+	$j('#nav .menu-item-has-children').click( function(e) {
+	
+		if (!$j(this).hasClass('current-submenu')) {
+			e.preventDefault();
+			getSubmenu(this);
+		}
+	
+	}); //end $j('#nav .menu-item-has-children').click( function(e)
+	
+}	//end function initTekNavSubmenu()
+
+function getSubmenu(newMenu) {
+	
+	$j('.current-submenu .sub-menu').animate( {'left': '9999px', 'opacity': 0}, 250 );
+	setTimeout( function() { 
+	
+		$j('.current-submenu .sub-menu').css( 'left', '-9999px' );
+		$j('.current-submenu').removeClass('current-submenu');
+		$j(newMenu).addClass('current-submenu');
+		$j('.current-submenu .sub-menu').animate( {'left': 0, 'opacity': 1}, 250 );
+	
+	}, 260 ); //end setTimeout( function()
+	
+} //end function getSubmenu($newMenu)
+
+/******
+	Create Placeholders with form titles
+******/
+
+function initTitleOnAjaxFormSubmit() {
+
+	labelsToPlaceholders();
+
+	$j('.gform_wrapper input.button').click( function() {
+
+		setTimeout( function(){ labelsToPlaceholders(); }, 1000 );
+
+	}); //end $j('.gform_wrapper input.button').click( function()
+
+} //end function initTitleOnAjaxFormSubmit()
+
+function labelsToPlaceholders() {
+	
+	var $gformLabels = $j('.gfield');
+
+	if ( $gformLabels.length > 0 ) {
+
+		$gformLabels.each( function() {
+	
+			var labeltxt = $j(this).find('label').text();
+			labeltxt = labeltxt.replace('*', '');
+			console.log('label: ' + labeltxt);
+			$j(this).find('input, textarea').attr('placeholder', labeltxt).attr('title', labeltxt);
+	
+		}); //end $gformLabels.each( function()
+
+	} //end if ( $gformLabels.length > 0 )
+
+} //end function labelsToPlaceholders()
