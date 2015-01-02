@@ -614,18 +614,18 @@ function setEventsBG() {
 function initTekNavSubmenu() {
 	$j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').animate( {'left': 0, 'opacity': 1}, 250 );
 	
-	if( $j('body').hasClass('home') ) {
+	if( $j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').length ) {
 	
-
-		$j('#nav .menu-primary > .menu-item:first-child').addClass('current-submenu');
-		getSubmenu('#nav .menu-primary > .menu-item:first-child');
+		$j('#nav .current-page-ancestor.menu-item-has-children, #nav .current-menu-item.menu-item-has-children').addClass('current-submenu');
+		
 		
 	}
 	else {
 	
-		$j('#nav .current-page-ancestor.menu-item-has-children, #nav .current-menu-item.menu-item-has-children').addClass('current-submenu');
+		$j('#nav .menu-primary > .menu-item:first-child').addClass('current-submenu');
+		getSubmenu('#nav .menu-primary > .menu-item:first-child');
 		
-	}	//end if( $j('body').hasClass('home') )
+	}	//end if( $j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').length )
 	
 	$j('#nav .menu-item-has-children').click( function(e) {
 	
