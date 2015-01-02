@@ -27,6 +27,12 @@ $organizer_id = get_the_ID();
 
 ?>
 
+<?php if (function_exists('vc_map')): //check for vc_map function ?>
+
+<?php wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) ) ?>
+
+<?php endif ?>
+
 <?php while( have_posts() ) : the_post(); ?>
 <div class="tribe-events-organizer">
 	<p class="tribe-events-back"><a href="<?php echo tribe_get_events_link() ?>" rel="bookmark"><?php _e( '&larr; Back to Events', 'tribe-events-calendar-pro' ) ?></a></p>

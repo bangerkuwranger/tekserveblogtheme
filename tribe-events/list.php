@@ -16,6 +16,12 @@
 
 if ( !defined('ABSPATH') ) { die('-1'); } ?>
 
+<?php if (function_exists('vc_map')): //check for vc_map function ?>
+
+<?php wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) ) ?>
+
+<?php endif ?>
+
 <?php do_action( 'tribe_events_before_template' ); ?>
 <?php if( !( is_single() ) ): ?>
 <!-- List Header -->
