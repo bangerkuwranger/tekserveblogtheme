@@ -50,18 +50,14 @@ remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	'nav',
-	'subnav',
 	'inner',
 	'footer-ets',
 	'footer',
 	'footer-widgets'
 ) );
 
-/** Move Subnav to page area before content container */
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_after_header', 'genesis_do_nav' );
+/** Remove Subnav */
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_after_header', 'genesis_do_subnav' );
 
 /** Genesis Single Post Navigation: Reverse link direction */
 define( 'GSPN_REVERSE_LINK_DIRECTION', TRUE );
@@ -195,33 +191,12 @@ function bw_images_filter($meta) {
 	return $meta;
 }
 
-/** Create search box in topnav */
-// add_filter( 'wp_nav_menu_items', 'genesis_search_primary_nav_menu', 10, 2 );
-// 
-// function genesis_search_primary_nav_menu( $menu, stdClass $args ){
-//         if ( 'primary' != $args->theme_location )
-//         	return $menu;
-//                if( genesis_get_option( 'nav_extras' ) )
-//                 return $menu;
-//         if ( function_exists( 'tekserve_divert_relevanissi' ) ) {
-// 			$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( tekserve_custom_search( $echo ) ) );
-//         }
-//         else {
-//         	$menu .= sprintf( '<li class="tekserve_custom_search custom-search right search">%s</li>', __( genesis_search_form( $echo ) ) );
-//         }
-//         return $menu;
-// }
-
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
 	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.css' );
-
-//  	wp_enqueue_script ( 'color2color', get_stylesheet_directory_uri() . '/js/color2color.min.js' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
-//  	wp_enqueue_style ( 'footer-folk', get_stylesheet_directory_uri() . '/footer-folk.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
-// 	wp_enqueue_script ( 'modernizr', 'http://modernizr.com/downloads/modernizr-latest.js', array( 'jquery' ), '', true );
 //
 //	debug includes
 //
@@ -237,11 +212,6 @@ function include_local_scripts() {
 		'cssurl'	=> get_stylesheet_directory_uri()
 	);
 	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
-	
-	//testing new menu
-// 	wp_enqueue_style ( 'tekmenustyle', get_stylesheet_directory_uri() . '/tekmenustyle.css' );
-// 	wp_enqueue_script ( 'tekmenujs', get_stylesheet_directory_uri() . '/js/tekmenustyle.js', array( 'jquery' ) );
-
 }
 add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
 
@@ -319,15 +289,7 @@ array(
 			'name' 		=> 'Genesis Simple Hooks',
 			'slug' 		=> 'genesis-simple-hooks',
 			'required' 	=> true,
-			'version' 	=> '2.0.1',
-			'force_activation' 	=> true,
-		),
-		
-		array(
-			'name' 		=> 'Genesis Simple Menus',
-			'slug' 		=> 'genesis-simple-menus',
-			'required' 	=> true,
-			'version' 	=> '0.3',
+			'version' 	=> '2.1.0',
 			'force_activation' 	=> true,
 		),
 		
@@ -335,7 +297,7 @@ array(
 			'name' 		=> 'Get to Tekserve',
 			'slug' 		=> 'get-to-tekserve',
 			'required' 	=> true,
-			'version' 	=> '1.1',
+			'version' 	=> '1.3',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/get-to-tekserve.zip'
 		),
@@ -344,7 +306,7 @@ array(
 			'name' 		=> 'Google Analyticator',
 			'slug' 		=> 'google-analyticator',
 			'required' 	=> false,
-			'version' 	=> '6.4.7.3',
+			'version' 	=> '6.4.8',
 			'force_activation' 	=> false,
 		),
 				
@@ -352,7 +314,7 @@ array(
 			'name' 		=> 'Gravity Forms',
 			'slug' 		=> 'gravityforms',
 			'required' 	=> true,
-			'version' 	=> '1.8.11',
+			'version' 	=> '1.8.17',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/gravityforms.zip'
 		),
@@ -361,7 +323,7 @@ array(
 			'name' 		=> 'Pardot',
 			'slug' 		=> 'pardot',
 			'required' 	=> false,
-			'version' 	=> '1.3.10',
+			'version' 	=> '1.4',
 			'force_activation' 	=> false,
 		),
 		
@@ -369,7 +331,7 @@ array(
 			'name' 		=> 'Revolution Slider',
 			'slug' 		=> 'revslider',
 			'required' 	=> true,
-			'version' 	=> '4.1.3',
+			'version' 	=> '4.1.4',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/revslider.zip'
 		),
@@ -386,7 +348,7 @@ array(
 			'name' 		=> 'SlickMap CSS Sitemap',
 			'slug' 		=> 'slickmap',
 			'required' 	=> false,
-			'version' 	=> '1.0',
+			'version' 	=> '1.2.1',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/slickmap.zip'
 		),
@@ -403,7 +365,7 @@ array(
 			'name' 		=> 'Tekserve Case Studies',
 			'slug' 		=> 'tekserve-case-studies',
 			'required' 	=> false,
-			'version' 	=> '1.0',
+			'version' 	=> '1.1.1',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-case-studies.zip'
 		),
@@ -421,7 +383,7 @@ array(
 			'name' 		=> 'Tekserve Press Mentions',
 			'slug' 		=> 'tekserve-press-mentions',
 			'required' 	=> false,
-			'version' 	=> '1.2',
+			'version' 	=> '1.2.1',
 			'force_activation' 	=> false,
 		),
 		
@@ -429,7 +391,7 @@ array(
 			'name' 		=> 'Tekserve Shared Data',
 			'slug' 		=> 'tekserve-shared-data',
 			'required' 	=> true,
-			'version' 	=> '1.2',
+			'version' 	=> '1.2.1',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-shared-data.zip'
 		),
@@ -438,7 +400,7 @@ array(
 			'name' 		=> 'Tekserve Single Post Shortcode',
 			'slug' 		=> 'tekserve-single-post-shortcode',
 			'required' 	=> true,
-			'version' 	=> '1.4',
+			'version' 	=> '1.4.1',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-single-post-shortcode.zip'
 		),
@@ -447,15 +409,26 @@ array(
 			'name' 		=> 'Tekserve Testimonials',
 			'slug' 		=> 'tekserve-testimonials',
 			'required' 	=> false,
+			'version' 	=> '1.1',
+			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-testimonials.zip'
+		),
+		
+				
+		array(
+			'name' 		=> 'Tekserve Theme Widgets',
+			'slug' 		=> 'tekserve_theme_widgets',
+			'required' 	=> false,
 			'version' 	=> '1.0',
 			'force_activation' 	=> false,
+			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve_theme_widgets.zip'
 		),
 		
 		array(
 			'name' 		=> 'Tekserve VCButtons',
 			'slug' 		=> 'tekserve-vcbuttons',
 			'required' 	=> true,
-			'version' 	=> '1.2.2',
+			'version' 	=> '1.2.3',
 			'force_activation' 	=> true,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/tekserve-vcbuttons.zip'
 		),
@@ -464,15 +437,23 @@ array(
 			'name' 		=> 'Use Google Libraries',
 			'slug' 		=> 'use-google-libraries',
 			'required' 	=> true,
-			'version' 	=> '1.5.2',
+			'version' 	=> '1.6.2',
 			'force_activation' 	=> true,
+		),
+		
+		array(
+			'name' 		=> 'WordPress SEO by Yoast',
+			'slug' 		=> 'wordpress-seo',
+			'required' 	=> true,
+			'version' 	=> '1.7.1',
+			'force_activation' 	=> false,
 		),
 		
 		array(
 			'name' 		=> 'WPBakery Visual Composer',
 			'slug' 		=> 'js_composer',
 			'required' 	=> true,
-			'version' 	=> '4.3.3',
+			'version' 	=> '4.3.5',
 			'force_activation' 	=> false,
 			'source'	=> get_stylesheet_directory_uri() . '/lib/js_composer.zip'
 		),
