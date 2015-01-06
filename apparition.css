@@ -1599,10 +1599,12 @@ p.subscribe-to-comments {
 	clear: both;
 	margin: 0 0 25px;
 }
+/* 
 .even {
 	background: #f36f37;
 	color: white;
 }
+ */
 
 .wpb_alert p:first-child,
 #content .wpb_alert p:first-child,
@@ -3835,6 +3837,7 @@ color: #f06c34 !important;
 
 /* Post Alternation
 ------------------------------------------------------------ */
+/* 
 .even h2 a {color:white;}
 
 .even h2 a:hover {color:#40a8c9;}
@@ -3847,6 +3850,7 @@ color: #f06c34 !important;
 .search-results #content h2.entry-title > a:hover {
 	color: #40a8c9;
 }
+ */
 
 /* Page Sections
 ------------------------------------------------------------ */
