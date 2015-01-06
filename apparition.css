@@ -6815,6 +6815,7 @@ button.positive:hover {
 
 form#status-front.status-front {
 	float: none;
+	outline: none;
 }
 
 #status-content .buttons {
