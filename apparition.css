@@ -3376,9 +3376,25 @@ label.lower {
 	display: inline;
 }
 
+.ginput_container li[class^="gchoice"] {
+	padding-left: 1em;
+}
+
 .ginput_container li[class^="gchoice"] label {
-	display: inline;
+	display: inline !important;
 	margin-left: 1em;
+	font-weight: 400;
+	font-size: .8em;
+}
+
+.gfield_description {
+	margin-left: 3em;
+	font-size: .75em;
+	color: #999;
+}
+
+.gfield_contains_required label {
+	color: #f36f37;
 }
 
 form.post-password-form {
