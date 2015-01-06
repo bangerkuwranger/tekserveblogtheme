@@ -78,6 +78,19 @@ function twitterMeta() {
 	}
 }
 
+/** check for vc_map function and add js composer css to single pages if so **/
+
+function jscomposerSinglePostFix() {
+
+	if( function_exists('vc_map') && ( is_single() || is_archive() ) ) { 
+
+		wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) );
+
+	}	//end if( function_exists('vc_map') && ( is_single() || is_archive() ) )
+	
+}	//end function jscomposerSinglePostFix()
+
+add_action( 'wp_enqueue_scripts', 'jscomposerSinglePostFix' );
 
 /** Add new image sizes */
 add_image_size( 'featured-circle', 300, 300, TRUE );
@@ -214,6 +227,13 @@ function include_local_scripts() {
 	
 		$user_id = 'guest';
 		
+	}
+	else {
+	
+		global $current_user;
+    	get_currentuserinfo();
+    	$user_id = $current_user->user_login;
+    	
 	}//	end if ($user_id == 0)
 
 	//include url of this child theme directory and user id as js variable
