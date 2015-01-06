@@ -714,9 +714,9 @@ body.custom-background {
 .menu-primary > li.current-menu-item > a,
 .menu-secondary > li.current-menu-item > a,
 #header .menu li.current-menu-item > a,
-.menu-primary > .current-page-ancestor > a,
-.menu-secondary > .current-page-ancestor > a,
-#header .menu > .current-page-ancestor > a,
+.menu-primary > .current_page_ancestor > a,
+.menu-secondary > .current_page_ancestor > a,
+#header .menu > .current_page_ancestor > a,
 .menu-primary > .menu-item-home > a,
 .menu-secondary > .menu-item-home > a,
 #header .menu > .menu-item-home > a {
@@ -724,12 +724,12 @@ body.custom-background {
 }
 
 /* 
-.menu-primary li.current-page-ancestor .sub-menu > li a {
+.menu-primary li.current_page_ancestor .sub-menu > li a {
 	font-weight: 200;
 }
  */
 
-.menu-primary .sub-menu > li.current_page_item a {
+.menu-primary .sub-menu > li.current-menu-item>a {
 	font-weight: bold;
 }
 
@@ -1102,7 +1102,7 @@ div#wrap #nav .wrap {
 	}
 	
 	#nav .menu-primary.hovermenu > .current-menu-item > a,
-	#nav .menu-primary.hovermenu > .current-page-ancestor > a,
+	#nav .menu-primary.hovermenu > .current_page_ancestor > a,
 	#nav .menu-primary.hovermenu > .menu-item-home a {
 		font-weight: bold;
 	}
