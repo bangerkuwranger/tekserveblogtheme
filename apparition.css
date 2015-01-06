@@ -1180,9 +1180,11 @@ div#wrap #nav .wrap {
 
 @media only screen and (max-width: 640px) {
 
+/* 
 	#footer-widgets.footer-widgets {
 		padding-bottom: 12em;
 	}
+ */
 	
 	#footer.footer {
 		bottom: -12em;
@@ -2604,7 +2606,7 @@ button:hover {
 /* Footer - Responsive
 ------------------------------------------------------------ */
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 
 	#footer.footer,
 	#footer-widgets.footer-widgets {
@@ -2617,12 +2619,11 @@ button:hover {
 
 @media only screen and (max-width: 640px) {
 
-	/* 
-#footer-widgets.footer-widgets {
+	#footer-widgets.footer-widgets {
 		padding-bottom: 9em;
 	}
 	
-*/
+
 
 	#footer.footer .innerRowWrap {
 		font-size: 1em;
