@@ -207,9 +207,19 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
 	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
+	
+	//get user id if logged in or set user id to 'guest' if not logged in
+	$user_id = get_current_user_id();
+	if ($user_id == 0) {
+	
+		$user_id = 'guest';
 		
+	}//	end if ($user_id == 0)
+
+	//include url of this child theme directory and user id as js variable
 	$jsdata = array(
-		'cssurl'	=> get_stylesheet_directory_uri()
+		'cssurl'	=> get_stylesheet_directory_uri(),
+		'userid'	=> $user_id
 	);
 	wp_localize_script( 'apparitionjs', 'themeInfo', $jsdata );
 }
@@ -568,7 +578,7 @@ function tekserve_footer() {
 	echo '		<a href="http://www.tekserve.com/sitemap/">sitemap</a>';
 	echo '	</div>';
 	echo '	<div class="vc_col-sm-2 wpb_column vc_column_container">';
-	echo '		<a href="http://nytm.org/made" target="_blank">dilligently made in nyc</a>';
+	echo '		<a href="http://nytm.org/made" target="_blank">diligently made in nyc</a>';
 	echo '	</div>';
 	echo '</div>';
 	
