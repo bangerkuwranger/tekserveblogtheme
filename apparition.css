@@ -2610,7 +2610,7 @@ button:hover {
 
 	#footer.footer,
 	#footer-widgets.footer-widgets {
-		padding-bottom: 3em;
+/* 		padding-bottom: 3em; */
 		margin: 0 auto;
 	}
 
@@ -2623,7 +2623,9 @@ button:hover {
 		padding-bottom: 9em;
 	}
 	
-
+	#footer.footer {
+		padding-bottom: 4em;
+	}
 
 	#footer.footer .innerRowWrap {
 		font-size: 1em;
