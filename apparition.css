@@ -55,6 +55,7 @@
 * RSS / Post / Isotope
 * Pardot
 * Revolution Slider
+* Sortable Post Grid
 * Contact Us
 * Print
 
@@ -5134,7 +5135,7 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 	color: #fff;
 	border-radius: 12px 0 12px;
 	border: none;
-	font-size: 1.5em;
+	font-size: 1.15em;
 	font-weight: 900;
 	text-transform: uppercase;
 	margin: 1em 0 0;
@@ -7229,6 +7230,74 @@ text-align: center;
 
 	.rev_slider_wrapper {
 		display: none;
+	}
+
+}
+
+/* Sortable Post Grid
+------------------------------------------------------------ */
+
+span.spg-overlay-link {
+	width: 148px !important;
+	height: 148px !important;
+	background-size: 100px !important;
+}
+
+#loop-content ul,
+#loop-content ol,
+#loop-content li,
+.select2-results,
+.select2-results li {
+	text-indent: 0 !important;
+}
+
+.spg-grids > .spg-item {
+	min-height: 30em;
+}
+
+#loop-content.spg-grid-mini .spg-item {
+	width: 23.5%
+}
+
+.innerRowWrap #loop-content li p.spg-entry-summary {
+	text-align: left;
+}
+
+.spg-grids > .spg-item:hover .spg-entry-title a > h3 {
+	color: #f36f37;
+}
+
+.tektips .spg-custom-sort-opt {
+	width: 100%;
+}
+
+.tektips .select2-results .select2-highlighted {
+	background-color: #40a8c9;
+	border-radius: 12px 0;
+}
+
+
+/* Sortable Post Grid - Responsive
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 1024px) {
+
+	#loop-content.spg-grid-mini .spg-item {
+		width: 20%;
+	}
+
+}
+
+@media only screen and (max-width: 520px) {
+
+	#loop-content.spg-grid-mini .spg-item {
+		width: 75%;
+		margin-left: 2em;
+		margin-bottom: 3em;
+	}
+	
+	.spg-custom-tax {
+		width: 75%;
 	}
 
 }
