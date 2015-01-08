@@ -4561,17 +4561,22 @@ color: #f06c34 !important;
 }
 
 
-.single-post h2 img.alignleft {
+.has-toc .single-post h2 img.alignleft {
 	width: auto;
-	max-width: 1em;
-	height: 1em;
-	margin: 0 1em 0 0;
+	max-width: 6em;
+	height: 6em;
+	margin: 0 1em 1em 0;
 }
 
 .single-post #toc_container.toc_transparent {
-	border: 4px inset;
+	border: 1px inset #aaa;
 	display: block;
-/* 	background-color: #eee; */
+}
+
+.single-post #toc_container .toc_title {
+	text-align: left;
+	font-size: 2em;
+	font-weight: 900;
 }
 
 .single-post #toc_container ul li,
@@ -4581,21 +4586,22 @@ color: #f06c34 !important;
 }
 
 .single-post #toc_container ul.toc_list>li {
-	padding-top: 100px;
+	padding-top: 5.5em;
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
 
 .single-post #toc_container ul li a {
-	font-size: 2.25em;
-	font-weight: 900;
-	text-transform: uppercase;
+	font-size: 1.5em;
+	font-weight: bold;
 	padding-left: .5em;
+	line-height: 2em;
 }
 
 .single-post .wrap #content #toc_container > ul > li {
 	list-style: none;
-/* 	border: 4px solid #fff; */
+	display: block;
+	margin-bottom: 2em;
 }
 
 .single-post .wrap #content #toc_container > ul > li:hover {
@@ -4604,29 +4610,79 @@ color: #f06c34 !important;
 }
 
 .single-post .wrap #content #toc_container > ul > li > ul > li {
-	list-style: inside square;
+	list-style: none;
 }
 
 .single-post .wrap #content #toc_container ul ul li a {
 	font-size: 1em;
 	color: #40a8c9 !important;
+	font-weight: 200;
+}
+
+.single-post .wrap #content #toc_container ul ul ul li a {
+	font-size: .9em;
+}
+.single-post .wrap #content #toc_container ul ul ul ul li a {
+	font-size: .75em;
+}
+
+.single-post .wrap #content #toc_container ul ul ul ul li {
+	list-style-type: none;
+}
+
+.single-post .wrap #content #toc_container ul ul ul ul li a:before {
+	content: '- ';
+	color: #004d72;
 }
 
 .single-post #toc_container ul.toc_list>li>a {
 	display: inline-block;
 	background-color: rgba(255,255,255,.8);
 	min-width: 200px;
+	color: #40a8c9 !important;
 }
 
+.single-post #toc_container {
+	margin-bottom: 4em;
+}
 
 .single-post .wrap #content #toc_container > ul > li:hover > a {
-	color: #004d72 !important;
+	color: #f36f37 !important;
 	text-decoration: none;
 	background-color: rgba(255,255,255,.98);
 }
 
 .single-post .wrap #content #toc_container > ul > li > a:hover {
 	text-decoration: underline;
+}
+
+.has-toc.single-post h1.entry-title {
+	text-transform: none;
+}
+
+.has-toc.single-post .entry-content > h2 {
+	border-top: 1px inset #ccc;
+	margin-top: 2em;
+	padding-top: 2em;
+}
+
+.has-toc.single-post .entry-content > h2:first-of-type {
+	border: 0;
+	margin: .5em 0;
+	padding: 0;
+}
+
+.has-toc.single-post #content .entry-content a.toclink {
+	font-weight: 200;
+	color: #40a8c9 !important;
+}
+
+.has-toc.single-post #content .entry-content a.toclink:hover {
+	color: #f36f37 !important;
+}
+
+.has-toc.single-post .entry-content h2 img.alignleft {
+	margin: .25em 1em .75em 0;
 }
 
 /* home page */
@@ -5159,6 +5215,11 @@ a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-
 .tekserve-celebros-related-items-single-data {
 	padding-bottom: 1em;
 	border-bottom: 1px dotted #40a8c9;
+}
+
+.tektips .featured-image {
+	float: right;
+	margin: 0 0 2em 2em;
 }
 
 /* FAQs - Responsive
@@ -5932,10 +5993,30 @@ table.sortable td a {
 /* Sidebar / Front Page Widgets
 ------------------------------------------------------------ */
 
-h4.widget-title {
-	text-transform: uppercase;
-	font-size: 1.75em;
+#sidebar h4.widget-title {
+	text-transform: none;
+	font-size: 1.25em;
 	margin-top: 2em;
+}
+
+#sidebar p.tekserve-celebros-related-items-section-title strong {
+	font-size: 1em;
+}
+
+#sidebar .tekserve-celebros-related-items-single-data-title {
+	font-size: 1em;
+	font-weight: 200;
+}
+
+#sidebar .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button,
+#sidebar .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .button {
+	margin: .25em 0 0;
+	font-size: .75em;
+}
+
+#sidebar .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .price {
+	font-size: .75em;
+	display: block;
 }
 
 /* FACEBOOK */

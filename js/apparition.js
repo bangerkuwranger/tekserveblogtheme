@@ -245,6 +245,8 @@ $j(window).bind('load', function() {
 		$j('#pageLoad').slideUp();
 	} //end if ( $j('body').hasClass('page') )
 	
+
+	
 	rearrangeContent(clientWidth); //pass window width to various functions in width.js on full load
 	$j(window).resize(function() {
 		clientWidth = document.documentElement.clientWidth;
