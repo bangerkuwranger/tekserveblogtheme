@@ -7272,6 +7272,10 @@ text-align: center;
 	left: auto;
 }
 
+.rev_slider_wrapper li {
+	text-indent: 0 !important;
+}
+
 /* Revolution Slider - Responsive
 ------------------------------------------------------------ */
 
