@@ -6212,7 +6212,7 @@ span.tribe-events-list-separator-month span {
 #tribe-events-bar #tribe-bar-form .tribe-bar-submit input[type=submit] {
 	background-color: #004d72;
 	border-radius: 16px 0 16px 0;
-	font-size: 1.5em !important;
+	font-size: 1em !important;
 	min-width: 6.75em;
 }
 
