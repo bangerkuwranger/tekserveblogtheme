@@ -324,8 +324,9 @@ function goToAnchor() {
 		setTimeout(function() {
 			if (location.hash) {
 				window.scrollTo(0, 0);
-				$j('#nav').addClass('floating-menu');
-				$j('#footer').addClass('floating');
+				// $j('#nav').addClass('floating-menu');
+// 				$j('#footer').addClass('floating');
+				fixDiv();
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = hash;
 				window.scrollBy(0, offset);
@@ -345,8 +346,9 @@ function bindAnchors() {
 		setTimeout(function() {
 			if (pageHash != "" && pageHash != "#" && pageHash != "#!" && pageHash.indexOf("tab-") === -1 ) {
 				window.scrollTo(0, 0);
-				$j('#nav').addClass('floating-menu');
-				$j('#footer').addClass('floating');
+// 				$j('#nav').addClass('floating-menu');
+// 				$j('#footer').addClass('floating');
+				fixDiv();
 				var offset = -( parseInt( $j('#nav').outerHeight(true) ) );
 				window.location.href = pageHash;
 				window.scrollBy(0, offset);
@@ -356,7 +358,7 @@ function bindAnchors() {
 } //end bindAnchors()
 
 /******
-	noconflict declaration, global vars
+	global vars
 ******/
 
 var currentWidth;

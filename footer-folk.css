@@ -4,7 +4,7 @@
 /* .wpb_{shortcode_base} .wpb_element_wrapper selector can be used to add background image to VC shortcode block in the Visual Composer Editor working canvas */
 .wpb_footerfolk .wpb_element_wrapper { background-image: url(images/footerfolk.png); background-size: 32px; height: 30px; }
 
-.footer-folk {
+#footer-folk {
 	width: 100%;
 	margin: 0 auto;
 	background: #fff;
