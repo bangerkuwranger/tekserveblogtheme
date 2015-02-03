@@ -2464,6 +2464,10 @@ button:hover {
 
 @media only screen and (max-width: 660px) {
 
+	#footer-widgets {
+		margin: 0;
+	}
+
 	#footer-widgets .widget {
 		display: block;
 	}
