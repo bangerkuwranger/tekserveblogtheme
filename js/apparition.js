@@ -99,7 +99,7 @@ function navInit() {
   	
   	//bind fixDiv() to window scroll; enables fixed topnav
   	$j(window).scroll(fixDiv);
-
+  	
 	
 } //end navInit()
 
@@ -108,14 +108,45 @@ function navInit() {
 function fixDiv() { 
 
     var $jdiv = $j("#nav");
-	if ($j(window).scrollTop() > $jdiv.data("top")) { 
-		$jdiv.addClass('floating-menu');
-		$j('#footer').addClass('floating');
-	}
-	else {
-		$jdiv.removeClass('floating-menu');
-		$j('#footer').removeClass('floating');
-	} //end if ($j(window).scrollTop() > $jdiv.data("top"))
+    
+    // if window is larger than the document content-> no pinned menu and show #footer
+    if ( $j(window).height() >= ( $j(document).height() - $j('#footer-widgets').height() ) ) {
+    
+    	$j('#footer').addClass('floating');
+    	$jdiv.removeClass('floating-menu');
+    	
+    }
+    // if window is not mobile, and difference between content height and window height is larger than the total height of the navbar-> no pinned menu and show #footer
+    else if ( $j(window).height() - $j('#inner').height() >= $j('#nav > .wrap').outerHeight(true) && $j(window).width() > 450 ) {
+    
+    	$j('#footer').addClass('floating');
+    	$jdiv.removeClass('floating-menu');
+    
+    }
+    // if window is mobile, and difference between (content + header) height and window height is larger than the total height of the navbar-> no pinned menu and show #footer
+    else if ( $j(window).height() - $j('#inner').height() - $j('#header').height() >= $j('#nav > .wrap').outerHeight(true) && $j(window).width() < 450 ) {
+    
+    	$j('#footer').addClass('floating');
+    	$jdiv.removeClass('floating-menu');
+    
+    }
+    //	otherwise, use normal pinned menu and sliding #footer behavior. Conditions prevent window jumping and hiding footer in certain window configurations
+    else {
+    
+		if ($j(window).scrollTop() > $jdiv.data("top")) {
+		
+			$jdiv.addClass('floating-menu');
+			$j('#footer').addClass('floating');
+		
+		}
+		else {
+		
+			$jdiv.removeClass('floating-menu');
+			$j('#footer').removeClass('floating');
+		
+		}	//end if ($j(window).scrollTop() > $jdiv.data("top"))
+
+	}	//end if ( $j(window).height() >= $j(document).height() )
 	
 } //end fixDiv()
 
@@ -258,6 +289,9 @@ $j(window).bind('load', function() {
 	initTekNavSubmenu();
 	
 	initTitleOnAjaxFormSubmit();
+	
+	//run fixdiv once to insure correct behavior on load
+	fixDiv();
 
 }); //end onload function
 
@@ -688,3 +722,30 @@ function labelsToPlaceholders() {
 	} //end if ( $gformLabels.length > 0 )
 
 } //end function labelsToPlaceholders()
+
+/******
+	Determine whether element is visible on page
+******/
+
+function isElementVisible(el) {
+    var rect     = el.getBoundingClientRect(),
+        vWidth   = window.innerWidth || doc.documentElement.clientWidth,
+        vHeight  = window.innerHeight || doc.documentElement.clientHeight,
+        efp      = function (x, y) { return document.elementFromPoint(x, y) };     
+
+    // Return false if it's not in the viewport
+    if (rect.right < 0 || rect.bottom < 0 || rect.left > vWidth || rect.top > vHeight) {
+    
+        return false;
+
+	}	//end if (rect.right < 0 || rect.bottom < 0 || rect.left > vWidth || rect.top > vHeight)
+	
+    // Return true if any of its four corners are visible
+    return (
+          el.contains(efp(rect.left,  rect.top))
+      ||  el.contains(efp(rect.right, rect.top))
+      ||  el.contains(efp(rect.right, rect.bottom))
+      ||  el.contains(efp(rect.left,  rect.bottom))
+    );
+    
+}	//end isElementVisible(el)
