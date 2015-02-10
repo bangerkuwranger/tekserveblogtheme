@@ -2708,12 +2708,8 @@ button:hover {
 	}
 
 	#footer.footer .innerRowWrap {
-		font-size: 1em;
-		text-align: left;
-	}
-
-	#footer.footer .innerRowWrap a {
 		font-size: 9px !important;
+		text-align: left;
 	}
 
 
