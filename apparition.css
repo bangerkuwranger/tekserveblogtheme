@@ -1428,11 +1428,9 @@ ul.tekserve_custom_search_menu {
 	
 	input.s.search-input {
 		font-size: 1.125em;
-		font-weight: bold;
 		height: 28px;
 		color: #004d72;
-		border: 1px solid #40a8c9;
-		border-right: none;
+		border: 0;
 	}
 	
 	.tekserve_custom_search .search-option-menu {

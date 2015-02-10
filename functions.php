@@ -207,7 +207,7 @@ function bw_images_filter($meta) {
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.css' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
  	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
 //
@@ -218,7 +218,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
-	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
 	
 	//get user id if logged in or set user id to 'guest' if not logged in
@@ -687,7 +687,7 @@ $html .= '
 	var zagaturl = "'.$zagat.'", foursquareurl = "'.$foursquare.'", folkurl = "'.$folk.'";
 </script>
 ';
-wp_enqueue_script ( 'footerfolk', get_stylesheet_directory_uri() . '/js/folk.js', array( 'jquery' ), '', true );
+wp_enqueue_script ( 'footerfolk', get_stylesheet_directory_uri() . '/js/folk.min.js', array( 'jquery' ), '', true );
 echo $html;
 }
 add_shortcode( 'footerfolk', 'footer_folk' );
