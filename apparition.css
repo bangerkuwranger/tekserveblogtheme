@@ -142,6 +142,48 @@ li {
 	text-decoration: none;
 }
 
+body span,
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span,
+p span,
+select span,
+textarea span,
+ul span,
+ol span,
+li span,
+body em,
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em,
+p em,
+select em,
+textarea em,
+ul em,
+ol em,
+li em,
+body strong,
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong,
+p strong,
+select strong,
+textarea strong,
+ul strong,
+ol strong,
+li strong {
+	font-size: inherit;
+}
+
 
 
 blockquote,
@@ -1023,6 +1065,16 @@ div#wrap #nav .wrap {
 		
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+	#footer-widgets,
+	#footer.footer .innerRowWrap {
+		max-width: 90%;
+	}
+
+}
+
+
 @media only screen and (max-width: 1024px) {
 
 	.menu-primary,
@@ -1049,6 +1101,17 @@ div#wrap #nav .wrap {
 	
 }
 
+@media only screen and (min-width: 769px) {
+
+	#header .widget-area {
+		min-width: 315px;
+	}
+	
+	.menu-primary {
+		max-height: 3em;
+	}
+
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -1177,7 +1240,25 @@ div#wrap #nav .wrap {
 		width: 100%
 	}
 	
+	.tekserve-top-widget .social-icons li.tekserve_custom_search {
+		position: relative;
+	}
+	
 }
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+	
+	.tekserve-top-widget .social-icons li.tekserve_custom_search {
+		top: 5px;
+	}
+	
+	.tekserve-top-widget .social-icons li.searchlink.active {
+		top: -.25em;
+		right: -1.5em;
+	}
+
+}
+
 
 @media only screen and (max-width: 640px) {
 
@@ -1191,9 +1272,7 @@ div#wrap #nav .wrap {
 		bottom: -12em;
 	}
 
-	.tekserve-top-widget .social-icons li.tekserve_custom_search {
-		position: relative;
-	}
+	
 	
 }
 
