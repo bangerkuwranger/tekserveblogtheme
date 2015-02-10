@@ -469,7 +469,7 @@ function unmobileV() {
 function mobileH() {
 	if (prevWidth >= mH) {
 	
-		moveSearchMobile();
+		
 		shutMobileDrawers();
 		
 	} //end if(prevWidth >= mH) {
@@ -478,7 +478,7 @@ function mobileH() {
 function unmobileH() {
 	if (prevWidth < mH) {
 	
-		moveSearchBack();
+		
 		
 	} //end if(prevWidth < mH) {
 } //end unmobileH()
@@ -490,6 +490,7 @@ function tabletV() {
 		swapHeaderImgs();
 		
 		$j( '.menu-primary' ).addClass( 'menu-mobile' );
+		moveSearchMobile();
 		
 	} //end if(prevWidth >= tV)
 } //end tabletV()
@@ -500,6 +501,7 @@ function untabletV() {
 		swapHeaderImgs();
 		
 		$j('.menu-primary').removeClass('menu-mobile');
+		moveSearchBack();
 		
 	} //endif(prevWidth < tV) {
 } //end untabletV()
