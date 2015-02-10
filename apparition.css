@@ -1256,23 +1256,21 @@ div#wrap #nav .wrap {
 		top: -.25em;
 		right: -1.5em;
 	}
+	
+		#footer-widgets.footer-widgets {
+		padding-bottom: 8em;
+	}
+
 
 }
 
 
 @media only screen and (max-width: 640px) {
 
-/* 
-	#footer-widgets.footer-widgets {
-		padding-bottom: 12em;
-	}
- */
 	
 	#footer.footer {
 		bottom: -12em;
 	}
-
-	
 	
 }
 
@@ -2702,7 +2700,7 @@ button:hover {
 @media only screen and (max-width: 640px) {
 
 	#footer-widgets.footer-widgets {
-		padding-bottom: 9em;
+		padding-bottom: 12em;
 	}
 	
 	#footer.footer {
