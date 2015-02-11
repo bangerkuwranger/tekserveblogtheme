@@ -1709,22 +1709,13 @@ p.subscribe-to-comments {
 /* Content - Responsive
 ------------------------------------------------------------ */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
 
 	.single #sidebar,
 	.single.content-sidebar #content,
 	.single #content {
 		width: 100%;
 		padding: 1em 2.5%;
-	}
-	
-	.single #sidebar .nrelate-related-widget,
-	.single #sidebar iframe,
-	.search-results #sidebar .nrelate-related-widget,
-	.search-results #sidebar iframe,
-	.archive #sidebar .nrelate-related-widget,
-	.archive #sidebar iframe {
-		display: none;
 	}
 	
 }
