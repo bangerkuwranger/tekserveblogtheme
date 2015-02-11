@@ -1712,7 +1712,8 @@ p.subscribe-to-comments {
 @media only screen and (max-width: 1024px) {
 
 	.single #sidebar,
-	.single.content-sidebar #content {
+	.single.content-sidebar #content,
+	.single #content {
 		width: 100%;
 		padding: 1em 2.5%;
 	}
