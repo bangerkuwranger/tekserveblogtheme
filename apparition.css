@@ -2721,6 +2721,7 @@ button:hover {
 	width: 100%;
 	margin: 0 auto;
 	background: #fff;
+	border-top: 1em solid #40a8c9;
 }
 
 .footer-folk-wrap {
