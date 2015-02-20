@@ -2334,6 +2334,181 @@ button:hover {
 	display: none;
 }
 
+#footer-widgets .widget-wrap .tekserve-modal-newsletter-window h1,
+#footer-widgets .widget-wrap .tekserve-modal-newsletter-window h2,
+#footer-widgets .widget-wrap .tekserve-modal-newsletter-window h3,
+#footer-widgets .widget-wrap .tekserve-modal-newsletter-window h4 {
+	color: #004d72;
+}
+
+.tekserve-modal-window-form .mc_error_msg {
+	color: #f36f37;
+}
+
+.tekserve-modal-window-form .mc_success_msg {
+	background: #40a8c9;
+	color: #fff;
+	padding: .5em 1em;
+	border-radius: 12px;
+	display: inline-block;
+	text-indent: 1em;
+}
+
+.tekserve-modal-window-form .mc_success_msg:before {
+	content: '\f058';
+	font-family: FontAwesome;
+	position: relative;
+	left: -1em;
+	font-weight: 200;
+	color: #fff;
+}
+
+.tekserve-modal-newsletter-window #mc_subheader,
+.mc_custom_border_hdr {
+	display: none;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form {
+	outline: 0;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form div label {
+	font-weight: normal;
+	text-transform: none;
+	color: #555;
+	font-size: .75em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_merge_var .mc_var_label,
+.tekserve-modal-newsletter-window #mc_signup_form .mergeRow .mc_email_format {
+	display: inline-block;
+	min-width: 20%;
+	font-weight: 200;
+	text-transform: none;
+	color: #555;
+	font-size: 1.125em;
+}
+
+.tekserve-modal-newsletter-window .mc_interests_header {
+	font-weight: 200;
+	text-transform: none;
+	color: #555;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_input {
+	display: inline-block;
+	width: auto;
+	min-width: 75%;
+	color: #555;
+	padding: .1em .5em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_input.hasDatepicker {
+	width: 228px !important;
+	min-width: 0;
+}
+
+.tekserve-modal-newsletter-window .mc_required,
+.tekserve-modal-newsletter-window #mc-indicates-required {
+	color: #f36f37;
+	font-weight: bold;
+}
+
+.tekserve-modal-newsletter-window #mc-indicates-required {
+	font-size: .75em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_help {
+	display: block;
+	color: #888;
+	font-size: .75em;
+	margin-left: 1.25em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_help:before {
+	content: '\f0a6';
+	font-family: FontAwesome;
+	position: relative;
+	left: -.5em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form ul.mc_list {
+	padding: 0;
+	margin-left: -1em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form ul.mc_list li {
+	display: inline-block;
+	margin: 0 1em;
+	font-size: 1em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_radio,
+.tekserve-modal-newsletter-window #mc_signup_form input[type="radio"] {
+	display: inline;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form label.mc_radio_label,
+.tekserve-modal-newsletter-window #mc_signup_form ul.mc_list li label {
+	display: inline;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form select {
+	display: inline-block;
+	max-width: 75%;
+	text-transform: none;
+	font-weight: normal;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_signup_submit {
+	text-align: left;
+	font-size: 1.125em;
+	position: relative;
+	margin-top: 1em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form .mc_signup_submit:before {
+	content: '\f0e0';
+	font-family: FontAwesome;
+	position: absolute;
+	color: #fff;
+	left: .75em;
+	top: 0.24em;
+}
+
+.tekserve-modal-newsletter-window #mc_signup_form #mc_signup_submit {
+	width: auto;
+	padding: .25em .75em .15em 2em !important;
+	margin: 0;
+}
+
+
+/* Search Form / eNews and Update Widget - Responsive
+------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+
+	.tekserve-modal-newsletter-window #mc_signup_form .mc_input,
+	.tekserve-modal-newsletter-window #mc_signup_form select {
+		display: block;
+		width: 100%;
+	}
+	
+	.tekserve-modal-newsletter-window #mc_signup_form div label,
+	.tekserve-modal-newsletter-window #mc_signup_form .mc_merge_var .mc_var_label,
+	.tekserve-modal-newsletter-window #mc_signup_form .mergeRow .mc_email_format,
+	.tekserve-modal-newsletter-window #mc_signup_form .mc_help {
+		font-size: 1em;
+	}
+	
+	.tekserve-modal-newsletter-window #mc_signup_form .mc_help {
+		margin-top: .25em;
+	}
+
+}
+
 /* Search Results / Archives
 ------------------------------------------------------------ */
 

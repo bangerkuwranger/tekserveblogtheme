@@ -350,10 +350,10 @@ array(
 		),
 		
 		array(
-			'name' 		=> 'Pardot',
-			'slug' 		=> 'pardot',
+			'name' 		=> 'MailChimp List Subscribe Form',
+			'slug' 		=> 'mailchimp',
 			'required' 	=> false,
-			'version' 	=> '1.4',
+			'version' 	=> '1.4.2',
 			'force_activation' 	=> false,
 		),
 		
