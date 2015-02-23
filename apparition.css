@@ -7225,9 +7225,11 @@ form#status-front.status-front {
 	width: 50%;
 }
 
+/* 
 .slickmap #primaryNav li a {
 	background-image: none;
 }
+ */
 
 .slickmap #primaryNav li li a {
 	padding: 10px 1.25em;
