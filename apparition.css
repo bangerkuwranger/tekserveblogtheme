@@ -4544,6 +4544,8 @@ color: #f06c34 !important;
 
 .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
 	margin-bottom: 2em !important;
+	background: transparent;
+	border: 0;
 }
 
 .innerRowWrap .wpb_content_element .wpb_tabs_nav li {
@@ -4551,6 +4553,7 @@ color: #f06c34 !important;
 	text-align: center;
 	text-indent: 0;
 	padding: 0 .5em;
+	border: 0;
 	border-right: 2px solid #40a8c9;
 }
 
@@ -7706,6 +7709,7 @@ span.spg-overlay-link {
 	-webkit-transition: height .2s;
 	transition: padding 1s;
 	-webkit-transition: padding 1s;
+	border: 0;
 }
 
 .flatBottom {
