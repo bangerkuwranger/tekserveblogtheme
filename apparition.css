@@ -6366,14 +6366,6 @@ div.tribe-events-map-wrap {
 	background-color: #f36f37 !important;
 }
 
-body.events-single #wrap div#inner,
-body.events-archive #wrap div#inner {
-	background-image: url(./random-image/rotate.php);
-	background-position: bottom right;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
 /* 
 body.events-list #wrap div#inner {
 	background-size: 50%;
@@ -7225,15 +7217,27 @@ form#status-front.status-front {
 	width: 50%;
 }
 
-/* 
 .slickmap #primaryNav li a {
-	background-image: none;
+	line-height: 1;
 }
- */
 
-.slickmap #primaryNav li li a {
-	padding: 10px 1.25em;
+.slickmap #primaryNav li a::after {
+	margin-top: .75em;
+	font-weight: 200;
+} 
+
+
+/* Sitemap - Responsive
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 960px) and (min-width: 768px) {
+
+	.slickmap #primaryNav li a {
+		padding: .5em .25em !important;
+	}
+	
 }
+
 
 /* RSS / Post / Isotope
 ------------------------------------------------------------ */

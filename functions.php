@@ -659,7 +659,6 @@ add_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 function footer_folk() {
 $zagat = get_stylesheet_directory_uri() . '/footer-images/logos/zagat.png';
 $foursquare = get_stylesheet_directory_uri() . '/footer-images/logos/foursquare-logo.png';
-$folk = get_stylesheet_directory_uri() . '/rotate.php';
 if( get_post_type() == "page" ) {
 	$html = '<div id="pageLoad"><img src="' . get_stylesheet_directory_uri() . '/images/ajax-loader.gif" alt="Page Loading" /></div>';
 }
