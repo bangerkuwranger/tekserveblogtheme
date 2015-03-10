@@ -2158,8 +2158,20 @@ p.wp-caption-text {
 	border-color: #fff;
 }
 
+.overlap .vc_single_image-wrapper img {
+	margin-top: -30%;
+}
+
 /* Images - Responsive
 ------------------------------------------------------------ */
+
+@media only screen and (max-width: 960px) {
+
+	.overlap .vc_single_image-wrapper img {
+		margin-top: 0;
+	}
+
+}
 
 @media only screen and (max-width: 640px) {
 
@@ -4312,6 +4324,7 @@ color: #f06c34 !important;
 		color: #fff;
 		background-color: #004d72;
 		text-align: center;
+		margin-top: 0;
 	}
 	
 	.innerRowWrap.lightblue h1 {
