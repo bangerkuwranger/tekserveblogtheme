@@ -6253,9 +6253,10 @@ table.sortable td a {
 ------------------------------------------------------------ */
 
 #sidebar h4.widget-title {
-	text-transform: none;
-	font-size: 1.25em;
+	text-transform: uppercase;
+	font-size: 1.125em;
 	margin-top: 2em;
+	font-weight: 400;
 }
 
 #sidebar p.tekserve-celebros-related-items-section-title strong {
@@ -6278,11 +6279,20 @@ table.sortable td a {
 	display: block;
 }
 
-/* FACEBOOK */
-
-.recent-facebook-posts .rfbp-text {
-	display: none;
+#sidebar .widget ul,
+#sidebar .widget ul li {
+	list-style-type: none;
 }
+
+#sidebar .tekserve-modal-newsletter-link {
+  font-size: 1.125em;
+}
+
+#sidebar .tekserve-modal-newsletter-link:hover {
+  color: #f36f37;
+}
+
+/* FACEBOOK */
 
 .recent-facebook-posts .rfbp-post {
 	border: 0;
