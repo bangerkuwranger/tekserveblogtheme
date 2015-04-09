@@ -1,0 +1,76 @@
+.full-width-content .post .entry-content {
+	color: #222 !important;
+}
+
+.full-width-content .post .entry-content body,
+.full-width-content .post .entry-content h1,
+.full-width-content .post .entry-content h2,
+.full-width-content .post .entry-content h3,
+.full-width-content .post .entry-content h4,
+.full-width-content .post .entry-content h5,
+.full-width-content .post .entry-content h6,
+.full-width-content .post .entry-content li,
+.full-width-content .post .entry-content ol,
+.full-width-content .post .entry-content p,
+.full-width-content .post .entry-content select,
+.full-width-content .post .entry-content textarea,
+.full-width-content .post .entry-content ul,
+.full-width-content .post .entry-content span,
+.full-width-content .post .entry-content blockquote,
+.full-width-content .post .entry-content div,
+.full-width-content .post .entry-content table {
+	color: inherit;
+	font-size: 1.05em;
+}
+
+.full-width-content.single #content {
+	max-width: 700px;
+	margin: 0 auto;
+	float: none;
+}
+
+.content-sidebar.single #content {
+	max-width: 700px;
+	float: left;
+}
+
+.content-sidebar #sidebar .featured-content, .content-sidebar #sidebar .featured-content p {
+  font-size: .75em !important;
+}
+
+.content-sidebar #sidebar .featured-content .hentry .alignleft img {
+	margin: 0;
+	max-width: 75px;
+	height: auto;
+}
+
+.even .alignleft {
+	float: left;
+}
+
+.content-sidebar #sidebar .alignleft:after {
+	height: 1px;
+	display: block;
+	clear: both;
+}
+
+.linkwithin_posts > a {
+	float: none !important;
+	width: 100%;
+	border-left: 0 !important;
+	margin: .5em 0 !important;
+	border-bottom: 1px dotted rgb(221, 221, 221) !important;
+}
+
+.linkwithin_posts > a:last-child {
+	border-bottom: 0 !important;
+} 
+
+@media (max-width: 768px) {
+
+	.full-width-content.single #content,
+	.content-sidebar.single #content {
+		width: 90%;
+	}
+
+}
