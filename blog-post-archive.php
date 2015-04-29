@@ -25,6 +25,8 @@ function apparition_post_loop() {
 	else {
 		$paged = 1;
 	}
+	
+	$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . get_stylesheet_directory_uri() . '/images/blogplaceholder.jpg" />';
 
 	$args = array(
 		'orderby'       => 'post_date',
@@ -47,7 +49,7 @@ function apparition_post_loop() {
 		<div class="vc_row wpb_row vc_row-fluid hero">
 			<div class="vc_col-sm-4 wpb_column vc_column_container">
 				<a href="<?php the_permalink() ?>">
-					<p class="heroimage"><?php the_post_thumbnail( 'large' ) ?></p>
+					<p class="heroimage"><?php has_post_thumbnail() ? the_post_thumbnail( 'large' ) : print($placeholderimg) ?></p>
 				</a>
 			</div>
 			<div class="vc_col-sm-8 wpb_column vc_column_container">
@@ -69,7 +71,7 @@ function apparition_post_loop() {
 			<div class="vc_row wpb_row vc_row-fluid article-archive">
 				<div class="vc_col-sm-3 wpb_column vc_column_container">
 					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail( 'medium' ) ?>
+						<?php has_post_thumbnail() ? the_post_thumbnail( 'medium' ) : print($placeholderimg) ?>
 					</a>
 				</div>
 				<div class="vc_col-sm-9 wpb_column vc_column_container">
@@ -150,7 +152,8 @@ function apparition_infinite_scroll_js() {
 		"nextSelector":".navigation .nav-previous a",
 		"navSelector":".navigation",
 		"itemSelector":".article-archive",
-		"contentSelector":"#content"
+		"contentSelector":"#content",
+		"animate":true,
 	};
 	jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
 	</script>
