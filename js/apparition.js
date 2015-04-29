@@ -283,6 +283,10 @@ $j(window).bind('load', function() {
 	$j(window).resize(function() {
 		clientWidth = document.documentElement.clientWidth;
 		rearrangeContent(clientWidth);
+		if (typeof blogHero == 'function') {
+			clearTimeout(blogHeroTimeout);
+			var blogHeroTimeout = setTimeout(function() { blogHero(); }, 150);
+		}
 	});  //pass window width to various functions in width.js on resize
 	
 	initTekNavSubmenu();
@@ -294,6 +298,10 @@ $j(window).bind('load', function() {
 	
 	//run fixdiv once to insure correct behavior on load
 	fixDiv();
+	
+	if (typeof blogHero == 'function') {
+		blogHero();
+	}
 
 }); //end onload function
 
