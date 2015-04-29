@@ -16,11 +16,21 @@ add_action( 'genesis_loop', 'apparition_post_loop' );
 
 function apparition_post_loop() {
 
+	if ( get_query_var('paged') ) {
+		$paged = get_query_var('paged');
+	}
+	elseif ( get_query_var('page') ) {
+		$paged = get_query_var('page');
+	}
+	else {
+		$paged = 1;
+	}
+
 	$args = array(
 		'orderby'       => 'post_date',
 		'order'         => 'DESC',
 		'posts_per_page'=> '12', // overrides posts per page in theme settings
-		'page' 		=> ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1.
+		'paged' 		=> $paged,
 	);
 
 	$loop = new WP_Query( $args );

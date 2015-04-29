@@ -207,7 +207,7 @@
 
 	.page-template-blog-post-archive .innerRowWrap h1,
 	.page-template-blog-post-archive .innerRowWrap h1 a {
-		padding-top: 1em;
+		padding-top: .5em;
 	}
 
 	.page-template-blog-post-archive #inner #content,
@@ -218,11 +218,29 @@
 	}
 	
 	.page-template-blog-post-archive .innerRowWrap {
-		overflow: hidden;
+		overflow: visible;
 	}
 
 	.page-template-blog-post-archive .hero .valigncenter {
 		display: inline !important;
+	}
+	
+	.page-template-blog-post-archive .hero .innerRowWrap h1 {
+		padding-top: 1em;
+	}
+	
+	.page-template-blog-post-archive .hero-separator .innerRowWrap h1 {
+		padding-top: 0;
+	}
+
+}
+
+@media (max-width: 420px) {
+
+	.page-template-blog-post-archive .article-archive img {
+	  margin: 0;
+	  max-height: 120px;
+	  width: auto;
 	}
 
 }
