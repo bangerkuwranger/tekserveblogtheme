@@ -760,6 +760,12 @@ function save_apparition_custom_post_fields( $post_id, $post ) {
 	
 	}	//end if( ! wp_verify_nonce( $nonce, 'apparition_custom_post_fields' ) ) {
 	
+	if( ! current_user_can( 'edit_post', $post_id ) ) {
+	
+		return $post_id;
+	
+	}	//end if( ! current_user_can( 'edit_post', $post_id ) )
+	
     // Check post type for 'post'
     if( $post->post_type == 'post' ) {
         // Store data in post meta table if present in post data

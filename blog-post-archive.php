@@ -52,11 +52,17 @@ function apparition_post_loop() {
 // 		'meta_value'		=> 'content-sidebar',
 // 		'meta_compare' 		=> '!=',
 		'meta_query' => array(
-							  array(
-								 'key' => '_genesis_layout',
-								 'compare' => 'NOT EXISTS'
-							  ),
-						  )
+								'relation'	=> 'OR',
+								array(
+									'key' 		=> '_genesis_layout',
+									'compare' 	=> 'NOT EXISTS'
+								),
+								array(
+									'key'     => '_genesis_layout',
+									'value'   => 'content-sidebar',
+									'compare' => 'LIKE',
+								),
+							)
 	);
 	
 	//create new query
