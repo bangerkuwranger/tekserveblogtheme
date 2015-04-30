@@ -93,8 +93,8 @@ function jscomposerSinglePostFix() {
 add_action( 'wp_enqueue_scripts', 'jscomposerSinglePostFix' );
 
 /** Add new image sizes */
-add_image_size( 'featured-circle', 300, 300, TRUE );
-add_image_size( 'featured-square', 300, 300, TRUE );
+// add_image_size( 'featured-circle', 300, 300, TRUE );
+// add_image_size( 'featured-square', 300, 300, TRUE );
 
 /** Unregister layout settings */
 genesis_unregister_layout( 'sidebar-content' );
@@ -130,9 +130,10 @@ add_action( 'genesis_before_post_title', 'genesis_do_post_image' );
 /** Add the featured image section */
 add_action( 'genesis_before_post_title', 'apparition_featured_image' );
 function apparition_featured_image() {
-	if ( is_singular( array( 'post', 'page' ) ) && has_post_thumbnail() ){
+	if ( is_singular( array( 'post', 'page' ) ) ) {
+		$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . get_stylesheet_directory_uri() . '/images/blogplaceholder.jpg" />';
 		echo '<div class="featured-image">';
-		echo get_the_post_thumbnail( $thumbnail->ID, 'thumbnail-bw' );
+		echo has_post_thumbnail() ?  get_the_post_thumbnail( $thumbnail->ID, 'large' ) : ($placeholderimg);
 		echo '</div>';
 	}
 }

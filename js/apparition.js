@@ -164,6 +164,15 @@ $j(function() {
 
 	//Initialize submenu position
 	$j('.sub-menu').css({'left': -9999, 'opacity': 0});
+	
+	//weird headers
+	if ($j('body').hasClass('single-post')) {
+		$j('h2').parent('li').addClass('htwoList');
+		$j('h3').parent('li').addClass('hthreeList');
+		$j('h4').parent('li').addClass('hfourList');
+		//remove that from widgets
+		$j('h2').parent('li.widget').removeClass('htwoList');
+	}
 		
 	if ($j('body').hasClass('page')) {
 
