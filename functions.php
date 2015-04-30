@@ -218,7 +218,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
-	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
 	
 	//get user id if logged in or set user id to 'guest' if not logged in
@@ -697,6 +697,53 @@ function tekserve_footer_folk_vc() {
 	<div class='vc_col-sm-12 wpb_column vc_column_container' style='min-height: 0px;'>
 		<div class='wpb_wrapper' style='padding-bottom: 0px;'>".footer_folk()."</div></div></div>";
 	echo $html;
+}
+
+/****
+	Custom Post Fields
+****/
+
+//create custom fields for details
+add_action( 'admin_init', 'apparition_custom_post_fields' );
+function apparition_custom_post_fields() {
+    add_meta_box( 'apparition_custom_post_fields', 'Blog Post Fields', 'apparition_custom_post_fields_metabox', 'post', 'normal', 'high' );
+}
+
+// Retrieve current details based on case study ID
+function apparition_custom_post_fields_metabox( $post ) {
+	$apparition_post_subtitle = esc_html( get_post_meta( $post->ID, 'apparition_post_subtitle', true ) );
+	$apparition_post_cta = esc_html( get_post_meta( $post->ID, 'apparition_post_cta', true ) );
+	?>
+    <table>
+        <tr>
+            <td style="width: 100%">Subtitle (leave blank for none)</td>
+        </tr>
+        <tr>
+            <td><input type="text" size="130" name="apparition_post_subtitle" value="<?php echo $apparition_post_subtitle; ?>" /></td>
+        </tr>
+        <tr>
+            <td style="width: 100%">CTA Text (leave blank for default: 'READ MORE')</td>
+        </tr>
+        <tr>
+            <td><input type="text" size="130" name="apparition_post_cta" value="<?php echo $apparition_post_cta; ?>" /></td>
+        </tr>
+    </table>
+    <?php
+}
+
+//store custom field data
+add_action( 'save_post', 'save_apparition_custom_post_fields', 5, 2 );
+function save_apparition_custom_post_fields( $post_id, $post ) {
+    // Check post type for 'post'
+    if ( $post->post_type == 'post' ) {
+        // Store data in post meta table if present in post data
+        if ( isset( $_POST['apparition_post_subtitle'] ) ) {
+            update_post_meta( $post_id, 'apparition_post_subtitle', sanitize_text_field( $_REQUEST['apparition_post_subtitle'] ) );
+    	}
+    	if ( isset( $_POST['apparition_post_cta'] ) ) {
+            update_post_meta( $post_id, 'apparition_post_cta', sanitize_text_field( $_REQUEST['apparition_post_cta'] ) );
+    	}
+    }
 }
 
 /**  Visual Composer button  **/

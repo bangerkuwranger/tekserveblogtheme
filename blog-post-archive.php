@@ -44,10 +44,19 @@ function apparition_post_loop() {
 	//vars for use in query and loop
 	$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . get_stylesheet_directory_uri() . '/images/blogplaceholder.jpg" />';
 	$args = array(
-		'orderby'       => 'post_date',
-		'order'         => 'DESC',
-		'posts_per_page'=> '12', // overrides posts per page in theme settings
-		'paged' 		=> $paged,
+		'orderby'       	=> 'post_date',
+		'order'         	=> 'DESC',
+		'posts_per_page'	=> '12', // overrides posts per page in theme settings
+		'paged' 			=> $paged,
+// 		'meta_key'			=> '_genesis_layout',
+// 		'meta_value'		=> 'content-sidebar',
+// 		'meta_compare' 		=> '!=',
+		'meta_query' => array(
+							  array(
+								 'key' => '_genesis_layout',
+								 'compare' => 'NOT EXISTS'
+							  ),
+						  )
 	);
 	
 	//create new query
@@ -59,54 +68,58 @@ function apparition_post_loop() {
 		$i = 0;
 		while( $loop->have_posts() ): $loop->the_post();
 		
-		$subtitle = get_post_meta( get_the_ID(), 'apparition_subtitle', true ) ? '<h2>' . get_post_meta( get_the_ID(), 'apparition_subtitle', true ) . '</h2>' : '';
-		$cta = get_post_meta( get_the_ID(), 'apparition_cta', true ) ? '<h3>' . get_post_meta( get_the_ID(), 'apparition_cta', true ) . '</h3>' : '<h3>Read More</h3>';
-		if( $i == 0 ) { ?>
+			//vars for each article, default if not defined
+			$subtitle = get_post_meta( get_the_ID(), 'apparition_post_subtitle', true ) ? '<h2>' . get_post_meta( get_the_ID(), 'apparition_post_subtitle', true ) . '</h2>' : '';
+			$cta = get_post_meta( get_the_ID(), 'apparition_post_cta', true ) ? '<h3>' . get_post_meta( get_the_ID(), 'apparition_post_cta', true ) . '</h3>' : '<h3>Read More</h3>';
 			
-		<div class="vc_row wpb_row vc_row-fluid hero">
-			<div class="vc_col-sm-4 wpb_column vc_column_container">
-				<a href="<?php the_permalink() ?>">
-					<p class="heroimage"><?php has_post_thumbnail() ? the_post_thumbnail( 'large' ) : print($placeholderimg) ?></p>
-				</a>
-			</div>
-			<div class="vc_col-sm-8 wpb_column vc_column_container">
-				<a class="valigncenter" href="<?php the_permalink() ?>">
-						<h1><?php the_title() ?></h1>
-						<?php if( ! empty( $subtitle ) ) { echo $subtitle; }  ?>
-						<?php echo $cta ?>
-				</a>
-			</div>
-		</div>
-		<div class="vc_row wpb_row vc_row-fluid hero-separator">
-			<div class="vc_col-sm-12 wpb_column vc_column_container">
-				<h1>RECENT POSTS</h1>
-			</div>
-		<?php
-			$i++;	//$i remains 1 for the rest of the while loop, i.e. only uses else case
-		
-		}
-		else {
-		
-			?> 
-			<div class="vc_row wpb_row vc_row-fluid article-archive">
-				<div class="vc_col-sm-3 wpb_column vc_column_container">
+			//define hero structure for latest article and create separator
+			if( $i == 0 ) { ?>
+			
+			<div class="vc_row wpb_row vc_row-fluid hero">
+				<div class="vc_col-sm-4 wpb_column vc_column_container">
 					<a href="<?php the_permalink() ?>">
-						<?php has_post_thumbnail() ? the_post_thumbnail( 'medium' ) : print($placeholderimg) ?>
+						<p class="heroimage"><?php has_post_thumbnail() ? the_post_thumbnail( 'large' ) : print($placeholderimg) ?></p>
 					</a>
 				</div>
-				<div class="vc_col-sm-9 wpb_column vc_column_container">
-					<a href="<?php the_permalink() ?>">
-						<h1><?php the_title() ?></h1>
-						<p><?php the_excerpt() ?></p>
-						<?php if( ! empty( $subtitle ) ) { echo $subtitle; }  ?>
-						<?php echo $cta ?>
+				<div class="vc_col-sm-8 wpb_column vc_column_container">
+					<a class="valigncenter" href="<?php the_permalink() ?>">
+							<h1><?php the_title() ?></h1>
+							<?php if( ! empty( $subtitle ) ) { echo $subtitle; }  ?>
+							<?php echo $cta ?>
 					</a>
 				</div>
-		<?php
+			</div>
+			<div class="vc_row wpb_row vc_row-fluid hero-separator">
+				<div class="vc_col-sm-12 wpb_column vc_column_container">
+					<h1>RECENT POSTS</h1>
+				</div>
+			<?php
+				$i++;	//$i remains 1 for the rest of the while loop, i.e. only uses else case
 		
-		}	//end if( $i == 0 )
-		?>
-		</div>
+			}
+			
+			//standard structure for all previous articles
+			else {
+		
+				?> 
+				<div class="vc_row wpb_row vc_row-fluid article-archive">
+					<div class="vc_col-sm-3 wpb_column vc_column_container">
+						<a href="<?php the_permalink() ?>">
+							<?php has_post_thumbnail() ? the_post_thumbnail( 'medium' ) : print($placeholderimg) ?>
+						</a>
+					</div>
+					<div class="vc_col-sm-9 wpb_column vc_column_container">
+						<a href="<?php the_permalink() ?>">
+							<h1><?php the_title() ?></h1>
+							<p><?php the_excerpt() ?></p>
+							<?php echo $cta ?>
+						</a>
+					</div>
+			<?php
+		
+			}	//end if( $i == 0 )
+			?>
+			</div>
 		<?php
 		
 		endwhile;

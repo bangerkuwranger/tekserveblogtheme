@@ -46,7 +46,7 @@ function initInfiniteScroll() {
 	
 		loading: {
 			img: themeInfo.cssurl + "/images/ajax-loader.gif",
-			msgText: "Loading the next set of posts...",
+			msgText: "<h3>Loading the next set of posts...</h3>",
 			finishedMsg: "<h3>All posts loaded.</h3>"
 		},
 		"nextSelector":".navigation .nav-previous a",
