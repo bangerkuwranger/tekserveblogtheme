@@ -298,10 +298,6 @@ $j(window).bind('load', function() {
 	
 	//run fixdiv once to insure correct behavior on load
 	fixDiv();
-	
-	if (typeof blogHero == 'function') {
-		blogHero();
-	}
 
 }); //end onload function
 
