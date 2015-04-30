@@ -706,11 +706,17 @@ function tekserve_footer_folk_vc() {
 //create custom fields for details
 add_action( 'admin_init', 'apparition_custom_post_fields' );
 function apparition_custom_post_fields() {
+
     add_meta_box( 'apparition_custom_post_fields', 'Blog Post Fields', 'apparition_custom_post_fields_metabox', 'post', 'normal', 'high' );
-}
+
+}	//end apparition_custom_post_fields()
+
+
 
 // Retrieve current details based on case study ID
 function apparition_custom_post_fields_metabox( $post ) {
+
+	wp_nonce_field( 'apparition_custom_post_fields', 'apparition_custom_post_fields_nonce' );
 	$apparition_post_subtitle = esc_html( get_post_meta( $post->ID, 'apparition_post_subtitle', true ) );
 	$apparition_post_cta = esc_html( get_post_meta( $post->ID, 'apparition_post_cta', true ) );
 	?>
@@ -729,22 +735,53 @@ function apparition_custom_post_fields_metabox( $post ) {
         </tr>
     </table>
     <?php
-}
+
+}	//end apparition_custom_post_fields_metabox( $post )
+
+
 
 //store custom field data
 add_action( 'save_post', 'save_apparition_custom_post_fields', 5, 2 );
 function save_apparition_custom_post_fields( $post_id, $post ) {
+
+	// SecCheck
+	if( ! isset( $_POST['apparition_custom_post_fields_nonce'] ) ) {
+	
+		return $post_id;
+	
+	}	//end if( ! isset( $_POST['apparition_custom_post_fields_nonce'] ) )
+	
+	$nonce = $_POST['apparition_custom_post_fields_nonce'];
+
+	// Verify that the nonce is valid.
+	if( ! wp_verify_nonce( $nonce, 'apparition_custom_post_fields' ) ) {
+	
+		return $post_id;
+	
+	}	//end if( ! wp_verify_nonce( $nonce, 'apparition_custom_post_fields' ) ) {
+	
     // Check post type for 'post'
-    if ( $post->post_type == 'post' ) {
+    if( $post->post_type == 'post' ) {
         // Store data in post meta table if present in post data
-        if ( isset( $_POST['apparition_post_subtitle'] ) ) {
+        if( isset( $_POST['apparition_post_subtitle'] ) ) {
+        
             update_post_meta( $post_id, 'apparition_post_subtitle', sanitize_text_field( $_REQUEST['apparition_post_subtitle'] ) );
-    	}
-    	if ( isset( $_POST['apparition_post_cta'] ) ) {
+    	
+    	}	//end if( isset( $_POST['apparition_post_subtitle'] ) )
+    	if( isset( $_POST['apparition_post_cta'] ) ) {
+    	
             update_post_meta( $post_id, 'apparition_post_cta', sanitize_text_field( $_REQUEST['apparition_post_cta'] ) );
-    	}
+    	
+    	}	//end if( isset( $_POST['apparition_post_cta'] ) )
+    
     }
-}
+    else {
+    
+    	return $post_id;
+    
+    }	//end if( $post->post_type == 'post' )
+
+}	//end save_apparition_custom_post_fields( $post_id, $post )
 
 /**  Visual Composer button  **/
 if (function_exists('vc_map')) {
