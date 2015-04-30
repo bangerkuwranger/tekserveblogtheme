@@ -57,7 +57,7 @@
 	padding: 0;
 }
 
-.full-width-content.single #content .featured-image img {
+.single-post #content .featured-image img {
   height: auto;
   width: auto;
 }
@@ -69,7 +69,7 @@
 }
 
 .content-sidebar.single #content {
-	max-width: 600px;
+/* 	max-width: 600px; */
 	float: left;
 }
 
