@@ -173,6 +173,22 @@ $j(function() {
 		//remove that from widgets
 		$j('h2').parent('li.widget').removeClass('htwoList');
 	}
+	//remove sidebar content from content-sidebar post
+	if ($j('.rich-post-nav').length > 0) {
+	
+		var $linkwithin = $j('#content .linkwithin_hook').detach();
+		if ($j('body').hasClass('single-post') && $j('body').hasClass('content-sidebar')) {
+	
+			$j('#sidebar').append($linkwithin);
+	
+		}
+		else {
+		
+			$j('#content .post').append($linkwithin);
+		
+		}
+	
+	}
 		
 	if ($j('body').hasClass('page')) {
 

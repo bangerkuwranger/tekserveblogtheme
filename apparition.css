@@ -2066,11 +2066,13 @@ img {
 	height: auto;
 }
 
+/* 
 .avatar {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 }
+ */
 
 .featured-image {
 	padding: 0 2em 0 0;
@@ -2091,15 +2093,14 @@ img {
 }
 
 .author-box .avatar {
-	background-color: #fff;
+	background-color: transparent;
 	float: left;
 	margin: 0 20px 0 0;
 }
 
 .comment-list li .avatar {
-	background-color: #fff;
-	float: right;
-	margin: 5px 0 10px 10px;
+	background-color: transparent;
+	margin: 0 1em 0 0;
 }
 
 img.centered,
@@ -2274,6 +2275,10 @@ button {
 	margin: 1em 0 0;
 	text-align: center;
 	float: right;
+	font-size: 1em;
+	text-transform: lowercase;
+	border-radius: 0;
+	padding: .55em 3em .5em !important;
 }
 
 input:hover[type="button"],
@@ -2963,6 +2968,7 @@ ul.certificationlogos li img.foursquare {
 #comment,
 #email,
 #url {
+/* 
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	background-color: #fff;
@@ -2972,13 +2978,29 @@ ul.certificationlogos li img.foursquare {
 	padding: 1em;
 	width: 100%;
 	border-radius: 6px;
+ */
 }
 
+
+
 #comment {
-	height: 200px;
 	margin: 1em 0 0;
 	width: 100%;
 	float: none;
+	padding: 1em;
+	width: 95%;
+	color: #004d72;
+}
+
+#respond ::-webkit-input-placeholder,
+#respond :-moz-placeholder,
+#respond ::-moz-placeholder,
+#respond :-ms-input-placeholder {
+	color: #ccc;
+}
+
+#respond form {
+	outline: 0;
 }
 
 #respond p label {
@@ -3005,12 +3027,24 @@ label {
 	margin: 0 0 40px;
 }
 
+.comment-list li .comment-author-avatar {
+	position: absolute;
+	top: 1em;
+	left: 0;
+	width: 56px;
+}
+
+.comment-list li .comment-content {
+	width: 80%;
+	padding-left: 43px;
+}
+
 .comment-list li,
 .ping-list li {
 	list-style-type: none;
-	margin: 20px 0 10px;
-	padding: 15px 20px;
+	padding: 15px 20px 0;
 	text-indent: 0;
+	position: relative;
 }
 
 .comment-list li ul li {
@@ -3018,9 +3052,8 @@ label {
 }
 
 .comment-content p {
-	font-size: .875em;
+	font-size: .75em;
 	margin: 0 0 20px;
-	color: white;
 }
 
 .comment-list cite,
@@ -3028,36 +3061,72 @@ label {
 	font-style: normal;
 }
 
+.comment-author.vcard, .comment-meta {
+	line-height: 1;
+}
+
 .commentmetadata {
-	font-size: .75em;
+	font-size: .9em;
 	margin: 0 0 5px;
 }
 
+.single .wrap #content .commentmetadata a {
+	color: #004d72 !important;
+	font-weight: bold;
+}
+
+.single .wrap #content .commentmetadata a:hover {
+	color: #f36f37 !important;
+}
+
 .comment {
-	background-color: #004f72;
-	outline: 2px solid #fff;
-	border-right: none;
+	border: solid #ccc;
+	border-width: 0 0 2px;
+}
+
+.comment .depth-2,
+.comment .depth-3,
+.comment .depth-4,
+.comment .depth-5 {
+	border-width: 2px 0 0;
 }
 
 .reply {
 	font-size: .875em;
+	float: right;
+	position: relative;
+  	top: -3em;
+}
+
+a.comment-reply-link {
+  padding-right: 2em;
 }
 
 #comments .navigation {
 	display: block;
 }
+
 #reply-title,
 #comments>h3 {
 	color: #004d72;
 	text-transform: uppercase;
 	font-family: Tekvetica, Helvetica Neue, Helvetica, sans-serif;
 	font-weight: 900;
+	margin: 2em 0 1em;
+	border: solid #ccc;
+	border-width: 2px 0;
 	font-size: 1.5em;
+	padding: .15em .15em 0 0;
+}
+
+cite.fn {
+	font-size: 1.25em
 }
 
 cite.fn,
-span.says {
-	color: #fff;
+cite.fn a {
+	color: #f36f37;
+	font-weight: 900;
 }
 
 
@@ -6252,11 +6321,12 @@ table.sortable td a {
 /* Sidebar / Front Page Widgets
 ------------------------------------------------------------ */
 
-#sidebar h4.widget-title {
+#sidebar h4.widget-title,
+#sidebar .linkwithin_inner > .linkwithin_text {
 	text-transform: uppercase;
-	font-size: 1.125em;
+	font-size: 1.5em;
 	margin-top: 2em;
-	font-weight: 400;
+	font-weight: 400 !important;
 }
 
 #sidebar p.tekserve-celebros-related-items-section-title strong {

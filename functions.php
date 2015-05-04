@@ -208,8 +208,7 @@ function bw_images_filter($meta) {
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
- 	wp_enqueue_style ( 'gspn', get_stylesheet_directory_uri() . '/gspn-additons.css' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
 //
 //	debug includes
@@ -221,6 +220,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
 	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
+	wp_enqueue_style ( 'newblogcss', get_stylesheet_directory_uri() . '/newblog.css' );
 	
 	//get user id if logged in or set user id to 'guest' if not logged in
 	$user_id = get_current_user_id();
@@ -562,17 +562,12 @@ $args = array(
             '<label for="email">' . __( 'Email', 'genesis' ) . '<span style="color:#f36f37"> *</span></label> ' .
 	        '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" tabindex="2"' . $aria_req . ' />' .
 	        ( $req ? '<span class="required">*</span>' : '' ) .
-	        '</p>',
-         
-            'url' => '<p class="comment-form-url">' .
-            '<label for="url">' . __( 'Website', 'genesis' ) . '</label> ' .
-	    	'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" tabindex="3" />' .
-	    	'</p>'
+	        '</p>'
         ),
                  
         'comment_field' =>   '<p class="comment-form-comment">' .
         '<label for="comment">' . __( 'Comment', 'genesis' ) . '</label> ' .
-	    '<textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true"></textarea>' .
+	    '<textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true" placeholder="enter your comment here"></textarea>' .
 	    '</p>',
                              
         'title_reply' => __( 'Comment', 'genesis' ),
@@ -632,6 +627,196 @@ add_action( 'genesis_after_header', 'tekserve_below_header_banner_genesis' );
 
 /** Add post navigation (requires HTML5 support) */
 add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
+
+/** Previous / Next post links **/
+function get_excerpt_by_id( $post_id ) {
+
+    $the_post = get_post( $post_id ); //Gets post ID
+    $the_excerpt = $the_post->post_excerpt;
+    if( empty( $the_excerpt ) ) {
+    
+		$the_excerpt = $the_post->post_content; //Gets post_content to be used as a basis for the excerpt
+		$excerpt_length = 50; //Sets excerpt length by word count
+		$the_excerpt = strip_tags( strip_shortcodes( $the_excerpt ) ); //Strips tags and images
+		$words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
+
+		if( count( $words ) > $excerpt_length ) {
+	
+			array_pop( $words );
+			array_push( $words, '…' );
+			$the_excerpt = implode( ' ', $words );
+   
+	   }	//end if( count( $words ) > $excerpt_length )
+   
+   }	//end if( empty( $the_excerpt ) )
+
+    return $the_excerpt;
+
+}	//end get_excerpt_by_id( $post_id )
+
+
+function appartition_rich_post_nav() {
+
+	$prev_post = get_previous_post( false, '1651' );
+	$next_post = get_next_post( false, '1651' );
+	$post_nav = '';
+	if( ! empty( $prev_post ) || ! empty( $next_post ) ) {
+
+		$post_nav .= '<div class="rich-post-nav">';
+		$post_nav .= '<div class="rich-post-nav-separator vc_row wpb_row vc_row-fluid"><div class="vc_col-sm-12 wpb_column vc_column_container"><h1>Keep Reading</h1></div></div>';
+		$post_nav .= '<div class="rich-post-nav-articles">';
+		if( ! empty( $prev_post ) ) {
+	
+			$post_nav .= '<div class="vc_row wpb_row vc_row-fluid article-archive">
+				<div class="vc_col-sm-3 wpb_column vc_column_container">
+					<a class="rich-post-nav-link" href="' . get_permalink( $prev_post->ID ) . '" name="' . sanitize_title( $prev_post->post_title ) . '-image">';
+			$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . get_stylesheet_directory_uri() . '/images/blogplaceholder.jpg" />';
+			$featured = has_post_thumbnail( $prev_post->ID ) ?  get_the_post_thumbnail( $prev_post->ID, 'medium' ) : $placeholderimg;
+			$post_nav .=  $featured . '
+					</a>
+				</div>';
+			$post_nav .= '
+				<div class="vc_col-sm-9 wpb_column vc_column_container"> 
+					<a class="rich-post-nav-link" href="' . get_permalink( $prev_post->ID ) . '" name="' . sanitize_title( $prev_post->post_title ) . '-content">';
+			$cta = $prev_post->apparition_post_cta ? '<h3>' . $prev_post->apparition_post_cta . '</h3>' : '<h3>Read More</h3>';
+			$post_nav .= '	<h1>' . $prev_post->post_title . '</h1>
+							<p>' . get_excerpt_by_id( $prev_post->ID ) . '</p>
+							' . $cta ;
+			$post_nav .= '
+					</a>
+				</div>
+			</div>';
+		
+		}	//end if( ! empty( $prev_post ) )
+		if( ! empty( $next_post ) ) {
+		
+			$post_nav .= '<div class="vc_row wpb_row vc_row-fluid article-archive">
+				<div class="vc_col-sm-3 wpb_column vc_column_container">
+					<a class="rich-post-nav-link" href="' . get_permalink( $next_post->ID ) . '" name="' . sanitize_title( $next_post->post_title ) . '-image">';
+			$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . get_stylesheet_directory_uri() . '/images/blogplaceholder.jpg" />';
+			$featured = has_post_thumbnail( $next_post->ID ) ?  get_the_post_thumbnail( $next_post->ID, 'medium' ) : $placeholderimg;
+			$post_nav .=  $featured . '
+					</a>
+				</div>';
+			$post_nav .= '
+				<div class="vc_col-sm-9 wpb_column vc_column_container"> 
+					<a class="rich-post-nav-link" href="' . get_permalink( $next_post->ID ) . '" name="' . sanitize_title( $next_post->post_title ) . '-content">';
+			$cta = $next_post->apparition_post_cta ? '<h3>' . $next_post->apparition_post_cta . '</h3>' : '<h3>Read More</h3>';
+			$post_nav .= '	<h1>' . $next_post->post_title . '</h1>
+							<p>' . get_excerpt_by_id( $next_post->ID ) . '</p>
+							' . $cta ;
+			$post_nav .= '
+					</a>
+				</div>
+			</div>';
+		
+		}	//if( ! empty( $next_post ) )
+		$post_nav .= '</div></div>';
+		echo $post_nav;
+	
+	}	//end if( ! empty( $prev_post ) || ! empty( $next_post ) )
+	
+}	//end appartition_rich_post_nav
+add_action( 'genesis_after_post_content', 'appartition_rich_post_nav' );
+
+
+
+/** add custom default avatar **/
+
+add_filter( 'avatar_defaults', 'apparition_default_avatar' );
+function apparition_default_avatar( $avatar_defaults ) {
+
+    $myavatar = get_stylesheet_directory_uri() . '/images/apparition-avatar.jpg';
+    $avatar_defaults[$myavatar] = "Tekserve";
+    return $avatar_defaults;
+
+}	//end apparition_default_avatar( $avatar_defaults )
+
+
+
+/** change comments output **/
+add_filter( 'comment_form_defaults', 'sp_comment_form_defaults' );
+function sp_comment_form_defaults( $defaults ) {
+ 
+	$defaults['title_reply'] = __( 'Comments' );
+	return $defaults;
+ 
+}
+
+add_filter( 'genesis_title_comments', 'sp_genesis_title_comments' );
+function sp_genesis_title_comments() {
+
+	$title = '';
+	return $title;
+
+}
+
+function move_comments_form() {
+	global $wp_query;
+	if ( have_comments() ) {
+	
+		remove_action( 'genesis_comment_form', 'genesis_do_comment_form' );
+		add_action( 'genesis_comments', 'genesis_do_comment_form', 5 );
+	
+	}
+
+}
+add_action( 'genesis_before_comments', 'move_comments_form' );
+remove_action( 'genesis_list_comments', 'genesis_default_list_comments' );
+add_action( 'genesis_list_comments', 'apparition_default_list_comments' );
+function apparition_default_list_comments() {
+
+	$args = array(
+        'type'          => 'comment',
+        'avatar_size'   => 43,
+        'callback'      => 'apparition_comment_callback',
+    );
+ 
+    $args = apply_filters( 'genesis_comment_list_args', $args );
+ 
+    wp_list_comments( $args );
+
+}	//end apparition_default_list_comments()
+
+function apparition_comment_callback( $comment, $args, $depth ) {
+
+	$GLOBALS['comment'] = $comment;	?>
+
+	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+
+		<?php do_action( 'genesis_before_comment' ); ?>
+		
+		<div class="comment-author-avatar">
+			<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		</div>
+		<div class="comment-content">
+			<div class="comment-author vcard">
+				<?php printf( __( '<cite class="fn">%s</cite> <span class="says">%s</span>', 'genesis' ), get_comment_author_link(), apply_filters( 'comment_author_says_text', __( '', 'genesis' ) ) ); ?>
+		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '<span class="says">wrote on </span>%1$s at %2$s', 'genesis' ), get_comment_date(), get_comment_time() ); ?></a>
+				<?php edit_comment_link( __( '(Edit)', 'genesis' ), '' ); ?>
+			</div>
+
+		
+			<?php if ( ! $comment->comment_approved ) : ?>
+				<p class="alert"><?php echo apply_filters( 'genesis_comment_awaiting_moderation', __( 'Your comment is awaiting moderation.', 'genesis' ) ); ?></p>
+			<?php endif; ?>
+
+			<?php comment_text(); ?>
+		</div>
+
+		<div class="reply">
+			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+		</div>
+
+		<?php do_action( 'genesis_after_comment' );
+
+	//* No ending </li> tag because of comment threading
+
+}	//end apparition_comment_callback( $comment, $args, $depth )
+
 
 //add editors to roles allowed to edit forms
 function add_caps()
