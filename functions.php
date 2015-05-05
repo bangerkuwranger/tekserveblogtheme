@@ -552,14 +552,14 @@ function custom_email_note() {
 $args = array(
 
         'fields' => array(
-            'author' =>  '<p class="comment-form-author">' .
-            '<label for="author">' . __( 'Name', 'genesis' ) . '<span style="color:#f36f37"> *</span></label> ' .
+            'author' =>  '<p class="comment-form-author comment-field required">' .
+            '<label for="author">' . __( 'Name', 'genesis' ) . '</label> ' .
 	        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" tabindex="1"' . $aria_req . ' />' .
 	        ( $req ? '<span class="required">*</span>' : '' ) .
 	        '</p>',
 
-            'email' =>   '<p class="comment-form-email">' .
-            '<label for="email">' . __( 'Email', 'genesis' ) . '<span style="color:#f36f37"> *</span></label> ' .
+            'email' =>   '<p class="comment-form-email comment-field required">' .
+            '<label for="email">' . __( 'Email', 'genesis' ) . '</label> ' .
 	        '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" tabindex="2"' . $aria_req . ' />' .
 	        ( $req ? '<span class="required">*</span>' : '' ) .
 	        '</p>'
@@ -567,7 +567,7 @@ $args = array(
                  
         'comment_field' =>   '<p class="comment-form-comment">' .
         '<label for="comment">' . __( 'Comment', 'genesis' ) . '</label> ' .
-	    '<textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true" placeholder="enter your comment here"></textarea>' .
+	    '<textarea id="comment" name="comment" cols="45" rows="4" tabindex="4" aria-required="true" placeholder="enter your comment here"></textarea>' .
 	    '</p>',
                              
         'title_reply' => __( 'Comment', 'genesis' ),

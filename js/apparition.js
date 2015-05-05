@@ -6,6 +6,7 @@ var $j = jQuery;
 var clientWidth = document.documentElement.clientWidth;
 var $rev_slider;
 var tocLink = '<a href="#toc_container" class="toclink" title="Go to table of contents"><i class="fa fa-caret-square-o-up"></i> TABLE OF CONTENTS</a>';
+var linkwithin_text='Related Articles';
 
 function detailBoxBinder() {
 
@@ -179,7 +180,7 @@ $j(function() {
 		var $linkwithin = $j('#content .linkwithin_hook').detach();
 		if ($j('body').hasClass('single-post') && $j('body').hasClass('content-sidebar')) {
 	
-			$j('#sidebar').append($linkwithin);
+			$j('#sidebar').prepend($linkwithin);
 	
 		}
 		else {
@@ -720,7 +721,7 @@ function initTitleOnAjaxFormSubmit() {
 
 	labelsToPlaceholders();
 
-	$j('.gform_wrapper input.button').click( function() {
+	$j('.gform_wrapper input.button, .form-submit input').click( function() {
 
 		setTimeout( function(){ labelsToPlaceholders(); }, 1000 );
 
@@ -731,19 +732,33 @@ function initTitleOnAjaxFormSubmit() {
 function labelsToPlaceholders() {
 	
 	var $gformLabels = $j('.gfield');
+	var $cformLabels = $j('#respond form p.comment-field');
 
 	if ( $gformLabels.length > 0 ) {
 
 		$gformLabels.each( function() {
-	
-			var labeltxt = $j(this).find('label').text();
-			labeltxt = labeltxt.replace('*', '');
-			console.log('label: ' + labeltxt);
-			$j(this).find('input, textarea').attr('placeholder', labeltxt).attr('title', labeltxt);
+			
+			if( $j(this).find('input, textarea').attr('placeholder') == undefined ) {
+				var labeltxt = $j(this).find('label').text();
+				labeltxt = labeltxt.replace('*', '');
+				$j(this).find('input, textarea').attr('placeholder', labeltxt).attr('title', labeltxt);
+			}
 	
 		}); //end $gformLabels.each( function()
 
 	} //end if ( $gformLabels.length > 0 )
+	
+	if ( $cformLabels.length > 0 ) {
+	
+		$cformLabels.each( function() {
+		
+			var labeltxt = $j(this).find('label').text();
+			labeltxt = labeltxt.replace('*', '');
+			$j(this).find('input, textarea').attr('placeholder', labeltxt).attr('title', labeltxt);
+		
+		});
+	
+	}	//end if ( $cformLabels.length > 0 )
 
 } //end function labelsToPlaceholders()
 
