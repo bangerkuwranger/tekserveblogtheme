@@ -220,7 +220,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
 	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
-	wp_enqueue_style ( 'newblogcss', get_stylesheet_directory_uri() . '/newblog.css' );
+// 	wp_enqueue_style ( 'newblogcss', get_stylesheet_directory_uri() . '/newblog.css' );
 	
 	//get user id if logged in or set user id to 'guest' if not logged in
 	$user_id = get_current_user_id();
@@ -717,7 +717,7 @@ function appartition_rich_post_nav() {
 	}	//end if( ! empty( $prev_post ) || ! empty( $next_post ) )
 	
 }	//end appartition_rich_post_nav
-add_action( 'genesis_after_post_content', 'appartition_rich_post_nav' );
+// add_action( 'genesis_after_post_content', 'appartition_rich_post_nav' );
 
 
 

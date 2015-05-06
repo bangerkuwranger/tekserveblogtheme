@@ -7,6 +7,7 @@ var clientWidth = document.documentElement.clientWidth;
 var $rev_slider;
 var tocLink = '<a href="#toc_container" class="toclink" title="Go to table of contents"><i class="fa fa-caret-square-o-up"></i> TABLE OF CONTENTS</a>';
 var linkwithin_text='Related Articles';
+var hasSidebar = false;
 
 function detailBoxBinder() {
 
@@ -160,8 +161,7 @@ $j(function() {
 	
 	//Initialize nav menu functions
 	navInit();
-// 	initSearch();
-// 	initModalNews();
+	
 
 	//Initialize submenu position
 	$j('.sub-menu').css({'left': -9999, 'opacity': 0});
@@ -174,23 +174,15 @@ $j(function() {
 		//remove that from widgets
 		$j('h2').parent('li.widget').removeClass('htwoList');
 	}
-	//remove sidebar content from content-sidebar post
-	if ($j('.rich-post-nav').length > 0) {
 	
-		var $linkwithin = $j('#content .linkwithin_hook').detach();
-		if ($j('body').hasClass('single-post') && $j('body').hasClass('content-sidebar')) {
+	//rearrange content for sidebar, if needed
+	if ($j('body').hasClass('content-sidebar')) {
 	
-			$j('#sidebar').prepend($linkwithin);
+		hasSidebar = true;
 	
-		}
-		else {
-		
-			$j('#content .post').append($linkwithin);
-		
-		}
+	}	//end if ($j('body').hasClass('content-sidebar'))
+	moveForSidebar(hasSidebar);
 	
-	}
-		
 	if ($j('body').hasClass('page')) {
 
 		//create internal wraps for text color/width of internal content, add fullHeight class to page columns with contrasting backgrounds to row with correct bgcolor wrap
@@ -318,6 +310,8 @@ $j(window).bind('load', function() {
 	initTekNavSubmenu();
 	
 	initTitleOnAjaxFormSubmit();
+	
+	
 	
 	//set toc links
 	initFaqToc();
@@ -829,3 +823,32 @@ function initFaqToc() {
 	} //end if($j('#toc_container').length > 0)
 	
 }	//end initFaqToc()
+
+/******
+	remove sidebar content from content-sidebar post
+******/
+
+function moveForSidebar(hasSidebar) {
+
+	if ($j('.linkwithin_hook').length > 0) {
+	
+		var $linkwithin = $j('#content .linkwithin_hook').detach();
+		if (hasSidebar) {
+	
+			$j('#sidebar').prepend($linkwithin);
+			
+			$j(window).bind('load', function() {
+				var $addthis = $j('.addthis-smartlayers.at4-share-outer-right');
+				$addthis.removeClass( 'at4-share-outer-right' ).addClass( 'at4-share-outer-left' );
+				$addthis.children('.atss').removeClass( 'atss-right slideInRight' ).addClass( 'atss-left slideInLeft' );
+			});			
+		}
+		else {
+		
+			$j('#content .post').append($linkwithin);
+		
+		}	//end if (hasSidebar)
+	
+	}	//end if ($j('.linkwithin_hook').length > 0)
+	
+}	//end moveForSidebar(hasSidebar)

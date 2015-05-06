@@ -166,7 +166,6 @@ function apparition_infinite_enqueue() {
 
 	wp_enqueue_script ( 'infinitejs', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.min.js', array( 'jquery', 'apparitionjs' ) );
 	wp_enqueue_script ( 'blogpostarchive', get_stylesheet_directory_uri() . '/js/blogPostArchive.js', array( 'jquery', 'apparitionjs', 'infinitejs' ) );
-	wp_enqueue_style ( 'newblog', get_stylesheet_directory_uri() . '/newblog.css' );
 
 }	//end apparition_infinite_enqueue()
 
