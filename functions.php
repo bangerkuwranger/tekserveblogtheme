@@ -169,42 +169,11 @@ function apparition_comment_form_args( $args ) {
 /** Modify the Genesis content limit read more link */
 add_filter( 'get_the_content_more_link', 'apparition_read_more_link' );
 function apparition_read_more_link() {
-	return '... <a class="more-link" href="' . get_permalink() . '">' . __( '[Continue Reading]', 'apparition' ) .'</a>';
+	return '... <a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'apparition' ) .'</a>';
 }
 
 /** Add support for 5-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 5 );
-
-/** Create additional thumnails in black and white */
-add_action('after_setup_theme','bw_images_size');
-function bw_images_size() {
-	add_image_size('thumbnail-bw', 300, 300, FALSE);
-}
-add_filter('wp_generate_attachment_metadata','bw_images_filter');
-function bw_images_filter($meta) {
-	$file = wp_upload_dir();
-	$file = trailingslashit($file['path']).$meta['sizes']['thumbnail-bw']['file'];
-	list($orig_w, $orig_h, $orig_type) = @getimagesize($file);
-	$image = wp_load_image($file);
-	imagefilter($image, IMG_FILTER_GRAYSCALE);
-	//imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
-	switch ($orig_type) {
-		case IMAGETYPE_GIF:
-			$file = str_replace(".gif", "-bw.gif", $file);
-			imagegif( $image, $file );
-			break;
-		case IMAGETYPE_PNG:
-			$file = str_replace(".png", "-bw.png", $file);
-			imagepng( $image, $file );
-			break;
-		case IMAGETYPE_JPEG:
-			$file = str_replace(".jpg", "-bw.jpg", $file);
-			imagejpeg( $image, $file );
-			break;
-	}
-	return $meta;
-}
-
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
@@ -547,33 +516,24 @@ array(
 // add_editor_style( 'style.css' );					//editor style tba p2; current default is effective for non-visual tinymce
 
 /** Move labels to top of fields in comment form */
-add_filter('genesis_comment_form_args','custom_email_note'); //
-function custom_email_note() {
-$args = array(
-
-        'fields' => array(
-            'author' =>  '<p class="comment-form-author comment-field required">' .
-            '<label for="author">' . __( 'Name', 'genesis' ) . '</label> ' .
-	        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" tabindex="1"' . $aria_req . ' />' .
-	        ( $req ? '<span class="required">*</span>' : '' ) .
-	        '</p>',
-
-            'email' =>   '<p class="comment-form-email comment-field required">' .
-            '<label for="email">' . __( 'Email', 'genesis' ) . '</label> ' .
-	        '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" tabindex="2"' . $aria_req . ' />' .
-	        ( $req ? '<span class="required">*</span>' : '' ) .
-	        '</p>'
-        ),
-                 
-        'comment_field' =>   '<p class="comment-form-comment">' .
+add_filter('genesis_comment_form_args','apparition_respond_form'); //
+function apparition_respond_form($args) {
+	$args['fields'] = array( 
+		'author' => '<p class="comment-form-author comment-field required"><label for="author">Name</label><input id="author" name="author" type="text" value="" size="30" tabindex="1" aria-required="true" />',
+		'email' => '<p class="comment-form-email comment-field required"><label for="email">Email</label><input id="email" name="email" type="text" value="" size="30" tabindex="2" aria-required="true" />',
+		);
+		
+	$args['comment_field'] =   '<p class="comment-form-comment">' .
         '<label for="comment">' . __( 'Comment', 'genesis' ) . '</label> ' .
 	    '<textarea id="comment" name="comment" cols="45" rows="4" tabindex="4" aria-required="true" placeholder="enter your comment here"></textarea>' .
-	    '</p>',
-                             
-        'title_reply' => __( 'Comment', 'genesis' ),
-        'label_submit' => __( 'Submit', 'genesis' ),
-   );
-    return $args;
+	    '</p>';
+	                
+	$args['title_reply'] = __( 'Comment', 'genesis' );
+	$args['label_submit'] = __( 'Submit', 'genesis' );
+	$args['comment_notes_before'] = '<!-- ' . print_r($args['fields'], true) . '-->';
+	
+	return $args;
+    
 }
 
 /** Customize the credits */
