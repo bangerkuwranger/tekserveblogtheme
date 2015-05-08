@@ -177,7 +177,7 @@ add_theme_support( 'genesis-footer-widgets', 5 );
 
 /** Include JS files that create full width sections and wraps with adaptive background colors */
 function include_local_scripts() {
-	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.css' );
+	wp_enqueue_style ( 'apparitioncss', get_stylesheet_directory_uri() . '/apparition.min.css' );
 	wp_enqueue_script ( 'jquery-ui-core' );
 //
 //	debug includes
@@ -187,7 +187,7 @@ function include_local_scripts() {
 // 	wp_enqueue_script ( 'navmenu', get_stylesheet_directory_uri() . '/js/navmenu.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'width', get_stylesheet_directory_uri() . '/js/width.js', array( 'jquery' ), '', true );
 // 	wp_enqueue_script ( 'loadpage', get_stylesheet_directory_uri() . '/js/loadpage.js', array( 'jquery', 'detailbox', 'icaps', 'navmenu', 'width' ), '', true );
-	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.js', array( 'jquery' ) );
+	wp_enqueue_script ( 'apparitionjs', get_stylesheet_directory_uri() . '/js/apparition.min.js', array( 'jquery' ) );
 // 	wp_enqueue_script ( 'formtitles', get_stylesheet_directory_uri() . '/js/formtitles.js', array( 'jquery' ) );
 // 	wp_enqueue_style ( 'newblogcss', get_stylesheet_directory_uri() . '/newblog.css' );
 	
