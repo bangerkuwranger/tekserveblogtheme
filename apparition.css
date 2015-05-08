@@ -291,6 +291,10 @@ table td, table th {
 	color: #fff;
 }
 
+p:empty {
+	display: none;
+}
+
 /* Defaults - Responsive
 ------------------------------------------------------------ */
 
@@ -5032,6 +5036,7 @@ color: #f06c34 !important;
 	line-height: 1;
 	font-weight: 900;
 	margin: 12px 0;
+	color: #f36f37;
 }
 
 .page-template-blog-post-archive .article-archive h2 {
@@ -5322,6 +5327,24 @@ color: #f06c34 !important;
 	border-left: 0 !important;
 	margin: .5em 0 !important;
 	background: transparent !important;
+}
+
+.content-sidebar #sidebar .linkwithin_posts > a {
+	padding-bottom: .5em !important;
+}
+
+.content-sidebar .linkwithin_posts > a > div {
+  width: auto !important;
+}
+
+.content-sidebar .linkwithin_posts > a > div > div {
+	border: 0 !important;
+}
+
+.content-sidebar .linkwithin_posts > a > div > div.linkwithin_title {
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	color: #f36f37 !important;
+	font-weight: 900 !important;
 }
 
 .full-width-content .linkwithin_posts > a {
@@ -6757,7 +6780,7 @@ table.sortable td a {
 	text-transform: uppercase;
 	font-size: 1.5em;
 	margin-top: 2em;
-	font-weight: 400 !important;
+	font-weight: 900 !important;
 	line-height: 1;
 }
 
@@ -6773,8 +6796,18 @@ table.sortable td a {
 	border-width: 0;
 }
 
+#sidebar .widget.featuredpost .post > h2 > a {
+	color: #f36f37;
+	font-weight: 900;
+}
+
+#sidebar .widget.featuredpost .post > .byline > span {
+	font-weight: bold;
+	font-size: .8em;
+}
+
 #sidebar .widget .hentry {
-	padding: 0 0 1em;
+	padding: 0 0 2em;
 }
 
 #sidebar p.tekserve-celebros-related-items-section-title strong {

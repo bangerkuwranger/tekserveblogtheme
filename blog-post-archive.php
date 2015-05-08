@@ -48,9 +48,6 @@ function apparition_post_loop() {
 		'order'         	=> 'DESC',
 		'posts_per_page'	=> '12', // overrides posts per page in theme settings
 		'paged' 			=> $paged,
-// 		'meta_key'			=> '_genesis_layout',
-// 		'meta_value'		=> 'content-sidebar',
-// 		'meta_compare' 		=> '!=',
 		'meta_query' => array(
 								'relation'	=> 'OR',
 								array(
@@ -117,6 +114,7 @@ function apparition_post_loop() {
 					<div class="vc_col-sm-9 wpb_column vc_column_container">
 						<a href="<?php the_permalink() ?>">
 							<h1><?php the_title() ?></h1>
+							<div class="post-meta"><?php the_date() ?></div>
 							<p><?php the_excerpt() ?></p>
 							<?php echo $cta ?>
 						</a>
