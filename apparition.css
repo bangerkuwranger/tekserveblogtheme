@@ -5233,14 +5233,6 @@ color: #f06c34 !important;
 	margin-bottom: 12px;
 }
 
-/* 
-
-.single-post em,
-.single-post i {
-	font-size: .9em !important
-}
- */
-
 .single-post #content .entry-content {
 	margin-top: 1em;
 	padding-top: 1em;
@@ -5266,11 +5258,9 @@ color: #f06c34 !important;
 		max-width: 820px;
 	}
 	
-/* 
 	.single-post .entry-content p {
-		font-size: 20px;
+		font-size: .9em;
 	}
- */
 
 }
 

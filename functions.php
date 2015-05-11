@@ -516,7 +516,7 @@ array(
 // add_editor_style( 'style.css' );					//editor style tba p2; current default is effective for non-visual tinymce
 
 /** Move labels to top of fields in comment form */
-add_filter('genesis_comment_form_args','apparition_respond_form'); //
+add_filter('genesis_comment_form_args','apparition_respond_form');
 function apparition_respond_form($args) {
 	$args['fields'] = array( 
 		'author' => '<p class="comment-form-author comment-field required"><label for="author">Name</label><input id="author" name="author" type="text" value="" size="30" tabindex="1" aria-required="true" />',
