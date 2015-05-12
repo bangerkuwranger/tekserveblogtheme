@@ -1,5 +1,7 @@
 (function() {
+
     tinymce.create('tinymce.plugins.Apparition', {
+        
         /**
          * Initializes the plugin, this will be executed after the plugin has been created.
          * This call is done before the editor instance has finished it's initialization so use the onInit event
@@ -8,6 +10,7 @@
          * @param {tinymce.Editor} ed Editor instance that the plugin is initialized in.
          * @param {string} url Absolute URL to where the plugin is located.
          */
+         
         init : function(ed, url) {
         
         	ed.addButton('invisibleline', {
@@ -22,17 +25,17 @@
                 image : url + '/tekbutton.png'
             });
             
-            ed.addButton('maptrigger', {
-                title : 'Trigger for Directions Drawer',
-                cmd : 'maptrigger',
-                image : url + '/maptrigger.png'
-            });
-            
-            ed.addButton('drawertrigger', {
-                title : 'Trigger for Drawer',
-                cmd : 'drawertrigger',
-                image : url + '/drawertrigger.png'
-            });
+//             ed.addButton('maptrigger', {
+//                 title : 'Trigger for Directions Drawer',
+//                 cmd : 'maptrigger',
+//                 image : url + '/maptrigger.png'
+//             });
+             
+//             ed.addButton('drawertrigger', {
+//                 title : 'Trigger for Drawer',
+//                 cmd : 'drawertrigger',
+//                 image : url + '/drawertrigger.png'
+//             });
             
             ed.addCommand('invisibleline', function() {
             	var return_txt = '[invisibleline]';
@@ -52,25 +55,25 @@
                 }
             });
             
-            ed.addCommand('maptrigger', function() {
-                var shortcode,
-                    content = ed.selection.getContent();
-                    shortcode = '[maptrigger]' + content + '[/maptrigger]';
-                    ed.execCommand('mceInsertContent', 0, shortcode);
-            });
+//				ed.addCommand('maptrigger', function() {
+//                 var shortcode,
+//                     content = ed.selection.getContent();
+//                     shortcode = '[maptrigger]' + content + '[/maptrigger]';
+//                     ed.execCommand('mceInsertContent', 0, shortcode);
+//				});
             
-            ed.addCommand('drawertrigger', function() {
-                var shortcode,
-                	drawer = prompt("Enter ID of drawer to trigger: "),
-                    content = ed.selection.getContent();
-                    if (drawer !== null) {
-						shortcode = '[drawertrigger drawerid="' + drawer + '" title="' + content + '" swaptitle="Hide ' + content + '"]' + content + '[/drawertrigger]';
-						ed.execCommand('mceInsertContent', 0, shortcode);
-                    }
-                    else {
-						alert("Enter a valid drawer ID.");
-					}
-            });
+//             ed.addCommand('drawertrigger', function() {
+//                 var shortcode,
+//                 	drawer = prompt("Enter ID of drawer to trigger: "),
+//                     content = ed.selection.getContent();
+//                     if (drawer !== null) {
+// 						shortcode = '[drawertrigger drawerid="' + drawer + '" title="' + content + '" swaptitle="Hide ' + content + '"]' + content + '[/drawertrigger]';
+// 						ed.execCommand('mceInsertContent', 0, shortcode);
+//                     }
+//                     else {
+// 						alert("Enter a valid drawer ID.");
+// 					}
+//             });
  
         },
  
