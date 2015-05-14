@@ -1530,6 +1530,22 @@ p.subscribe-to-comments {
 	padding: 20px 0 10px;
 }
 
+.right {
+	text-align: right;
+}
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.justify {
+	text-align: justify;
+}
+
 .alignleft {
 	float: left;
 }
@@ -6519,7 +6535,8 @@ h2.tribe-events-page-title a:visited {
 
 #tribe-events-content h3.tribe-events-related-events-title,
 #tribe-events-content #reply-title,
-.single-tribe_events h2.tribe-events-single-event-title {
+.single-tribe_events h2.tribe-events-single-event-title,
+.single-tribe_events .tribe-events-schedule h2 {
 	margin: .8em 0 .5em !important;
 	line-height: 1 !important;
 	text-transform: uppercase;
@@ -6532,11 +6549,10 @@ h2.tribe-events-page-title a:visited {
 }
 
 .single-tribe_events h2.tribe-events-single-event-title {
-	border-top-width: 0;
+	border-width: 0;
 	text-align: center;
 	font-size: 2em !important;
 	text-transform: none;
-	padding-bottom: .5em !important;
 }
 
 .single-tribe_events .tribe-events-single-event-venue,
