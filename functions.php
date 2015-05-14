@@ -254,7 +254,7 @@ add_action( 'genesis_before_post_title', 'genesis_do_post_image' );
 add_action( 'genesis_before_post_title', 'apparition_featured_image' );
 function apparition_featured_image() {
 
-	if( is_singular( array( 'post', 'page' ) ) ) {
+	if( is_singular( array( 'post' ) ) ) {
 	
 		$placeholderimg = '<img class="wp-post-image placeholder" alt="No Image Found for This Article" src="' . CHILD_THEME_LOC . '/images/blogplaceholder.jpg" />';
 		echo '<div class="featured-image">';
@@ -1055,7 +1055,7 @@ function apparition_footer_folk() {
 	$zagat = CHILD_THEME_LOC . '/footer-images/logos/zagat.png';
 	$foursquare = CHILD_THEME_LOC . '/footer-images/logos/foursquare-logo.png';
 	if( get_post_type() == 'page' ): ?>
-		<div id="pageLoad"><img src="<?php CHILD_THEME_LOC ?>/images/ajax-loader.gif" alt="Page Loading" /></div>
+		<div id="pageLoad"><img src="<?php echo CHILD_THEME_LOC ?>/images/ajax-loader.gif" alt="Page Loading" /></div>
 	<?php endif ?>
 	<div id="footer-folk" class="footer-folk" style="display:none;">
 		<div class="footer-folk-wrap">
@@ -1073,7 +1073,7 @@ function apparition_footer_folk() {
 		</div>
 	</div>
 	<script type="text/javascript">
-		var zagaturl = "<?php $zagat ?>", foursquareurl = "<?php $foursquare ?>";
+		themeInfo.zagaturl = "<?php echo $zagat ?>", themeInfo.foursquareurl = "<?php echo $foursquare ?>";
 	</script>
 	<?php
 	//loads content after page is complete - some 3rd Party generated content can lock the page otherwise
