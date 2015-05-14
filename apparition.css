@@ -2149,7 +2149,7 @@ button {
 #commentform #submit,
 #respond .comment-form .form-submit input {
 	display: block;
-	margin: 1em 0 0;
+	margin: 0 .5em 0 0;
 	text-align: center;
 	float: right;
 	font-size: 1em;
@@ -3141,6 +3141,7 @@ div.gform_wrapper:after,
 #respond .comment-form-comment:after {
 	content: '* required field';
 	color: #f36f37;
+	white-space: nowrap;
 }
 
 div.gform_wrapper input,
@@ -6061,7 +6062,7 @@ table.sortable td a {
 ------------------------------------------------------------ */
 
 #tribe-events .tribe-events-venue-meta h2.entry-title {
-	font-size: 1.6em;
+	font-size: 1.5em;
 }
 
 .tribe-events-venue .tribe-events-venue-meta {
@@ -6259,7 +6260,7 @@ span.tribe-events-list-separator-month span {
     background-position: 2px 50%;
 }
 
-#tribe-events-content-wrapper#tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left, 
+#tribe-events-content-wrapper #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left, 
 #tribe-events-content-wrapper #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left,
 #tribe-events-content-wrapper #tribe-events-header .tribe-events-sub-nav li, 
 #tribe-events-content-wrapper #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-previous {
@@ -6298,36 +6299,46 @@ li.tribe-events-nav-previous a {
 .tribe-events-before-html h1,
 .tribe-events-after-html h1,
 #tribe-events-pg-template .tribe-events-content h1 {
-	font-size: 2.625em !important;
+	font-size: inherit !important;
+	font-size: 2em !important;
 	font-weight: 900;
-	text-transform: uppercase;
+	text-transform: none;
 }
+
 .tribe-events-before-html h2,
 .tribe-events-after-html h2,
 #tribe-events-pg-template .tribe-events-content h2 {
-	font-size: 2em !important;
+	font-size: inherit !important;
+	font-size: 1.5em !important
+	line-height: 1 !important
 	font-weight: 900;
 	list-style-position: inside;
 	text-transform: uppercase;
+	border: solid #ccc;
+	border-width: 2px 0;
+	padding: .15em 0 0 .15em;
 }
 
 .tribe-events-before-html h3,
 .tribe-events-after-html h3,
 #tribe-events-pg-template .tribe-events-content h3 {
-	font-size: 1.5em !important;
+	font-size: inherit !important;
+	font-size: 1.25em !important;
 	font-weight: bold;
 }
 
 .tribe-events-before-html h4,
 .tribe-events-after-html h4,
 #tribe-events-pg-template .tribe-events-content h4 {
-	font-size: 1.25em !important;
+	font-size: inherit !important;
+	font-size: 1.125em !important;
 	font-weight: bold;
 }
 
 .tribe-events-before-html h5,
 .tribe-events-after-html h5,
 #tribe-events-pg-template .tribe-events-content h5 {
+	font-size: inherit !important;
 	font-size: .875em !important;
 	line-height: 1 !important;
 }
@@ -6335,6 +6346,7 @@ li.tribe-events-nav-previous a {
 .tribe-events-before-html h6,
 .tribe-events-after-html h6,
 #tribe-events-pg-template .tribe-events-content h6 {
+	font-size: inherit !important;
 	font-size: .75em !important;
 	line-height: 1 !important;
 }
@@ -6508,15 +6520,30 @@ h2.tribe-events-page-title a:visited {
 #tribe-events-content h3.tribe-events-related-events-title,
 #tribe-events-content #reply-title,
 .single-tribe_events h2.tribe-events-single-event-title {
-	font-size: 2em !important;
 	margin: .8em 0 .5em !important;
-	line-height: 1.6 !important;
+	line-height: 1 !important;
 	text-transform: uppercase;
 	font-weight: 900;
+	font-size: inherit !important;
+	font-size: 1.5em !important;
+	border: 2px solid #ccc;
+	border-width: 2px 0;
+	padding: .15em 0 0 .15em;
 }
 
 .single-tribe_events h2.tribe-events-single-event-title {
-	font-size: 2.25em !important;
+	border-top-width: 0;
+	text-align: center;
+	font-size: 2em !important;
+	text-transform: none;
+	padding-bottom: .5em !important;
+}
+
+.single-tribe_events .tribe-events-single-event-venue,
+.single-tribe_events .tribe-events-single-event-eventlink,
+.single-tribe_events .tribe-events-single-event-organizer {
+	display: block;
+	margin-bottom: 1em;
 }
 
 .eventbrite-ticket-embed>div {
@@ -6569,7 +6596,7 @@ h2.tribe-events-page-title a:visited {
 
 #tribe-events #tribe-events-header .tribe-events-sub-nav li a,
 #tribe-events #tribe-events-footer .tribe-events-sub-nav li a {
-	font-size: 1.1em;
+	font-size: 1em;
 	max-width: 100%;
 }
 

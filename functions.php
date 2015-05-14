@@ -342,7 +342,7 @@ add_theme_support( 'genesis-footer-widgets', 5 );
 	Include JS and CSS Files - NO STYLE RULES in '/style.css'
 ****/
 
-add_action( 'wp_enqueue_scripts', 'include_local_scripts' );
+add_action( 'wp_enqueue_scripts', 'apparition_include_local_scripts' );
 function apparition_include_local_scripts() {
 
 	wp_enqueue_style ( 'apparitioncss', CHILD_THEME_LOC . '/apparition.min.css' );

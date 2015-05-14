@@ -9,20 +9,25 @@
  *
  */
 
-if ( !defined('ABSPATH') ) { die('-1'); } ?>
+if( !defined('ABSPATH') ) {
 
-<?php 
+	die('-1');
+	
+}	//end if( !defined('ABSPATH') ) 
 
 // Setup an array of venue details for use later in the template
 $venue_details = array();
+if ( $venue_name = tribe_get_meta( 'tribe_event_venue_name' ) ) {
 
-if ($venue_name = tribe_get_meta( 'tribe_event_venue_name' ) ) {
 	$venue_details[] = $venue_name;	
-}
 
-if ($venue_address = tribe_get_meta( 'tribe_event_venue_address' ) ) {
+}	//end ( $venue_name = tribe_get_meta( 'tribe_event_venue_name' ) )
+if( $venue_address = tribe_get_meta( 'tribe_event_venue_address' ) ) {
+
 	$venue_details[] = $venue_address;	
-}
+
+}	//end if( $venue_address = tribe_get_meta( 'tribe_event_venue_address' ) )
+
 // Venue microformats
 $has_venue_address = ( $venue_address ) ? ' location': '';
 ?>

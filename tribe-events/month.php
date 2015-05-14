@@ -12,16 +12,20 @@
  */
  
 
-if ( !defined('ABSPATH') ) { die('-1'); } ?>
+if( !defined('ABSPATH') ) {
 
-<?php if (function_exists('vc_map')): //check for vc_map function ?>
+	die('-1');
 
-<?php wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) ) ?>
+}	//end if( !defined('ABSPATH') )
 
-<?php endif ?>
+//check for vc_map function
+if( function_exists( 'vc_map' ) ) {
 
-<?php do_action( 'tribe_events_before_template' ) ?>
+	wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) );
 
+}	//end if( function_exists( 'vc_map' ) )
+
+do_action( 'tribe_events_before_template' ); ?>
 <!-- Tribe Bar -->
 <?php tribe_get_template_part( 'modules/bar' ); ?>
 

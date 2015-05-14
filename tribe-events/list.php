@@ -12,29 +12,31 @@
  *
  */
  
+if( ! defined( 'ABSPATH' ) ) {
 
+	die('-1');
 
-if ( !defined('ABSPATH') ) { die('-1'); } ?>
+}	//end if( ! defined( 'ABSPATH' ) )
 
-<?php if (function_exists('vc_map')): //check for vc_map function ?>
+//check for vc_map function
+if( function_exists( 'vc_map') ) {
 
-<?php wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) ) ?>
+	wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) );
 
-<?php endif ?>
+}	//end if( function_exists( 'vc_map') );
+do_action( 'tribe_events_before_template' );
+if( !( is_single() ) ) {
 
-<?php do_action( 'tribe_events_before_template' ); ?>
-<?php if( !( is_single() ) ): ?>
-<!-- List Header -->
+	?>
+	<!-- List Header -->
     <?php do_action( 'tribe_events_before_header' ); ?>
 	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
-
-		<!-- Header Navigation -->
-		<?php do_action( 'tribe_events_before_header_nav' ); ?>
-		<?php tribe_get_template_part('list/nav', 'header'); ?>
-		<?php do_action( 'tribe_events_after_header_nav' ); ?>
-
-	</div><!-- #tribe-events-header -->
-<?php endif ?>
+	</div>
+	<!-- #tribe-events-header -->
+	<?php
+	
+}	//end if( !( is_single() ) )
+?>
 <!-- Tribe Bar -->
 <?php tribe_get_template_part( 'modules/bar' ); ?>
 

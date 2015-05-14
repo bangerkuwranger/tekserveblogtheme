@@ -21,22 +21,24 @@
  */
  
  
-if ( !defined('ABSPATH') ) { die('-1'); }
+if( !defined('ABSPATH') ) {
 
+	die('-1');
+
+}	//end if( !defined('ABSPATH') )
 $organizer_id = get_the_ID();
 
-?>
+//check for vc_map function
+if( function_exists( 'vc_map' ) ) { 
 
-<?php if (function_exists('vc_map')): //check for vc_map function ?>
+	wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) );
 
-<?php wp_enqueue_style( 'tribe_js_composer', plugins_url( '/js_composer/assets/css/js_composer.css' ) ) ?>
+}	//end if( function_exists( 'vc_map' ) )
 
-<?php endif ?>
+while( have_posts() ) : the_post(); ?>
 
-<?php while( have_posts() ) : the_post(); ?>
 <div class="tribe-events-organizer">
 	<p class="tribe-events-back"><a href="<?php echo tribe_get_events_link() ?>" rel="bookmark"><?php _e( '&larr; Back to Events', 'tribe-events-calendar-pro' ) ?></a></p>
-
 	<?php do_action( 'tribe_events_single_organizer_before_organizer' ) ?>
 	<div class="tribe-events-organizer-meta vcard tribe-clearfix">
 
