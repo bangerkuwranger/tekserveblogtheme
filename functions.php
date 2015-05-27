@@ -30,7 +30,7 @@ define( 'CHILD_THEME_LOC', get_stylesheet_directory_uri() );
 ****/
 
 //anotherheadachforanotherday
-// add_theme_support( 'html5' );
+add_theme_support( 'html5' );
 
 
 
