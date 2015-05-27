@@ -2154,32 +2154,27 @@ button {
 	border: 0;
 	cursor: pointer;
 	font-family: 'Tekvetica', Helvetica, sans-serif;
-	border-radius: 12px 0;
 	background-color: #40a8c9;
 	display: inline-block;
-	padding: .05em .5em .025em !important;
 	color: #fff;
-	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 1.25em;
 	margin: .5em .15em;
 	text-decoration: none;
 	transition: all 0.2s ease-in-out;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+	margin: 1em 0 0;
+	text-align: center;
+	font-size: 1em;
+	text-transform: lowercase;
+	padding: .55em 3em .5em !important;
 }
 
 
 #commentform #submit,
 #respond .comment-form .form-submit input {
 	display: block;
-	margin: 0 .5em 0 0;
-	text-align: center;
 	float: right;
-	font-size: 1em;
-	text-transform: lowercase;
-	border-radius: 0;
-	padding: .55em 3em .5em !important;
 }
 
 input:hover[type="button"],
@@ -5282,17 +5277,19 @@ ul.tekserve-faq-post-archive-list li.tekserve-faq-post-archive-list-item i {
 .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button {
 	background-color: #f36f37;
 	color: #fff;
-	border-radius: 12px 0 12px;
 	border: none;
-	font-size: 1.15em;
 	font-weight: 900;
 	text-transform: uppercase;
 	margin: 1em 0 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: 6px 10px 3px !important;
 	margin-left: 1em;
-	line-height: 1.3125em;
+	display: block;
+	margin: 1em 0 0;
+	text-align: center;
+	font-size: 1em;
+	text-transform: lowercase;
+	padding: .55em 3em .5em!important;
 }
 
 .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-readmore .button {
@@ -5879,7 +5876,7 @@ a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-
 
 .page a.simpleCart_checkout.button {
 	float: left;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 /* Rentals - Responsive
@@ -6120,8 +6117,8 @@ table.sortable td a {
 #tribe_events_filters_wrapper input[type=submit], .tribe-events-button,
 #tribe-events .tribe-events-button {
 	background-color: #004d72 !important;
-	border-radius: 12px 0 !important;
-	padding: .25em 1em .15em !important;
+	border-radius: 0 !important;
+	padding: .55em 3em .5em!important;
 }
 
 div.tribe-events-map-wrap {
@@ -6423,7 +6420,6 @@ li.tribe-events-nav-previous a {
 
 a.tribe-events-button { 
 	background-color: #f36f37;
-	border-radius: 6px 0 6px 0;
 }
 
 a.tribe-events-button:hover {
@@ -6917,25 +6913,22 @@ h2.tribe-events-page-title a:visited {
 }
 
 button.positive {
-	-o-border-radius: 12px 0;
 	-o-transition: all 0.2s ease-in-out;
-	-moz-border-radius: 12px 0;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	background-color: #40a8c9;
 	color: #fff;
-	border-radius: 12px 0;
+	border-radius: 0;
 	border: none;
 	display: inline-block;
-	font-size: 1.25em;
+	font-size: 1em;
 	font-weight: 900;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: .25em 1em .15em;
-	font-family: Tekvetica;
+	padding: .55em 3em .5em;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	cursor: pointer;
 }
 
@@ -6970,24 +6963,21 @@ form#status-front.status-front {
 }
 
 #fail-msg .button {
-	-o-border-radius: 12px 0;
 	-o-transition: all 0.2s ease-in-out;
-	-moz-border-radius: 12px 0;
 	-moz-transition: all 0.2s ease-in-out;
-	-webkit-border-radius: 12px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	background-color: #40a8c9;
 	color: #fff;
-	border-radius: 12px 0;
+	border-radius: 0;
 	border: none;
 	display: inline-block;
 	font-weight: 900;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	margin: 1em 0;
 	text-align: center;
 	transition: all 0.2s ease-in-out;
-	padding: .25em 1em .15em;
-	font-family: Tekvetica;
+	padding: .55em 3em .5em;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	cursor: pointer;
 }
 
