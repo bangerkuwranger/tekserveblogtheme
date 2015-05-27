@@ -534,8 +534,8 @@ body.custom-background {
 }
 
 .header-image .title-area,
-.header-image .site-title,
-.header-image .site-title a {
+.header-image #title,
+.header-image #title a {
 	display: block;
 	float: left;
 	direction: ltr;
@@ -545,11 +545,11 @@ body.custom-background {
 	min-width: 320px;
 }
 
-.header-full-width .title-area,
-.header-full-width .site-title,
-.header-full-width .site-title a,
-.header-image .site-title,
-.header-image .site-title a {
+.header-full-width #title,
+.header-full-width #title,
+.header-full-width #title a,
+.header-image #title,
+.header-image #title a {
 	width: 100%;
 }
 
