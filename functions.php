@@ -29,7 +29,6 @@ define( 'CHILD_THEME_LOC', get_stylesheet_directory_uri() );
 	Add HTML5 support
 ****/
 
-//anotherheadachforanotherday
 add_theme_support( 'html5' );
 
 
@@ -731,7 +730,7 @@ function apparition_tekserve_footer() {
 			<a href="#wrap" rel="nofollow" title="Return to the top of the page" alt="Return to the top of the page"><i class="fa fa-2x fa-caret-square-o-up"></i></a>
 		</div>
 		<div class="vc_col-sm-3 wpb_column vc_column_container">
-			copyright &copy;&nbsp;<?php date('Y') ?><a href="http://www.tekserve.com">Tekserve Corporation</a>
+			copyright &copy;<?php echo date('Y') ?>&nbsp;<a href="http://www.tekserve.com">Tekserve Corporation</a>
 		</div>
 		<div class="vc_col-sm-3 wpb_column vc_column_container">
 			<a href="http://www.tekserve.com/terms-of-use/">terms of use</a> - <a href="http://www.tekserve.com/privacy-policy/">privacy policy</a>
