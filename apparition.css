@@ -3972,6 +3972,7 @@ color: #f06c34 !important;
 
 .innerRowWrap.darkblue .button {
 	background-color: #40a8c9;
+	border: 2px solid #fff;
 }
 
 .innerRowWrap.darkblue .button:hover {
@@ -3980,6 +3981,7 @@ color: #f06c34 !important;
 
 .innerRowWrap.lightblue .button {
 	background-color: #f36f37;
+	border: 2px solid #fff;
 }
 
 .innerRowWrap.lightblue .button:hover {
@@ -3987,11 +3989,12 @@ color: #f06c34 !important;
 }
 
 .innerRowWrap.orange .button {
-	background-color: #40a8c9;
+	background-color: #004d72;
+	border: 2px solid #fff;
 }
 
 .innerRowWrap.orange .button:hover {
-	background-color: #004d72;
+	background-color: #40a8c9;
 }
 
 .collapseomatic_content {
