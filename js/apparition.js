@@ -919,12 +919,22 @@ function fixDiv() {
 		
 			$jdiv.addClass('floating-menu');
 			$j('.site-footer').addClass('floating');
+			if ($j('body').hasClass('infinite-scroll')) {
+			
+				$j('.footer-widgets').addClass('infinite');
+			
+			}
 		
 		}
 		else {
 		
 			$jdiv.removeClass('floating-menu');
 			$j('.site-footer').removeClass('floating');
+			if ($j('body').hasClass('infinite-scroll')) {
+			
+				$j('.footer-widgets').removeClass('infinite');
+			
+			}
 		
 		}	//end if ($j(window).scrollTop() > $jdiv.data("top"))
 

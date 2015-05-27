@@ -167,5 +167,22 @@ function apparition_infinite_enqueue() {
 
 
 
-//init genesis after creating loop and enqueuing scripts
+/****
+	Adds Infinite Scroll Body Class
+****/
+
+add_filter( 'body_class','apparition_infinite_scroll_body_class' );
+function apparition_infinite_scroll_body_class( $classes ) {
+ 
+    $classes[] = 'infinite-scroll';
+    return $classes;
+     
+}	//end apparition_infinite_scroll_body_class( $classes )
+
+
+
+/****
+	Init Genesis after Creating Loop and Enqueuing Scripts
+****/
+
 genesis();

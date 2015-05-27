@@ -1006,7 +1006,7 @@ div.site-container .nav-primary .wrap {
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
 
-	.footer-widgets,
+	.footer-widgets > .wrap,
 	.site-footer .innerRowWrap {
 		max-width: 90%;
 	}
@@ -1158,7 +1158,7 @@ div.site-container .nav-primary .wrap {
 		margin-bottom: 0;
 	}
 	
-	.footer-widgets.footer-widgets {
+	.footer-widgets {
 		padding-bottom: 5em;
 	}
 	
@@ -1195,7 +1195,7 @@ div.site-container .nav-primary .wrap {
 		right: -1.5em;
 	}
 	
-		.footer-widgets.footer-widgets {
+		.footer-widgets {
 		padding-bottom: 8em;
 	}
 
@@ -2521,11 +2521,20 @@ button:hover {
 	width: 100%;
 }
 
+.footer-widgets.infinite {
+	position: fixed;
+	bottom: 58px;
+}
+
 .footer-widgets .wrap {
 	overflow: hidden;
 	padding: 1em 0 4em;
 	max-width: 1024px;
 	margin: 0;
+}
+
+.footer-widgets.infinite > .wrap {
+	padding-bottom: 1em !important;
 }
 
 .footer-widgets .widget {
@@ -2604,6 +2613,10 @@ button:hover {
 		margin: 0 0 9em;
 		padding: 0;
 	}
+	
+	.footer-widgets.infinite {
+		bottom: 50px;
+	}
 
 }
 
@@ -2618,6 +2631,7 @@ button:hover {
 @media only screen and (max-width: 660px) {
 
 	.footer-widgets {
+		padding-bottom: 8em;
 		margin: 0;
 	}
 
@@ -2695,7 +2709,7 @@ button:hover {
 @media only screen and (min-width: 1200px) {
 
 	.site-footer,
-	.footer-widgets.footer-widgets {
+	.footer-widgets {
 		margin: 0 auto;
 	}
 
@@ -2710,10 +2724,6 @@ button:hover {
 }
 
 @media only screen and (max-width: 640px) {
-
-	.footer-widgets.footer-widgets {
-		padding-bottom: 8em;
-	}
 	
 	.site-footer {
 		padding-bottom: 4em;
