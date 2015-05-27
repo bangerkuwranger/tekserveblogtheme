@@ -143,7 +143,7 @@ function apparition_remove_page_titles() {
 
 	if( get_post_type() == 'page' && !( is_search() ) ) {
 
-		remove_action('genesis_post_title', 'genesis_do_post_title');
+		remove_action('genesis_entry_header', 'genesis_do_post_title');
 
 	}	//end if( get_post_type() == 'page' && !( is_search() ) )
 
@@ -242,8 +242,8 @@ $current_class = 'odd';
 	Relocate the Genesis Post Image to Above Title
 ****/
 
-remove_action( 'genesis_post_content', 'genesis_do_post_image' );
-add_action( 'genesis_before_post_title', 'genesis_do_post_image' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_image' );
+add_action( 'genesis_entry_header', 'genesis_do_post_image' );
 
 
 
@@ -251,7 +251,7 @@ add_action( 'genesis_before_post_title', 'genesis_do_post_image' );
 	Add the Featured Image Container; Use Placeholder Image if None Assigned
 ****/
 
-add_action( 'genesis_before_post_title', 'apparition_featured_image' );
+add_action( 'genesis_entry_header', 'apparition_featured_image' );
 function apparition_featured_image() {
 
 	if( is_singular( array( 'post' ) ) ) {
@@ -271,7 +271,7 @@ function apparition_featured_image() {
 	Remove the Post Info
 ****/
 
-remove_action( 'genesis_before_post_content', 'genesis_post_info' );
+remove_action( 'genesis_entry_header', 'genesis_post_info' );
 
 
 
@@ -279,8 +279,8 @@ remove_action( 'genesis_before_post_content', 'genesis_post_info' );
 	Move the Post Meta to After Title
 ****/
 
-remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
-add_action( 'genesis_after_post_title', 'genesis_post_meta' );
+remove_action( 'genesis_entry_header', 'genesis_post_meta' );
+add_action( 'genesis_entry_header', 'genesis_post_meta' );
 
 
 
@@ -835,7 +835,7 @@ function get_excerpt_by_id( $post_id ) {
 	Rich Post Navigation - Use to Replace Default Single Post Nav with Preview of Next/Previous Post - Uncomment Line to Enable
 ****/
 
-// add_action( 'genesis_after_post_content', 'appartition_rich_post_nav' );
+// add_action( 'genesis_entry_footer', 'appartition_rich_post_nav' );
 function appartition_rich_post_nav() {
 
 	$prev_post = get_previous_post( false, '1651' );
