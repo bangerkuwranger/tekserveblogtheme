@@ -124,7 +124,7 @@ $j(function() {
 	
 	});	//end $j('.vc_row').each( function()
 	
-	$j('#inner').slideDown(); // show content after assigning classes
+	$j('.site-inner').slideDown(); // show content after assigning classes
 
 });	//end $j(function()
 
@@ -470,7 +470,7 @@ function swapHeaderImgs() {
 
 	if ($j('#tekserve-shared-data-hours-swap').length != 0) {
 	
-		var $header = $j('#wrap #header .wrap #title-area');
+		var $header = $j('.site-container .site-header .wrap .title-area');
 		var firstImg = $header.css('backgroundImage');
 		var $swap = $j('#tekserve-shared-data-hours-swap');
 		var secondImg = $swap.html();
@@ -551,19 +551,19 @@ function stackFullHeight() {
 
 function initTekNavSubmenu() {
 
-	$j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').animate( {'left': 0, 'opacity': 1}, 250 );
-	if( $j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').length ) {
+	$j('.nav-primary .current-page-ancestor.menu-item-has-children .sub-menu, .nav-primary .current-menu-item.menu-item-has-children .sub-menu').animate( {'left': 0, 'opacity': 1}, 250 );
+	if( $j('.nav-primary .current-page-ancestor.menu-item-has-children .sub-menu, .nav-primary .current-menu-item.menu-item-has-children .sub-menu').length ) {
 	
-		$j('#nav .current-page-ancestor.menu-item-has-children, #nav .current-menu-item.menu-item-has-children').addClass('current-submenu');
+		$j('.nav-primary .current-page-ancestor.menu-item-has-children, .nav-primary .current-menu-item.menu-item-has-children').addClass('current-submenu');
 	
 	}
 	else {
 	
-		$j('#nav .menu-primary > .menu-item:first-child').addClass('current-submenu');
-		getSubmenu('#nav .menu-primary > .menu-item:first-child');
+		$j('.nav-primary .menu-primary > .menu-item:first-child').addClass('current-submenu');
+		getSubmenu('.nav-primary .menu-primary > .menu-item:first-child');
 		
-	}	//end if( $j('#nav .current-page-ancestor.menu-item-has-children .sub-menu, #nav .current-menu-item.menu-item-has-children .sub-menu').length )
-	$j('#nav .menu-item-has-children').click( function(e) {
+	}	//end if( $j('.nav-primary .current-page-ancestor.menu-item-has-children .sub-menu, .nav-primary .current-menu-item.menu-item-has-children .sub-menu').length )
+	$j('.nav-primary .menu-item-has-children').click( function(e) {
 	
 		if (!$j(this).hasClass('current-submenu')) {
 		
@@ -572,7 +572,7 @@ function initTekNavSubmenu() {
 		
 		}	//end if (!$j(this).hasClass('current-submenu'))
 	
-	});	//end $j('#nav .menu-item-has-children').click( function(e)
+	});	//end $j('.nav-primary .menu-item-has-children').click( function(e)
 	
 }	//end function initTekNavSubmenu()
 
@@ -727,10 +727,10 @@ function initFaqToc() {
 
 function moveForSidebar(hasSidebar) {
 
-	var $linkwithin = $j('#content .linkwithin_hook').detach();
+	var $linkwithin = $j('.content .linkwithin_hook').detach();
 	if (hasSidebar) {
 
-		$j('#sidebar').prepend($linkwithin);
+		$j('.sidebar-primary').prepend($linkwithin);
 		$j(window).bind('load', function() {
 		
 			var $addthis = $j('.addthis-smartlayers.at4-share-outer-right');
@@ -745,7 +745,7 @@ function moveForSidebar(hasSidebar) {
 	}
 	else {
 	
-		$j('#content .post').append($linkwithin);
+		$j('.content .post').append($linkwithin);
 	
 	}	//end if (hasSidebar)
 	
@@ -840,7 +840,7 @@ $j('h1, h2, h3, h1 a, h2 a, h3 a, .detailBoxTrigger, .drawertrigger, .tekserve-c
 function navInit() {
 
 	//store fixed value for menu top position
-	$j('#nav').data('top', $j('#nav').offset().top);
+	$j('.nav-primary').data('top', $j('.nav-primary').offset().top);
 	
 	//bind class hovermenu to hover status
 	$j('.menu-primary').hover (
@@ -858,11 +858,11 @@ function navInit() {
   	//remove class hovermenu on window scroll
   	$j(window).scroll(function() {
   	
-		if ($j('#nav').hasClass('floating-menu')) {
+		if ($j('.nav-primary').hasClass('floating-menu')) {
 		
 			$j('.menu-primary').removeClass('hovermenu');
 		
-		}	//end if ($j('#nav').hasClass('floating-menu'))
+		}	//end if ($j('.nav-primary').hasClass('floating-menu'))
 	
 	});	//end $j(window).scroll(function()
 	
@@ -889,42 +889,42 @@ function navInit() {
 
 function fixDiv() { 
 
-    var $jdiv = $j("#nav");
+    var $jdiv = $j('.nav-primary');
     
-    // if window is larger than the document content-> no pinned menu and show #footer
-    if ( $j(window).height() >= ( $j(document).height() - $j('#footer-widgets').height() ) ) {
+    // if window is larger than the document content-> no pinned menu and show .site-footer
+    if ( $j(window).height() >= ( $j(document).height() - $j('.footer-widgets').height() ) ) {
     
-    	$j('#footer').addClass('floating');
+    	$j('.site-footer').addClass('floating');
     	$jdiv.removeClass('floating-menu');
     	
     }
-    // if window is not mobile, and difference between content height and window height is larger than the total height of the navbar-> no pinned menu and show #footer
-    else if ( $j(window).height() - $j('#inner').height() >= $j('#nav > .wrap').outerHeight(true) && $j(window).width() > 450 ) {
+    // if window is not mobile, and difference between content height and window height is larger than the total height of the navbar-> no pinned menu and show .site-footer
+    else if ( $j(window).height() - $j('.site-inner').height() >= $j('.nav-primary > .wrap').outerHeight(true) && $j(window).width() > 450 ) {
     
-    	$j('#footer').addClass('floating');
+    	$j('.site-footer').addClass('floating');
     	$jdiv.removeClass('floating-menu');
     
     }
-    // if window is mobile, and difference between (content + header) height and window height is larger than the total height of the navbar-> no pinned menu and show #footer
-    else if ( $j(window).height() - $j('#inner').height() - $j('#header').height() >= $j('#nav > .wrap').outerHeight(true) && $j(window).width() < 450 ) {
+    // if window is mobile, and difference between (content + header) height and window height is larger than the total height of the navbar-> no pinned menu and show .site-footer
+    else if ( $j(window).height() - $j('.site-inner').height() - $j('.site-header').height() >= $j('.nav-primary > .wrap').outerHeight(true) && $j(window).width() < 450 ) {
     
-    	$j('#footer').addClass('floating');
+    	$j('.site-footer').addClass('floating');
     	$jdiv.removeClass('floating-menu');
     
     }
-    //	otherwise, use normal pinned menu and sliding #footer behavior. Conditions prevent window jumping and hiding footer in certain window configurations
+    //	otherwise, use normal pinned menu and sliding .site-footer behavior. Conditions prevent window jumping and hiding footer in certain window configurations
     else {
     
 		if ($j(window).scrollTop() > $jdiv.data("top")) {
 		
 			$jdiv.addClass('floating-menu');
-			$j('#footer').addClass('floating');
+			$j('.site-footer').addClass('floating');
 		
 		}
 		else {
 		
 			$jdiv.removeClass('floating-menu');
-			$j('#footer').removeClass('floating');
+			$j('.site-footer').removeClass('floating');
 		
 		}	//end if ($j(window).scrollTop() > $jdiv.data("top"))
 
@@ -949,7 +949,7 @@ function goToAnchor() {
 			
 				window.scrollTo(0, 0);
 				fixDiv();
-				var offset = -(parseInt($j('#nav').outerHeight(true)));
+				var offset = -(parseInt($j('.nav-primary').outerHeight(true)));
 				window.location.href = hash;
 				window.scrollBy(0, offset);
 			
@@ -984,7 +984,7 @@ function bindAnchors() {
 			
 				window.scrollTo(0, 0);
 				fixDiv();
-				var offset = -(parseInt($j('#nav').outerHeight(true)));
+				var offset = -(parseInt($j('.nav-primary').outerHeight(true)));
 				window.location.href = pageHash;
 				window.scrollBy(0, offset);
 			
