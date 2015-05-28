@@ -1802,25 +1802,25 @@ li.hfourList {
 /* Post Info / Post Meta
 ------------------------------------------------------------ */
 
-.entry-footer .entry-meta {
+.content .entry-meta {
 	color: #999;
 	font-size: 1.125em;
 	padding: 10px 0 0;
 }
 
-.single .entry-footer .entry-meta {
+.single-post .content .entry-meta {
 	border-top: double #eee;
 	padding: 30px 0;
 	text-align: center;
 }
 
-.entry-footer .entry-meta a,
-.entry-footer .entry-meta a:visited {
+.content .entry-meta a,
+.content .entry-meta a:visited {
 	color: #f06c34;
 	text-decoration: none;
 }
 
-.entry-footer .entry-meta a:hover {
+.content .post-meta a:hover {
 	color: #333;
 	text-decoration: none;
 }
@@ -1831,13 +1831,13 @@ li.hfourList {
 	content: '/';
 	margin: 0 10px;
 }
-.single div.entry-footer .entry-meta {
+.single-post .content .entry-meta {
 	border: none;
 	padding: 0;
 	text-align: center;
 }
 
-.single div.entry-footer .entry-meta,
+.single .content .entry-meta,
 #tekserve-press-date,
 #tekserve-press-author,
 #tekserve-press-publication {
@@ -2612,7 +2612,11 @@ button:hover {
 	.footer-widgets {
 		font-size: 1em;
 		margin: 0;
-		padding-bottom: 9em;
+		padding-bottom: 4em;
+	}
+		
+	.footer-widgets.infinite {
+		padding: 0 0 9em;
 	}
 	
 	.footer-widgets .wrap {
@@ -2628,7 +2632,15 @@ button:hover {
 @media only screen and (max-width: 768px) {
 
 	.footer-widgets {
+		padding-bottom: 8em;
+	}
+
+	.footer-widgets.infinite {
 		padding: 0 0 12em;
+	}
+	
+	.footer-widgets.infinite .wrap {
+		padding-left: 2em;
 	}
 	
 	.footer-widgets .widget {
@@ -3009,7 +3021,7 @@ label {
 	border-width: 2px 0 0;
 }
 
-.comment-reply {
+.reply {
 	font-size: .875em;
 	float: right;
 	position: relative;
@@ -3017,7 +3029,7 @@ label {
 }
 
 a.comment-reply-link {
-  padding-right: 2em;
+  	padding-right: 2em;
 }
 
 .entry-comments .pagination {
@@ -4763,26 +4775,26 @@ color: #f06c34 !important;
 /* Blog Post
 ------------------------------------------------------------ */
 
-.single-post .post .entry-content {
+.single-post main .post .entry-content {
 	font-family: Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 }
 
-.single-post .entry-content p {
+.single-post main .entry-content p {
 	font-size: .95em;
 }
 
-.single-post .post .entry-content body,
-.single-post .post .entry-content li,
-.single-post .post .entry-content ol,
-.single-post .post .entry-content p,
-.single-post .post .entry-content select,
-.single-post .post .entry-content textarea,
-.single-post .post .entry-content ul,
-.single-post .post .entry-content span,
-.single-post .post .entry-content blockquote,
-.single-post .post .entry-content div,
-.single-post .post .entry-content table {
+.single-post main .post .entry-content body,
+.single-post main .post .entry-content li,
+.single-post main .post .entry-content ol,
+.single-post main .post .entry-content p,
+.single-post main .post .entry-content select,
+.single-post main .post .entry-content textarea,
+.single-post main .post .entry-content ul,
+.single-post main .post .entry-content span,
+.single-post main .post .entry-content blockquote,
+.single-post main .post .entry-content div,
+.single-post main .post .entry-content table {
 	font-family: inherit;
 	line-height: inherit;
 }
@@ -6052,17 +6064,21 @@ table.sortable td a {
 	border-width: 0;
 }
 
-.sidebar-primary .widget.featuredpost .post > h2 > a {
+.sidebar-primary .widget.featuredpost article > header h2 > a {
 	color: #f36f37;
 	font-weight: 900;
 }
 
-.sidebar-primary .widget.featuredpost .post > .byline > span {
+.sidebar-primary .widget.featuredpost article > header time {
 	font-weight: bold;
 	font-size: .8em;
 }
 
-.sidebar-primary .widget .entry {
+.sidebar-primary .widget.featuredpost article > .entry-content {
+	margin-top: 0
+}
+
+.sidebar-primary .widget article {
 	padding: 0 0 2em;
 }
 

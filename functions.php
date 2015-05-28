@@ -241,8 +241,8 @@ $current_class = 'odd';
 	Relocate the Genesis Post Image to Above Title
 ****/
 
-remove_action( 'genesis_entry_content', 'genesis_do_post_image' );
-add_action( 'genesis_entry_header', 'genesis_do_post_image' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_format_image', 4);
+// add_action( 'genesis_entry_header', 'genesis_do_post_image' );
 
 
 
@@ -250,7 +250,7 @@ add_action( 'genesis_entry_header', 'genesis_do_post_image' );
 	Add the Featured Image Container; Use Placeholder Image if None Assigned
 ****/
 
-add_action( 'genesis_entry_header', 'apparition_featured_image' );
+add_action( 'genesis_entry_header', 'apparition_featured_image', 1 );
 function apparition_featured_image() {
 
 	if( is_singular( array( 'post' ) ) ) {
@@ -270,7 +270,7 @@ function apparition_featured_image() {
 	Remove the Post Info
 ****/
 
-remove_action( 'genesis_entry_header', 'genesis_post_info' );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 
 
@@ -278,8 +278,8 @@ remove_action( 'genesis_entry_header', 'genesis_post_info' );
 	Move the Post Meta to After Title
 ****/
 
-remove_action( 'genesis_entry_header', 'genesis_post_meta' );
-add_action( 'genesis_entry_header', 'genesis_post_meta' );
+// remove_action( 'genesis_entry_header', 'genesis_post_meta' );
+// add_action( 'genesis_entry_header', 'genesis_post_meta' );
 
 
 
@@ -287,13 +287,13 @@ add_action( 'genesis_entry_header', 'genesis_post_meta' );
 	Custom Format for the Post Meta
 ****/
 
-add_filter( 'genesis_post_meta', 'post_meta_filter' );
-function post_meta_filter( $post_meta ) {
+add_filter( 'genesis_post_info', 'apparition_post_meta_filter' );
+function apparition_post_meta_filter( $post_info ) {
 
 	if( !is_page() ) {
 	
-		$post_meta = '[post_date] [post_author_posts_link] [post_comments] [post_edit]';
-		return $post_meta;
+		$post_info = '[post_date] [post_author_posts_link] [post_comments] [post_edit]';
+		return $post_info;
 	
 	}	//end if( !is_page() )
 
