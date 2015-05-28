@@ -1808,7 +1808,7 @@ li.hfourList {
 	padding: 10px 0 0;
 }
 
-.single-post .content .entry-meta {
+.single-post .content .post-meta {
 	border-top: double #eee;
 	padding: 30px 0;
 	text-align: center;
@@ -1820,9 +1820,18 @@ li.hfourList {
 	text-decoration: none;
 }
 
-.content .post-meta a:hover {
+.content .entry-meta a:hover {
 	color: #333;
 	text-decoration: none;
+}
+
+.content .entry-meta a.post-edit-link {
+	font-weight: normal;
+	color: #004d72;
+}
+
+.content .entry-meta a.post-edit-link:hover {
+	color: #40a8c9;
 }
 
 .entry-comments-link:before,
@@ -2518,17 +2527,18 @@ button:hover {
 	margin: 0;
 	overflow: hidden;
 	width: 100%;
-	padding: 0 0 0 1em;
+	padding: 0;
 }
 
 .footer-widgets.infinite {
 	position: fixed;
 	bottom: 58px;
+	overflow: hidden;
+	padding-bottom: 1em;
 }
 
 .footer-widgets .wrap {
-	overflow: hidden;
-	padding: 1em 0 4em;
+	padding: 1em 0 5em 1em;
 	max-width: 1024px;
 	width: 96%;
 	margin: 0;
@@ -2612,7 +2622,7 @@ button:hover {
 	.footer-widgets {
 		font-size: 1em;
 		margin: 0;
-		padding-bottom: 4em;
+		padding-bottom: 5em;
 	}
 		
 	.footer-widgets.infinite {
@@ -2664,6 +2674,14 @@ button:hover {
 	.footer-widgets .widget-area .textwidget {
 		min-width: 280px;
 		width: 20%;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.footer-widgets {
+		display: none;
 	}
 
 }
@@ -2761,6 +2779,14 @@ button:hover {
 	
 	.site-footer .innerRowWrap > div {
 		text-indent: 0;
+	}
+	
+	footer a.anchor {
+		float: right;
+	}
+	
+	footer a > i.fa-2x {
+		font-size: 4em;
 	}
 
 }
