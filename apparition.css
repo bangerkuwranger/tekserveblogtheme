@@ -1802,7 +1802,7 @@ li.hfourList {
 /* Post Info / Post Meta
 ------------------------------------------------------------ */
 
-.content .entry-meta {
+.content .post-meta {
 	color: #999;
 	font-size: 1.125em;
 	padding: 10px 0 0;
@@ -4406,7 +4406,7 @@ color: #f06c34 !important;
 		padding: 0;
 	}
 	
-	.content  .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
+	main.content .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
 		display: block;
 		margin: 0 auto 2em;
 		width: 70%;
@@ -4416,7 +4416,7 @@ color: #f06c34 !important;
 
 @media only screen and (max-width: 768px) {
 
-	.content .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
+	main.content  .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
 		float: left;
 		width: 25%;
 		display: inline-block;
@@ -4445,7 +4445,7 @@ color: #f06c34 !important;
 
 @media only screen and (max-width: 500px) {
 
-	.content .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav,
+	main.content  .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav,
 	.innerRowWrap .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
 		width: 100%;
 		float: none;
@@ -4471,64 +4471,64 @@ color: #f06c34 !important;
 	width: 100%;
 }
 
-.page .page .site-container .site-inner .wrap .content,
+.page .page .site-container .site-inner .wrap main.content ,
 .page .page .site-container .site-inner .wrap .content.hfeed .entry {
 	padding: 0;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .wpb_column {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .wpb_column {
 	margin-left: 0;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-1 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-1 {
 	width: 8.333333333333333%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-2 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-2 {
 	width: 8.666666666666667%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-3 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-3 {
 	width: 25%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-4 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-4 {
 	width: 33.333333333333333%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-5 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-5 {
 	width: 41.666666666666667%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-6 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-6 {
 	width: 50%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-7 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-7 {
 	width: 58.333333333333333%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-8 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-8 {
 	width: 66.666666666666667%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-9 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-9 {
 	width: 75%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-10 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-10 {
 	width: 83.333333333333333%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-11 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-11 {
 	width: 91.666666666666667%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .vc_col-sm-12 {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .vc_col-sm-12 {
 	width: 100%;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .wpb_column .wpb_wrapper {
+.page .page .site-container .site-inner .wrap main.content  .vc_row-fluid .wpb_column .wpb_wrapper {
 	padding: 2em;
 }
 
@@ -4579,16 +4579,16 @@ color: #f06c34 !important;
 	margin-top: 0;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .leftstory .wpb_wrapper {
+.page .page .site-container .site-inner .wrap main.content .vc_row-fluid .leftstory .wpb_wrapper {
 	padding: 2em 2em 2em 16em;
 }
 
-.page .page .site-container .site-inner .wrap .content .vc_row-fluid .rightstory .wpb_wrapper {
+.page .page .site-container .site-inner .wrap main.content .vc_row-fluid .rightstory .wpb_wrapper {
 	padding: 2em 16em 2em 2em;
 }
 
-.page-template-blog-post-archive .site-inner .content,
-.tag .site-inner .content {
+.page-template-blog-post-archive .site-inner main.content,
+.tag .site-inner main.content {
 	float: none;
 	width: 85%;
 	max-width: 730px;
@@ -4738,10 +4738,10 @@ color: #f06c34 !important;
 		padding-top: .5em;
 	}
 
-	.page-template-blog-post-archive .site-inner .content,
-	.tag .site-inner .content,
-	.full-width-content.single .content,
-	.content-sidebar.single .content {
+	.page-template-blog-post-archive .site-inner main.content,
+	.tag .site-inner main.content,
+	.full-width-content.single main.content,
+	.content-sidebar.single main.content {
 		width: 80%;	
 	}
 	
@@ -4799,7 +4799,7 @@ color: #f06c34 !important;
 	line-height: inherit;
 }
 
-.single-post .content .featured-image {
+.single-post main.content .featured-image {
 	margin-bottom: 2em;
 	float: none;
 	width: 100%;
@@ -4808,7 +4808,7 @@ color: #f06c34 !important;
 	text-align: center;
 }
 
-.single-post .content .featured-image img {
+.single-post main.content .featured-image img {
   height: auto;
   width: auto;
   max-height: 320px;
@@ -4881,7 +4881,7 @@ color: #f06c34 !important;
 	margin-bottom: 12px;
 }
 
-.single-post .content .entry-content {
+.single-post main.content .entry-content {
 	margin-top: 1em;
 	padding-top: 1em;
 	border-top: 2px solid #ccc;

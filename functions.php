@@ -274,28 +274,29 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 
 
-/****
-	Move the Post Meta to After Title
-****/
-
-// remove_action( 'genesis_entry_header', 'genesis_post_meta' );
-// add_action( 'genesis_entry_header', 'genesis_post_meta' );
-
-
 
 /****
 	Custom Format for the Post Meta
 ****/
 
-add_filter( 'genesis_post_info', 'apparition_post_meta_filter' );
-function apparition_post_meta_filter( $post_info ) {
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+add_action( 'genesis_entry_header', 'apparition_post_info', 12 );
+function apparition_post_info() {
 
-	if( !is_page() ) {
+	if ( 'page' === get_post_type() ) {
 	
-		$post_info = '[post_date] [post_author_posts_link] [post_comments] [post_edit]';
-		return $post_info;
+		return;
 	
-	}	//end if( !is_page() )
+	}
+	echo '<p class="entry-meta"><time class="entry-time" itemprop="datePublished">';
+	the_time( 'l, F j, Y' );
+	echo '</time> by <span class="entry-author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">';
+	the_author_link();
+	echo '</span> ';
+	edit_post_link();
+	echo '</p>';
+
+	
 
 }	//end post_meta_filter( $post_meta )
 
@@ -318,7 +319,7 @@ function apparition_author_box_gravatar_size( $size ) {
 	Customize the Comment Submit Button Text
 ****/
 
-add_filter( 'genesis_comment_form_args', 'apparition_comment_form_args' );
+add_filter( 'comment_form_defaults', 'apparition_comment_form_args' );
 function apparition_comment_form_args( $args ) {
 
 	$args['label_submit'] = __( 'Submit', 'apparition' );
@@ -698,7 +699,7 @@ array(
 	Customize Fields in Comment Form
 ****/
 
-add_filter( 'genesis_comment_form_args', 'apparition_respond_form' );
+add_filter( 'comment_form_defaults', 'apparition_respond_form' );
 function apparition_respond_form( $args ) {
 
 	$args['fields'] = array( 
@@ -710,6 +711,7 @@ function apparition_respond_form( $args ) {
 	$args['comment_field'] = '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'apparition' ) . '</label><textarea id="comment" name="comment" cols="45" rows="4" tabindex="4" aria-required="true" placeholder="enter your comment here"></textarea></p>';
 	$args['title_reply'] = __( 'Comment', 'apparition' );
 	$args['label_submit'] = __( 'Submit', 'apparition' );
+	$args['comment_notes_before'] = '';
 	return $args;
     
 }	//end apparition_respond_form( $args )
@@ -795,7 +797,7 @@ function apparition_below_header_banner() {
 	Add Post Navigation (requires HTML5 support, so not active until that is)
 ****/
 
-add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
+// add_action( 'genesis_after_entry_content', 'genesis_prev_next_post_nav', 5 );
 
 
 
@@ -925,6 +927,7 @@ add_filter( 'comment_form_defaults', 'apparition_comment_form_defaults' );
 function apparition_comment_form_defaults( $defaults ) {
  
 	$defaults['title_reply'] = __( 'Comments' );
+	$defaults['comment_notes_after'] = '';
 	return $defaults;
  
 }	//end apparition_comment_form_defaults( $defaults )

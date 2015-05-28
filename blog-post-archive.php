@@ -112,7 +112,7 @@ function apparition_post_loop() {
 					<div class="vc_col-sm-9 wpb_column vc_column_container">
 						<a href="<?php the_permalink() ?>">
 							<h1><?php the_title() ?></h1>
-							<div class="post-meta"><?php the_date() ?></div>
+							<div class="post-meta"><?php the_time( 'l, F j, Y' ) ?></div>
 							<p><?php the_excerpt() ?></p>
 							<?php echo $cta ?>
 						</a>
