@@ -1164,7 +1164,6 @@ div.site-container .nav-primary .wrap {
 	
 	.site-footer {
 		padding-bottom: 4em;
-		bottom: -8em;
 	}
 	
 	.site-footer .innerRowWrap .wpb_column {
@@ -1195,7 +1194,7 @@ div.site-container .nav-primary .wrap {
 		right: -1.5em;
 	}
 	
-		.footer-widgets {
+	.footer-widgets {
 		padding-bottom: 8em;
 	}
 
@@ -2516,9 +2515,10 @@ button:hover {
 	color: #fff;
 	font-size: 1em;
 	font-weight: 200;
-	margin: 0 2em;
+	margin: 0;
 	overflow: hidden;
 	width: 100%;
+	padding: 0 0 0 1em;
 }
 
 .footer-widgets.infinite {
@@ -2530,6 +2530,7 @@ button:hover {
 	overflow: hidden;
 	padding: 1em 0 4em;
 	max-width: 1024px;
+	width: 96%;
 	margin: 0;
 }
 
@@ -2610,12 +2611,16 @@ button:hover {
 
 	.footer-widgets {
 		font-size: 1em;
-		margin: 0 0 9em;
-		padding: 0;
+		margin: 0;
+		padding-bottom: 9em;
+	}
+	
+	.footer-widgets .wrap {
+		margin: 0 auto;
 	}
 	
 	.footer-widgets.infinite {
-		bottom: 50px;
+		bottom: 0;
 	}
 
 }
@@ -2623,7 +2628,17 @@ button:hover {
 @media only screen and (max-width: 768px) {
 
 	.footer-widgets {
-		margin: 0 0 6em;
+		padding: 0 0 12em;
+	}
+	
+	.footer-widgets .widget {
+		display: block;
+	}
+	
+	.footer-widgets .widget-area {
+		float: none;
+		padding: 0;
+		line-height: 1.5;
 	}
 
 }
@@ -2631,16 +2646,7 @@ button:hover {
 @media only screen and (max-width: 660px) {
 
 	.footer-widgets {
-		padding-bottom: 8em;
 		margin: 0;
-	}
-
-	.footer-widgets .widget {
-		display: block;
-	}
-	
-	.footer-widgets .widget-area {
-		float: none;
 	}
 	
 	.footer-widgets .widget-area .textwidget {
@@ -2675,6 +2681,10 @@ button:hover {
 	background-color: #004d72;
 	overflow: hidden;
 	padding: 8px 0;
+}
+
+.site-footer > .wrap {
+	width: 96%;
 }
 
 .site-footer .wpb_row {
@@ -2715,10 +2725,30 @@ button:hover {
 
 }
 
+@media only screen and (min-width: 640px) and ( max-width: 1024px ) {
+
+	.site-footer {
+		bottom: -128px;
+	}
+
+}
+
 @media only screen and (max-width: 960px) {
 
 	.site-footer .wpb_row {
 		margin-bottom: 4em;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.site-footer .innerRowWrap {
+		text-align: left !important;
+	}
+	
+	.site-footer .innerRowWrap > div {
+		text-indent: 0;
 	}
 
 }
@@ -2731,7 +2761,6 @@ button:hover {
 
 	.site-footer .innerRowWrap {
 		font-size: 9px !important;
-		text-align: left;
 	}
 	
 	.site-footer .wpb_row {

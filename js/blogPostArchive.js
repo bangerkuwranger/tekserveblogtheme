@@ -1,5 +1,5 @@
 /******
-	Maintain Proper for Blog archive page (window resize called conditionally in main JS resize function)
+	Maintain Proper Height / Alignment for Blog archive page (window resize called conditionally in main JS resize function)
 ******/
 
 function blogHero() {
@@ -52,7 +52,7 @@ function initInfiniteScroll() {
 		"nextSelector":".navigation .nav-previous a",
 		"navSelector":".navigation",
 		"itemSelector":".article-archive",
-		"contentSelector":"#content",
+		"contentSelector":".content",
 		"animate":true,
 	
 	};
@@ -66,6 +66,11 @@ function initInfiniteScroll() {
 
 jQuery(window).bind('load', function() {
 
+	if (themeInfo.resultCount && themeInfo.resultCount > 12) {
+	
+		jQuery('body').addClass('infinite-scroll');
+	
+	}	//end if (themeInfo.resultCount && themeInfo.resultCount > 12)
 	blogHero();
 	initInfiniteScroll();
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Template Name: Apparition Post Archive
+* Template Name: Apparition Tag Archive
 * Description: Infinite Scroll Tag archive page.
 */
 
@@ -73,6 +73,9 @@ function apparition_post_loop() {
 		
 		?>
 		<link rel="stylesheet" id="js_composer_front-css" href="<?php echo get_site_url() ?>/wp-content/plugins/js_composer/assets/css/js_composer.css?ver=4.5" type="text/css" media="all">
+		<script type="text/javascript">
+			themeInfo.resultCount = <?php echo $tagPostQty ?>;
+		</script>
 		<div class="vc_row wpb_row vc_row-fluid tag-separator">
 			<div class="vc_col-sm-12 wpb_column vc_column_container">
 				<h1>Articles with Keyword: <?php echo get_tag($term_id)->name ?></h1>
@@ -109,6 +112,7 @@ function apparition_post_loop() {
 		?>
 		<?php if( $tagPostQty > 12 ): ?>
 		
+
 		<div class="navigation">
 			<div class="nav-previous alignleft">
 				< <?php next_posts_link( 'Older posts', $loop->max_num_pages ) ?>
@@ -147,6 +151,7 @@ function apparition_infinite_enqueue() {
 }	//end apparition_infinite_enqueue()
 
 add_action( 'wp_enqueue_scripts', 'apparition_infinite_enqueue' );
+
 
 
 /****
