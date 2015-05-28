@@ -1051,8 +1051,8 @@ add_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_shortcode( 'footerfolk', 'apparition_footer_folk' );
 function apparition_footer_folk() {
 
-	$zagat = CHILD_THEME_LOC . '/footer-images/logos/zagat.png';
-	$foursquare = CHILD_THEME_LOC . '/footer-images/logos/foursquare-logo.png';
+	$zagat = CHILD_THEME_LOC . '/images/footer-images/logos/zagat.png';
+	$foursquare = CHILD_THEME_LOC . '/images/footer-images/logos/foursquare-logo.png';
 	if( get_post_type() == 'page' ): ?>
 		<div id="pageLoad"><img src="<?php echo CHILD_THEME_LOC ?>/images/ajax-loader.gif" alt="Page Loading" /></div>
 	<?php endif ?>
