@@ -1241,7 +1241,7 @@ function apparition_tekbutton( $atts, $content = null ) {
 add_shortcode( 'invisibleline', 'apparition_invisible_line' );
 function apparition_invisible_line() {
 
-	return '<hr style="visibility: hidden; clear: both; height: 1em;" /><br/>';
+	return '<hr style="visibility: hidden; clear: both; height: 1em;" />';
 
 }	//end apparition_invisible_line()
 
