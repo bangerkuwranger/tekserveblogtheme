@@ -124,6 +124,9 @@ $j(function() {
 	
 	});	//end $j('.vc_row').each( function()
 	
+	//set toc links
+	initFaqToc();
+	
 	$j('.site-inner').slideDown(); // show content after assigning classes
 
 });	//end $j(function()
@@ -173,7 +176,7 @@ function scrollToID() {
 ****/
 
 function additionalFunctions() {
-	
+
 	//bind hover class to special notice if there is a link present
 	if ($j('#special-notice a').length > 0 ) {
 	
@@ -197,8 +200,6 @@ function additionalFunctions() {
 	$j('#pageLoad').slideUp();
 	initTekNavSubmenu();
 	initTitleOnAjaxFormSubmit();
-	//set toc links
-	initFaqToc();
 	
 } //end additionalFunctions()
 
