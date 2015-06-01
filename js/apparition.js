@@ -981,7 +981,7 @@ function goToAnchor() {
 			
 				window.scrollTo(0, 0);
 				fixDiv();
-				var offset = -(parseInt($j('.nav-primary').outerHeight(true)));
+				var offset = -2*(parseInt($j('.nav-primary').outerHeight(true)));
 				window.location.href = hash;
 				window.scrollBy(0, offset);
 			
@@ -1016,7 +1016,7 @@ function bindAnchors() {
 			
 				window.scrollTo(0, 0);
 				fixDiv();
-				var offset = -(parseInt($j('.nav-primary').outerHeight(true)));
+				var offset = -2*(parseInt($j('.nav-primary').outerHeight(true)));
 				window.location.href = pageHash;
 				window.scrollBy(0, offset);
 			
