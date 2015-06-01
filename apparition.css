@@ -2782,11 +2782,22 @@ button:hover {
 	}
 	
 	footer a.anchor {
-		float: right;
+		min-height: 4em;
+		display: inline-block;
+		z-index: 999;
+	}
+	
+	.site-container .site-footer .wpb_row .wpb_column:first-child {
+		position: absolute;
+		right: 1em;
 	}
 	
 	footer a > i.fa-2x {
 		font-size: 4em;
+	}
+	
+	.site-footer a:hover {
+		color: #fff;
 	}
 
 }
@@ -2803,6 +2814,10 @@ button:hover {
 	
 	.site-footer .wpb_row {
 		margin-bottom: 0;
+	}
+	
+	.site-footer .innerRowWrap .wpb_column {
+		max-width: 50%;
 	}
 
 }
@@ -2865,6 +2880,14 @@ ul.certificationlogos li img.foursquare {
 		max-width: 92%;
 	}
 	
+}
+
+@media only screen and (max-width: 500px) {
+
+	.footer-folk {
+		padding-bottom: 125px;
+	}
+
 }
 
 

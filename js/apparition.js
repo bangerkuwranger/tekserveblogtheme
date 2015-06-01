@@ -842,6 +842,13 @@ function navInit() {
 	//store fixed value for menu top position
 	$j('.nav-primary').data('top', $j('.nav-primary').offset().top);
 	
+	//add id 'wrap' to html5 page markup for 'to top of page' nav
+	if ($j('body>.site-container').length > 0) {
+	
+		$j('body>.site-container').attr('id', 'wrap');
+	
+	}	//end if ($j('body>.site-container').length > 0)
+	
 	//bind class hovermenu to hover status
 	$j('.menu-primary').hover (
 	
