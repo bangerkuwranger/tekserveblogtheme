@@ -2799,6 +2799,10 @@ button:hover {
 	.site-footer a:hover {
 		color: #fff;
 	}
+		
+	.site-footer .innerRowWrap .wpb_column {
+		max-width: 50%;
+	}
 
 }
 
@@ -2814,10 +2818,6 @@ button:hover {
 	
 	.site-footer .wpb_row {
 		margin-bottom: 0;
-	}
-	
-	.site-footer .innerRowWrap .wpb_column {
-		max-width: 50%;
 	}
 
 }
