@@ -2905,6 +2905,10 @@ ul.certificationlogos li img.foursquare {
 	padding-bottom: 78px;
 }
 
+.has-toc #respond {
+	border-bottom-width: 0;
+}
+
 #respond .comment-field input {
 	padding: .5em;
 	margin-top: 1em;
@@ -5158,6 +5162,7 @@ color: #f06c34 !important;
 .single-post #toc_container.toc_transparent {
 	border: 1px inset #aaa;
 	display: block;
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .single-post #toc_container .toc_title {
@@ -6144,6 +6149,7 @@ table.sortable td a {
 .sidebar-primary .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .button {
 	margin: .25em 0 0;
 	font-size: .75em;
+	display: table-cell;
 }
 
 .sidebar-primary .tekserve-celebros-related-items-single-data .tekserve-celebros-related-items-single-data-buy .price {
@@ -6202,6 +6208,7 @@ table.sortable td a {
 	}
 
 }
+
 
 
 
