@@ -6991,12 +6991,7 @@ h2.tribe-events-page-title a:visited {
 	}
 	
 	.events-gridview .tribe-events-sub-nav li a {
-		background: #f36f37 !important;
 		padding-top: 12px;
-	}
-	
-	.events-gridview .tribe-events-sub-nav li a:hover {
-		background: #40a8c9 !important;
 	}
 	
 	.tribe-events-calendar td.tribe-events-present.mobile-active,
