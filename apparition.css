@@ -7477,6 +7477,10 @@ span.spg-overlay-link {
 	background-size: 100px !important;
 }
 
+main div#loop-content {
+	border-top: 0;
+}
+
 #loop-content ul,
 #loop-content ol,
 #loop-content li,
