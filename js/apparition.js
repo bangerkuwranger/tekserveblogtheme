@@ -849,6 +849,21 @@ function navInit() {
 	
 	}	//end if ($j('body>.site-container').length > 0)
 	
+	//add infinite-scroll class to body if ajax grid is in infinite scroll (not using jquery.infinitescroll)
+	if ($j('.spg-loop-content').length > 0) {
+	
+		$j('.spg-loop-content').each( function() {
+		
+			if ($j(this).attr('data-ajaxload') === '1') {
+			
+				$j('body').addClass('infinite-scroll');
+			
+			}	//end if ($j(this).attr('data-ajaxload') === '1')
+		
+		});	//end $j('.spg-loop-content').each( function()
+	
+	}	//end if ($j('.spg-loop-content').length > 0)
+	
 	//bind class hovermenu to hover status
 	$j('.menu-primary').hover (
 	

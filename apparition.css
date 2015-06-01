@@ -2527,7 +2527,7 @@ button:hover {
 	margin: 0;
 	overflow: hidden;
 	width: 100%;
-	padding: 0;
+	padding: 0 0 1em;
 }
 
 .footer-widgets.infinite {
@@ -7465,7 +7465,6 @@ span.spg-overlay-link {
 
 .tektips .select2-results .select2-highlighted {
 	background-color: #40a8c9;
-	border-radius: 12px 0;
 }
 
 /* Sortable Post Grid - Responsive
