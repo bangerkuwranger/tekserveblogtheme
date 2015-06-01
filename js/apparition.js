@@ -691,7 +691,6 @@ function initFaqToc() {
 		$j('#toc_container>.toc_list>li').each(function() {
 
 			var theAnchor = $j(this).children('a').attr('href');
-			console.log(theAnchor);
 			var theTarget = $j(theAnchor);
 			if (theTarget.children('img').length > 0) {
 
