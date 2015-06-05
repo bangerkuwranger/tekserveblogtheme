@@ -3512,15 +3512,12 @@ div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message {
 }
 
 #ui-datepicker-div.ui-datepicker {
-    width: 216px;
-    height: auto;
-    margin: 5px auto 0;
-    font: 9pt Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -o-box-shadow: none;
     box-shadow: none;
-    padding: .5em;
+    width: auto;
 	background: #004d72;
 }
 
@@ -3534,7 +3531,7 @@ div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message {
 }
 
 #ui-datepicker-div .ui-datepicker-header {
-    background-color: #004d72; /* set the header background color */
+    background: #f36f37;
     color: #fff;
     font-weight: bold;
     -webkit-box-shadow: none;
@@ -3542,8 +3539,6 @@ div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message {
     -o-box-shadow: none;
     box-shadow: none;
     text-shadow: none;
-    line-height: 30px;
-    min-height: 30px !important;
     border: 0;
     text-transform: uppercase;
     text-align: center;
@@ -3604,6 +3599,7 @@ div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message {
     line-height: 30px;
     color: #004d72;
     text-shadow: none;
+    padding: 0;
 }
 
 #ui-datepicker-div .ui-datepicker-calendar .ui-state-default {
@@ -3623,7 +3619,7 @@ div.gform_wrapper .gform_fields .gfield .gfield_description.validation_message {
 #ui-datepicker-div .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-active,
 #ui-datepicker-div .ui-datepicker-calendar td .ui-state-hover {
     background: #f36f37; /* set the active date background color */
-    border: none; /* set the active date border color */
+    border: 1px solid #fff; /* set the active date border color */
     color: #fff; /* set the active date font color */
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -4208,19 +4204,21 @@ color: #f06c34 !important;
 .page .drawer .collapseomatic,
 .page .collapseomatic.drawertrigger, 
 .page .innerRowWrap .collapseomatic.drawertrigger {
-	background-position: right 45%;
+	background-position: left 2px;
 	background-repeat: no-repeat;
-	padding: 10px 30px 10px 0;
+	padding: 0 0 0 2.25em;
 	text-align: left;
-	font-size: 1.25em;
 	color: #004d72;
 	cursor: pointer;
 	width: auto;
+	font-weight: 200;
 	display: none;
 	position: relative;
 	z-index: 5;
 	background-size: 30px;
 	margin-bottom: 0 !important;
+	position: relative;
+	left: -2em;
 }
 
 .page .innerRowWrap.darkblue .collapseomatic.drawertrigger,
@@ -4334,6 +4332,19 @@ color: #f06c34 !important;
 	display: none;
 }
 
+/* Drawers - Responsive
+------------------------------------------------------------ */
+
+@media only screen and (max-width: 768px) {
+	
+	.page .drawer .collapseomatic,
+	.page .collapseomatic.drawertrigger, 
+	.page .innerRowWrap .collapseomatic.drawertrigger {
+		padding: 0 0 0 3em;
+	}
+	
+}
+
 
 
 /* Accordion
@@ -4400,18 +4411,26 @@ color: #f06c34 !important;
 /* Rental Tabs
 ------------------------------------------------------------ */
 
+.innerRowWrap .ui-widget {
+	font-family: Tekvetica, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	background: #fff;
+	background-color: transparent;
+}
+
 .innerRowWrap .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
-	background: transparent;
+	background: #fff;
 }
 
 .innerRowWrap .wpb_column .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav {
 	margin-bottom: 2em !important;
-	background: transparent;
+	background: #fff;
+	background-color: transparent;
 	border: 0;
 }
 
 .innerRowWrap .wpb_content_element .wpb_tabs_nav li {
-	font-size: 2em;
+	font-size: 1.25em;
 	text-align: center;
 	text-indent: 0;
 	padding: 0 .5em;
@@ -4424,11 +4443,13 @@ color: #f06c34 !important;
 }
 
 .innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default {
-	background: transparent;
+	background: #fff;
+	background-color: transparent;
 }
 
 .innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default.ui-state-active {
-	background: transparent;
+	background: #fff;
+	background-color: transparent;
 }
 
 .innerRowWrap .wpb_content_element .wpb_tabs_nav li.ui-state-default a {
@@ -4450,6 +4471,15 @@ color: #f06c34 !important;
 	position: absolute;
 	left: 45%;
 	bottom: -.5em;
+}
+
+.tekserverentals-item-add-to-cart {
+	margin-bottom: 1em;
+}
+
+.tekserverentals-item-add-to-cart .button.tekserverentals-item-add-to-cart-button {
+	padding: .55em 1em .5em !important;
+	margin: 0 0 0 1em;
 }
 
 /* Rental Tabs - Responsive
@@ -5897,6 +5927,25 @@ a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-
 	width: auto;
 }
 
+.tekserverental-checkout-form form,
+.tekserverental-dates-form form {
+	outline: 0;
+}
+
+.tekserverental-checkout-form form label,
+.tekserverental-dates-form form label {
+	text-transform: none;
+	font-weight: bold;
+	margin: 2em 0 1em;
+}
+
+.tekserverental-checkout-form form label.lower,
+.tekserverental-dates-form form label.lower {
+	font-weight: normal;
+	float:none;
+	margin: .25em 0 1em;
+}
+
 .ui-dialog {
     left: 0;
     outline: 0 none;
@@ -6029,8 +6078,7 @@ a:hover .tekserve-celebros-related-items-single-data .tekserve-celebros-related-
 }
 
 .page a.simpleCart_checkout.button {
-	float: left;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 /* Rentals - Responsive

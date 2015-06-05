@@ -165,8 +165,14 @@ $j(window).bind('load', function() {
 	deprecated stuff caught
 ****/
 
-function scrollToID() {
-	goToAnchor();
+function scrollToID(id) {
+	if(id) {
+		window.location.href = '#' + id;
+		goToAnchor();
+	}
+	else {
+		goToAnchor();
+	}
 }
 
 
@@ -974,7 +980,7 @@ function fixDiv() {
 function goToAnchor() {
 
 	hash = document.location.hash;
-	if (hash !="") {
+	if (hash != "" && hash != "#!" && hash != "#") {
 	
 		setTimeout(function() {
 			if (location.hash) {
