@@ -167,37 +167,7 @@ $fof_redirect_rules = array(
 		  'new_url'       => 'rentals.tekserve.com/', 
 		  'wildcard'      => TRUE, 
 		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insiders/how-to-join/', 
-		  'new_url'       => 'www.tekserve.com/insider/', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insiders/*', 
-		  'new_url'       => 'www.tekserve.com/insider/', 
-		  'wildcard'      => TRUE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insider_mac/', 
-		  'new_url'       => 'www.tekserve.com/insider/#mac', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insider_ipad/', 
-		  'new_url'       => 'www.tekserve.com/insider/#ipad', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insider-members/', 
-		  'new_url'       => 'www.tekserve.com/insider/', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/insider-terms-conditions/', 
-		  'new_url'       => 'www.tekserve.com/insider/#insider-terms-and-conditions', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
+	),
 	array('old_url'       => 'www.tekserve.com/tekserve-events/', 
 		  'new_url'       => 'events.tekserve.com/', 
 		  'wildcard'      => FALSE, 
@@ -526,11 +496,6 @@ $fof_redirect_rules = array(
 	),	  
 	array('old_url'       => 'www.tekserve.com/tradein', 
 		  'new_url'       => 'www.tekserve.com/trade-in', 
-		  'wildcard'      => FALSE, 
-		  'preserve_path' => FALSE 
-	),	  
-	array('old_url'       => 'www.tekserve.com/tekserve-insiders/', 
-		  'new_url'       => 'www.tekserve.com/insider/', 
 		  'wildcard'      => FALSE, 
 		  'preserve_path' => FALSE 
 	),	  
