@@ -47,6 +47,26 @@ function apparition_add_viewport_meta_tag() {
 
 
 /****
+	Add noscript tag
+****/
+
+add_action( 'genesis_before_header', 'apparition_noscript' );
+function apparition_noscript() {
+	?>
+		<noscript>
+			<style>#pageLoad { display: none; } #noscript-box { background: #fff; padding: .5em 1em 1em; margin-bottom: 1em; border-bottom: 4px solid #f36f37;  } .site-inner { display: block !important }</style>
+			<div id="noscript-box">
+				<h1>JavaScript Disabled</h1>
+				<p>For full functionality of this page it is necessary to enable JavaScript. Here are the <a href="http://activatejavascript.org" target="_blank"> instructions how to enable JavaScript in your web browser</a></p>
+				<p>If you need to contact us for any reason, we are available during regular business hours either by phone - 212.929.3645 - or in the store - 119 W. 23rd St. New York, NY 10011. We are also always available at <a href="mailto:info@tekserve.com">info@tekserve.com</a>.</p>
+			</div>
+		</noscript>
+	<?php
+		
+}	//end apparition_noscript()
+
+
+/****
 	Force full width content layout - disabled to allow selection - uncomment to enable
 ****/
 
@@ -1058,6 +1078,7 @@ function apparition_footer_folk() {
 	$foursquare = CHILD_THEME_LOC . '/images/footer-images/logos/foursquare-logo.png';
 	if( get_post_type() == 'page' ): ?>
 		<div id="pageLoad"><img src="<?php echo CHILD_THEME_LOC ?>/images/ajax-loader.gif" alt="Page Loading" /></div>
+		
 	<?php endif ?>
 	<div id="footer-folk" class="footer-folk" style="display:none;">
 		<div class="footer-folk-wrap">
